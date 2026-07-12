@@ -1,0 +1,50 @@
+---
+layout: default
+title: Tous les sujets
+permalink: /index-sujets-hlp/sujets/
+---
+<h1>Tous les sujets</h1>
+<p>{{ site.data.sujets | size }} sujets indexés.</p>
+
+<ul class="liste-sujets">
+{% for s in site.data.sujets %}
+  {% assign corrige = site.data.corriges | where: "id", s.id | first %}
+  <li>
+    <p class="ref-auteur">
+      <span class="ref">{{ s.annee }}·{{ s.lieu | slice: 0, 3 | upcase }}</span>
+      {{ s.auteur.prenom }} {{ s.auteur.nom }}, <em>{{ s.titre }}</em>
+    </p>
+
+    <ul class="questions">
+    {% for q in s.questions %}
+      <li>
+        <span class="badge-discipline">{% include nom-discipline.html code=q.discipline %}</span>
+        {{ q.intitule }}
+      </li>
+    {% endfor %}
+    </ul>
+
+    <p class="meta">{{ s.lieu }}, session {{ s.annee }} · axe {{ s.theme_programme }}{% if s.type_session != "" %} · {{ s.type_session }}{% endif %}</p>
+
+    <details>
+      <summary>Voir le texte{% if corrige %} et le corrigé{% endif %}</summary>
+
+      {% if s.chapeau != "" %}<p class="chapeau">{{ s.chapeau }}</p>{% endif %}
+      <div class="texte-extrait">{{ s.texte | markdownify }}</div>
+
+      {% if corrige %}
+        {% for c in corrige.corriges %}
+          <h4>Corrigé — {% include nom-discipline.html code=c.discipline %}</h4>
+          <div class="corrige-texte">{{ c.texte | markdownify }}</div>
+        {% endfor %}
+      {% endif %}
+
+      {% if s.themes_index.size > 0 %}
+      <p class="tags">
+        {% for t in s.themes_index %}<span class="tag">{{ t }}</span>{% endfor %}
+      </p>
+      {% endif %}
+    </details>
+  </li>
+{% endfor %}
+</ul>

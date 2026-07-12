@@ -1,0 +1,35 @@
+---
+layout: default
+title: Par discipline
+permalink: /index-sujets-hlp/par-discipline/
+---
+<h1>Questions par discipline</h1>
+<p class="note">Chaque sujet comporte une question de Philosophie et une question de Lettres : cette page les sépare pour une révision ciblée par discipline.</p>
+
+<h2>Philosophie</h2>
+<ul class="liste-sujets">
+{% for s in site.data.sujets %}
+  {% for q in s.questions %}
+    {% if q.discipline == "phil" %}
+    <li>
+      <p class="intitule">{{ q.intitule }}</p>
+      <p class="meta">{{ s.auteur.prenom }} {{ s.auteur.nom }}, <em>{{ s.titre }}</em> — {{ s.lieu }}, {{ s.annee }}</p>
+    </li>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>
+
+<h2>Lettres</h2>
+<ul class="liste-sujets">
+{% for s in site.data.sujets %}
+  {% for q in s.questions %}
+    {% if q.discipline == "litt" %}
+    <li>
+      <p class="intitule">{{ q.intitule }}</p>
+      <p class="meta">{{ s.auteur.prenom }} {{ s.auteur.nom }}, <em>{{ s.titre }}</em> — {{ s.lieu }}, {{ s.annee }}</p>
+    </li>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>

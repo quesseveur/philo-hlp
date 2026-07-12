@@ -1,14 +1,17 @@
 ---
-layout: hub
-title: Philo & HLP
+layout: default
+title: Accueil
 ---
-<h1>Philo & HLP</h1>
-<p>Ressources pour l'enseignement des Humanités, Littérature et Philosophie.</p>
+{% assign vedette = site.data.sujets | first %}
+{% assign premiere_question = vedette.questions | first %}
+<p class="eyebrow">Sujet en vedette</p>
+<blockquote class="hero-sujet">{{ premiere_question.intitule }}</blockquote>
+<p class="hero-meta">{{ vedette.auteur.prenom }} {{ vedette.auteur.nom }}, <em>{{ vedette.titre }}</em> — {{ vedette.lieu }}, session {{ vedette.annee }}</p>
 
-<ul class="liste-ressources">
-  <li>
-    <a href="{{ '/index-sujets-hlp/' | relative_url }}">Banque de sujets indexée →</a>
-    <p>Sujets de Bac HLP indexés par centre, session, discipline, axe et thème, avec corrigés.</p>
-  </li>
-  <!-- D'autres ressources HLP viendront s'ajouter ici au fur et à mesure. -->
-</ul>
+<h1>Banque de sujets HLP</h1>
+<p>{{ site.data.sujets | size }} sujets indexés par centre, session, discipline, axe et thème.</p>
+<p>
+  <a href="{{ '/index-sujets-hlp/sujets/' | relative_url }}">→ Parcourir tous les sujets</a><br>
+  <a href="{{ '/index-sujets-hlp/par-discipline/' | relative_url }}">→ Parcourir par discipline</a><br>
+  <a href="{{ '/index-sujets-hlp/par-axe/' | relative_url }}">→ Parcourir par axe du programme</a>
+</p>

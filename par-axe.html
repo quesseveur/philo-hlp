@@ -1,0 +1,20 @@
+---
+layout: default
+title: Par axe du programme
+permalink: /index-sujets-hlp/par-axe/
+---
+<h1>Sujets par axe du programme</h1>
+<p class="note">Les codes d'axe (ex. ETA, EXS) reprennent tels quels les codes utilisés dans les sources LaTeX. À toi de les faire correspondre aux intitulés officiels du programme si tu veux les afficher en toutes lettres (ou de me fournir la légende pour que je l'ajoute).</p>
+
+{% assign groupes = site.data.sujets | group_by: "theme_programme" %}
+{% for groupe in groupes %}
+  <h2>{{ groupe.name }}</h2>
+  <ul class="liste-sujets">
+  {% for s in groupe.items %}
+    <li>
+      <p class="ref-auteur">{{ s.auteur.prenom }} {{ s.auteur.nom }}, <em>{{ s.titre }}</em></p>
+      <p class="meta">{{ s.lieu }}, session {{ s.annee }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}

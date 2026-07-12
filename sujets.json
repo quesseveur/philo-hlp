@@ -1,0 +1,175 @@
+[
+  {
+    "id": "cea_2025_1",
+    "auteur": {
+      "nom": "Agoult",
+      "prenom": "Marie",
+      "initiale": "M",
+      "particule": "d'"
+    },
+    "titre": "Premières années",
+    "genre": "autobiographie",
+    "datepub": "1871",
+    "reference_complementaire": "",
+    "lieu": "Centres étrangers",
+    "annee": "2025",
+    "jour": 1,
+    "type_session": "",
+    "semestre": "RS",
+    "theme_programme": "ETA",
+    "a_un_corrige": true,
+    "chapeau": "Marie d'Agoult, future grande écrivaine, voyageuse, musicienne, découvre, adolescente, le plaisir de la lecture.",
+    "questions": [
+      {
+        "discipline": "litt",
+        "intitule": "Comment la narratrice décrit-elle dans cet extrait le plaisir de la lecture ?"
+      },
+      {
+        "discipline": "phil",
+        "intitule": "L'interdit est-il essentiel à toute éducation ?"
+      }
+    ],
+    "texte": "Il y avait dans un petit boudoir proche du salon, où l'on se tenait de préférence en automne mais qu'on me laissait, à moi seule, l'été, pour y écrire mes devoirs, une armoire ou placard, fermée d'un grillage en fil de fer que doublait une soie verte fanée. Cette armoire renfermait, sur des tablettes, un assez grand nombre de livres en petits formats très variés, fort joliment reliés, mais dont aucun n'avait été choisi en vue d'une bibliothèque de demoiselle. Jamais on ne m'avait défendu de lire ces livres, mais quelque chose me disait qu'ils devaient m'être interdits. La première fois que je tournai la clef du placard, étant seule, dans la simple intention de regarder les titres des volumes, je fus prise de peur et, aussitôt, me figurant entendre ouvrir la porte du boudoir, je refermai précipitamment l'armoire et je me rassis à ma table, avec l'air d'écrire. Cette dissimulation fut toute d'instinct, et l'on m'aurait, à coup sûr, fort embarrassée, si l'on m'en eût demandé la cause, car je ne désobéissais à personne ; et quel mal pouvait-il y avoir d'ouvrir, pour regarder des titres de livres, une armoire dont la clef restait à la serrure ?\n\nLe jour suivant je fus plus hardie ; sur le rayon le mieux à portée de ma main, je pris un volume, le plus petit, le plus joli ; je l'ouvris. Il y avait une gravure en tête ; c'était Le Diable amoureux de Cazotte ; ç'aurait pu être pire. Un nouveau bruit me fit fuir, comme le rat de La Fontaine, avant que de goûter au mets friand. Mais j'y revins ; et bientôt, dans cet exercice répété de l'armoire à la table et de la table à l'armoire, toujours l'oreille au guet, j'acquis une finesse de l'ouïe, une prestesse des jambes extraordinaires. Un jour, fatiguée de me tenir debout près de l'armoire, je m'assis avec mon volume à la table où j'étais censée travailler. C'était bien plus commode et plus sûr. Au moindre mouvement de chaise que j'entendais au salon, je fourrais le volume dans le tiroir de mon pupitre, sous mes cahiers d'analyses ; et, trempant ma plume dans l'encre, j'achevais tant bien que mal la phrase commencée sur le premier empire des Assyriens ou sur les habitants de la Nouvelle-Zélande. Personne ne se doutait de rien ; et de la sorte, je lus pendant toute une saison une infinité de romans : madame Cottin, madame de Genlis, madame Riccoboni, Ann Radcliffe[^1], qui mirent en désarroi ma pauvre petite cervelle. Un jour, j'eus la mortification extrême de trouver la clef de l'armoire ôtée. On ne l'y remit plus. S'était-on aperçu de quelque chose ? C'est assez probable, mais j'ai dit qu'on ne me grondait jamais. Ma mère ou ma grand-mère s'étaient dit d'ailleurs peut-être qu'elles étaient, en ceci, les plus répréhensibles ; bref, tout le monde se tut. Je fus fort attrapée. Mais, privée de mes lectures, je n'en gardais que mieux dans ma mémoire les noms, les images, les aventures romanesques que j'y avais entassées depuis six mois.\n\n[^1]: Madame Cottin, madame de Genlis, madame Riccoboni, Ann Radcliffe : célèbres autrices des XVIII{ieme} et XIX{e} siècles.",
+    "themes_index": [
+      "enfant",
+      "lecture",
+      "transgression",
+      "imagination",
+      "mémoire",
+      "éducation",
+      "curiosité",
+      "interdit",
+      "romanesque"
+    ]
+  },
+  {
+    "id": "met_2025_1",
+    "auteur": {
+      "nom": "Condorcet",
+      "prenom": "Nicolas",
+      "initiale": "N",
+      "particule": "de"
+    },
+    "titre": "Cinq mémoires sur l'instruction publique",
+    "genre": "essaip",
+    "datepub": "1791",
+    "reference_complementaire": "",
+    "lieu": "Métropole",
+    "annee": "2025",
+    "jour": 1,
+    "type_session": "",
+    "semestre": "RS",
+    "theme_programme": "EXSTA",
+    "a_un_corrige": true,
+    "chapeau": "",
+    "questions": [
+      {
+        "discipline": "phil",
+        "intitule": "Pourquoi, d'après ce texte, faut-il « exercer l'âme des enfants » à la pitié ?"
+      },
+      {
+        "discipline": "litt",
+        "intitule": "La littérature a-t-elle pour vocation d'éduquer à la sensibilité ?"
+      }
+    ],
+    "texte": "Les premiers sentiments auxquels il faut exercer l'âme des enfants, et sur lesquels il est utile de l'arrêter, sont la pitié pour l'homme et pour les animaux, une affection habituelle pour ceux qui nous ont fait du bien, et dont les actions nous en montrent le désir ; affection qui produit la tendresse filiale et l'amitié. Ces sentiments sont de tous les âges ; ils sont fondés sur des motifs simples et voisins de nos sensations immédiates de plaisir ou de peine ; ils existent dans notre âme aussitôt que nous pouvons avoir l'idée distincte d'un individu, et nous n'avons besoin que d'en être avertis pour apprendre à les apercevoir, à les reconnaître, à les distinguer.\n\nLa pitié pour les animaux a le même principe que la pitié pour les hommes. L'une et l'autre naissent de cette douleur irréfléchie et presque organique, produite en nous par la vue ou par le souvenir des souffrances d'un autre être sensible. Si on habitue un enfant à voir souffrir des animaux avec indifférence ou même avec plaisir, on affaiblit, on détruit en lui, même à l'égard des hommes, le germe de la sensibilité naturelle, premier principe actif de toute moralité comme de toute vertu, et sans lequel elle n'est plus qu'un calcul d'intérêt, qu'une froide combinaison de la raison. Gardons-nous donc d'étouffer ce sentiment dans sa naissance ; conservons-le comme une plante faible encore, qu'un instant peut flétrir et dessécher pour jamais. N'oublions pas surtout que dans l'homme occupé de travaux grossiers qui émoussent sa sensibilité, et le ramènent aux sentiments personnels, l'habitude de la dureté produit cette disposition à la férocité qui est le plus grand ennemi des vertus et de la liberté du peuple, la seule excuse des tyrans, le seul prétexte spécieux de toutes les lois inégales.",
+    "themes_index": [
+      "pitié",
+      "enfant",
+      "animal",
+      "amitié",
+      "sentiments",
+      "conscience",
+      "souffrance",
+      "morale",
+      "utilitarisme",
+      "vertu",
+      "tyrannie",
+      "morale › conscience morale",
+      "morale › éducation morale",
+      "cruauté"
+    ]
+  },
+  {
+    "id": "met_2024_2",
+    "auteur": {
+      "nom": "Hugo",
+      "prenom": "Victor",
+      "initiale": "H",
+      "particule": ""
+    },
+    "titre": "Ruy Blas",
+    "genre": "theatre",
+    "datepub": "1838",
+    "reference_complementaire": "Acte III, Scène troisième, v. 1184-1228",
+    "lieu": "Métropole",
+    "annee": "2024",
+    "jour": 2,
+    "type_session": "",
+    "semestre": "RS",
+    "theme_programme": "EXS",
+    "a_un_corrige": true,
+    "chapeau": "Ruy Blas, valet de don Salluste, est amoureux de la reine d'Espagne, négligée par son mari. Ruy Blas lui témoigne son amour en secret en déposant pour elle chaque jour un bouquet de fleurs. Or don Salluste, qui veut se venger de la reine, a ordonné à son valet de se faire aimer par celle-ci pour la perdre ensuite, et l'a introduit à la cour sous le nom du noble don César de Bazan. Les qualités politiques de Ruy Blas et la protection de la reine l'élèvent au rang de Premier ministre. Dans la scène qui précède, Ruy Blas a humilié les Grands d'Espagne qu'il accuse d'avoir ruiné le pays. La reine, cachée dans un cabinet (petite pièce) secret, a tout entendu et s'adresse à celui qu'elle croit être Don César…",
+    "questions": [
+      {
+        "discipline": "litt",
+        "intitule": "Comment se manifeste le sentiment amoureux dans cette scène de théâtre ?"
+      },
+      {
+        "discipline": "phil",
+        "intitule": "Que gagne l'amour à être déclaré ?"
+      }
+    ],
+    "texte": "**RUY BLAS, LA REINE.**\n\n**LA REINE, *du fond du théâtre.***\n\nOh ! merci !\n\n**RUY BLAS**\n\nCiel !\n\n**LA REINE**\n\nVous avez bien fait de leur parler ainsi.\n\nJe n'y puis résister, duc, il faut que je serre\n\nCette loyale main si ferme et si sincère !\n\n*(Elle marche vivement à lui et lui prend la main, qu'elle presse avant qu'il ait pu s'en défendre.)*\n\n**RUY BLAS**\n\n*(À part.)*\n\nLa fuir depuis six mois et la voir tout à coup.\n\n*(Haut.)*\n\nVous étiez là, madame ?…\n\n**LA REINE**\n\nOui, duc, j'entendais tout.\n\nJ'étais là. J'écoutais avec toute mon âme !\n\n**RUY BLAS, *montrant la cachette.***\n\nJe ne soupçonnais pas… — Ce cabinet, madame…\n\n**LA REINE**\n\nPersonne ne le sait. C'est un réduit obscur\n\nQue don Philippe Trois[^2] fit creuser dans ce mur,\n\nD'où le maître invisible entend tout comme une ombre.\n\nLà j'ai vu bien souvent Charles Deux[^3], morne et sombre,\n\nAssister aux conseils où l'on pillait son bien,\n\nOù l'on vendait l'État.\n\n**RUY BLAS**\n\nEt que disait-il ?\n\n**LA REINE**\n\nRien.\n\n**RUY BLAS**\n\nRien ? — Et que faisait-il ?\n\n**LA REINE**\n\nIl allait à la chasse.\n\nMais vous ! j'entends encor votre accent qui menace.\n\nComme vous les traitiez d'une haute façon,\n\nEt comme vous aviez superbement raison !\n\nJe soulevais le bord de la tapisserie,\n\nJe vous voyais. Votre œil, irrité sans furie,\n\nLes foudroyait d'éclairs, et vous leur disiez tout.\n\nVous me sembliez seul être resté debout !\n\nMais où donc avez-vous appris toutes ces choses ?\n\nD'où vient que vous savez les effets et les causes ?\n\nVous n'ignorez donc rien ? D'où vient que votre voix\n\nParlait comme devrait parler celle des rois ?\n\nPourquoi donc étiez-vous, comme eût été Dieu même,\n\nSi terrible et si grand ?\n\n**RUY BLAS**\n\nParce que je vous aime !\n\nParce que je sens bien, moi qu'ils haïssent tous,\n\nQue ce qu'ils font crouler s'écroulera sur vous !\n\nParce que rien n'effraie une ardeur si profonde,\n\nEt que pour vous sauver je sauverais le monde !\n\nJe suis un malheureux qui vous aime d'amour.\n\nHélas ! je pense à vous comme l'aveugle au jour.\n\nMadame, écoutez-moi. J'ai des rêves sans nombre.\n\nJe vous aime de loin, d'en bas, du fond de l'ombre ;\n\nJe n'oserais toucher le bout de votre doigt,\n\nEt vous m'éblouissez comme un ange qu'on voit !\n\n— Vraiment, j'ai bien souffert. Si vous saviez, madame !\n\nJe vous parle à présent. Six mois, cachant ma flamme,\n\nJ'ai fui. Je vous fuyais et je souffrais beaucoup.\n\nJe ne m'occupe pas de ces hommes du tout,\n\nJe vous aime. — Ô mon Dieu, j'ose le dire en face\n\nÀ votre majesté. Que faut-il que je fasse ?\n\nSi vous me disiez : meurs ! je mourrais. J'ai l'effroi\n\nDans le cœur. Pardonnez ! […]\n\n[^2]: Philippe Trois : roi d'Espagne de 1598 à 1621, grand-père de Charles Deux.\n[^3]: Charles Deux est le mari de la reine, roi d'Espagne de 1665 à 1700.",
+    "themes_index": [
+      "amour",
+      "courage",
+      "tromperie",
+      "secret",
+      "politique",
+      "sincérité",
+      "aveu"
+    ]
+  },
+  {
+    "id": "metrem_2024_1",
+    "auteur": {
+      "nom": "Condorcet",
+      "prenom": "Nicolas",
+      "initiale": "N",
+      "particule": "de"
+    },
+    "titre": "Cinq mémoires sur l'instruction publique",
+    "genre": "essaip",
+    "datepub": "1791",
+    "reference_complementaire": "",
+    "lieu": "Métropole",
+    "annee": "2024",
+    "jour": 1,
+    "type_session": "Remplacement",
+    "semestre": "RS",
+    "theme_programme": "ETA",
+    "a_un_corrige": false,
+    "chapeau": "",
+    "questions": [
+      {
+        "discipline": "phil",
+        "intitule": "Selon ce texte, quelles sont les conditions requises pour que l'éducation ne porte pas atteinte à la liberté ?"
+      },
+      {
+        "discipline": "litt",
+        "intitule": "En quoi la littérature et les arts contribuent-ils à la libération de la pensée ?"
+      }
+    ],
+    "texte": "L'éducation, si on la prend dans toute son étendue, ne se borne pas seulement à l'instruction positive[^4], à l'enseignement des vérités de fait et de calcul, mais elle embrasse toutes les opinions politiques, morales ou religieuses. Or, la liberté de ces opinions ne serait plus qu'illusoire, si la société s'emparait des générations naissantes pour leur dicter ce qu'elles doivent croire. Celui qui en entrant dans la société y porte des opinions que son éducation lui a données n'est plus un homme libre ; il est l'esclave de ses maîtres, et ses fers sont d'autant plus difficiles à rompre, que lui-même ne les sent pas, et qu'il croit obéir à sa raison, quand il ne fait que se soumettre à celle d'un autre. On dira peut-être qu'il ne sera pas plus réellement libre s'il reçoit ses opinions de sa famille. Mais alors ces opinions ne sont pas les mêmes pour tous les citoyens ; chacun s'aperçoit bientôt que sa croyance n'est pas la croyance universelle ; il est averti de s'en défier ; elle n'a plus à ses yeux le caractère d'une vérité convenue ; et son erreur, s'il y persiste, n'est plus qu'une erreur volontaire. L'expérience a montré combien le pouvoir de ces premières idées s'affaiblit, dès qu'il s'élève contre elles des réclamations : on sait qu'alors la vanité de les rejeter l'emporte souvent sur celle de ne pas changer.\n\n[^4]: « positif » : ce qui a trait aux véritables connaissances",
+    "themes_index": [
+      "éducation",
+      "instruction",
+      "politique",
+      "morale",
+      "préjugés",
+      "famille › et éducation",
+      "citoyen"
+    ]
+  }
+]
