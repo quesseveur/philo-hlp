@@ -1,0 +1,24 @@
+title: "Philo & HLP"
+description: "Ressources pour l'enseignement de l'HLP : banque de sujets indexée et autres outils à venir."
+
+# Ce dépôt s'appelle "philo-hlp" -> baseurl doit être "/philo-hlp".
+# (Le sous-dossier index-sujets-hlp/ est géré par les permaliens des pages
+# elles-mêmes, pas par baseurl — voir le guide, section 9.)
+baseurl: "/philo-hlp"
+url: ""
+
+# Titre affiché spécifiquement pour la section banque de sujets
+# (distinct du titre général du site ci-dessus).
+sujets_section_title: "Sujets de Bac HLP — Banque indexée"
+
+# Lien de retour vers ton portail personnel (dépôt séparé Quesseveur.github.io).
+# Laisse parent_url vide ("") pour ne pas afficher ce lien.
+parent_url: "https://Quesseveur.github.io/"
+parent_label: "← Mes cours"
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - outils
