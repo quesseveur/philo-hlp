@@ -1,0 +1,25 @@
+---
+layout: default
+title: Rechercher un sujet
+permalink: /index-sujets-hlp/sujets/
+---
+<h1>Rechercher un sujet</h1>
+<p class="note">Recherche par auteur, titre, mot-clé du thème ou de l'intitulé — insensible aux accents et à la casse. Filtre par discipline et par axe en complément.</p>
+
+<div class="recherche-barre">
+  <input type="search" id="recherche" placeholder="Rechercher (auteur, titre, mot-clé...)" data-source="{{ '/index-sujets-hlp/donnees-recherche.json' | relative_url }}">
+  <select id="filtre-discipline">
+    <option value="">Toutes disciplines</option>
+    <option value="phil">Philosophie</option>
+    <option value="litt">Lettres</option>
+  </select>
+  <select id="filtre-axe">
+    <option value="">Tous les axes</option>
+  </select>
+</div>
+
+<p id="compteur" class="note"></p>
+
+<ul id="resultats" class="liste-sujets"></ul>
+
+<script src="{{ '/assets/recherche.js' | relative_url }}" defer></script>

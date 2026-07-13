@@ -1,0 +1,15 @@
+---
+layout: default
+title: Accueil
+---
+{% assign vedette = site.data.sujets | first %}
+{% assign premiere_question = vedette.questions | first %}
+<p class="eyebrow">Sujet en vedette</p>
+<blockquote class="hero-sujet">{{ premiere_question.intitule }}</blockquote>
+<p class="hero-meta">{{ vedette.auteur.prenom }} {{ vedette.auteur.nom }}, <em>{{ vedette.titre }}</em> — {{ vedette.lieu }}, session {{ vedette.annee }}</p>
+
+<h1>Banque de sujets HLP</h1>
+<p>{{ site.data.sujets | size }} sujets indexés par centre, session, discipline, axe et thème.</p>
+<p>
+  <a href="{{ '/index-sujets-hlp/sujets/' | relative_url }}">→ Rechercher un sujet</a>
+</p>

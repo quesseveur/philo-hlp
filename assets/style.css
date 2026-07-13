@@ -146,6 +146,34 @@ h2 {
   margin-right: 0.6rem;
 }
 
+.recherche-barre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0 0.6rem;
+}
+
+.recherche-barre input[type="search"] {
+  flex: 1 1 260px;
+}
+
+.recherche-barre input[type="search"],
+.recherche-barre select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--encre);
+  background: #FFFFFF;
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+  padding: 0.55rem 0.7rem;
+}
+
+.recherche-barre input[type="search"]:focus,
+.recherche-barre select:focus {
+  outline: none;
+  border-color: var(--rouge);
+}
+
 .note {
   font-size: 0.85rem;
   color: var(--gris-texte);

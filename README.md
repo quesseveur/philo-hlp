@@ -47,8 +47,10 @@ Puis, dans tous les cas : `git add . && git commit -m "Ajout sujets" && git push
 - `_layouts/default.html` — gabarit des pages de la banque de sujets (`index-sujets-hlp/`)
 - `_includes/nom-discipline.html` — convertit un code (`litt`/`phil`) en nom affiché
 - `index.html` — page d'accueil du hub (racine du dépôt)
-- `index-sujets-hlp/` — toutes les pages de la banque de sujets (accueil, liste, par discipline, par axe)
+- `index-sujets-hlp/` — pages de la banque de sujets : accueil (`index.html`) et recherche (`sujets.html`)
+- `index-sujets-hlp/donnees-recherche.json` — point d'accès JSON généré pour la recherche
 - `assets/style.css` — mise en forme partagée
+- `assets/recherche.js` — recherche/filtre côté navigateur (sans dépendance)
 - `outils/convertir_latex_vers_json.py` — conversion LaTeX → JSON
 
 ## Points de vigilance connus (voir le guide complet pour le détail)

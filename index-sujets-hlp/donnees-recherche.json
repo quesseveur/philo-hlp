@@ -1,0 +1,35 @@
+---
+layout: null
+permalink: /index-sujets-hlp/donnees-recherche.json
+---
+{% assign json_str = "" %}
+{% for s in site.data.sujets %}
+{% assign corrige = site.data.corriges | where: "id", s.id | first %}
+{% if s.auteur.particule != "" %}
+  {% if s.auteur.particule contains "'" %}
+    {% assign nom_complet = s.auteur.particule | append: s.auteur.nom %}
+  {% else %}
+    {% assign nom_complet = s.auteur.particule | append: " " | append: s.auteur.nom %}
+  {% endif %}
+{% else %}
+  {% assign nom_complet = s.auteur.nom %}
+{% endif %}
+{% assign auteur_complet = s.auteur.prenom | append: " " | append: nom_complet %}
+{% assign texte_json = s.texte | markdownify | jsonify %}
+{% for q in s.questions %}
+{% assign corrige_html = "null" %}
+{% if corrige %}
+  {% assign matches = corrige.corriges | where: "discipline", q.discipline %}
+  {% if matches.size > 0 %}
+    {% assign corrige_html = matches.first.texte | markdownify | jsonify %}
+  {% endif %}
+{% endif %}
+{% capture objet %}{"sujet_id":{{ s.id | jsonify }},"discipline":{{ q.discipline | jsonify }},"intitule":{{ q.intitule | jsonify }},"auteur":{{ auteur_complet | jsonify }},"titre":{{ s.titre | jsonify }},"lieu":{{ s.lieu | jsonify }},"annee":{{ s.annee | jsonify }},"axe":{{ s.theme_programme | jsonify }},"themes":{{ s.themes_index | jsonify }},"chapeau":{{ s.chapeau | jsonify }},"texte_html":{{ texte_json }},"corrige_html":{{ corrige_html }}}{% endcapture %}
+{% if json_str == "" %}
+  {% assign json_str = objet %}
+{% else %}
+  {% assign json_str = json_str | append: "," | append: objet %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+[{{ json_str }}]
