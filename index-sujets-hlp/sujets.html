@@ -8,14 +8,31 @@ permalink: /index-sujets-hlp/sujets/
 
 <div class="recherche-barre">
   <input type="search" id="recherche" placeholder="Rechercher (auteur, titre, mot-clé...)" data-source="{{ '/index-sujets-hlp/donnees-recherche.json' | relative_url }}">
+  
   <select id="filtre-discipline">
     <option value="">Toutes disciplines</option>
     <option value="phil">Philosophie</option>
     <option value="litt">Lettres</option>
   </select>
-  <select id="filtre-axe">
-    <option value="">Tous les axes</option>
+
+  <!-- Nouveaux filtres -->
+  <select id="filtre-lieu">
+    <option value="">Tous les centres</option>
+    <!-- Les options seront injectées par JavaScript -->
   </select>
+
+  <select id="filtre-annee">
+    <option value="">Toutes les années</option>
+    <!-- Les options seront injectées par JavaScript -->
+  </select>
+</div>
+
+<!-- Remplacement du select "axe" par des cases à cocher -->
+<div id="filtres-axes" style="margin-top: 10px; margin-bottom: 20px;">
+  <span class="note" style="margin-right: 15px;">Thèmes (2 max) :</span>
+  <label style="margin-right: 10px;"><input type="checkbox" name="filtre-axe" value="EXS"> EXS</label>
+  <label style="margin-right: 10px;"><input type="checkbox" name="filtre-axe" value="MM"> MM</label>
+  <!-- Ajoutez les autres sigles pertinents pour votre programme HLP ici -->
 </div>
 
 <p id="compteur" class="note"></p>
