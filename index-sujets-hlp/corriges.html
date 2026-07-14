@@ -1,46 +1,9 @@
----
-layout: default
-title: Rechercher un sujet
-permalink: /index-sujets-hlp/sujets/
----
-<h1>Rechercher un sujet</h1>
-<p class="note">Recherche par auteur, titre, mot-clé du thème ou de l'intitulé.</p>
-
-<table>
-  <tr>
-    <div class="recherche-barre">
-    <input type="search" id="recherche" data-mode="sujets" placeholder="Rechercher..." data-source="{{ '/index-sujets-hlp/donnees-recherche.json' | relative_url }}">
-    </div>
-    </tr>
-    <tr>
-    <div class="recherche-barre">
-  <select id="filtre-discipline">
-    <option value="">Toutes disciplines</option>
-    <option value="phil">Philosophie</option>
-    <option value="litt">Lettres</option>
-  </select>
-
-  <select id="filtre-type">
-    <option value="">Interprétation et essai</option>
-    <option value="interpretation">Interprétation</option>
-    <option value="essai">Essai</option>
-  </select>
-
-  <select id="filtre-lieu">
-    <option value="">Tous les centres</option>
-    <!-- Rempli par le JS -->
-  </select>
-</div>
-</tr>
-</table>
-
 <div class="zone-filtres">
 
   <!-- Section Années -->
   <div>
     <span class="note titre-groupe">| Années :</span>
     <div class="grille-annees">
-      <label class="case-label"><input type="checkbox" name="filtre-annee" value="2019"> 2020</label>
       <label class="case-label"><input type="checkbox" name="filtre-annee" value="2021"> 2021</label>
       <label class="case-label"><input type="checkbox" name="filtre-annee" value="2022"> 2022</label>
       <label class="case-label"><input type="checkbox" name="filtre-annee" value="2023"> 2023</label>
@@ -98,9 +61,3 @@ permalink: /index-sujets-hlp/sujets/
   </div>
 
 </div>
-
-<p id="compteur" class="note"></p>
-
-<ul id="resultats" class="liste-sujets"></ul>
-
-<script src="{{ '/assets/recherche.js' | relative_url }}" defer></script>

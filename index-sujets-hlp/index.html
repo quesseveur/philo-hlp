@@ -3,9 +3,9 @@ layout: default
 title: Accueil
 ---
 {% assign vedette = site.data.sujets | last %}
-{% assign premiere_question = vedette.questions | first %}
-<p class="eyebrow">Sujet en vedette</p>
-<blockquote class="hero-sujet">{{ premiere_question.intitule }}</blockquote>
+{% assign question_essai = vedette.questions | last %}
+<p class="eyebrow">Dernier sujet ajouté</p>
+<blockquote class="hero-sujet">{{ question_essai.intitule }}</blockquote>
 <p class="hero-meta">{{ vedette.auteur.prenom }} {{ vedette.auteur.nom }}, <em>{{ vedette.titre }}</em> — {{ vedette.lieu }}, session {{ vedette.annee }}</p>
 
 <h1>Banque de sujets HLP</h1>
