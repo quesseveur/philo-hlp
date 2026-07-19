@@ -5496,4 +5496,160 @@
       "usine"
     ]
   }
-]
+  {
+    "id": "pol_2026_1_54",
+    "auteur": {
+      "nom": "Monin",
+      "prenom": "Catherine",
+      "initiale": "C",
+      "particule": ""
+    },
+    "titre": "Polywere",
+    "genre": "theatre",
+    "datepub": "2020",
+    "reference_complementaire": "",
+    "lieu": "Polynésie",
+    "annee": "2026",
+    "jour": 1,
+    "type_session": "",
+    "semestre": "RS",
+    "a_un_corrige": false,
+    "chapeau": "Dans cette pièce de théâtre, le personnage d’Emmanuel s’enfuit seul dans la forêt.",
+    "questions": [
+      {
+        "discipline": "litt",
+        "intitule": "Que provoque chez le personnage d’Emmanuel la rencontre avec le cerf\u00A0?",
+        "theme_programme": "EXSMM"
+      },
+      {
+        "discipline": "phil",
+        "intitule": "Rencontrer l’autre, est-ce devenir autre\u00A0?",
+        "theme_programme": "MM"
+      }
+    ],
+    "texte": "EMMANUEL. –\n\n C’est la nuit.\nJe suis dans mon lit de mousse.\nJe me lève.\nJ’urine dans la mare.\nEncore dans mon sommeil à demi.\nEt il apparait.Le cerf.\n Je vois d’abord ses bois se pencher pour boire et puis sa tête les relever vers l’arrière.\n Comme la chevelure hirsute d’un punk arrogant.\n J’ai des fourmis intenses et l’envie de lui sauter aux joues.\n Comme quand on retrouve un parent.\n Mais je reste planté là, les pieds dans la vase, les mains occupées, n’osant pas un seul geste ni même un petit coup de cil sur la gauche.\n Je le devine de côté.\n Je le sens me respirer.\n Je le sens faire corps, je ne l’entends pas réfléchir la forêt.\n Il se tient en son sein.\n C’est par le museau qu’il la capte.\n Il la hume, l’inspire, la goûte. Je l’entends.\n C’est son dialogue avec le monde, je me dis,\n Un continuel et pénétrant échange de souffles.\n Des frissons furtifs et légers parcourent son échine,\n Il ponctue avec son sabot.\n Il est là.\n Pas d’hier, pas de demain.\n Indifférent au temps.\n Posté.\n Moi aussi posté, comme un chasseur tenant encore dans la main son faux canard[^1],\n je regarde la mare.\n La même que lui.\n Je la regarde vraiment.\n Je la trouve belle… la mare… Sur son ventre fin passe un nuage long dégageant une lune croissante, au milieu d’une flopée d’étoiles où patinent des araignées d’eau.\n Est-ce qu’il lit la beauté couramment ?\n Est-ce que si je lui dis c’est beau non ? il va me répondre ? Je peux l’imaginer parlant… Peut-il m’entendre autrement ?\n Je regarde les étoiles dans l’eau et puis dans le ciel où je sais qu’elles résident…\n Voit-il deux mondes étoilés ?\n Voit-il les étoiles comme un corps céleste enflammé de la même proportion que le soleil ?\n Voit-il que nous sommes debout sur un minus caillou dans un univers infini ?\n Voit-il aussi grand ?\n Non, je me dis, il est grand.\n\n[^1]Appât utilisé pour la chasse au canard.",
+    "themes_index": [
+      "nature!environnement",
+      "sensation",
+      "souffle",
+      "forêt",
+      "lac",
+      "mare",
+      "paysage",
+      "nuit",
+      "majesté",
+      "rencontre",
+      "animal",
+      "perception",
+      "beauté",
+      "sensibilités",
+      "communication",
+      "univers",
+      "étoiles",
+      "corps"
+    ]
+  }
+  {
+    "id": "pol_2026_2_55",
+    "auteur": {
+      "nom": "Günther",
+      "prenom": "Anders",
+      "initiale": "G.",
+      "particule": ""
+    },
+    "titre": "Hiroshima est partout",
+    "genre": "essaip",
+    "datepub": "1958",
+    "reference_complementaire": "traduction de Denis Trierweiler",
+    "lieu": "Polynésie",
+    "annee": "2026",
+    "jour": 2,
+    "type_session": "",
+    "semestre": "HQ",
+    "a_un_corrige": false,
+    "chapeau": "Ce texte est extrait d’une conférence de Günther Anders à Tokyo en 1958.",
+    "questions": [
+      {
+        "discipline": "phil",
+        "intitule": "Selon le texte, en quoi la maîtrise de la technique place-t-elle l’humanité dans une « situation apocalyptique »\u00A0?",
+        "theme_programme": "{HVL}"
+      },
+      {
+        "discipline": "litt",
+        "intitule": "La littérature et les arts peuvent-ils enseigner à résister à la tentation de «\u00A0se rendre tout-puissant\u00A0»\u00A0?",
+        "theme_programme": "{HL}"
+      }
+    ],
+    "texte": "Car, si puissant que soit l’homme, il est une chose qu’il ne peut pas faire : il ne peut pas révoquer son propre savoir-faire. Et si grande que puisse être sa faculté d’apprentissage, il est une chose qu’il ne peut pas apprendre : c’est de désapprendre ce qu’il sait. Les armes atomiques qu’en ce moment <i>il a</i>, celles-là il peut certes s’en défaire, mais, sa connaissance de leur fabrication, il ne pourra plus jamais s’en débarrasser. La situation technique dans laquelle se trouve l’homme ne se définit pas seulement par ce qu’il maîtrise, mais aussi par ce qu’il est incapable de <i>ne pas</i> maîtriser. Vous-mêmes qui n’êtes pas physiciens – et je ne le suis pas non plus –, savez que la capacité de produire des armes atomiques ne représente pas une capacité isolée ; que celui qui sait produire des réacteurs pacifiques est également en mesure à tout moment de produire les moyens de destruction atomiques. Car ceux-ci, bien que leurs effets possibles aillent bien au-delà de tous les effets que nous avons par ailleurs techniquement produits, ne sont que des spécialités et des partis de l’ensemble de l’état de notre maîtrise physique et technique. Et, comme cet état de maîtrise est inabrogeable[^1], la spécialité l’est aussi. En d’autres termes : même s’il n’existait plus une seule « arme atomique », plus d’explosion expérimentale, plus de vol d’essai, plus de rampe de lancement et pas un seul pays travaillant à la fabrication de ces armes, le danger ne serait pas pour autant levé. Étant donné que, par l’élimination momentanée des attirails[^2] menaçants, la capacité de fabriquer ces attirails ne serait pas supprimée du même coup et que la tentation et la séduction de se rendre tout-puissant à l’aide de tels attirails ne le seraient bien sûr pas non plus, nous nous trouverions toujours encore, et ce à tout jamais, dans la situation apocalyptique, autrement dit dans la situation où l’humanité pourrait, par elle-même, s’anéantir.\n\n[^1]: Inabrogeable : qui ne peut être abrogé, supprimé.\n\n[^2]: Attirail : ensemble d’outils, d’instruments, de machines.",
+    "themes_index": [
+      "bombe atomique",
+      "toute-puissance",
+      "omnipotence",
+      "physique",
+      "technique!et sciences",
+      "technique!maîtrise technique de la nature",
+      "anéantissement",
+      "armes",
+      "technologie",
+      "connaissance",
+      "savoir",
+      "sciences",
+      "apocalypse",
+      "destruction",
+      "finitude",
+      "irréverisibilité",
+      "omnipotence!tentation de l'omnipotence"
+    ]
+  },
+  {
+    "id": "amnord_2026_2_67",
+    "auteur": {
+      "nom": "Boulle",
+      "prenom": "Pierre",
+      "initiale": "P",
+      "particule": ""
+    },
+    "titre": "La planète des singes",
+    "genre": "romanl",
+    "datepub": "1963",
+    "reference_complementaire": "",
+    "lieu": "Amérique du Nord",
+    "annee": "2026",
+    "jour": 2,
+    "type_session": "Secours",
+    "semestre": "HQ",
+    "a_un_corrige": false,
+    "chapeau": "Lors d’une exploration spatiale, le Terrien Ulysse Mérou découvre une planète dominée par les singes. Il visite un laboratoire où des expériences sont menées sur des humains : grâce à des stimulations électriques infligées au cerveau, une femme restitue des souvenirs d’ancêtres lointains.",
+    "questions": [
+      {
+        "discipline": "litt",
+        "intitule": "Quelle image ce texte donne-t-il de l’humanité\u00A0?",
+        "theme_programme": "{HVL}"
+      },
+      {
+        "discipline": "phil",
+        "intitule": "{Un être humain peut-il perdre sa dignité\u00A0?}",
+        "theme_programme": "{HL}"
+      }
+    ],
+    "texte": "Une nouvelle voix féminine prit le relai.\n « J’étais femme-dompteur. Je présentais un numéro de douze orangs-outans; des bêtes magnifiques. Aujourd’hui, c’est moi qui suis dans leur cage, en compagnie d’autres artistes du cirque.\n Il faut être équitable. Les singes nous traitent bien et nous donnent à manger en abondance. Ils changent la paille de notre litière quand elle est trop sale. Ils ne sont pas méchants ; ils corrigent\footnote{ils punissent} seulement ceux, parmi nous, qui font preuve de mauvaise volonté et refusent d’exécuter les tours qu’ils se sont mis en tête de nous apprendre. Ceux-là sont bien avancés ! Moi, je me plie à leurs fantaisies sans discuter. Je marche à quatre pattes ; je fais des cabrioles. Aussi sont-ils très gentils avec moi. Je ne suis pas malheureuse. Je n’ai plus ni soucis ni responsabilités. La plupart d’entre nous s’accommodent de ce régime. » \n La femme observa cette fois un long silence, pendant lequel Cornélius\footnote{Chimpanzé et scientifique, Cornélius est un ami du narrateur.} me regardait avec une insistance gênante. Je comprenais trop bien sa pensée. Une humanité aussi veule\footnote{faible, lâche}, qui se résignait si facilement, n’avait-elle pas fait son temps sur la planète et ne devait-elle pas céder la place à une race plus noble ? Je rougis et détournai les yeux. La femme reprit, sur un ton de plus en plus angoissé :\n « Ils tiennent maintenant toute la ville. Nous ne sommes plus que quelques centaines dans ce réduit\footnote{petit espace} et notre situation est précaire. Nous formons le dernier noyau humain aux environs de la cité, mais les singes ne nous toléreront pas en liberté si près d’eux. Dans les autres camps, quelques hommes ont fui au loin, dans la jungle, les autres se sont rendus pour avoir de quoi manger à leur faim. Ici, nous sommes restés sur place, surtout par paresse. Nous dormons ; nous sommes incapables de nous organiser pour la résistance…\n C’est bien ce que je craignais. J’entends une cacophonie barbare. On dirait une parodie de musique militaire… Au secours ! ce sont eux, ce sont les singes ! Ils nous encerclent. Ils sont dirigés par d’énormes gorilles. Ils nous ont pris nos trompettes, nos tambours et nos uniformes ; nos armes aussi, bien sûr… Non, ils n’ont pas d’armes. Ô cruelle humiliation, suprême injure ! voilà leur armée qui arrive et ils ne brandissent que des fouets ! »",
+    "themes_index": [
+      "science-fiction",
+      "singes",
+      "animal",
+      "dignité",
+      "renversement",
+      "esclavage",
+      "cirque",
+      "liberté",
+      "résistance",
+      "paresse",
+      "survie",
+      "civilisation",
+      "humiliation",
+      "soumissions",
+      "inversion!des rôles",
+      "armée"
+    ]
+  }
+] 
