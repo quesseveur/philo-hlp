@@ -1,3 +1,16 @@
+---
+layout: default
+title: Rechercher un corrigé
+permalink: /index-sujets-hlp/corriges/
+---
+
+<h1>Rechercher un corrigé</h1>
+<p class="note">Utiliser les filtres ci-dessous pour affiner votre recherche</p>
+
+<div class="recherche-barre">
+  <input type="search" id="recherche" data-mode="corriges" placeholder="Rechercher..." data-source="{{ '/index-sujets-hlp/donnees-recherche.json' | relative_url }}">
+</div>
+
 <div class="zone-filtres">
 
   <!-- Section Années -->
@@ -17,7 +30,6 @@
   <div>
     <span class="note titre-groupe">| Thèmes (2 maximum) :</span>
     <div class="grille-themes">
-      <!-- Colonne de gauche (implicite avec la grille) -->
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="ETA"> Éducation, transmission et émancipation</label>
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="CC"> Création, continuités et ruptures</label>
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="EXS"> Les expressions de la sensibilité</label>
@@ -27,7 +39,7 @@
     </div>
   </div>
 
-  <!-- Section Croisements (Divisée en deux blocs) -->
+  <!-- Section Croisements -->
   <div class="conteneur-croisements">
     <!-- Bloc 1 : Même semestre -->
     <div>
@@ -61,3 +73,10 @@
   </div>
 
 </div>
+
+<p id="compteur" class="note"></p>
+
+<!-- Correction de la classe ici pour l'harmonisation du style CSS -->
+<ul id="resultats" class="liste-sujets"></ul>
+
+<script src="{{ '/assets/recherche.js' | relative_url }}" defer></script>

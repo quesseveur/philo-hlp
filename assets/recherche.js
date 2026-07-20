@@ -20,21 +20,37 @@
   var mode = champRecherche.getAttribute("data-mode") || "sujets"; // "sujets" ou "corriges"
   var donnees = [];
 
-  // On liste les axes connus pour la logique "Autres"
+  // On dresse la liste des axes prévus pour la logique "Autres"
   var axesConnus = [];
   for (var i = 0; i < checkboxesAxes.length; i++) {
     if (checkboxesAxes[i].value !== "Autres") axesConnus.push(checkboxesAxes[i].value);
   }
 
+  // --- CORRECTION : Indexation des références culturelles pour la recherche ---
   function haystack(item) {
-    return normaliser([
-      item.auteur, item.titre, item.intitule, item.lieu, item.axe,
-      (item.themes || []).join(" ")
-    ].join(" "));
+  var refsCulturellesStr = "";
+  // Les références culturelles ne sont indexées pour la recherche que sur la page des corrigés
+  if (mode === "corriges" && item.references_culturelles && item.references_culturelles !== "null") {
+    refsCulturellesStr = Array.isArray(item.references_culturelles) 
+      ? item.references_culturelles.join(" ") 
+      : String(item.references_culturelles);
+  }
+
+    var texteBrut = [
+      item.auteur, item.titre, item.intitule, item.lieu, item.axe, item.annee,
+      (item.themes || []).join(" "),
+      refsCulturellesStr
+    ].join(" ");
+
+    // NOUVEAU : On supprime toutes les balises HTML (ex: <i>, <b>) pour que la recherche 
+    // trouve une correspondance parfaite même si la barre de recherche contient du texte brut.
+    var texteSansHtml = texteBrut.replace(/<[^>]*>?/gm, '');
+
+    return normaliser(texteSansHtml);
   }
 
   function correspond(item, texte, discipline, type_question, lieu, anneesCochees, axesCoches) {
-    // 1. Filtre du mode (si on est sur la page corrigés, on masque ce qui n'a pas de corrigé)
+    // 1. Filtre du mode
     if (mode === "corriges" && (!item.corrige_html || item.corrige_html === "null")) return false;
 
     // 2. Filtres standards
@@ -42,12 +58,12 @@
     if (type_question && item.type_question !== type_question) return false;
     if (lieu && item.lieu !== lieu) return false;
     
-    // 3. Filtre Années (Multiples)
+    // 3. Filtre Années
     if (anneesCochees && anneesCochees.length > 0) {
       if (anneesCochees.indexOf(String(item.annee)) === -1) return false;
     }
 
-    // 4. Filtre Axes (Croisés et limités à 2 + Logique "Autres")
+    // 4. Filtre Axes
     if (axesCoches && axesCoches.length > 0) {
       var correspondAxe = false;
       for (var j = 0; j < axesCoches.length; j++) {
@@ -67,16 +83,36 @@
       if (!correspondAxe) return false;
     }
 
-    // 5. Filtre Texte
-    if (texte && haystack(item).indexOf(texte) === -1) return false;
+    // 5. NOUVELLE LOGIQUE : Recherche multi-mots-clés
+    // 5. NOUVELLE LOGIQUE : Recherche multi-mots-clés
+    if (texte) {
+      // On découpe la recherche par virgules et/ou espaces, et on nettoie les termes vides
+      var termesRecherche = texte.split(/[,\s]+/).filter(function(t) { return t.length > 0; });
+      var contenuSujet = haystack(item);
+      // On vérifie que TOUS les mots tapés sont présents quelque part dans le sujet
+      var tousLesTermesSontPresents = termesRecherche.every(function(term) {
+      return contenuSujet.indexOf(term) !== -1;
+      });
+      if (!tousLesTermesSontPresents) return false;
+    }
     
     return true;
+  }
+
+  // Lie deux éléments <details> en accordéon : ouvrir l'un referme l'autre.
+  function lierAccordeon(detailsA, detailsB) {
+    detailsA.addEventListener("toggle", function () {
+      if (detailsA.open) detailsB.open = false;
+    });
+    detailsB.addEventListener("toggle", function () {
+      if (detailsB.open) detailsA.open = false;
+    });
   }
 
   function rendreResultat(item) {
     var li = document.createElement("li");
 
-    // --- Génération du badge (Ex: INTERPRÉTATION LITTÉRAIRE) ---
+    // --- Génération du badge et de l'intitulé ---
     var p = document.createElement("p");
     p.className = "intitule";
     var badge = document.createElement("span");
@@ -95,48 +131,119 @@
     p.appendChild(document.createTextNode(" " + item.intitule));
     li.appendChild(p);
 
-    // --- Méta-données ---
+    // --- Méta-données (Axes) ---
     var meta = document.createElement("p");
     meta.className = "meta";
     meta.innerHTML = item.auteur + ", <em>" + item.titre + "</em> — " + item.lieu + ", " + item.annee + " · axe " + item.axe;
+    if (item.a_un_corrige) {
+      meta.innerHTML += " · <strong>Éléments d'évaluations disponibles</strong>";
+    }
     li.appendChild(meta);
 
-    // --- Détails (Sujet ou Corrigé selon le mode) ---
-    var details = document.createElement("details");
-    var summary = document.createElement("summary");
-    summary.textContent = mode === "corriges" ? "Voir le corrigé" : "Voir le texte";
-    details.appendChild(summary);
-
-    if (item.chapeau) {
-      var chapeauEl = document.createElement("p");
-      chapeauEl.className = "chapeau";
-      chapeauEl.textContent = item.chapeau;
-      details.appendChild(chapeauEl);
-    }
-
+    // --- MODE CORRIGÉS : Deux blocs séparés ---
     if (mode === "corriges") {
+      // 1. Voir le texte
+      var detailsTexte = document.createElement("details");
+      var summaryTexte = document.createElement("summary");
+      summaryTexte.textContent = "Voir le texte";
+      detailsTexte.appendChild(summaryTexte);
+      
+      var texteDiv = document.createElement("div");
+      texteDiv.className = "texte-extrait";
+      texteDiv.innerHTML = item.texte_html;
+      detailsTexte.appendChild(texteDiv);
+      li.appendChild(detailsTexte);
+
+      // 2. Voir les éléments de correction
+      var detailsCorrige = document.createElement("details");
+      var summaryCorrige = document.createElement("summary");
+      summaryCorrige.textContent = "Voir les éléments de correction";
+      detailsCorrige.appendChild(summaryCorrige);
+      
       var corrDiv = document.createElement("div");
       corrDiv.className = "corrige-texte";
       corrDiv.innerHTML = item.corrige_html;
-      details.appendChild(corrDiv);
+      detailsCorrige.appendChild(corrDiv);
+
+      // Gestion des références culturelles AVEC compteur (+X autres)
+      if (item.references_culturelles && item.references_culturelles !== "null") {
+        var refsList = Array.isArray(item.references_culturelles) ? item.references_culturelles : [item.references_culturelles];
+        if (refsList.length > 0) {
+          var refsP = document.createElement("p");
+          refsP.className = "tags";
+          refsP.style.marginTop = "15px";
+          
+          var limite = 5;
+          refsList.forEach(function(ref, index) {
+            var span = document.createElement("span");
+            span.className = "tag";
+            span.style.backgroundColor = "#f0f4f8";
+            span.style.color = "#2c3e50";
+            span.style.border = "1px solid #cbd5e1";
+            span.style.cursor = "pointer";
+            span.innerHTML = "📖 " + ref;
+            if (index >= limite) { span.style.display = "none"; span.classList.add("ref-cachee"); }
+            
+            span.addEventListener("click", function() {
+               var champ = document.getElementById("recherche");
+               champ.value = ref.replace(/<[^>]*>/g, ''); // Texte pur
+               rafraichir();
+            });
+            refsP.appendChild(span);
+          });
+
+          if (refsList.length > limite) {
+            var btnPlus = document.createElement("span");
+            btnPlus.className = "tag";
+            btnPlus.style.cursor = "pointer";
+            btnPlus.style.backgroundColor = "#e2e8f0";
+            btnPlus.textContent = "+ " + (refsList.length - limite) + " autres...";
+            btnPlus.addEventListener("click", function() {
+              refsP.querySelectorAll(".ref-cachee").forEach(function(el) { el.style.display = "inline-block"; });
+              btnPlus.style.display = "none";
+            });
+            refsP.appendChild(btnPlus);
+          }
+          detailsCorrige.appendChild(refsP);
+        }
+      }
+      li.appendChild(detailsCorrige);
+
+      // Accordéon : un seul bloc ouvert à la fois
+      lierAccordeon(detailsTexte, detailsCorrige);
+
     } else {
+      // MODE SUJETS (Comportement inchangé)
+      var details = document.createElement("details");
+      var summary = document.createElement("summary");
+      summary.textContent = "Voir le texte";
+      details.appendChild(summary);
+      
       var texteDiv = document.createElement("div");
       texteDiv.className = "texte-extrait";
       texteDiv.innerHTML = item.texte_html;
       details.appendChild(texteDiv);
-      
-      // Afficher le corrigé à la suite si disponible en mode "sujet"
+      li.appendChild(details);
+
       if (item.corrige_html && item.corrige_html !== "null") {
-        var h4 = document.createElement("h4");
-        h4.textContent = "Proposition de corrigé";
-        details.appendChild(h4);
+        var detailsCorrigeSujet = document.createElement("details");
+        var summaryCorrigeSujet = document.createElement("summary");
+        summaryCorrigeSujet.textContent = "Voir les éléments de correction";
+        detailsCorrigeSujet.appendChild(summaryCorrigeSujet);
+
         var corrDivSujet = document.createElement("div");
         corrDivSujet.className = "corrige-texte";
         corrDivSujet.innerHTML = item.corrige_html;
-        details.appendChild(corrDivSujet);
+        detailsCorrigeSujet.appendChild(corrDivSujet);
+
+        li.appendChild(detailsCorrigeSujet);
+
+        // Accordéon : un seul bloc ouvert à la fois
+        lierAccordeon(details, detailsCorrigeSujet);
       }
     }
 
+    // Affichage des thèmes du programme (commun aux deux modes)
     if (item.themes && item.themes.length > 0) {
       var tagsP = document.createElement("p");
       tagsP.className = "tags";
@@ -146,10 +253,9 @@
         span.textContent = t;
         tagsP.appendChild(span);
       });
-      details.appendChild(tagsP);
+      li.appendChild(tagsP);
     }
 
-    li.appendChild(details);
     return li;
   }
 
@@ -196,6 +302,7 @@
     });
     lieux.sort();
     if (filtreLieu) {
+      filtreLieu.innerHTML = '<option value="">Tous les centres</option>';
       lieux.forEach(function (lieu) {
         var option = document.createElement("option");
         option.value = lieu;
@@ -231,7 +338,6 @@
     checkboxesAnnees[k].addEventListener("change", rafraichir);
   }
 
-  // Limite de 2 cases maximum pour les thèmes
   for (var x = 0; x < checkboxesAxes.length; x++) {
     checkboxesAxes[x].addEventListener("change", function () {
       var checkedCount = document.querySelectorAll('input[name="filtre-axe"]:checked').length;

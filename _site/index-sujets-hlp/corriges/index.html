@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechercher un corrigé — Sujets de Bac HLP — Banque indexée</title>
+  <meta name="description" content="Ressources pour l'enseignement de l'HLP : banque de sujets indexée et autres outils à venir.">
+  <link rel="stylesheet" href="/philo-hlp/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="breadcrumb"><a href="/philo-hlp/">← Philo & HLP</a></div>
+    <div class="header-row">
+      <a class="site-title" href="/philo-hlp/index-sujets-hlp/">Sujets de Bac HLP — Banque indexée</a>
+      <nav>
+        <a href="/philo-hlp/index-sujets-hlp/">Accueil</a>
+        <a href="/philo-hlp/index-sujets-hlp/sujets/">Rechercher</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Rechercher un corrigé</h1>
+<p class="note">Utiliser les filtres ci-dessous pour affiner votre recherche</p>
+
+<div class="recherche-barre">
+  <input type="search" id="recherche" data-mode="corriges" placeholder="Rechercher..." data-source="/philo-hlp/index-sujets-hlp/donnees-recherche.json">
+</div>
+
 <div class="zone-filtres">
 
   <!-- Section Années -->
@@ -17,7 +46,6 @@
   <div>
     <span class="note titre-groupe">| Thèmes (2 maximum) :</span>
     <div class="grille-themes">
-      <!-- Colonne de gauche (implicite avec la grille) -->
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="ETA"> Éducation, transmission et émancipation</label>
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="CC"> Création, continuités et ruptures</label>
       <label class="case-label"><input type="checkbox" name="filtre-axe" value="EXS"> Les expressions de la sensibilité</label>
@@ -27,7 +55,7 @@
     </div>
   </div>
 
-  <!-- Section Croisements (Divisée en deux blocs) -->
+  <!-- Section Croisements -->
   <div class="conteneur-croisements">
     <!-- Bloc 1 : Même semestre -->
     <div>
@@ -61,3 +89,17 @@
   </div>
 
 </div>
+
+<p id="compteur" class="note"></p>
+
+<!-- Correction de la classe ici pour l'harmonisation du style CSS -->
+<ul id="resultats" class="liste-sujets"></ul>
+
+<script src="/philo-hlp/assets/recherche.js" defer></script>
+  </main>
+
+  <footer>
+    <p>127 sujets indexés · généré avec Jekyll</p>
+  </footer>
+</body>
+</html>

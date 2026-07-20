@@ -19,10 +19,15 @@ permalink: /index-sujets-hlp/donnees-recherche.json
   
   {%- for q in s.questions -%}
     {%- assign corrige_html = "null" -%}
+    {%- assign refs_json = "null" -%}
+    
     {%- if corrige -%}
       {%- assign matches = corrige.corriges | where: "discipline", q.discipline -%}
       {%- if matches.size > 0 -%}
         {%- assign corrige_html = matches.first.texte | markdownify | jsonify -%}
+        {%- if matches.first.references_culturelles -%}
+          {%- assign refs_json = matches.first.references_culturelles | jsonify -%}
+        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
     
@@ -32,7 +37,7 @@ permalink: /index-sujets-hlp/donnees-recherche.json
       {%- assign type_q = "essai" -%}
     {%- endif -%}
     
-    {%- capture objet -%}{"sujet_id":{{ s.id | jsonify }},"discipline":{{ q.discipline | jsonify }},"type_question":{{ type_q | jsonify }},"intitule":{{ q.intitule | jsonify }},"auteur":{{ auteur_complet | jsonify }},"titre":{{ s.titre | jsonify }},"lieu":{{ s.lieu | jsonify }},"annee":{{ s.annee | jsonify }},"axe":{{ q.theme_programme | jsonify }},"themes":{{ s.themes_index | jsonify }},"chapeau":{{ s.chapeau | jsonify }},"texte_html":{{ texte_json }},"corrige_html":{{ corrige_html }}}{%- endcapture -%}
+    {%- capture objet -%}{"sujet_id":{{ s.id | jsonify }},"discipline":{{ q.discipline | jsonify }},"type_question":{{ type_q | jsonify }},"intitule":{{ q.intitule | jsonify }},"auteur":{{ auteur_complet | jsonify }},"titre":{{ s.titre | jsonify }},"lieu":{{ s.lieu | jsonify }},"annee":{{ s.annee | jsonify }},"axe":{{ q.theme_programme | jsonify }},"themes":{{ s.themes_index | jsonify }},"chapeau":{{ s.chapeau | jsonify }},"texte_html":{{ texte_json }},"corrige_html":{{ corrige_html }},"references_culturelles":{{ refs_json }}}{%- endcapture -%}
     
     {%- if json_str == "" -%}
       {%- assign json_str = objet -%}
