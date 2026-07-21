@@ -1,0 +1,125 @@
+---
+layout: default
+title: Statistiques
+permalink: /index-sujets-hlp/statistiques/
+---
+<h1>Statistiques</h1>
+<!-- À placer dans ton layout ou ton fichier .md -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Grand conteneur principal divisé en 2 colonnes -->
+<div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+
+    <!-- COLONNE GAUCHE : Le menu de filtres collant -->
+    <!-- flex: 0 0 200px fixe la largeur à 200px. position: sticky et top: 20px le rendent "collant" -->
+    <div id="menu-lateral" style="position: sticky; top: 20px; flex: 0 0 125px; display: flex; flex-direction: column; gap: 10px; z-index: 100;">
+        
+        <h3 style="margin-top: 0;">Filtres</h3>
+        
+        <button onclick="filtrerZone('Toutes')">Toutes les zones</button>
+        <button onclick="filtrerZone('Antilles')">Antilles</button>
+        <button onclick="filtrerZone('Asie')">Asie</button>
+        <button onclick="filtrerZone('Amérique du Nord')">Amérique du Nord</button>
+        <button onclick="filtrerZone('Amérique du Sud')">Amérique du Sud</button>
+        <button onclick="filtrerZone('Centres étrangers')">Centres étrangers</button>
+        <button onclick="filtrerZone('La Réunion')">La Réunion</button>
+        <button onclick="filtrerZone('Liban')">Liban</button>
+        <button onclick="filtrerZone('Métropole')">Métropole</button>
+        <button onclick="filtrerZone('Nouvelle-Calédonie')">Nouvelle-Calédonie</button>
+        <button onclick="filtrerZone('Polynésie')">Polynésie</button>
+
+        <!-- Tri par discipline -->
+    <h3 style="margin-top: 30px;">Affichage</h3>
+    <button onclick="afficherSection('tout')">Tout afficher</button>
+    <button onclick="afficherSection('general')">Récapitulatif général</button>
+    <button onclick="afficherSection('litterature')">Littérature</button>
+    <button onclick="afficherSection('philosophie')">Philosophie</button>
+
+    </div>
+
+<!-- COLONNE DROITE : Les graphiques -->
+    <!-- flex: 1 lui dit de prendre tout le reste de l'espace disponible -->
+    <div style="flex: 1; min-width: 0;">
+        
+        <!-- Le compteur dynamique -->
+        <h3 id="compteur-sujets" style="margin-bottom: 20px; color: #555;"></h3>
+
+<!-- SECTION 1 : Disciplines et répartition globale -->
+<div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+
+    <!-- Colonne GAUCHE (environ 30%) : Les deux camemberts empilés -->
+    <!-- flex-direction: column permet de les mettre l'un au-dessus de l'autre -->
+    <div style="flex: 5; min-width: 100px; display: flex; flex-direction: column; gap: 40px;">
+        <div>
+            <canvas id="canvasInterpDiscipline"></canvas>
+        </div>
+    </div>
+    <div style="flex:5; min-width: 100px; display: flex; flex-direction:column; gap: 40px;">
+            <div>
+            <canvas id="canvasEssaiDiscipline"></canvas>
+        </div>
+    </div>
+
+    <!-- Colonne DROITE (environ 70%) : Le grand diagramme en barres -->
+    <div style="flex: 1; min-width: 300px;">
+        <canvas id="barThemesGlobal"></canvas>
+    </div>
+</div>
+<hr style="margin: 40px 0;">
+
+<!-- SECTION 2 : Détails Littérature (Camembert à gauche, 2 Barres à droite) -->
+ <div id="section-litterature">
+    <h2 style="text-align: center; color: #36A2EB;">Questions Littéraires</h2>
+    <div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+    
+        <!--Camemberg global Littérature-->
+        <canvas id="pieLittGlobal"></canvas>
+        <!-- DROITE (70%) : Barres Interprétation au-dessus de Essai -->
+        <div style="flex: 5; min-width: 300px; display: flex; flex-direction: column; gap: 40px;">
+            <div><canvas id="barLittInterp"></canvas></div>
+        </div>
+        <div style="flex: 5; min-width: 300px;">
+            <div><canvas id="barLittEssai"></canvas></div>
+        </div>
+    </div>
+
+<hr style="margin: 40px 0;">
+</div>
+
+
+<!-- SECTION 3 : Détails Philosophie (Camembert à gauche, 2 Barres à droite) -->
+ <div id="section-philosophie">
+    <h2 style="text-align: center; color: #FFCE56;">Questions Philosophiques</h2>
+    <div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+        
+        <!--Camemberg global Philosophie-->
+        <canvas id="piePhilGlobal"></canvas>
+        <!-- DROITE (70%) : Barres Interprétation au-dessus de Essai -->
+        <div style="flex: 5; min-width: 300px; display: flex; flex-direction: column; gap: 40px;">
+            <div><canvas id="barPhilInterp"></canvas></div>
+        </div>
+        <div style="flex: 5; min-width: 300px;">
+            <div><canvas id="barPhilEssai"></canvas></div>
+        </div>
+    </div>
+    <hr style="margin: 40px 0;">
+</div>
+
+<!-- SECTION 4 : 4 Camemberts des thèmes (Interprétation puis Essai) -->
+ <div id="section-general">
+ <h2 style="text-align: center;">Récapitulatif général</h2>
+<div style="display: flex; gap: 40px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 5; min-width: 300px;"><canvas id="pieInterpLitt"></canvas></div>
+    <div style="flex: 5; min-width: 300px;"><canvas id="pieInterpPhil"></canvas></div>
+</div>
+<div style="display: flex; gap: 40px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 5; min-width: 300px;"><canvas id="pieEssaiLitt"></canvas></div>
+    <div style="flex: 5; min-width: 300px;"><canvas id="pieEssaiPhil"></canvas></div>
+</div>
+<hr style="margin: 40px 0;"></div>
+
+<!-- Le script de traitement -->
+ <script>
+  const urlDonnees = "{{ '/api-sujets.json' | relative_url }}";
+</script>
+<script src="{{ '/assets/statistiques.js' | relative_url }}"></script>
