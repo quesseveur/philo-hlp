@@ -32,9 +32,9 @@
     ],
     "texte": "Un être humain nous jette d'abord au visage cette forme et cette\ncouleur, ce jeu des mouvements, qui ne sont qu'à lui. Les marques de\nl'âge et du métier s'imprimeront sur cette écorce, mais sans la\nchanger. Tel il est à douze ans, sur les bancs de l'école, tel il\nsera ; pas un pli des cheveux n'en sera changé. La manière de\ns'asseoir, de prendre, de tourner la tête, de s'incliner, de se\nredresser, est dans cette forme pour toute la vie. Ce sont des signes\nconstants, que l'individu ne cesse point de lancer, ni les autres\nd'observer et de reconnaître. Quelque puissance de persuasion que\nj'aie, que je sois puissant ou riche, ou flatteur, ou prometteur, je\nsais bien qu'il ne changera rien de ce front large ou étroit, de\ncette mâchoire, de ces mains, de ce dos, pas plus qu'il ne changera\nla couleur de ces yeux. Alexandre, César, Louis XIV, Napoléon, ne\npouvaient rien sur ces différences. Aussi l'attention de tout homme\nse jette là, assurée de pouvoir compter sur cette forme si bien\nterminée, si bien assise sur elle-même, si parfaitement composée, où\ntout s'accorde et se soutient. On peut le tuer, on ne peut le\nchanger. Là-dessus donc s'appuient d'abord tous nos projets et toutes\nnos alliances. Vainement l'homme tend un autre rideau de signes,\nceux-là communs, qui sont costumes, politesses, phrases ; tout cela\nne brouille même pas un petit moment le ferme contour, la couleur,\nl'indicible mouvement, le fond et le roc d'une nature. Ici est\nsignifié quelque chose qui ne peut changer et qui ne peut tromper.\nMais quoi ?",
     "themes_index": [
-      "identite@identité!personnelle",
+      "identité!personnelle",
       "personnalité",
-      "identite@identité",
+      "identité",
       "apparences",
       "vanité",
       "corps"
@@ -73,8 +73,8 @@
     ],
     "texte": "<i>En 1923, Antonin Artaud a expédié des poèmes à </i>La nouvelle revue française<i>. Son directeur, Jacques Rivière, ne souhaite pas les\npublier, mais s'en explique, et ouvre ainsi une correspondance suivie\nentre les deux écrivains.</i>\n\n\nVous dites « qu'un homme ne se possède que par éclaircies, et même\nquand il se possède, il ne s'atteint pas tout à fait ». Cet homme,\nc'est vous ; mais je peux vous dire que c'est moi aussi. Je ne\nconnais rien qui ressemble à vos « tornades », ni à cette « volonté\nméchante » qui « du dehors attaque l'âme » et ses pouvoirs\nd'expression. Mais pour être plus générale, moins douloureuse, la\nsensation que j'ai parfois de mon infériorité à moi-même n'est pas\nmoins nette.\n\nComme vous j'écarte, pour expliquer les alternatives par lesquelles je\npasse, le symbole commode de l'inspiration. Il s'agit de quelque\nchose de plus profond, de plus « substantiel », si j'ose détourner ce\nmot de son sens, qu'un bon vent qui me viendrait, ou non, du fond de\nl'esprit ; il s'agit de degrés que je parcours dans ma propre\nréalité. Non pas volontairement, hélas ! mais de façon purement\naccidentelle.\n\nIl y a ceci de remarquable que le fait même de mon existence, comme\nvous le notez pour vous-même, ne fait à aucun moment pour moi l'objet\nd'un doute sérieux ; il me reste toujours quelque chose de moi, mais\nc'est bien souvent quelque chose de pauvre, de malhabile, d'infirme\net presque de suspect. Je ne perds pas à ces moments toute idée de ma\nréalité complète ; mais quelquefois tout espoir de la reconquérir\njamais. Elle est comme un toit au-dessus de moi qui resterait en\nl'air par miracle, et jusqu'auquel je ne verrais aucun moyen de me\nreconstruire.\n\nMes sentiments, mes idées – les mêmes qu'à l'habitude – passent en moi\navec un petit air fantastique ; ils sont tellement affaiblis,\ntellement hypothétiques qu'ils ont l'air de faire partie d'une pure\nspéculation philosophique, ils sont encore là, pourtant, mais ils me\nregardent comme pour me faire admirer leur absence.\n\nProust a décrit « les intermittences du cœur » ; il faudrait\nmaintenant décrire les intermittences de l'être.\n\n[…] En tout cas, c'est un fait, je crois, que toute une catégorie\nd'hommes est sujette à ces oscillations du niveau de l'être. Combien\nde fois, nous plaçant machinalement dans une attitude psychologique\nfamilière, n'avons-nous pas découvert brusquement qu'elle nous\ndépassait, ou plutôt que nous lui étions devenus subrepticement\ninégaux ! Combien de fois notre personnage le plus habituel ne nous\nest-il pas apparu tout à coup factice, et même fictif, par l'absence\ndes ressources spirituelles, ou « essentielles », qui devaient\nl'alimenter ?\n\nOù passe, et d'où revient notre être, que toute la psychologie jusqu'à nos jours a feint de considérer comme une constante ?",
     "themes_index": [
-      "identite@identité",
-      "identite@identité!et différences",
+      "identité",
+      "identité!et différences",
       "substance",
       "soi!difficile accès à soi",
       "moi!mobilité du moi",
@@ -123,7 +123,7 @@
       "solitude",
       "silence",
       "liberté",
-      "identite@identité"
+      "identité"
     ]
   },
   {
@@ -182,7 +182,7 @@
     "titre": "Walden ou la Vie dans les bois",
     "genre": "romanp",
     "datepub": "1854",
-    "reference_complementaire": "\n traduction de Brice <span style=\"font-variant: small-caps;\">Matthieussent</span>",
+    "reference_complementaire": "traduction de Brice <span style=\"font-variant: small-caps;\">Matthieussent</span>",
     "lieu": "Asie",
     "annee": "2021",
     "jour": 2,
@@ -448,13 +448,13 @@
     ],
     "texte": "Le Moi n'est pas l'affirmation d'Un être face à plusieurs (instincts,\npensées, etc.), au contraire, l'ego est une pluralité de forces\npersonnalisées dont tantôt l'une tantôt l'autre passe au premier plan\nen qualité d'ego et considère les autres de loin, comme un sujet\nconsidère le monde extérieur qui influe sur lui et le détermine. Le\nsujet est instable, nous ressentons probablement le degré d'intensité\ndes forces et des instincts comme proximité ou éloignement, et nous\ninterprétons pour nous-mêmes sous la forme d'un paysage, d'une\nplaine, ce qui est en réalité une multiplicité de degrés\nquantitatifs. L'élément le plus rapproché, nous l'appelons « moi » de\npréférence à ce qui est plus lointain, et accoutumés à la désignation\nimprécise « moi et tout le reste, tu[^1] », nous faisons instinctivement, de l'élément dominant\nmomentanément, tout l'ego, nous repoussons l'ensemble des tendances\nplus faibles dans une perspective plus lointaine et nous en faisons\nle domaine entier d'un « Tu » ou « Ça ». Nous nous traitons comme une\npluralité et transportons dans ces « rapports sociaux » toutes les\nhabitudes sociales que nous avions envers les hommes, les animaux,\nles pays et les choses. Nous nous déguisons, nous nous faisons peur,\nformons des factions, représentons des procès, nous agressons nous-mêmes, nous torturons, nous glorifions, faisons de tel ou tel de nos\ntraits de caractère notre dieu ou notre diable et nous montrons aussi\ndéloyaux et aussi loyaux que nous avons coutume de l'être en société.\n\n\n[^1]: Nietzsche utilise ici le terme français « tu », pour désigner ici tout ce qui n'est pas « moi ».",
     "themes_index": [
-      "identite@identité",
+      "identité",
       "moi!mobilité du moi",
       "moi!fragmentation du moi",
       "introspection",
       "caractère",
-      "identite@identité!sociale",
-      "identite@identité",
+      "identité!sociale",
+      "identité",
       "moi!inexistence du moi",
       "rôle!jouer un rôle"
     ]
@@ -494,7 +494,7 @@
     "themes_index": [
       "rire",
       "souffrance",
-      "emotions@émotions",
+      "émotions",
       "société!organisation sociale",
       "sentiments"
     ]
@@ -533,7 +533,7 @@
     "texte": "Qu'est-ce que je fais ici ?\n\nJ'appelle.\n\nJ'appelle.\n\nJ'appelle.\n\nJe ne sais pas qui j'appelle.\n\nQui j'appelle ne sait pas.\n\nJ'appelle quelqu'un de faible,\n\nquelqu'un de brisé,\n\nquelqu'un de fier que rien n'a pu briser.\n\nJ'appelle.\n\nJ'appelle quelqu'un de là-bas,\n\nquelqu'un au loin perdu,\n\nquelqu'un d'un autre monde.\n\n(C'était donc tout mensonge, ma solidité ?)\n\nJ'appelle.\n\nDevant cet instrument si clair,\n\nce n'est pas comme ce serait avec ma voix sourde.\n\nDevant cet instrument chantant qui ne me juge pas,\n\nqui ne m'observe pas,\n\nperdant toute honte, j'appelle,\n\nj'appelle,\n\nj'appelle du fond de la tombe de mon enfance qui boude et se contracte\nencore,\n\ndu fond de mon désert présent,\n\nj'appelle,\n\nj'appelle.\n\nL'appel m'étonne moi-même.\n\nQuoique ce soit tard, j'appelle.\n\nPour crever mon plafond sans doute surtout\n\nj'appelle.",
     "themes_index": [
       "autrui!comme inconnu",
-      "autrui!etranger@étranger",
+      "autrui!étranger",
       "solitude",
       "enfant"
     ]
@@ -571,18 +571,18 @@
     ],
     "texte": "Sur quoi repose <i>l'identité de la personne</i> ? Non pas sur la\nmatière du corps : celle-ci se renouvelle au bout de quelques années.\nNon plus sur la forme de ce corps : elle change dans son ensemble et\ndans ses diverses parties, sauf toutefois dans l'expression du regard ;\nc'est au regard qu'après un grand nombre d'années même on peut\nreconnaître une personne […] On admet généralement que l'identité de\nla personne repose sur celle de la conscience. Si on entend\nuniquement par cette dernière le souvenir coordonné du cours de notre\nvie, elle ne suffit pas à expliquer l'autre. Sans doute nous savons\nun peu plus de notre vie passée que d'un roman lu autrefois ; mais ce\nque nous en savons est pourtant peu de chose. Les événements\nprincipaux, les scènes intéressantes se sont gravées dans la mémoire ;\nquant au reste, pour un événement retenu, mille autres sont tombés\ndans l'oubli. Plus nous vieillissons, et plus les faits de notre vie\npassent sans laisser de trace. Un âge très avancé, une maladie, une\nlésion du cerveau, la folie peuvent nous priver complètement de\nmémoire. Mais l'identité de la personne ne s'est pas perdue avec cet\névanouissement progressif du souvenir. Elle repose sur la volonté\nidentique[^1], et sur le caractère immuable que celle-ci\nprésente. C'est cette même volonté qui confère sa persistance à\nl'expression du regard. L'homme se trouve dans le cœur, non dans la\ntête. Sans doute, par suite de nos relations avec le dehors, nous\nsommes habitués à considérer comme notre moi véritable le sujet de la\nconnaissance, le moi connaissant, qui s'alanguit le soir, s'évanouit\ndans le sommeil, pour briller le lendemain, d'un plus vif éclat. Mais\nce moi-là est une simple fonction du cerveau et non notre moi\nvéritable. Celui-ci, ce noyau de notre être, c'est ce qui est caché\nderrière l'autre, c'est ce qui ne connaît au fond que deux choses :\nvouloir ou ne pas vouloir, être ou ne pas être content, avec\ncertaines nuances bien entendu de l'expression de ces actes et qu'on\nappelle sentiments, passions, émotions. C'est ce dernier moi qui\nproduit l'autre, il ne dort pas avec cet autre, et quand celui-ci est\nanéanti par la mort, son compagnon n'est pas atteint.\n\n\n[^1]: Schopenhauer ne parle pas ici de la volonté comme une faculté libre et individuelle, mais comme un instinct vital d'abord indifférencié.",
     "themes_index": [
-      "identite@identité!personnelle",
+      "identité!personnelle",
       "reconnaissance",
       "moi!mobilité du moi",
       "souvenir",
       "oubli",
       "conscience",
       "vieillesse",
-      "identite@identité!et différences",
+      "identité!et différences",
       "sujet",
       "sujet",
-      "memoire@mémoire",
-      "emotions@émotions",
+      "mémoire",
+      "émotions",
       "moi!moi authentique",
       "sentiments",
       "rêve!problème du rêve et du sommeil (Descartes)",
@@ -628,7 +628,7 @@
       "temps",
       "amour",
       "vertus (et vices)",
-      "desir@désir"
+      "désir"
     ]
   },
   {
@@ -715,7 +715,7 @@
       "larmes",
       "enfant",
       "vieillesse",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "vie (et mort)!âge de la vie",
       "famille",
       "pitié"
     ]
@@ -763,7 +763,7 @@
       "silence",
       "berger",
       "technique!maîtrise technique de la nature",
-      "creation@création!humaine",
+      "création!humaine",
       "renouvellement!de la nature"
     ]
   },
@@ -882,13 +882,13 @@
     ],
     "texte": "Un désir est d'autant plus sauvage qu'il s'empare à lui seul de\nl'homme tout entier et que l'homme n'a pas encore appris à se\ndifférencier, en tant que généralité, par rapport à cette\ndétermination. Quand je dis : ma passion est plus forte que moi, je\nfais bien une différence entre mon moi abstrait et la passion ; mais\nc'est là une distinction purement formelle qui signifie que je ne\nsuis rien en comparaison de la passion. La sauvagerie de la passion\nrésulte donc de l'unité qui existe entre mon moi général et la\nlimitation à laquelle il est soumis, de sorte que je ne connais pas\nd'autre volonté que cette volonté limitée. On appelle <i>un homme\nentier</i>[^1] un\nhomme qui concentre toute sa volonté sur une fin particulière.\n\nC'est là la sauvagerie, force et puissance de l'homme dominé par les\npassions. Elle peut être adoucie par l'art, dans la mesure où\ncelui-ci représente à l'homme les passions elles-mêmes, les instincts\net, en général, l'homme tel qu'il est. Et en se bornant à dérouler le\ntableau des passions, l'art, alors même qu'il les flatte, le fait\npour montrer à l'homme ce qu'il est, pour l'en rendre conscient.\nC'est déjà en cela que consiste son action adoucissante, car il met\nainsi l'homme en présence de ses instincts, comme s'ils étaient en\ndehors de lui, et lui confère de ce fait une certaine liberté à leur\négard. Sous ce rapport, on peut dire de l'art qu'il est un\nlibérateur. Les passions perdent leur force, du fait même qu'elles\nsont devenues objets de représentations, objets tout court.\nL'objectivation[^2] des sentiments a justement pour\neffet de leur enlever leur intensité et de nous les rendre\nextérieurs, plus ou moins étrangers. Par son passage dans la\nreprésentation, le sentiment sort de l'état de concentration dans\nlequel il se trouvait en nous et s'offre à notre libre jugement. Il\nen est des passions comme de la douleur : le premier moyen que la\nnature met à notre disposition pour obtenir un soulagement d'une\ndouleur qui nous accable, sont les larmes ; pleurer, c'est déjà être\nconsolé. Le soulagement s'accentue ensuite au cours de conversations\navec des amis, et le besoin d'être soulagé et consolé peut nous\npousser jusqu'à composer des poésies. C'est ainsi que dès qu'un homme\nqui se trouve plongé dans la douleur et absorbé par elle est à même\nd'extérioriser cette douleur, il s'en sent soulagé, et ce qui soulage\nencore davantage, c'est son expression en paroles, en chants, en sons\net en figures. Ce dernier moyen est encore plus efficace.\n\n\n[^1]: « un homme entier » : en français dans le texte.\n[^2]: « objectivation » : passage d'un vécu intérieur à une réalité extérieure.",
     "themes_index": [
-      "desir@désir",
-      "identite@identité!et différences",
+      "désir",
+      "identité!et différences",
       "passion",
       "moi!moi abstrait",
       "art",
       "liberté",
-      "emotions@émotions!objectivation des émotions",
+      "émotions!objectivation des émotions",
       "souffrance",
       "consolation",
       "sentiments",
@@ -930,10 +930,10 @@
     "themes_index": [
       "théâtre",
       "souvenir",
-      "identite@identité!sociale",
+      "identité!sociale",
       "mensonge",
       "rôle!jouer un rôle",
-      "memoire@mémoire"
+      "mémoire"
     ]
   },
   {
@@ -969,13 +969,13 @@
     ],
     "texte": "Mais même au point de vue des plus insignifiantes choses de la vie,\nnous ne sommes pas un tout matériellement constitué, identique pour\ntout le monde et dont chacun n'a qu'à aller prendre connaissance\ncomme d'un cahier des charges ou d'un testament ; notre personnalité\nsociale est une création de la pensée des autres. Même l'acte si\nsimple que nous appelons « voir une personne que nous connaissons »\nest en partie un acte intellectuel. Nous remplissons l'apparence\nphysique de l'être que nous voyons de toutes les notions que nous\navons sur lui, et dans l'aspect total que nous nous représentons, ces\nnotions ont certainement la plus grande part. Elles finissent par\ngonfler si parfaitement les joues, par suivre en une adhérence si\nexacte la ligne du nez, elles se mêlent si bien de nuancer la\nsonorité de la voix comme si celle-ci n'était qu'une transparente\nenveloppe, que chaque fois que nous voyons ce visage et que nous\nentendons cette voix, ce sont ces notions que nous retrouvons, que\nnous écoutons. Sans doute, dans le Swann qu'ils s'étaient constitué,\nmes parents avaient omis par ignorance de faire entrer une foule de\nparticularités de sa vie mondaine qui étaient cause que d'autres\npersonnes, quand elles étaient en sa présence, voyaient les élégances\nrégner dans son visage et s'arrêter à son nez busqué comme à leur\nfrontière naturelle ; mais aussi ils avaient pu entasser dans ce\nvisage désaffecté de son prestige, vacant et spacieux, au fond de ces\nyeux dépréciés, le vague et doux résidu – mi-mémoire, mi-oubli – des\nheures oisives passées ensemble après nos dîners hebdomadaires,\nautour de la table de jeu ou au jardin, durant notre vie de bon\nvoisinage campagnard. L'enveloppe corporelle de notre ami en avait\nété si bien bourrée, ainsi que de quelques souvenirs relatifs à ses\nparents, que ce Swann-là était devenu un être complet et vivant, et\nque j'ai l'impression de quitter une personne pour aller vers une\nautre qui en est distincte, quand, dans ma mémoire, du Swann que j'ai\nconnu plus tard avec exactitude, je passe à ce premier Swann – à ce\npremier Swann dans lequel je retrouve les erreurs charmantes de ma\njeunesse et qui d'ailleurs ressemble moins à l'autre qu'aux personnes\nque j'ai connues à la même époque, comme s'il en était de notre vie\nainsi que d'un musée où tous les portraits d'un même temps ont un air\nde famille, une même tonalité – à ce premier Swann rempli de loisir,\nparfumé par l'odeur du grand marronnier, des paniers de framboises et\nd'un brin d'estragon.",
     "themes_index": [
-      "identite@identité!sociale",
+      "identité!sociale",
       "moi!fragmentation du moi",
       "autrui",
       "reconnaissance",
       "corps",
-      "identite@identité!et changements",
-      "memoire@mémoire",
+      "identité!et changements",
+      "mémoire",
       "oubli"
     ]
   },
@@ -1019,7 +1019,7 @@
       "imagination",
       "enfant",
       "sensibilité",
-      "vie (et mort)!age de la vie@âge de la vie"
+      "vie (et mort)!âge de la vie"
     ]
   },
   {
@@ -1094,11 +1094,11 @@
         "theme_programme": "EXS"
       }
     ],
-    "texte": "<i>\nLa sœur Sainte-Sophie vit dans un couvent depuis deux ans, parce\nqu'elle « aime Dieu, la mère abbesse, le silence ». Un jeune homme,\nJulien, vient admirer un tableau dans la chapelle du couvent. C'est\nle coup de foudre mais, au nom de sa foi, Sophie décide de renoncer à\nJulien.</i>\n\n\n<p align=\"right\">10 décembre.</p>\n\n\nMon chéri, voilà plus de trois semaines que je suis malade. On ne me\ndonne pas vos lettres, et si je vous écrivais, on ne vous ferait pas\nparvenir les miennes.\n\nJe n'ai plus de force, je voudrais beaucoup mourir. Par moments, je\nvous vois comme si vous étiez très loin, je n'entends presque plus\nvotre voix, et à d'autres instants votre image emplit et déchire mon\ncœur resserré. Je ne sais si je redoute ou si je souhaite que vous\nvous effaciez en moi.\n\nTout ce qu'on peut souffrir, je l'ai souffert : j'ai pensé m'éteindre\nde violence et de colère, et maintenant je souffre d'une douce et\nterrible sentimentalité ; ce sentiment fait plus mal que les autres ;\nje pense à vous avec une tendresse qui me tue. Je suis là, couchée,\nprès de la sœur Marthe qui brode. Je vois par la fenêtre un ciel\nd'hiver très bleu.\n\nSi je n'avais connu que votre passion et la mienne, je pourrais,\naujourd'hui où je suis si malade, oublier, mais j'ai connu, mon\nchéri, votre bonté.\n\nJ'ai connu votre bonté pour moi auprès de laquelle l'affection de la\nsupérieure est pauvre et blessante, la sympathie de mes sœurs\nmisérable.\n\nVous m'avez tant donné, dans des moments de douceur sans limite, que\nl'attention moindre de toutes les autres âmes ne peut plus que\nm'offenser. La pureté, l'amitié infinie, c'est nous qui les avons\ngoûtées, dans les instants où, sans secret, sans défiance, nous fûmes\nvraiment des âmes mêlées, des regards pareils. Que les amies\nparfaites aient entre elles besoin de précautions et d'égards, que\nles frères et les parents se respectent et craignent de s'offenser,\nmais nous, quels soins eussions-nous pu prendre d'une âme qui nous\nétait commune ?\n\nJe me souviens que vous sembliez oppressé la nuit où vous m'avez\nquittée.\n\nHélas ! je n'ai pas suivi votre douleur. Comment étiez-vous quand vous\nêtes rentré dans votre chambre, quand vos bras pendaient le long de\nvotre corps, quand vous vous êtes assis avec stupeur, car les hommes,\nn'est-ce pas, sont étonnés de souffrir ? Mon chéri, cette\nsentimentalité dont la douceur fait mal, je ne puis l'écarter de moi,\nelle pèse sur mon cœur et m'étouffe, comme ces beaux chats chauds et\nfourrés qui s'endorment la nuit sur la poitrine des petits enfants.",
+    "texte": "<i>\nLa sœur Sainte-Sophie vit dans un couvent depuis deux ans, parce\nqu'elle « aime Dieu, la mère abbesse, le silence ». Un jeune homme,\nJulien, vient admirer un tableau dans la chapelle du couvent. C'est\nle coup de foudre mais, au nom de sa foi, Sophie décide de renoncer à\nJulien.</i>\n\n\n<p align=\"right\">10 décembre.\n\n\n</p>\n\nMon chéri, voilà plus de trois semaines que je suis malade. On ne me\ndonne pas vos lettres, et si je vous écrivais, on ne vous ferait pas\nparvenir les miennes.\n\nJe n'ai plus de force, je voudrais beaucoup mourir. Par moments, je\nvous vois comme si vous étiez très loin, je n'entends presque plus\nvotre voix, et à d'autres instants votre image emplit et déchire mon\ncœur resserré. Je ne sais si je redoute ou si je souhaite que vous\nvous effaciez en moi.\n\nTout ce qu'on peut souffrir, je l'ai souffert : j'ai pensé m'éteindre\nde violence et de colère, et maintenant je souffre d'une douce et\nterrible sentimentalité ; ce sentiment fait plus mal que les autres ;\nje pense à vous avec une tendresse qui me tue. Je suis là, couchée,\nprès de la sœur Marthe qui brode. Je vois par la fenêtre un ciel\nd'hiver très bleu.\n\nSi je n'avais connu que votre passion et la mienne, je pourrais,\naujourd'hui où je suis si malade, oublier, mais j'ai connu, mon\nchéri, votre bonté.\n\nJ'ai connu votre bonté pour moi auprès de laquelle l'affection de la\nsupérieure est pauvre et blessante, la sympathie de mes sœurs\nmisérable.\n\nVous m'avez tant donné, dans des moments de douceur sans limite, que\nl'attention moindre de toutes les autres âmes ne peut plus que\nm'offenser. La pureté, l'amitié infinie, c'est nous qui les avons\ngoûtées, dans les instants où, sans secret, sans défiance, nous fûmes\nvraiment des âmes mêlées, des regards pareils. Que les amies\nparfaites aient entre elles besoin de précautions et d'égards, que\nles frères et les parents se respectent et craignent de s'offenser,\nmais nous, quels soins eussions-nous pu prendre d'une âme qui nous\nétait commune ?\n\nJe me souviens que vous sembliez oppressé la nuit où vous m'avez\nquittée.\n\nHélas ! je n'ai pas suivi votre douleur. Comment étiez-vous quand vous\nêtes rentré dans votre chambre, quand vos bras pendaient le long de\nvotre corps, quand vous vous êtes assis avec stupeur, car les hommes,\nn'est-ce pas, sont étonnés de souffrir ? Mon chéri, cette\nsentimentalité dont la douceur fait mal, je ne puis l'écarter de moi,\nelle pèse sur mon cœur et m'étouffe, comme ces beaux chats chauds et\nfourrés qui s'endorment la nuit sur la poitrine des petits enfants.",
     "themes_index": [
       "amour",
       "vie (et mort)",
-      "emotions@émotions",
+      "émotions",
       "passion",
       "sentiments",
       "souffrance",
@@ -1144,8 +1144,8 @@
       "contemplation",
       "reconnaissance",
       "corps",
-      "identite@identité",
-      "identite@identité!comme unicité",
+      "identité",
+      "identité!comme unicité",
       "introspection"
     ]
   },
@@ -1182,7 +1182,7 @@
     ],
     "texte": "Quand je vois chacun de nous sans cesse occupé de l'opinion publique\nétendre pour ainsi dire son existence tout autour de lui sans en\nréserver presque rien dans son propre cœur, je crois voir un petit\ninsecte former de sa substance une grande toile par laquelle seule il\nparaît sensible tandis qu'on le croirait mort dans son trou. La\nvanité de l'homme est la toile d'araignée qu'il tend sur tout ce qui\nl'environne. L'une est aussi solide que l'autre, le moindre fil qu'on\ntouche met l'insecte en mouvement, il mourrait de langueur si l'on\nlaissait la toile tranquille, et si d'un doigt on la déchire il\nachève de s'épuiser plutôt que de ne la pas refaire à l'instant.\nCommençons par redevenir nous, par nous concentrer en nous, par\ncirconscrire notre âme des mêmes bornes que la nature a données à\nnotre être, commençons en un mot par nous rassembler où nous sommes,\nafin qu'en cherchant à nous connaître tout ce qui nous compose vienne\nà la fois se présenter à nous. Pour moi, je pense que celui qui sait\nle mieux en quoi consiste le moi humain est le plus près de la\nsagesse et que comme le premier trait d'un dessin se forme des lignes\nqui le terminent, la première idée de l'homme est de le séparer de\ntout ce qui n'est pas lui.\n\nMais comment se fait cette séparation ? Cet art n'est pas si difficile\nqu'on pourrait croire, ou du moins la difficulté n'est pas où on la\ncroit, il dépend plus de la volonté que des lumières, il ne faut\npoint un appareil d'études et de recherches pour y parvenir. Le jour\nnous éclaire, et le miroir est devant nous ; mais pour le voir il\nfaut jeter les yeux et le moyen de les y fixer est d'écarter les\nobjets qui nous en détournent. Recueillez-vous, cherchez la solitude,\nvoilà d'abord tout le secret et par celui-là seul on découvre bientôt\nles vôtres. Pensez-vous en effet que la philosophie nous apprenne à\nrentrer en nous – mêmes ? Ah combien l'orgueil sous son nom nous en\nécarte ! C'est tout le contraire ma charmante amie, il faut commencer\npar rentrer en soi pour apprendre à philosopher.",
     "themes_index": [
-      "identite@identité!sociale",
+      "identité!sociale",
       "rôle!jouer un rôle",
       "moi!unité du moi",
       "nature!nature humaine",
@@ -1230,7 +1230,7 @@
       "deuil",
       "larmes",
       "maladie",
-      "memoire@mémoire",
+      "mémoire",
       "souvenir"
     ]
   },
@@ -1268,11 +1268,11 @@
     "texte": "<i>Rainer Maria Rilke s'adresse au « jeune poète » Franz Kappus.</i>\n\n\nVous avez eu maintes grandes tristesses, qui ont passé. Et vous dites que c'est aussi ce caractère passager qui vous a été pénible et contrariant. Mais réfléchissez, je vous prie : ces grandes tristesses ne vous ont-elles pas plutôt centralement traversé ? Maintes choses en vous ne se sont-elles pas transformées, n'avez-vous pas changé en tel point, tel endroit de votre être, tandis que vous étiez triste ? Seules sont dangereuses et mauvaises les tristesses qu'on emporte au milieu des gens pour en couvrir la voix ; comme des maladies superficiellement et sottement traitées, elles ne font que reculer, et leur éruption, après une petite pause, est d'autant plus effroyable ; elles s'accumulent au-dedans, elles sont de la vie, de la vie non vécue, rejetée, perdue, de la vie dont on peut mourir. S'il nous était possible de voir un peu plus loin que notre savoir ne porte, et encore un peu au-delà des avant-postes de notre intuition, peut-être supporterions-nous alors nos tristesses avec plus de confiance que nos joies. Car elles sont les instants où quelque chose de nouveau est entré en nous, quelque chose d'inconnu ; nos sentiments se taisent, en une réticence craintive, tout en nous recule, il se fait un silence, et le nouveau, que personne ne connaît, se tient là, au milieu, muet.\n\nJe crois que presque toutes nos tristesses sont des moments de tension que nous ressentons comme de la paralysie, sourds que nous sommes à la vie de nos sentiments frappés d'étrangeté. C'est que nous sommes seuls avec l'étranger qui est entré en nous ; c'est que tout le familier, tout l'habituel nous est pour un instant enlevé ; et que nous nous trouvons au milieu d'une transition où nous ne pouvons rester arrêtés. Voilà pourquoi la tristesse est passagère : le nouveau en nous, venu s'ajouter, est entré dans notre cœur, a pénétré dans sa loge la plus intime, mais, là même, il n'est plus – est déjà dans le sang. Et nous n'avons pas connaissance de ce que c'était. On pourrait facilement nous faire croire que rien ne s'est passé ; et pourtant nous nous sommes transformés comme se transforme une maison où un hôte est entré. Nous ne pouvons dire qui est venu, nous ne le saurons peut-être jamais, mais bien des indices donnent à penser que c'est l'avenir qui, de cette manière, entre en nous, pour se transformer en nous, longtemps avant que de survenir.",
     "themes_index": [
       "tristesse",
-      "temps!ephemere@éphémère",
-      "poesie@poésie",
+      "temps!éphémère",
+      "poésie",
       "vie (et mort)",
-      "emotions@émotions",
-      "creation@création",
+      "émotions",
+      "création",
       "nouveauté",
       "intime",
       "avenir",
@@ -1316,22 +1316,22 @@
       "mort",
       "temps",
       "nature!environnement",
-      "memoire@mémoire",
+      "mémoire",
       "souvenir",
       "lumière",
       "naissance",
       "vie (et mort)!fin de vie",
       "temps!passage du temps",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "vie (et mort)!âge de la vie",
       "autrui!comme inconnu",
       "finitude",
       "paysage",
-      "memoire@mémoire",
+      "mémoire",
       "souvenir",
-      "identite@identité",
+      "identité",
       "existence",
       "transmission",
-      "heritage@héritage"
+      "héritage"
     ]
   },
   {
@@ -1369,14 +1369,14 @@
     "themes_index": [
       "habitude",
       "histoire",
-      "temps!ephemere@éphémère",
+      "temps!éphémère",
       "enfant",
       "bonheur",
       "solitude",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "vie (et mort)!âge de la vie",
       "larmes",
       "famille",
-      "emotions@émotions",
+      "émotions",
       "mariage"
     ]
   },
@@ -1414,19 +1414,19 @@
     "texte": "La pathologie nous fait connaître un grand nombre d'états dans\nlesquels la démarcation du moi d'avec le monde qui l'entoure devient\nincertaine, ou dans lesquels les frontières sont tracées de manière\nvraiment incorrecte ; des cas où des parties de notre propre corps,\net même des pans de vie de notre âme, perceptions, pensées,\nsentiments, apparaissent comme étrangers et n'appartenant pas au moi,\nd'autres où l'on impute au monde extérieur ce qui est manifestement\nné dans le moi et devrait être reconnu par lui. Ainsi, le sentiment\ndu moi est soumis lui aussi à des perturbations, et les frontières du\nmoi ne sont pas constantes.\n\nUne autre réflexion consiste à dire : ce sentiment du moi de l'adulte\nne peut avoir été tel dès le début. Il doit avoir suivi un\ndéveloppement qu'on ne peut évidemment pas démontrer, mais qu'on peut\nreconstruire avec une certaine vraisemblance. Le nourrisson n'isole\npas encore son moi d'un monde extérieur qui est la source des\nsensations affluant sur lui. Il apprend à le faire peu à peu par\ndiverses excitations. Cela doit lui faire la plus forte impression,\nque certaines sources d'excitations, dans lesquelles il reconnaîtra\nplus tard ses organes corporels, puissent à tout moment lui faire\nparvenir des sensations, tandis que d'autres se dérobent à lui par\nmoments – parmi elles, celle qu'il désire le plus : le sein maternel\n–, qu'il ne peut rappeler qu'en les réclamant par des cris. Par là,\nun « objet » s'oppose d'abord au moi, comme quelque chose qui se\ntrouve « à l'extérieur », et qui ne peut apparaître que sous la\ncontrainte d'une action particulière. Une autre impulsion, au\ndétachement du moi d'avec la masse des sensations, donc à la\nreconnaissance d'un « dehors », d'un monde extérieur, est donnée par\nles fréquentes, diverses et inévitables sensations de douleur et de\ndéplaisir que le tout-puissant principe de plaisir[^1] commande de\nsuspendre et d'éviter. Une tendance se crée à isoler du moi ce qui\npeut devenir source d'un tel déplaisir, à le rejeter à l'extérieur, à\nformer un pur moi hédonique[^2], auquel s'oppose un dehors étranger et\nmenaçant.\n\n\n[^1]: Le principe de plaisir désigne la tendance des pulsions inconscientes à rechercher le plaisir, quitte à s'écarter de la réalité.\n[^2]: Hédonique : qui renvoie au principe de plaisir.",
     "themes_index": [
       "moi!frontières du moi",
-      "identite@identité!et différences",
+      "identité!et différences",
       "soi!comme un autre",
       "monde",
       "moi!sentiment du moi",
       "enfant",
       "adulte",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "vie (et mort)!âge de la vie",
       "sujet",
       "corps",
       "douleur",
-      "deplaisir@déplaisir",
+      "déplaisir",
       "objet!extérieur",
-      "moi!developpement du moi@développement du moi"
+      "moi!développement du moi"
     ]
   },
   {
@@ -1464,10 +1464,10 @@
     "themes_index": [
       "amour",
       "parole",
-      "memoire@mémoire",
+      "mémoire",
       "souvenir",
       "sentiments",
-      "metaphore@métaphore"
+      "métaphore"
     ]
   },
   {
@@ -1550,7 +1550,7 @@
       "soi",
       "moi!inexistence du moi",
       "altruisme|see{égoïsme}",
-      "egoisme@égoïsme",
+      "égoïsme",
       "autrui",
       "sentiments",
       "société",
@@ -1563,7 +1563,7 @@
       "conscience",
       "plaisir",
       "famille",
-      "identite@identité!sociale"
+      "identité!sociale"
     ]
   },
   {
@@ -1642,11 +1642,11 @@
     "texte": "Le mot personne vient du mot\n<i>persona</i>[^1] qui veut dire masque. Or il semble qu'il existe une\ncontradiction entre cette sincérité authentique qui caractérise pour\nnous la personne véritable et la figure d'emprunt que le mot\n<i>masque</i> désigne. Pourtant on conçoit comment cette\ntransformation de sens a pu se produire. Le masque tragique était la\nmarque du rôle joué par l'acteur dont il abolissait les traits\nindividuels afin de fixer l'attention du public sur l'être invisible\ndont la destinée allait lui être représentée. Dans l'optique du\nthéâtre il ne dissimulait que l'accidentel, c'est-à-dire\nl'interprète, pour témoigner de l'essentiel, c'est-à-dire de la\nréalité même du personnage dramatique. Or nous sentons bien que, pour\nnous encore aujourd'hui, le mot <i>personnalité</i>, dans son\nacception la plus populaire, tend à effacer aussi les caractères\napparents de l'individu au profit d'un rôle public qu'il est appelé à\ntenir, qui lui confère des obligations et qui doit être constamment\nsoutenu par sa volonté. Dans une acception plus profonde, je deviens\nmoi-même une personne lorsque je commence à reconnaître le rôle que\nj'ai à remplir dans l'univers. L'acteur garde toujours la\nresponsabilité du rôle qu'il a accepté. Mais le rôle le plus sérieux\net le plus grave que je puisse concevoir est celui qui consiste à\nréaliser mon être même, c'est-à-dire à abolir en moi toute\ndistinction entre l'individu et le personnage.\n\n\n[^1]: Le mot latin <i>persona</i> désigne le masque de l'acteur. Dans le théâtre antique, les acteurs ne jouaient pas à visage découvert, mais portaient un masque qui indiquait les principaux traits de leur personnage (bonté, méchanceté, ruse, etc.).",
     "themes_index": [
       "personne",
-      "identite@identité!personnelle",
+      "identité!personnelle",
       "sincérité",
       "soi!comme un autre",
       "personnage",
-      "role@rôle!jouer un rôle",
+      "rôle!jouer un rôle",
       "caractère",
       "acteur",
       "responsabilité",
@@ -1687,10 +1687,10 @@
     ],
     "texte": "<i>Écrivain, grand voyageur, Blaise Cendrars revient dans son récit\nautobiographique </i>Bourlinguer<i> sur ses souvenirs et se livre à une\nvéritable introspection.</i>\n\n\nAujourd'hui, c'est le 1er septembre 1947, c'est le jour de mon\nanniversaire, j'ai 60 ans. Qui suis-je ?\n\nLes quelques portraits de peintres que je viens d'énumérer dans le\nparagraphe précédent ne me servent à rien pour répondre à cette\nquestion, pas plus que ne me sont utiles, pour résoudre ce problème\nde l'identité de soi, les milliers de photographies pittoresques que\nl'on a pu faire de moi dans tous les pays du monde, les\ninstantanés[^1], les bouts de pellicule, les chutes de films de\nmontage et les négatifs que l'on a pu collectionner quand je faisais\ndu cinéma et parce que j'y figurais comme acteur, ou comme metteur en\nscène ou auteur du scénario dans le générique, les agrandissements et\nles clichés publicitaires et jusqu'à cette radiographie en relief que\nl'on a faite de moi au lendemain d'un accident d'automobile, où l'on\nvoit par transparence mon cœur à l'aorte déviée, le docteur Dioclès,\nle grand spécialiste de l'Hôtel-Dieu[^2], pointant de son stylomine[^3] mes poumons, mon estomac, mes intestins, mon\nfoie, ma rate et me faisant toucher du doigt les vraies et les\nfausses côtes de ma cage thoracique qui encerclent ces organes comme\ndans un tonneau et compter mes vertèbres, du sacrum, entre les os\niliaques, jusqu'à la pinéale[^4], en avant du repli\npostérieur du cerveau, cette documentation n'est bonne à rien, ne me\nlivre tout au plus qu'une image fugitive, chronométrée en telle et\ntelle année, tel mois, tel jour, à telle heure, sous telle et telle\nlatitude, dans tel et tel rôle, tout cela ne répondant pas à la\nquestion : en vérité, qui suis-je ?\n\nEn vérité, je crois que je ne puis répondre à cette question qu'en\nprenant pour échelle des valeurs les vices connus sous l'appellation\ndes sept péchés capitaux : la gourmandise, la luxure, l'avarice, la\ncolère, l'envie, la paresse et l'orgueil, en me mesurant par rapport\nà eux, à la notion que j'en ai, à l'art, à l'usure de leur pratique\ncomme on vous fait passer successivement sous différentes toises pour\nprendre des tests, remplir une fiche signalétique, établir une carte\nd'identité avec poids, mesures, couleur des yeux, dentition, oreille\ndroite, profil, face, pigmentation de la peau, groupe sanguin,\nempreintes digitales et autres signes particuliers (des verrues, des\ngrains de beauté) ou distinctifs (des tatouages) ou défectueux\n(bossu, pied-bot) ou accidentels (par exemple : mon amputation du\nbras droit[^5]) ou phénoménaux (nain, géant, femme à\nbarbe, hermaphrodisme), etc., etc., tout ce fatras\npseudo-scientifique mais avant tout policier grâce auquel on croit\npouvoir numéroter un individu pour le ranger dans une classification,\nafin de lui mettre plus facilement la main dessus. Je veux bien, moi,\nmais quelle main ? Une main sale. Et cela me répugne. Alors je\npréfère m'en remettre à la main de Dieu, et voyons ce que les diables\nont fait de moi, et voyons comment je m'en suis tiré à soixante ans,\ncar je n'existe en vérité, car je ne puis me définir que par rapport\naux péchés que j'ai tous pratiqués. Et Dieu jaugera[^6] et Dieu jugera.\n\n\n[^1]: Instantanés : photographies prises avec un temps de pause très court.\n[^2]: Hôtel-Dieu : hôpital parisien.\n[^3]: Stylomine : sorte de stylo avec une mine.\n[^4]: Le sacrum se trouve à la base de la colonne vertébrale, les os iliaques sont ceux du bassin. La glande pinéale se trouve dans le cerveau.\n[^5]: Blaise Cendrars a perdu son bras droit lors de la première guerre mondiale.\n[^6]: Jauger : mesurer, estimer la valeur de quelqu'un.",
     "themes_index": [
-      "identite@identité!personnelle",
+      "identité!personnelle",
       "moi!mobilité du moi",
       "corps",
-      "identite@identité!et changements",
+      "identité!et changements",
       "vertus (et vices)",
       "scientifique",
       "religion",
@@ -1773,7 +1773,7 @@
     ],
     "texte": "<i>Célestine, personnage de fiction, est femme de chambre. Après des\nservices pénibles et humiliants chez de mauvais maîtres, elle est\nengagée par une vieille dame qui s'efforce d'adoucir l'agonie de\nGeorges, son petit-fils tuberculeux, âgé de 19 ans.</i>\n\n\nM. Georges adorait les vers… Des heures entières, sur la terrasse, au\nchant de la mer, ou bien, le soir, dans sa chambre, il me demandait\nde lui lire des poèmes de Victor Hugo, de Baudelaire, de Verlaine, de\nMaeterlinck. Souvent, il fermait les yeux, restait immobile, les\nmains croisées sur sa poitrine, et croyant qu'il s'était endormi, je\nme taisais… Mais il souriait et il me disait :\n\n--- Continue, petite… Je ne dors pas… J'entends mieux ainsi ces vers…\nj'entends mieux ainsi ta voix… Et ta voix est charmante… Parfois,\nc'est lui qui m'interrompait. Après s'être recueilli, il récitait\nlentement, en prolongeant les rythmes, les vers qui l'avaient le plus\nenthousiasmé, et il cherchait – ah ! que je l'aimais de cela ! – à\nm'en faire comprendre, à m'en faire sentir la beauté…\n\nUn jour il me dit… et j'ai gardé ces paroles comme une relique :\n\n--- Ce qu'il y a de sublime, vois-tu, dans les vers, c'est qu'il n'est\npoint besoin d'être un savant pour les comprendre et pour les aimer…\nau contraire… Les savants ne les comprennent pas et, la plupart du\ntemps, ils les méprisent, parce qu'ils ont trop d'orgueil… Pour aimer\nles vers, il suffit d'avoir une âme… une petite âme toute nue, comme\nune fleur… Les poètes parlent aux âmes des simples, des tristes, des\nmalades… Et c'est en cela qu'ils sont éternels… Sais-tu bien que,\nlorsqu'on a de la sensibilité, on est toujours un peu poète ?… Et\ntoi-même, petite Célestine, souvent tu m'as dit des choses qui sont\nbelles comme des vers…\n\n--- Oh !… monsieur Georges… vous vous moquez de moi…\n\n--- Mais non !… Et tu n'en sais rien que tu m'as dit ces choses\nbelles… Et c'est ce qui est délicieux…\n\nCe furent pour moi des heures uniques ; quoi qu'il arrive de la\ndestinée, elles chanteront dans mon cœur, tant que je vivrai…\nJ'éprouvai cette sensation, indiciblement douce, de redevenir un être\nnouveau, d'assister, pour ainsi dire, de minute en minute, à la\nrévélation de quelque chose d'inconnu de moi et qui, pourtant, était\nmoi… Et, aujourd'hui, malgré de pires déchéances, toute reconquise\nque je sois par ce qu'il y a en moi de mauvais et d'exaspéré, si j'ai\nconservé ce goût passionné pour la lecture, et, parfois, cet élan\nvers des choses supérieures à mon milieu social et à moi-même, si,\ntâchant à reprendre confiance en la spontanéité de ma nature, j'ai\nosé, moi, ignorante de tout, écrire ce journal, c'est à M. Georges\nque je le dois…",
     "themes_index": [
-      "poesie@poésie",
+      "poésie",
       "maladie",
       "sagesse",
       "vie (et mort)",
@@ -1871,7 +1871,7 @@
       "jalousie",
       "imagination",
       "envie",
-      "education@éducation",
+      "éducation",
       "caractère",
       "richesse"
     ]
@@ -1912,9 +1912,9 @@
       "insensibilité",
       "amitié",
       "bonheur",
-      "interiorite@intériorité",
+      "intériorité",
       "solitude",
-      "emotions@émotions",
+      "émotions",
       "rire",
       "enfant",
       "parole"
@@ -1961,9 +1961,9 @@
       "singularité",
       "monstre",
       "histoire",
-      "melancolie@mélancolie",
+      "mélancolie",
       "nature!nature humaine",
-      "heros@héros"
+      "héros"
     ]
   },
   {
@@ -2000,13 +2000,13 @@
     "texte": "Être dans la nature, ainsi qu'un arbre humain\n\nÉtendre ses désirs comme un profond feuillage,\n\nEt sentir, par la nuit paisible et par l'orage,\n\nLa sève universelle affluer dans ses mains.\n\n\nVivre, avoir les rayons du soleil sur la face,\n\nBoire le sel ardent des embruns et des pleurs\n\nEt goûter chaudement la joie et la douleur\n\nQui font une buée humaine dans l'espace.\n\n\nSentir dans son cœur vif l'air, le feu et le sang\n\nTourbillonner ainsi que le vent sur la terre :\n\n--- S'élever au réel et pencher au mystère,\n\nÊtre le jour qui monte et l'ombre qui descend.\n\n\nComme du pourpre soir aux couleurs de cerise\n\nLaisser du cœur vermeil couleur la flamme et l'eau.\n\nEt comme l'aube claire appuyée au coteau\n\nAvoir l'âme qui rêve, au bord du monde assise…",
     "themes_index": [
       "nature!environnement",
-      "metaphore@métaphore",
-      "desir@désir",
+      "métaphore",
+      "désir",
       "souffrance",
       "bonheur",
       "sensibilité",
       "larmes",
-      "mystere@mystère"
+      "mystère"
     ]
   },
   {
@@ -2043,7 +2043,7 @@
     "texte": "<i>Mademoiselle Giroud donne une leçon de piano à l'un de ses élèves, « l'enfant ». Elle veut lui faire traduire la mention « Moderato cantabile », inscrite dans sa partition, dont ils ont à de nombreuses reprises revu le sens lors des séances précédentes.</i>\n\n\n--- Une dernière fois. Tu es sûr de ne pas le savoir ?\n\nUne vedette[^1] passa dans le cadre de la fenêtre ouverte. L'enfant, tourné vers sa partition, remua à peine — seule sa mère le sut — alors que la vedette lui passait dans le sang. Le ronronnement feutré du moteur s'entendit dans toute la ville. Rares étaient les bateaux de plaisance. Le rose de la journée finissante colora le ciel tout entier. D'autres enfants, ailleurs, sur les quais, arrêtés, regardaient.\n\n--- Sûr, vraiment, une dernière fois, tu es sûr ?\n\nEncore, la vedette passait.\n\nLa dame s'étonna de tant d'obstination. Sa colère fléchit et elle se désespéra de si peu compter aux yeux de cet enfant, que d'un geste, pourtant, elle eût pu réduire à la parole, que l'aridité de son sort, soudain, lui apparut.\n\n--- Quel métier, quel métier, quel métier, gémit-elle.\n\nAnne Desbaresdes[^2] ne releva pas le propos, mais sa tête se pencha un peu de la manière, peut-être, d'en convenir.\n\nLa vedette eut enfin fini de traverser le cadre de la fenêtre ouverte. Le bruit de la mer s'éleva, sans bornes, dans le silence de l'enfant.\n\n--- Moderato ?\n\nL'enfant ouvrit sa main, la déplaça et se gratta légèrement le mollet. Son geste fut désinvolte et peut-être la dame convint-elle de son innocence.\n\n--- Je sais pas, dit-il, après s'être gratté.\n\nLes couleurs du couchant devinrent tout à coup si glorieuses que la blondeur de cet enfant s'en trouva modifiée.\n\n--- C'est facile, dit la dame un peu plus calmement.\n\nElle se moucha longuement.\n\n--- Quel enfant j'ai là, dit Anne Desbaresdes joyeusement, tout de même, mais quel enfant j'ai fait là, et comment se fait-il qu'il me soit venu avec cet entêtement-là…\n\nLa dame ne crut pas bon de relever tant d'orgueil.\n\n--- Ça veut dire, dit-elle à l'enfant — écrasée — pour la centième fois, ça veut dire modéré et chantant.\n\n--- Modéré et chantant, dit l'enfant totalement en allé où ?\n\nLa dame se retourna.\n\n--- Ah, je vous jure.\n\n--- Terrible, affirma Anne Desbaresdes, en riant, têtu comme une chèvre, terrible.\n\n--- Recommence, dit la dame.\n\nL'enfant ne recommença pas.\n\n--- Recommence, j'ai dit.\n\nL'enfant ne bougea pas davantage. Le bruit de la mer dans le silence de son obstination se fit entendre de nouveau. Dans un dernier sursaut, le rose du ciel augmenta.\n\n--- Je ne veux pas apprendre le piano, dit l'enfant.\n\n\n[^1]: « vedette » : bateau rapide et puissant.\n[^2]: Anne Desbaresdes : mère de l'enfant.",
     "themes_index": [
       "liberté",
-      "education@éducation",
+      "éducation",
       "musique",
       "ennui",
       "parole",
@@ -2052,7 +2052,7 @@
       "ignorance",
       "savoir",
       "apprentissage",
-      "lecon@leçon"
+      "leçon"
     ]
   },
   {
@@ -2086,15 +2086,15 @@
         "theme_programme": "EXS"
       }
     ],
-    "texte": "Ainsi l'on parle aux yeux bien mieux qu'aux oreilles. Il n'y a personne qui ne sente la vérité du jugement d'Horace[^1] à cet égard. On voit même que les discours les plus éloquents sont ceux où l'on enchâsse[^2] le plus d'images ; et les sons n'ont jamais plus d'énergie que quand ils font l'effet* des couleurs.\n\nMais lorsqu'il est question d'émouvoir le cœur et d'enflammer les passions, c'est toute autre chose. L'impression successive du discours, qui frappe à coups redoublés, vous donne bien une autre émotion que la présence de l'objet même, où d'un coup d'œil vous avez tout vu. Supposez une situation de douleur parfaitement connue, en voyant la personne affligée vous serez difficilement ému jusqu'à pleurer ; mais laissez-lui le temps de vous dire tout ce qu'elle sent, et bientôt vous allez fondre en larmes. Ce n'est qu'ainsi que les scènes de tragédie font leur effet. La seule pantomime[^3] sans discours vous laissera presque tranquille ; le discours sans geste vous arrachera des pleurs. Les passions ont leurs gestes, mais elles ont aussi leurs accents, et ces accents qui nous font tressaillir, ces accents auxquels on ne peut dérober son organe, pénètrent par lui jusqu'au fond du cœur, y portent malgré nous les mouvements qui les arrachent, et nous font sentir ce que nous entendons. Concluons que les signes visibles rendent l'imitation plus exacte, mais que l'intérêt s'excite mieux par les sons. Ceci me fait penser que si nous n'avions jamais eu que des besoins physiques, nous aurions fort bien pu ne parler jamais, et nous entendre parfaitement par la seule langue du geste.\n\n<small> *[Note de l'auteur] J'ai dit ailleurs pourquoi les malheurs feints nous touchent bien plus que les véritables. Tel sanglote à la Tragédie qui n'eut de ses jours pitié d'aucun malheureux. L'invention du théâtre est admirable pour enorgueillir notre amour-propre de toutes les vertus que nous n'avons point.</small>\n\n\n[^1]: Horace : poète du 1<sup>er</sup> siècle av. J.-C., selon lequel la peinture --- grâce aux images --- possède une capacité représentative qui la rend supérieure à la musique.\n[^2]: « où l'on enchâsse » : où l'on insère\n[^3]: « pantomime » : partie gestuelle du spectacle (mouvements, expressions du visage, etc.)",
+    "texte": "Ainsi l'on parle aux yeux bien mieux qu'aux oreilles. Il n'y a personne qui ne sente la vérité du jugement d'Horace[^1] à cet égard. On voit même que les discours les plus éloquents sont ceux où l'on enchâsse[^2] le plus d'images ; et les sons n'ont jamais plus d'énergie que quand ils font l'effet* des couleurs.\n\nMais lorsqu'il est question d'émouvoir le cœur et d'enflammer les passions, c'est toute autre chose. L'impression successive du discours, qui frappe à coups redoublés, vous donne bien une autre émotion que la présence de l'objet même, où d'un coup d'œil vous avez tout vu. Supposez une situation de douleur parfaitement connue, en voyant la personne affligée vous serez difficilement ému jusqu'à pleurer ; mais laissez-lui le temps de vous dire tout ce qu'elle sent, et bientôt vous allez fondre en larmes. Ce n'est qu'ainsi que les scènes de tragédie font leur effet. La seule pantomime[^3] sans discours vous laissera presque tranquille ; le discours sans geste vous arrachera des pleurs. Les passions ont leurs gestes, mais elles ont aussi leurs accents, et ces accents qui nous font tressaillir, ces accents auxquels on ne peut dérober son organe, pénètrent par lui jusqu'au fond du cœur, y portent malgré nous les mouvements qui les arrachent, et nous font sentir ce que nous entendons. Concluons que les signes visibles rendent l'imitation plus exacte, mais que l'intérêt s'excite mieux par les sons. Ceci me fait penser que si nous n'avions jamais eu que des besoins physiques, nous aurions fort bien pu ne parler jamais, et nous entendre parfaitement par la seule langue du geste.\n\n<small>*[Note de l'auteur] J'ai dit ailleurs pourquoi les malheurs feints nous touchent bien plus que les véritables. Tel sanglote à la Tragédie qui n'eut de ses jours pitié d'aucun malheureux. L'invention du théâtre est admirable pour enorgueillir notre amour-propre de toutes les vertus que nous n'avons point.</small>\n\n\n[^1]: Horace : poète du 1<sup>er</sup> siècle av. J.-C., selon lequel la peinture --- grâce aux images --- possède une capacité représentative qui la rend supérieure à la musique.\n[^2]: « où l'on enchâsse » : où l'on insère\n[^3]: « pantomime » : partie gestuelle du spectacle (mouvements, expressions du visage, etc.)",
     "themes_index": [
       "images",
       "parole",
       "représentation",
       "discours",
       "sensibilité",
-      "emotions@émotions",
-      "metaphore@métaphore",
+      "émotions",
+      "métaphore",
       "synesthésie",
       "passion",
       "souffrance",
@@ -2138,11 +2138,11 @@
     ],
     "texte": "<i>Voltaire imagine un dialogue entre deux amies, Mélinde et Sophronie. Mélinde se réjouit des sentiments qui lient Sophronie et Éraste, un jeune homme de leur connaissance.</i>\n\n\nMÉLINDE\n\n(…) Je vois que vous épouserez bientôt Éraste.\n\n\nSOPHRONIE\n\nJe vous dirai, avec la même confiance, que je ne l'épouserai jamais.\n\n\nMÉLINDE\n\nQuoi ! votre mère s'oppose à un parti si sortable[^1] ?\n\n\nSOPHRONIE\n\nNon, elle me laisse la liberté du choix ; j'aime Éraste, et je ne l'épouserai pas.\n\n\nMÉLINDE\n\nEt quelle raison pouvez-vous avoir de vous tyranniser ainsi vous-même ?\n\n\nSOPHRONIE\n\nLa crainte d'être tyrannisée. Éraste a de l'esprit, mais il l'a impérieux et mordant ; il a des grâces, mais il en ferait bientôt usage pour d'autres que pour moi : je ne veux pas être la rivale d'une de ces personnes qui vendent leurs charmes, qui donnent malheureusement de l'éclat à celui qui les achète, qui révoltent la moitié d'une ville par leur faste, qui ruinent l'autre par l'exemple, et qui triomphent en public du malheur d'une honnête femme réduite à pleurer dans la solitude. J'ai une forte inclination pour Éraste, mais j'ai étudié son caractère ; il a trop contredit mon inclination : je veux être heureuse ; je ne le serais pas avec lui ; j'épouserai Ariste, que j'estime, et que j'espère aimer.\n\n\nMÉLINDE\n\nVous êtes bien raisonnable pour votre âge. Il n'y a guère de filles que la crainte d'un avenir fâcheux empêche de jouir d'un présent agréable. Comment pouvez-vous avoir un tel empire sur vous-même ?\n\n\nSOPHRONIE\n\nCe peu que j'ai de raison, je le dois à l'éducation que m'a donnée ma mère. Elle ne m'a point élevée dans un couvent, parce que ce n'était pas dans un couvent que j'étais destinée à vivre. Je plains les filles dont les mères ont confié la première jeunesse à des religieuses, comme elles ont laissé le soin de leur première enfance à des nourrices étrangères. J'entends dire que dans ces couvents, comme dans la plupart des collèges où les jeunes gens sont élevés, on n'apprend guère que ce qu'il faut oublier pour toute sa vie ; on ensevelit dans la stupidité les premiers de vos beaux jours. Vous ne sortez guère de votre prison que pour être promise à un inconnu qui vient vous épier à la grille ; quel qu'il soit, vous le regardez comme un libérateur, et, fût-il un singe, vous vous croyez trop heureuse : vous vous donnez à lui sans le connaître ; vous vivez avec lui sans l'aimer. C'est un marché qu'on a fait sans vous, et bientôt après les deux parties se repentent. Ma mère m'a crue digne de penser de moi-même, et de choisir un jour un époux moi-même. Si j'étais née pour gagner ma vie, elle m'aurait appris à réussir dans les ouvrages convenables à mon sexe ; mais, née pour vivre dans la société, elle m'a fait instruire de bonne heure dans tout ce qui regarde la société ; elle a formé mon esprit, en me faisant craindre les écueils du bel esprit[^2] ; elle m'a menée à tous les spectacles choisis qui peuvent inspirer le goût sans corrompre les mœurs, où l'on étale encore plus les dangers des passions que leurs charmes, où la bienséance règne, où l'on apprend à penser et à s'exprimer. La tragédie m'a paru souvent l'école de la grandeur d'âme ; la comédie, l'école des bienséances ; et j'ose dire que ces instructions, qu'on ne regarde que comme des amusements, m'ont été plus utiles que les livres. Enfin, ma mère m'a toujours regardée comme un être pensant dont il fallait cultiver l'âme, et non comme une poupée qu'on ajuste, qu'on montre, et qu'on renferme le moment d'après.\n\n\n[^1]: Un parti si sortable : Éraste représente pour Sophronie un époux idéal aux yeux de la société.\n[^2]: Les écueils du bel esprit : les défauts d'un esprit très cultivé mais creux.",
     "themes_index": [
-      "emancipation@émancipation",
+      "émancipation",
       "liberté",
-      "education@éducation",
+      "éducation",
       "amour",
-      "determinisme@déterminisme!social",
+      "déterminisme!social",
       "tromperie",
       "bonheur",
       "religion",
@@ -2151,7 +2151,7 @@
       "société!et éducation",
       "formation",
       "esthétique!éducation du goût",
-      "ame@âme"
+      "âme"
     ]
   },
   {
@@ -2193,10 +2193,10 @@
       "règles",
       "habitude",
       "liberté",
-      "emancipation@émancipation",
-      "pedagogie@pédagogie",
+      "émancipation",
+      "pédagogie",
       "sociologie",
-      "etre social@être social",
+      "identité!sociale",
       "milieu social",
       "parent",
       "maîtres"
@@ -2242,7 +2242,7 @@
       "introspection",
       "autrui",
       "langage",
-      "interiorite@intériorité"
+      "intériorité"
     ]
   },
   {
@@ -2320,11 +2320,11 @@
     ],
     "texte": "L'éducation, si on la prend dans toute son étendue, ne se borne pas seulement à l'instruction positive[^1], à l'enseignement des vérités de fait et de calcul, mais elle embrasse toutes les opinions politiques, morales ou religieuses. Or, la liberté de ces opinions ne serait plus qu'illusoire, si la société s'emparait des générations naissantes pour leur dicter ce qu'elles doivent croire. Celui qui en entrant dans la société y porte des opinions que son éducation lui a données n'est plus un homme libre ; il est l'esclave de ses maîtres, et ses fers sont d'autant plus difficiles à rompre, que lui-même ne les sent pas, et qu'il croit obéir à sa raison, quand il ne fait que se soumettre à celle d'un autre. On dira peut-être qu'il ne sera pas plus réellement libre s'il reçoit ses opinions de sa famille. Mais alors ces opinions ne sont pas les mêmes pour tous les citoyens ; chacun s'aperçoit bientôt que sa croyance n'est pas la croyance universelle ; il est averti de s'en défier ; elle n'a plus à ses yeux le caractère d'une vérité convenue ; et son erreur, s'il y persiste, n'est plus qu'une erreur volontaire. L'expérience a montré combien le pouvoir de ces premières idées s'affaiblit, dès qu'il s'élève contre elles des réclamations : on sait qu'alors la vanité de les rejeter l'emporte souvent sur celle de ne pas changer.\n \n\n[^1]: « positif » : ce qui a trait aux véritables connaissances",
     "themes_index": [
-      "education@éducation",
+      "éducation",
       "instruction",
       "politique",
       "morale",
-      "prejuges@préjugés",
+      "préjugés",
       "famille!et éducation",
       "citoyen"
     ]
@@ -2362,12 +2362,12 @@
     ],
     "texte": "Le vieillissement englobe deux choses qui ne sont pas absolument liées l'une à l'autre. C'est l'irréversibilité du devenir qui est le pathos[^1] fondamental de l'existence, qui est à la source des regrets, des chants les plus beaux, de la poésie la plus touchante, la plus poignante. Mais cela ne suffit pas, parce que le devenir pourrait être irréversible, aller toujours dans le même sens, sans jamais retourner sur ses pas, et se renouveler continuellement. Il faut donc autre chose. Eh bien, il y a le devenir, l'usure qualitative qui fait que chaque existence possède un certain rythme qui vient en gros de la longévité moyenne de l'espèce. L'homme a un tonus vital accordé pour une vie qui durera en moyenne soixante-quinze à quatre-vingts ans. Je suppose qu'un chat ou un chien ont des rythmes de vie tout à fait différents des nôtres. Si nous vivions sur une autre planète, où l'année serait plus courte ou bien plus longue, nos rythmes, nos affaires, la nuit de sommeil, la journée de travail, nos rythmes vitaux seraient totalement différents. Je crois que notre vie humaine, telle que nous la connaissons, et tout ce qui la compose sont accordés sur une certaine durée moyenne. L'économie de ma journée, notre conversation, tout cela est accordé sur ce rythme-là. Bien sûr, les hommes vieillissent plus ou moins vite, selon l'état général du corps. Et puis le vieillissement n'est pas régulier. Il y a des rebroussements. Il y a une entropie[^2] naturelle, qualitative du devenir humain. Bien entendu, la vocation de l'homme, comme le dit Edgar Morin[^3], est d'allonger de plus en plus la vie humaine. Elle est du reste notablement allongée. Remarquez d'ailleurs que l'allongement moyen de la vie humaine a déjà modifié nos sentiments, notre style de vie (…). Mais il n'en est pas moins vrai que, à chaque époque donnée, la vie sera tout de même finie. La vie ne sera jamais infinie.\n\n\n[^1]: « pathos » : état de souffrance\n[^2]: « entropie » : tendance au désordre\n[^3]: Edgar Morin : Philosophe et sociologue français né en 1921 qui tient ce propos dans <i>L'homme et la mort</i> (1951).",
     "themes_index": [
-      "vie (et mort)!age de la vie@âge de la vie",
+      "vie (et mort)!âge de la vie",
       "vieillesse",
       "temps",
       "souffrance",
       "regrets",
-      "poesie@poésie",
+      "poésie",
       "finitude"
     ]
   },
@@ -2405,7 +2405,7 @@
     "texte": "<i>Dans </i>L'Homme sans qualités<i>, Robert Musil dépeint les dernières années de l'empire austro-hongrois, à la veille de la Première Guerre mondiale, à travers l'existence de son personnage Ulrich, riche héritier, mathématicien brillant que ses grandes capacités d'analyse et de réflexion empêchent de donner du sens à son existence et à la réalité. Dans cet extrait du roman, Ulrich réfléchit à l'aménagement d'un petit château qu'il loue dans les faubourgs de Vienne.</i>\n\n\nC'est alors que, mettant de l'ordre dans sa maison, comme dit la Bible, il fit une expérience dont l'attente avait été, somme toute, sa véritable occupation. Il s'était mis dans l'agréable obligation de réinstaller entièrement à neuf, et à sa guise, la petite propriété laissée à l'abandon. De la restauration fidèle à l'irrespect total, il avait le choix entre toutes les méthodes, et tous les styles, des Assyriens[^1] au cubisme, se présentaient à son esprit. Quel choix fallait-il faire ? L'homme moderne naît en clinique et meurt en clinique : il faut que sa demeure ressemble à une clinique ! Cet impératif venait d'être formulé par un architecte d'avant-garde, tandis qu'un autre, réformateur de l'aménagement, exigeait des parois amovibles sous prétexte que l'homme doit apprendre à vivre en confiance avec son semblable et cesser de s'en isoler par goût du séparatisme. Des temps nouveaux venaient de commencer (il en commence à chaque minute) : à temps nouveaux, style nouveau ! Par bonheur pour Ulrich, le petit hôtel, dans l'état où il le trouva, possédait déjà trois styles superposés, de sorte qu'il était vraiment impossible, dans de telles conditions, de satisfaire à toutes ces exigences à la fois ; il ne s'en trouva pas moins profondément ébranlé par la responsabilité de cette maison à installer, et une menace qu'il avait pu lire plus d'une fois dans des revues d'art : « Dis-moi comment tu es logé et je te dirai qui tu es » planait sur sa tête. Après un examen approfondi de ces revues, il décida qu'il aimait encore mieux prendre lui-même en main l'aménagement de sa personnalité, et il se mit à dessiner son futur mobilier.\n\n\n[^1]: Peuple de la Mésopotamie dont l'influence sur la région s'est exercée du XXV<sup>e</sup> au VII<sup>e</sup> siècle av. J-C.",
     "themes_index": [
       "architecture",
-      "interiorite@intériorité",
+      "intériorité",
       "nouveauté",
       "art!style artistique",
       "cubisme",
@@ -2449,11 +2449,11 @@
     "themes_index": [
       "passion",
       "impuissance",
-      "identite@identité!et changements",
-      "memoire@mémoire",
-      "passe@passé",
+      "identité!et changements",
+      "mémoire",
+      "passé",
       "autrui",
-      "autrui!etranger@étranger",
+      "autrui!étranger",
       "sujet",
       "autrui!proches",
       "amour"
@@ -2493,11 +2493,11 @@
     "texte": "Tout change en moi sous mon regard et par mon regard. Et l'on voudrait maintenant expliquer comment je me saisis et comment je me reconnais, en ce contenu où le rêve le plus absurde peut rester attaché aux perceptions les plus raisonnables, où la superstition résiste autant que les idées, où tant de souvenirs sont oubliés, tant d'autres décolorés, où tout change enfin par le temps et l'âge. Mais il se trouve que le problème n'a point de sens, et que je n'ai pas à me retrouver, parce que je ne puis me perdre moi-même un seul instant. Toute pensée, confuse ou claire, de doctrine, de sentiment, de chose, de vision, de résolution, d'hésitation, de négation, de doute, de souvenir, de remords, d'espérance, de crainte, vraie ou non, durable ou non, en rêve ou non, a pour sujet constant le Moi, ou pour mieux parler le Je. Quand je voudrais feindre quelque nébuleuse[^1] inconnue où je ne sois pas, quelque autre monde séparé, quelque passé avant moi, quelque avenir après moi, le sujet de ces pensées est toujours moi. Je pense tout ce qui est pensé, tout ce qui est et tout ce qui peut être, tout le possible et l'impossible ; c'est pourquoi je ne puis penser que « je ne suis pas », comme Descartes a su le mettre au jour. Telle est sans doute la loi suprême de toute logique, puisque n'importe quelle pensée, même absurde, la suppose. Je ne suis qu'un ; car si je suis deux, l'un et l'autre c'est toujours moi ; et quand je me dédouble, il m'apparaît encore mieux que je ne suis qu'un ; car l'un est moi, et l'autre est moi. Je reste le même ; car si je suis tel, et puis autre, c'est toujours moi qui suis tel, et puis autre. Je ne saurai jamais que je suis autre, si ce n'est point moi, le même, qui suis autre. De toute pensée je suis le sujet. Toute connaissance, toute expérience forme ainsi un tout avec toute connaissance et toute expérience ; que ce soit passé ou imaginaire il n'importe ; c'est d'abord et ensuite de moi et pour moi. Cette forme liante m'interdit de couper l'expérience, d'interrompre le temps, de penser deux univers. Aussitôt les deux temps sont parties d'un seul temps, et les deux univers sont parties d'un seul univers.\n \n\n[^1]: nébuleuse : lieu cosmique lointain et indistinct.",
     "themes_index": [
       "introspection",
-      "memoire@mémoire",
-      "identite@identité",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "mémoire",
+      "identité",
+      "vie (et mort)!âge de la vie",
       "temps",
-      "identite@identité!et changements",
+      "identité!et changements",
       "introspection!se trouver",
       "inconscient",
       "soi!comme un autre",
@@ -2540,8 +2540,8 @@
     "themes_index": [
       "adolescence",
       "violence",
-      "interiorite@intériorité",
-      "vie (et mort)!age de la vie@âge de la vie"
+      "intériorité",
+      "vie (et mort)!âge de la vie"
     ]
   },
   {
@@ -2579,15 +2579,15 @@
     "themes_index": [
       "enfant",
       "facultés",
-      "education@éducation",
+      "éducation",
       "passivité (et activité)",
       "transmission",
       "assimilation",
-      "etudes@études",
+      "études",
       "connaissance",
-      "education@éducation!methodes educatives@méthodes éducatives",
+      "éducation!méthodes éducatives",
       "apprentissage",
-      "chatiments@châtiments",
+      "châtiments",
       "ennui",
       "explications"
     ]
@@ -2629,8 +2629,8 @@
       "lecture",
       "transgression",
       "imagination",
-      "memoire@mémoire",
-      "education@éducation",
+      "mémoire",
+      "éducation",
       "curiosité",
       "interdit",
       "romanesque"
@@ -2681,7 +2681,7 @@
       "vertu",
       "tyrannie",
       "morale!conscience morale",
-      "morale!education morale@éducation morale",
+      "morale!éducation morale",
       "cruauté"
     ]
   },
@@ -2718,15 +2718,15 @@
     ],
     "texte": "Jeunes maîtres, pensez, je vous prie, à cet exemple, et souvenez-vous qu’en toute chose vos leçons doivent être plus en actions qu’en discours ; car les enfants oublient aisément ce qu’ils ont dit et ce qu’on leur a dit, mais non pas ce qu’ils ont fait et ce qu’on leur a fait.\n \nDe pareilles instructions se doivent donner, comme je l’ai dit, plus tôt ou plus tard, selon que le naturel paisible ou turbulent de l’élève en accélère ou retarde le besoin ; leur usage est d’une évidence qui saute aux yeux ; mais, pour ne rien omettre d’important dans les choses difficiles, donnons encore un exemple.\n\nVotre enfant dyscole[^1] gâte tout ce qu’il touche : ne vous fâchez point ; mettez hors de sa portée ce qu’il peut gâter. Il brise les meubles dont il se sert ; ne vous hâtez point de lui en donner d’autres : laissez-lui sentir le préjudice de la privation. Il casse les fenêtres de sa chambre ; laissez le vent souffler sur lui nuit et jour sans vous soucier des rhumes ; car il vaut mieux qu’il soit enrhumé que fou. Ne vous plaignez jamais des incommodités qu’il vous cause, mais faites qu’il les sente le premier. À la fin vous faites raccommoder les vitres, toujours sans rien dire. Il les casse encore ? changez alors de méthode ; dites-lui sèchement, mais sans colère : Les fenêtres sont à moi ; elles ont été mises là par mes soins ; je veux les garantir. Puis vous l’enfermerez à l’obscurité dans un lieu sans fenêtre. À ce procédé si nouveau il commence par crier, tempêter ; personne ne l’écoute. Bientôt il se lasse et change de ton ; il se plaint, il gémit : un domestique se présente, le mutin[^2] le prie de le délivrer. Sans chercher de prétexte pour n’en rien faire, le domestique répond : <i>j’ai aussi des vitres à conserver</i>, et s’en va. Enfin, après que l’enfant aura demeuré là plusieurs heures, assez longtemps pour s’y ennuyer et s’en souvenir, quelqu’un lui suggérera de vous proposer un accord au moyen duquel vous lui rendriez la liberté, et il ne casserait plus de vitres. Il ne demandera pas mieux. Il vous fera prier de le venir voir : vous viendrez ; il vous fera sa proposition, et vous l’accepterez à l’instant en lui disant : C’est très bien pensé ; nous y gagnerons tous deux : que n’avez-vous eu plus tôt cette bonne idée ! Et puis, sans lui demander ni protestation ni confirmation de sa promesse, vous l’embrasserez avec joie et l’emmènerez sur-le-champ dans sa chambre, regardant cet accord comme sacré et inviolable autant que si le serment y avait passé.\n\n\n[^1]: Dyscole : dont le comportement est difficile à vivre, qui est de tempérament morose.\n[^2]: Mutin : personne qui se révolte.",
     "themes_index": [
-      "education@éducation",
-      "pedagogie@pédagogie",
+      "éducation",
+      "pédagogie",
       "comportement",
       "discipline",
       "apprentissage!par l'action",
       "responsabilité",
       "communication",
       "accord",
-      "education@éducation!conséquences",
+      "éducation!conséquences",
       "ennui"
     ]
   },
@@ -2766,14 +2766,14 @@
       "amour",
       "famille",
       "relation",
-      "identite@identité",
+      "identité",
       "existence",
       "solitude",
       "doute",
       "postérité",
       "solitude",
-      "ecriture@écriture",
-      "vie (et mort)!age de la vie@âge de la vie",
+      "écriture",
+      "vie (et mort)!âge de la vie",
       "soi!parler de soi"
     ]
   },
@@ -2811,17 +2811,17 @@
     "texte": "Quand, dans la solitude, rêvant un peu longuement, nous allons loin du présent, revivre les temps de la première vie, plusieurs visages d'enfants viennent à notre rencontre. Nous fûmes plusieurs dans la vie essayée, dans notre vie primitive. C'est seulement par le récit des autres que nous avons connu notre unité. Sur le fil de notre histoire racontée par les autres, nous finissons, année par année, à nous ressembler. Nous amassons tous nos êtres autour de l'unité de notre nom.\n\nMais la rêverie ne raconte pas. Ou, du moins, il est des rêveries si profondes, des rêveries qui nous aident à descendre si profondément en nous qu'elles nous débarrassent de notre histoire. Elles nous libèrent de notre nom. Elles nous rendent, ces solitudes d'aujourd'hui, aux solitudes premières. Ces solitudes premières, ces solitudes d'enfant, laissent, dans certaines âmes, des marques ineffaçables. Toute la vie est sensibilisée pour la rêverie poétique, pour une rêverie qui sait le prix de la solitude. L'enfance connaît le malheur par les hommes. En la solitude, il peut détendre ses peines. L'enfant se sent fils du cosmos[^1] quand le monde humain lui laisse la paix. Et c'est ainsi que dans ses solitudes, dès qu'il est maître de ses rêveries, l'enfant connaît le bonheur de rêver qui sera plus tard le bonheur des poètes. Comment ne pas sentir qu'il y a communication entre notre solitude de rêveur et les solitudes de l'enfance ? Et ce n'est pas pour rien que, dans une rêverie tranquille, nous suivons souvent la pente qui nous rend à nos solitudes d'enfance.\n\n\n[^1]: cosmos : l'univers considéré dans sa totalité.",
     "themes_index": [
       "solitude",
-      "reve@rêve",
+      "rêve",
       "temps",
-      "identite@identité",
+      "identité",
       "enfance",
       "soi!connaissance de soi",
       "autrui",
       "nom et prénom",
-      "recit@récit",
-      "poesie@poésie",
+      "récit",
+      "poésie",
       "communication",
-      "memoire@mémoire"
+      "mémoire"
     ]
   },
   {
@@ -2859,19 +2859,19 @@
     "themes_index": [
       "beauté",
       "contemplation",
-      "passe@passé",
-      "emotion@émotion",
+      "passé",
+      "émotions",
       "sublime",
       "intellection",
       "souvenir",
       "masque",
-      "role@rôle!jouer un rôle",
-      "identite@identité!sociale",
+      "rôle!jouer un rôle",
+      "identité!sociale",
       "intime",
-      "expérience!esthetique@esthétique",
+      "expérience!esthétique",
       "narcissisme",
       "sensation",
-      "ame@âme"
+      "âme"
     ]
   },
   {
@@ -2910,7 +2910,7 @@
       "famille!et éducation",
       "enfant",
       "curiosité",
-      "education@éducation",
+      "éducation",
       "apprentissage",
       "culture",
       "identification",
@@ -2921,7 +2921,7 @@
       "autorité",
       "ambition",
       "connivence",
-      "etudes@études",
+      "études",
       "adulte",
       "enfance",
       "langage"
@@ -2961,15 +2961,15 @@
     "texte": "Pour en finir avec les images tout à fait confuses des commencements de ma vie, je veux encore parler d’un rayon de soleil — rayon triste cette fois, — qui a laissé en moi-même sa marque ineffaçable et dont le sens ne me sera jamais expliqué.\n \nAu retour du service religieux, un dimanche, ce rayon m’apparut ; il entrait dans un escalier de la maison, par une fenêtre entre-bâillée, et s’allongeait d’une certaine manière bizarre sur la blancheur d’un mur\nJ’étais revenu du temple[^1] seul avec ma mère, et je montais l’escalier en lui donnant la main ; la maison pleine de silence avait cette sonorité particulière aux midis très chauds de l’été ; ce devait être en août ou en septembre et, suivant l’usage de nos pays, les contrevents[^2] à demi fermés entretenaient une espèce de nuit pendant l’ardeur du soleil.\n\nDès l’entrée, il me vint une conception déjà mélancolique de ce repos du dimanche qui, dans les campagnes et dans les recoins paisibles des petites villes, est comme un arrêt de la vie. Mais quand j’aperçus ce rayon de soleil plongeant obliquement dans cet escalier par cette fenêtre, ce fut une impression bien autrement poignante de tristesse ; quelque chose de tout à fait incompréhensible et de tout à fait nouveau, où entrait peut-être la notion infuse[^3] de la brièveté des étés de la vie, de leur fuite rapide, et de l’impassible éternité des soleils… Mais d’autres éléments plus mystérieux s’y mêlaient aussi, qu’il me serait impossible d’indiquer même vaguement.\n\nJe veux seulement ajouter à l’histoire de ce rayon une suite qui pour moi y est intimement liée. Des années et des années passèrent ; devenu homme, ayant vu les deux bouts du monde et couru toutes les aventures, il m’arriva d’habiter, pendant un automne et un hiver, une maison isolée au fond d’un faubourg de Stamboul[^4]. Là, sur le mur de mon escalier, chaque soir à la même heure, un rayon de soleil, arrivé par une fenêtre, glissait en biais ; il éclairait une sorte de niche qui était creusée dans la pierre et où j’avais posé une amphore[^5] d’Athènes. Eh bien, jamais je n’ai pu voir descendre ce rayon sans repenser à l’autre, celui de ce dimanche d’autrefois, et sans éprouver la même, précisément <i>la même</i> impression triste, à peine atténuée par le temps et toujours aussi pleine de mystère. Puis, quand le moment vint où il me fallut quitter la Turquie, quitter ce petit logis dangereux de Stamboul que j’avais adoré, à tous les déchirements du départ se mêla par instants cet étrange regret : jamais plus je ne reverrai le soleil oblique de l’escalier descendre sur la niche du mur et sur l’amphore grecque…\n\n\n[^1]: <i>temple :</i> ici, lieu de culte protestant.\n[^2]: <i>contrevents :</i> volets.\n[^3]: <i>infuse :</i> immédiate, spontanée.\n[^4]: <i>Stamboul :</i> Istanbul.\n[^5]: <i>amphore :</i> vase antique.",
     "themes_index": [
       "tristesse",
-      "melancolie@mélancolie",
+      "mélancolie",
       "saisons",
       "temps!passage du temps",
       "introspection",
       "souvenir",
       "lumière",
-      "mystere@mystère",
+      "mystère",
       "voyage",
-      "memoire@mémoire",
+      "mémoire",
       "enfance",
       "nostalgie"
     ]
@@ -3011,9 +3011,9 @@
       "animaux",
       "insecte",
       "sommeil",
-      "lumiere@lumière",
+      "lumière",
       "soleil",
-      "reve@rêve",
+      "rêve",
       "repos",
       "instant"
     ]
@@ -3096,15 +3096,15 @@
     "texte": "<i>Née en 1966 au Canada, la poétesse Rita Mestokosho appartient au peuple amérindien des Innus, dont le nom signifie « être humain ». Représentante de sa communauté, elle milite pour la valorisation de sa culture et la préservation de sa langue, l’innu. C’est pourquoi ses poèmes sont écrits en innu et en français - ou, comme ici, en français ponctué d’un mot innu -, ce qui exprime une volonté de dialogue avec tous les lecteurs.</i>\n\n\n \n<b>Parfum de la terre</b>\n \nViens marcher avec le printemps\n\nSens le vent sur tes joues\n\nSois libre de tes mouvements\n\nPrends le temps de vivre\n\nCar demain ne t’appartient pas.\n\n\nN’oublie pas ta promesse\n\nD’aller retrouver la paix\n\nDans une forêt\n\nDans une maison en bois\n\nRetrouve le battement de ton cœur.\n\n\nNous partirons les yeux fermés\n\nLe cœur enveloppé\n\nDu parfum de la terre\n\nL’automne Uashtessiu[^1]\n\nQui nous dira\n\nViens viens mon ami mon frère\n\nOui je t’attends\n\nDepuis cet instant\n\nOù ton souffle a touché mon âme\n\nOui je t’attends mon frère\n\nAlors nous partirons tous deux.\n\n\nJ’ai vu la montagne dans sa splendeur\n\nJ’ai entendu la rivière dans son désir\n\nQuel plaisir et quel bonheur\n\nD’être dans les bras de la Terre.\n\n\nEt lui ce grand mystère\n\nQue je découvre dans son absence\n\nChercher la vérité au creux de ses mains\n\nJe respire l’air qu’il habite.\n\n\nVoir son regard s’évanouir dans le mien\n\nPendant qu’il ferme les yeux sur mon corps\n\nPour mieux goûter à l’instant\n\nJ’entends son cœur battre.\n\n\nJ’aime son silence\n\nJ’aime sa voix\n\nJ’aime son reflet\n\nJ’aime l’invisible que je ne peux toucher\n\nMais que je sens avec force en moi.\n\n\nLes arbres sont témoins de mon amour\n\nLes rochers entendent encore aujourd’hui\n\nL’écho de ma grande tendresse\n\nSur le ciel qui nous enveloppe.\n\n\nMon cœur est fait de branches de sapin\n\nEntremêlées à toutes les saisons du monde.\n\n\nJe dors pour mieux tapisser tes rêves\n\nEt celui du chasseur en quête d’une terre\n\nOù il pourra alimenter son envie d’être libre\n\nDe marcher en admirant les courbes des rivières\n\nDe nourrir sa faim et d’assouvir sa soif.\n\n\nJe crois aussi en la force du destin\n\nJe crois aussi en la confiance de demain\n\nLa patience d’attendre en admirant l’eau des chutes\n\nEn priant pour mon prochain.\n\n\nJe deviens l’hiver pour me reposer\n\nJe deviens le printemps pour rêver\n\nJe deviens l’été pour briller.\n\n\nEt je suis une femme d’automne\n\nNée dans un univers qui est aussi le tien.\n\n\n[^1]: En innu (la langue de Rita Mestokosho), <i>Uashtessiu</i> signifie « les arbres changent de couleur ». Il s’agit donc d’une référence aux feuilles d’automne.",
     "themes_index": [
       "nature!environnement",
-      "ephemere@éphémère",
+      "éphémère",
       "vie (et mort)",
       "harmonie",
       "regard",
-      "amitie@amitié",
+      "amitié",
       "temps!passage du temps",
       "saisons",
-      "identite@identité",
-      "amerindien@amérindien",
+      "identité",
+      "amérindien",
       "corps",
       "amour",
       "spiritualité"
@@ -3143,9 +3143,9 @@
     ],
     "texte": "Serait-il possible de s’en tenir à la conscience instantanée de soi ? Ne pourrait-on pas dire que la sincérité absolue serait, à la limite, la coïncidence incessamment renouvelée de l’être avec lui-même, le respect absolu des impressions naïves ? Se connaître authentiquement, n’est-ce pas forger et maintenir l’illusion que l’on est étranger à soi-même, et que l’on se découvre sans se modifier ? En dépit de sa séduction littéraire, cet idéal de la sincérité passive est inacceptable. Il est irréalisable parce que, sous couleur de les respecter, il mutile et défigure les données de l’existence humaine. Une telle sincérité serait instable autant que son objet. Comment ferait-elle la distinction entre ce qui est superficiel et ce qui est profond, entre les pensées errantes et les impulsions enracinées ? Elle serait incapable de discerner les sentiments que l’on éprouve et ceux que l’on se figure éprouver. Elle en viendrait ainsi à consacrer[^1] tout le vécu et à construire le moi, sous prétexte de ne pas construire. Car bon gré mal gré, toujours on se détermine, partiellement au moins, par l’idée que l’on se fait de soi-même. Si l’on obéissait à une telle morale, on se créerait par cette obéissance, mais au lieu de se créer un, on s’imposerait de perpétuels renouvellements, ou du moins on les accepterait parce que le devenir serait la valeur suprême.\n \n\n[^1]: <i>Consacrer :</i> donner une valeur égale à tout ce qui est vécu.",
     "themes_index": [
-      "identite@identité",
-      "sincerite@sincérité",
-      "authenticite@authenticité",
+      "identité",
+      "sincérité",
+      "authenticité",
       "superficialité",
       "moi!mobilité du moi",
       "moi!moi authentique",
@@ -3157,8 +3157,8 @@
       "soi!difficile accès à soi",
       "devenir",
       "impulsion",
-      "identite@identité!et changements",
-      "identite@identité!sociale"
+      "identité!et changements",
+      "identité!sociale"
     ]
   },
   {
@@ -3288,7 +3288,7 @@
       "vie (et mort)",
       "naturel (et artificiel)",
       "eugénisme",
-      "biogenetique@biogénétique",
+      "biogénétique",
       "transhumanisme",
       "technique!maîtrise technique de la nature",
       "technique!et sciences",
@@ -3333,9 +3333,9 @@
       "Shoah",
       "camp de concentration",
       "victime",
-      "memoire@mémoire",
+      "mémoire",
       "oubli",
-      "deportation@déportation"
+      "déportation"
     ]
   },
   {
@@ -3374,7 +3374,7 @@
       "naturel (et artificiel)",
       "culture!comme maîtrise de la nature",
       "nature!environnement",
-      "ecologie@écologie",
+      "écologie",
       "technique!maîtrise technique de la nature"
     ]
   },
@@ -3411,13 +3411,13 @@
     ],
     "texte": "<i>\nJean Ferrat (1930-2010) compose cette chanson, </i>Nuit et\nbrouillard<i>, en 1963. « Nuit et brouillard » est le nom d'un décret\ndes autorités nazies, signé le 7 décembre 1941 et condamnant les\nopposants à la déportation en Allemagne et à la mort.</i>\n\n\n<center>\nNuit et brouillard </center>\n\n\nIls étaient vingt et cent, ils étaient des milliers\n\nNus et maigres, tremblants, dans ces wagons plombés\n\nQui déchiraient la nuit de leurs ongles battants\n\nIls étaient des milliers, ils étaient vingt et cent\n\n\nIls se croyaient des hommes, n'étaient plus que des nombres\n\nDepuis longtemps leurs dés avaient été jetés\n\nDès que la main retombe il ne reste qu'une ombre\n\nIls ne devaient jamais plus revoir un été\n\n\nLa fuite monotone et sans hâte du temps\n\nSurvivre encore un jour, une heure, obstinément\n\nCombien de tours de roues, d'arrêts et de départs\n\nQui n'en finissent pas de distiller l'espoir\n\n\nIls s'appelaient Jean-Pierre, Natacha ou Samuel\n\nCertains priaient Jésus, Jéhovah ou Vichnou\n\nD'autres ne priaient pas, mais qu'importe le ciel\n\nIls voulaient simplement ne plus vivre à genoux\n\n\nIls n'arrivaient pas tous à la fin du voyage\n\nCeux qui sont revenus peuvent-ils être heureux\n\nIls essaient d'oublier, étonnés qu'à leur âge\n\nLes veines de leurs bras soient devenues si bleues\n\n\nLes Allemands guettaient du haut des miradors\n\nLa lune se taisait comme vous vous taisiez\n\nEn regardant au loin, en regardant dehors\n\nVotre chair était tendre à leurs chiens policiers\n\n\nOn me dit à présent que ces mots n'ont plus cours\n\nQu'il vaut mieux ne chanter que des chansons d'amour\n\nQue le sang sèche vite en entrant dans l'histoire\n\nEt qu'il ne sert à rien de prendre une guitare\n\n\nMais qui donc est de taille à pouvoir m'arrêter ?\n\n\nL'ombre s'est faite humaine, aujourd'hui c'est l'été\n\n\nJe twisterais[^1]\nles mots s'il fallait les twister\n\n\nPour qu'un jour les enfants sachent qui vous étiez\n\n\nVous étiez vingt et cent, vous étiez des milliers\n\nNus et maigres, tremblants, dans ces wagons plombés\n\nQui déchiriez la nuit de vos ongles battants\n\nVous étiez des milliers, vous étiez vingt et cent\n\n\n[^1]: « twister » : tordre, tortiller, retourner (le twist est une danse populaire des années 1960, qui se danse sur une musique de rock and roll, par une rotation des jambes et du bassin).",
     "themes_index": [
-      "deportation@déportation",
+      "déportation",
       "Shoah",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "vie (et mort)",
       "temps",
       "histoire",
-      "memoire@mémoire"
+      "mémoire"
     ]
   },
   {
@@ -3457,7 +3457,7 @@
       "temps",
       "pensée!anéantissement de la pensée",
       "souffrance",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "armes"
     ]
   },
@@ -3495,8 +3495,8 @@
     "texte": "<i>\nPendant la Première Guerre mondiale, M. Marchandeau vient d'apprendre\nque son fils Pierre, soldat ayant refusé d'obéir aux ordres,\ns'apprête à être fusillé pour cette raison.</i>\n\n\nComme tout le monde, M. Marchandeau avait souvent compulsé, d'une main\nparfois distraite, ces\n<i>illustrés</i>[^1]\n de la guerre qui offraient au monde un tel résumé d'horreurs qu'il ne\nsemblait pas croyable que personne en pût supporter la vue. Dans ces\nillustrés, dont certains se vantaient de payer n'importe quel prix\nles documents intéressants, il lui était arrivé de tomber sur les\nimages d'une exécution capitale : espion passé par les\narmes[^2]. L'homme, la tête\nbasse, les mains liées, une dernière cigarette aux lèvres, marchait\nentouré de ses bourreaux, et M. Marchandeau avait remarqué qu'il s'en\ntrouvait toujours un pour sourire. C'était à croire qu'il ne pouvait\ny avoir d'exécution capitale sans ce sourire-là ! Qui donc tout à\nl'heure sourirait ?\n\nVenait ensuite l'exécution proprement dite : l'homme, à genoux devant\nle poteau, les yeux bandés. Ensuite enfin, et pour conclure, le\ndéfilé des troupes devant le cadavre.\n\nIl avait regardé ces images non sans émotion, mais avec le sentiment\nque cela ne le concernait pas directement, que ces choses atroces se\npassaient dans un univers sans rapport avec le sien, si paisible, que\nbien sûrement il ne serait jamais fusillé, lui ni personne qu'il\nconnût. Or…\n\nIl lui arrivait, comme à tant d'autres, une aventure à laquelle il\nn'était pas préparé : il était au spectacle, commodément installé\ndans un fauteuil, et voilà qu'on le priait durement de vider son\nsiège, de grimper en scène, d'y traîner avec lui sa femme et son\nfils. Il n'avait pas prévu cela. Naïvement, jusqu'au 2 août 1914\n[^3], il avait pris la\nvie pour un conte. On exigeait aujourd'hui, fouet en main, qu'il prît\nau jeu une part active, sans même lui demander s'il avait au moins\nappris un petit bout de rôle, s'il savait en quoi consistait le\nscénario dans son ensemble et au bénéfice de qui était monté ce\ngala[^4] ? Mais il ne savait\nrien. Il voyait seulement qu'il ne s'agissait plus de spectacle du\ntout, que la comédie tournait au drame – au vrai drame – que la balle\nétait une vraie balle, l'épée vraiment teintée de sang, le mort un\nvrai mort.\n\nOn fusillait les espions : soit ! Mais on ne lui avait pas dit qu'on\nfusillait aussi les insurgés[^5], ni même qu'il y en eût. On lui avait fait croire que\ntout allait « à merveille » et que ces milliers de jeunes gens jetés\nau fumier acceptaient joyeusement leur mort. Il s'était laissé duper\nsans penser une seconde que la machine meurtrière pouvait aussi se\nretourner contre lui et contre son fils. Il avait laissé faire, il\navait consenti. Il était complice, hélas ! de ce sourire qui tout à\nl'heure accompagnerait Pierre au poteau, complice des prières qu'un\ntendre aumônier[^6] ne manquerait pas de prodiguer\nà son fils afin que tout soit en règle et la mort bien parée.\n\n\n[^1]: « illustré » : magazine comportant des images.\n[^2]: « passé par les armes » : exécuté.\n[^3]: « 2 août 1914 » : le jour de la mobilisation générale, au cours duquel les soldats sont appelés au front.\n[^4]: « gala » : grande fête officielle.\n[^5]: « insurgés » : ceux qui se révoltent.\n[^6]: « aumônier » : prêtre chargé de recueillir les dernières volontés d'un mourant.",
     "themes_index": [
       "guerre!Première Guerre mondiale",
-      "desobeissance@désobéissance",
-      "execution@exécution",
+      "désobéissance",
+      "exécution",
       "armée",
       "parent",
       "vie (et mort)",
@@ -3541,10 +3541,10 @@
       "nature!environnement",
       "vie (et mort)",
       "humain!et animal",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "eugénisme",
       "nature!nature humaine",
-      "deportation@déportation",
+      "déportation",
       "Shoah",
       "SS"
     ]
@@ -3584,7 +3584,7 @@
     "themes_index": [
       "guerre!Seconde Guerre mondiale",
       "camp de concentration",
-      "temoignage@témoignage",
+      "témoignage",
       "souvenir",
       "habitude",
       "solitude",
@@ -3592,7 +3592,7 @@
       "souffrance",
       "mensonge",
       "soi!parler de soi",
-      "temoignage@témoignage!temoigner de la violence@témoigner de la violence",
+      "témoignage!témoigner de la violence",
       "Shoah"
     ]
   },
@@ -3636,7 +3636,7 @@
       "nature!nature humaine",
       "anomalie",
       "connaissance",
-      "deportation@déportation"
+      "déportation"
     ]
   },
   {
@@ -3670,15 +3670,15 @@
         "theme_programme": "HVL"
       }
     ],
-    "texte": "<i>\nCharlotte Delbo, résistante, a été déportée à Auschwitz le 24 janvier 1943. Survivante du camp d'extermination, elle écrit six mois après\nson retour de déportation un texte qui ne sera publié que vingt ans\nplus tard.</i>\n\n\nLa gare n'est pas une gare. C'est la fin d'un rail. Ils regardent et\nils sont éprouvés par la désolation autour d'eux.\n\nLe matin la brume leur cache les marais.\n\nLe soir les réflecteurs éclairent les barbelés blancs dans une netteté\nde photographie astrale. Ils croient que c'est là qu'on les mène et\nils sont effrayés.\n\nLa nuit ils attendent le jour avec les enfants qui pèsent aux bras des\nmères. Ils attendent et ils se demandent.\n\nLe jour ils n'attendent pas. Les rangs se mettent en marche tout de\nsuite. Les femmes avec les enfants d'abord, ce sont les plus\nlas[^1]. Les hommes ensuite. Ils sont aussi las mais ils sont\nsoulagés qu'on fasse passer en premier leurs femmes et leurs enfants.\nCar on fait passer en premier les femmes et les enfants.\n\nL'hiver ils sont saisis par le froid. Surtout ceux qui viennent de\nCandie[^2] la neige leur est nouvelle.\n\nL'été le soleil les aveugle au sortir des fourgons obscurs qu'on a\nverrouillés au départ.\n\nAu départ de France d'Ukraine d'Albanie de Belgique de Slovaquie\nd'Italie de Hongrie du Péloponnèse de Hollande de Macédoine\nd'Autriche d'Herzégovine des bords de la mer Noire et des bords de la\nBaltique des bords de la Méditerranée et des bords de la Vistule.\n\nIls voudraient savoir où ils sont. Ils ne savent pas que c'est ici le\ncentre de l'Europe. Ils cherchent la plaque de la gare. C'est une\ngare qui n'a pas de nom. Une gare qui pour eux n'aura jamais de nom.\n\n\nIl y en a qui voyagent pour la première fois de leur vie. Il y en a\nqui ont voyagé dans tous les pays du monde, des commerçants. Tous les\npaysages leur étaient familiers mais ils ne reconnaissent pas\ncelui-ci.\n\nIls regardent. Ils sauront dire plus tard comme c'était.\n\nTous veulent se rappeler quelle impression ils ont eue et comme ils\nont eu le sentiment qu'ils ne reviendraient pas.\n\nC'est un sentiment qu'on peut avoir eu déjà dans sa vie. Ils savent qu'il faut se défier des sentiments.\n\n\n[^1]: « las » : qui éprouve une fatigue physique, brisé, éreinté.\n[^2]: « Candie » : nom médiéval de la ville d'Héraklion, en Crête.",
+    "texte": "<i>\nCharlotte Delbo, résistante, a été déportée à Auschwitz le 24 janvier\n1943. Survivante du camp d'extermination, elle écrit six mois après\nson retour de déportation un texte qui ne sera publié que vingt ans\nplus tard.</i>\n\n\nLa gare n'est pas une gare. C'est la fin d'un rail. Ils regardent et\nils sont éprouvés par la désolation autour d'eux.\n\nLe matin la brume leur cache les marais.\n\nLe soir les réflecteurs éclairent les barbelés blancs dans une netteté\nde photographie astrale. Ils croient que c'est là qu'on les mène et\nils sont effrayés.\n\nLa nuit ils attendent le jour avec les enfants qui pèsent aux bras des\nmères. Ils attendent et ils se demandent.\n\nLe jour ils n'attendent pas. Les rangs se mettent en marche tout de\nsuite. Les femmes avec les enfants d'abord, ce sont les plus\nlas[^1]. Les hommes ensuite. Ils sont aussi las mais ils sont\nsoulagés qu'on fasse passer en premier leurs femmes et leurs enfants.\nCar on fait passer en premier les femmes et les enfants.\n\nL'hiver ils sont saisis par le froid. Surtout ceux qui viennent de\nCandie[^2] la neige leur est nouvelle.\n\nL'été le soleil les aveugle au sortir des fourgons obscurs qu'on a\nverrouillés au départ.\n\nAu départ de France d'Ukraine d'Albanie de Belgique de Slovaquie\nd'Italie de Hongrie du Péloponnèse de Hollande de Macédoine\nd'Autriche d'Herzégovine des bords de la mer Noire et des bords de la\nBaltique des bords de la Méditerranée et des bords de la Vistule.\n\nIls voudraient savoir où ils sont. Ils ne savent pas que c'est ici le\ncentre de l'Europe. Ils cherchent la plaque de la gare. C'est une\ngare qui n'a pas de nom. Une gare qui pour eux n'aura jamais de nom.\n\n\nIl y en a qui voyagent pour la première fois de leur vie. Il y en a\nqui ont voyagé dans tous les pays du monde, des commerçants. Tous les\npaysages leur étaient familiers mais ils ne reconnaissent pas\ncelui-ci.\n\nIls regardent. Ils sauront dire plus tard comme c'était.\n\nTous veulent se rappeler quelle impression ils ont eue et comme ils\nont eu le sentiment qu'ils ne reviendraient pas.\n\nC'est un sentiment qu'on peut avoir eu déjà dans sa vie. Ils savent qu'il faut se défier des sentiments.\n\n\n[^1]: « las » : qui éprouve une fatigue physique, brisé, éreinté.\n[^2]: « Candie » : nom médiéval de la ville d'Héraklion, en Crête.",
     "themes_index": [
       "centre de mise à mort",
       "camp d'extermination|see{centre de mise à mort}",
-      "deportation@déportation",
+      "déportation",
       "peur",
       "violence",
       "Europe",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "marche (militaire)"
     ]
   },
@@ -3895,14 +3895,14 @@
       "animaux",
       "conscience",
       "souffrance",
-      "ecologie@écologie",
+      "écologie",
       "vivant",
       "nature!environnement",
-      "ecosysteme@écosystème",
-      "vegetaux@végétaux",
+      "écosystème",
+      "végétaux",
       "loi!du plus fort",
       "droit!des animaux",
-      "Etat@État",
+      "État",
       "justice",
       "ascétisme",
       "morale",
@@ -3940,13 +3940,13 @@
         "theme_programme": "HV"
       }
     ],
-    "texte": "<i>\nDavid Diop (1927-1966) est un poète et écrivain français, né en France\nde père sénégalais et de mère camerounaise.</i>\n\n\nAfrique\n\n{\\raggedleft\nÀ ma mère\n\n\n}\n\nAfrique, mon Afrique\n\nAfrique des fiers guerriers dans les savanes ancestrales\n\nAfrique que chante ma grand-Mère\n\nAu bord de son fleuve lointain\n\nJe ne t'ai jamais connue\n\nMais mon regard est plein de ton sang\n\nTon beau sang noir à travers les champs répandu\n\nLe sang de ta sueur\n\nLa sueur de ton travail\n\nLe travail de l'esclavage\n\nL'esclavage de tes enfants\n\nAfrique dis-moi Afrique\n\nEst-ce donc toi ce dos qui se courbe\n\nEt se couche sous le poids de l'humilité\n\nCe dos tremblant à zébrures rouges\n\nQui dit oui au fouet sur les routes de midi\n\nAlors gravement une voix me répondit\n\nFils impétueux cet arbre robuste et jeune\n\nCet arbre là-bas\n\nSplendidement seul au milieu de fleurs blanches et fanées\n\nC'est l'Afrique ton Afrique qui repousse\n\nQui repousse patiemment obstinément\n\nEt dont les fruits ont peu à peu\n\nL'amère saveur de la liberté.",
+    "texte": "<i>\nDavid Diop (1927-1966) est un poète et écrivain français, né en France\nde père sénégalais et de mère camerounaise.</i>\n\n\nAfrique\n\n<p align=\"right\">À ma mère\n\n\n</p>\n\nAfrique, mon Afrique\n\nAfrique des fiers guerriers dans les savanes ancestrales\n\nAfrique que chante ma grand-Mère\n\nAu bord de son fleuve lointain\n\nJe ne t'ai jamais connue\n\nMais mon regard est plein de ton sang\n\nTon beau sang noir à travers les champs répandu\n\nLe sang de ta sueur\n\nLa sueur de ton travail\n\nLe travail de l'esclavage\n\nL'esclavage de tes enfants\n\nAfrique dis-moi Afrique\n\nEst-ce donc toi ce dos qui se courbe\n\nEt se couche sous le poids de l'humilité\n\nCe dos tremblant à zébrures rouges\n\nQui dit oui au fouet sur les routes de midi\n\nAlors gravement une voix me répondit\n\nFils impétueux cet arbre robuste et jeune\n\nCet arbre là-bas\n\nSplendidement seul au milieu de fleurs blanches et fanées\n\nC'est l'Afrique ton Afrique qui repousse\n\nQui repousse patiemment obstinément\n\nEt dont les fruits ont peu à peu\n\nL'amère saveur de la liberté.",
     "themes_index": [
       "Afrique",
       "colonisation",
       "esclavage",
       "liberté",
-      "histoire!epreuve de l'histoire@épreuve de l'histoire"
+      "histoire!épreuve de l'histoire"
     ]
   },
   {
@@ -3982,9 +3982,9 @@
     ],
     "texte": "Dans nos manuels de lecture figurait la fable du vieil homme qui sur\nson lit de mort fait croire à ses enfants qu'un trésor est caché dans\nsa vigne. Ils n'ont qu'à chercher. Les enfants creusent, mais nulle\ntrace de trésor. Quand vient l'automne, cependant, la vigne donne\ncomme aucune autre dans tout le pays. Ils comprennent alors que leur\npère a voulu leur léguer le fruit de son expérience : la vraie\nrichesse n'est pas dans l'or, mais dans le travail. Ce sont des\nexpériences de ce type qu'on nous a opposées, en guise de menace ou\nd'apaisement, tout au long de notre adolescence : « C'est encore\nmorveux et ça veut donner son avis. » « Tu en as encore beaucoup à\napprendre. » L'expérience, on savait exactement ce que c'était :\ntoujours les anciens l'avaient apportée aux plus jeunes. Brièvement,\navec l'autorité de l'âge, sous forme de proverbes ; longuement, avec\nsa faconde[^1], sous forme\nd'histoires ; parfois dans des récits de pays lointains, au coin du\nfeu, devant les enfants et les petits-enfants. – Où tout cela est-il\npassé ? Trouve-t-on encore des gens capables de raconter une histoire\n? Où les mourants prononcent-ils encore des paroles impérissables,\nqui se transmettent de génération en génération comme un anneau\nancestral ? Qui, aujourd'hui, sait dénicher le proverbe qui va le\ntirer d'embarras ? Qui chercherait à clouer le bec à la jeunesse en\ninvoquant son expérience passée ?\n\nNon, une chose est claire : le cours de l'expérience a chuté, et ce\ndans une génération qui fit en 1914-1918 l'une des expériences les\nplus effroyables de l'histoire universelle. Le fait, pourtant, n'est\npeut-être pas aussi étonnant qu'il y paraît. N'a-t-on pas alors\nconstaté que les gens revenaient muets du champ de bataille ? Non pas\nplus riches, mais plus pauvres en expérience communicable. Ce qui\ns'est répandu dix ans plus tard dans le flot des livres de guerre\nn'avait rien à voir avec une expérience quelconque, car l'expérience\nse transmet de bouche à oreille. Non, cette dévalorisation n'avait\nrien d'étonnant. Car jamais expériences acquises n'ont été aussi\nradicalement démenties que l'expérience stratégique par la guerre de\nposition, l'expérience économique par l'inflation, l'expérience\ncorporelle par l'épreuve de la faim, l'expérience morale par les\nmanœuvres des gouvernants. Une génération qui était encore allée à\nl'école en tramway hippomobile[^2] se retrouvait à découvert dans un paysage où\nplus rien n'était reconnaissable, hormis les nuages et au milieu,\ndans un champ de forces traversé de tensions et d'explosions\ndestructrices, le minuscule et fragile corps humain.\n\nCet effroyable déploiement de la technique plongea les hommes dans une\npauvreté tout à fait nouvelle.\n\n\n[^1]: Faconde : grande facilité de parole.\n[^2]: Tramway hippomobile : tramway tiré par des chevaux.",
     "themes_index": [
-      "temoignage@témoignage!temoigner de la violence@témoigner de la violence",
+      "témoignage!témoigner de la violence",
       "enfant",
-      "education@éducation",
+      "éducation",
       "adolescence",
       "tradition",
       "transmission",
@@ -4049,7 +4049,7 @@
     "titre": "L'intégration républicaine",
     "genre": "essaip",
     "datepub": "1996",
-    "reference_complementaire": "« Les droits de l'homme. À l'échelle mondiale et au niveau de l'État », traduit de l'allemand par\\\\Rainer <span style=\"font-variant: small-caps;\">Rochlitz</span> (revue)",
+    "reference_complementaire": "« Les droits de l'homme. À l'échelle mondiale et au niveau de l'État », traduit de l'allemand par\nRainer <span style=\"font-variant: small-caps;\">Rochlitz</span> (revue)",
     "lieu": "Asie",
     "annee": "2022",
     "jour": 2,
@@ -4075,9 +4075,9 @@
       "paix",
       "violence!psychologie de la violence",
       "guerre!causes de la guerre",
-      "Etat@État",
-      "Etat@État!Etat de droit@État de droit",
-      "democratie@démocratie",
+      "État",
+      "État!État de droit",
+      "démocratie",
       "politique",
       "droit!droit international",
       "justice"
@@ -4122,7 +4122,7 @@
       "mal",
       "sacrifice",
       "esclavage",
-      "interet@intérêt",
+      "intérêt",
       "histoire",
       "pouvoir",
       "valeurs"
@@ -4162,7 +4162,7 @@
     "texte": "L'État en guerre se permet toutes les injustices, toutes les\nviolences, dont la moindre déshonorerait l'individu. Il a recours, à\nl'égard de l'ennemi, non seulement à la ruse permise, mais aussi au\nmensonge conscient et voulu, et cela dans une mesure qui dépasse tout\nce qui s'était vu dans des guerres antérieures. L'État impose aux\ncitoyens le maximum d'obéissance et de sacrifices, mais les traite\nen mineurs, en leur cachant la vérité et en soumettant toutes les\ncommunications et toutes les expressions d'opinions à une censure qui\nrend les gens, déjà déprimés intellectuellement, incapables de\nrésister à une situation défavorable ou à une sinistre nouvelle. Il\nse dégage de tous les traités et de toutes les conventions qui le\nliaient à d'autres États, avoue sans crainte sa rapacité et sa soif\nde puissance que l'individu doit approuver et sanctionner par\npatriotisme.\n\nQu'on ne vienne pas nous dire que l'État ne peut pas renoncer à avoir\nrecours à l'injustice, car s'il y renonçait, il se mettrait en état\nd'infériorité. Se conformer aux normes morales, renoncer à l'activité\nbrutale et violente est pour l'individu aussi peu avantageux que pour\nl'État, et celui-ci se montre rarement disposé à dédommager le\ncitoyen des sacrifices qu'il exige de lui. Il ne faut pas, en outre,\ns'étonner de constater que le relâchement des rapports moraux entre\nles grands individus de l'humanité ait eu ses répercussions sur la\nmorale privée, car notre conscience, loin d'être le juge implacable\ndont parlent les moralistes, est, par ses origines, de l'« angoisse\nsociale », et rien de plus. Là où le blâme de la part de la\ncollectivité vient à manquer, la compression des mauvais instincts\ncesse, et les hommes se livrent à des actes de cruauté, de perfidie,\nde trahison et de brutalité, qu'on aurait crus impossibles, à en\njuger uniquement par leur niveau de culture.",
     "themes_index": [
       "guerre",
-      "Etat@État",
+      "État",
       "justice",
       "violence",
       "injustice|see{justice}",
@@ -4260,7 +4260,7 @@
       "technique!maîtrise technique de la nature",
       "technologie",
       "liberté",
-      "ecologie@écologie",
+      "écologie",
       "esclavage",
       "peur",
       "espérances",
@@ -4309,7 +4309,7 @@
       "valeurs",
       "inconscient",
       "droit",
-      "ideologie@idéologie",
+      "idéologie",
       "esthétique!de la violence"
     ]
   },
@@ -4350,7 +4350,7 @@
       "guerre!Seconde Guerre mondiale",
       "mobilisation",
       "absurde",
-      "incomprehension@incompréhension",
+      "incompréhension",
       "tristesse",
       "patriotisme",
       "esthétique!de la violence"
@@ -4389,14 +4389,15 @@
     ],
     "texte": "La désobéissance civile ne saurait être assimilée à la délinquance de droit commun[^1]. Il existe une différence essentielle entre le criminel qui prend soin de dissimuler à tous les regards ses actes répréhensibles et celui qui fait acte de désobéissance civile en défiant les autorités et s'institue lui-même porteur d'un autre droit. Cette distinction nécessaire entre une violation ouverte et publique de la loi et une violation clandestine a un tel caractère d'évidence que le refus d'en tenir compte ne saurait provenir que d'un préjugé allié à de la mauvaise volonté. Reconnue désormais par tous les auteurs sérieux qui abordent ce sujet, cette distinction est naturellement invoquée comme un argument primordial par tous ceux qui s'efforcent de faire reconnaître que la désobéissance civile n'est pas incompatible avec les lois et les institutions publiques des États-Unis. Le délinquant de droit commun, par contre, même s'il appartient à une organisation criminelle, agit uniquement dans son propre intérêt ; il refuse de s'incliner devant la volonté du groupe, et ne cédera qu'à la violence des services chargés d'imposer le respect de la loi. Celui qui fait acte de désobéissance civile, tout en étant généralement en désaccord avec une majorité, agit au nom et en faveur d'un groupe particulier. Il lance un défi aux lois et à l'autorité établie à partir d'un désaccord fondamental, et non parce qu'il entend personnellement bénéficier d'un passe-droit.\n\n\n[^1]: Le délinquant de droit commun est celui qui commet un délit ou un crime, au regard des règles établies du droit.",
     "themes_index": [
-      "desobeissance@désobéissance",
-      "delinquance@délinquance",
+      "désobéissance",
+      "délinquance",
       "droit",
       "autorité",
       "public",
       "crime",
       "police",
-      "ecrire@écrire"
+      "écrire",
+      "écriture"
     ]
   },
   {
@@ -4522,7 +4523,7 @@
       "meurtre",
       "soi",
       "destruction",
-      "emotions@émotions",
+      "émotions",
       "soi!contrôle de soi",
       "corps",
       "terreur",
@@ -4571,8 +4572,8 @@
       "technique",
       "destruction",
       "bombe atomique",
-      "energie@énergie",
-      "electricite@électricité",
+      "énergie",
+      "électricité",
       "technique!et sciences",
       "vie (et mort)",
       "technique!maîtrise technique de la nature"
@@ -4614,7 +4615,7 @@
       "vie (et mort)",
       "naturel (et artificiel)",
       "eugénisme",
-      "biogenetique@biogénétique",
+      "biogénétique",
       "transhumanisme",
       "technique!maîtrise technique de la nature",
       "technique!et sciences",
@@ -4664,7 +4665,7 @@
       "violence!psychologie de la violence",
       "société!organisation sociale",
       "paix!pacifisme",
-      "ideologie@idéologie"
+      "idéologie"
     ]
   },
   {
@@ -4700,14 +4701,14 @@
     ],
     "texte": "Imaginons, au prix d'une\ncertaine exagération, une société où les hommes ne se rencontrent\njamais face à face, où les affaires sont traitées par des individus\nisolés communiquant entre eux par lettres ou par télégrammes, se\ndéplaçant en voiture fermée et se reproduisant par insémination\nartificielle : pareille société serait totalement abstraite et\ndépersonnalisée. Or la société moderne lui ressemble déjà sur bien\ndes points. Dans une ville, les piétons se croisent mais s'ignorent,\nles membres d'un syndicat portent une carte et paient une cotisation\nmais peuvent ne jamais se connaître. Beaucoup d'individus ont peu ou\npas de contacts humains et vivent dans l'anonymat et l'isolement. Ils\ny sont malheureux, car, si la société tend à devenir abstraite, le\ntissu biologique de l'homme n'a guère changé, et il a des besoins\nsociaux que celle-ci est incapable de satisfaire.\n\nCertes, il n'y aura jamais de société complètement abstraite, pas\nplus, d'ailleurs, qu'on n'en connaîtra entièrement ou\nd'essentiellement rationnelle. Les hommes continuent à former des\ngroupes concrets et à maintenir entre eux divers rapports sociaux.\nMais, à l'exception de ce qui se passe dans certaines cellules\nfamiliales, la plupart de ces groupes ne s'ouvrent sur aucune vie\ncommune et beaucoup ne jouent aucun rôle sur le plan social.\n\nIl faut cependant être juste. L'évolution de la société présente aussi\ndes aspects positifs. Les rapports personnels, n'étant plus\ndéterminés par le hasard de la naissance, peuvent s'épanouir\nlibrement en une nouvelle forme d'individualisme. De même, les liens\nspirituels peuvent jouer un rôle d'autant plus important que les\nliens physiques ou biologiques sont affaiblis.",
     "themes_index": [
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "technique",
       "technique!et sciences",
       "eugénisme",
       "naturel (et artificiel)",
-      "derpersonnalisation@dépersonnalisation",
+      "dépersonnalisation",
       "société!organisation sociale",
-      "biogenetique@biogénétique",
+      "biogénétique",
       "biologie",
       "société!société abstraite",
       "famille",
@@ -4792,7 +4793,7 @@
     "themes_index": [
       "sciences",
       "technologie",
-      "electricite@électricité",
+      "électricité",
       "dystopie",
       "nature!lois de la nature",
       "société",
@@ -4836,7 +4837,7 @@
     "themes_index": [
       "ouvriers!condition ouvrière",
       "aliénation",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "naturel (et artificiel)",
       "artificiel|see{naturel (et artificiel)}",
       "usine",
@@ -4881,7 +4882,7 @@
     "themes_index": [
       "ouvriers!condition ouvrière",
       "aliénation",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "naturel (et artificiel)",
       "usine",
       "corps",
@@ -4970,7 +4971,7 @@
       "nouveauté",
       "progrès",
       "passion",
-      "ideal@idéal",
+      "idéal",
       "art!religion",
       "morale",
       "ancien",
@@ -5015,7 +5016,7 @@
       "armes",
       "guerre",
       "combat",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "guerre!civils",
       "enfant",
       "marche (militaire)",
@@ -5072,7 +5073,7 @@
       "gueules cassées",
       "corps",
       "chanson",
-      "memoire@mémoire"
+      "mémoire"
     ]
   },
   {
@@ -5113,7 +5114,7 @@
       "liberté",
       "vie (et mort)!sens de la vie",
       "quotidien",
-      "deshumanisation@déshumanisation",
+      "déshumanisation",
       "histoire",
       "bonheur"
     ]
@@ -5151,15 +5152,16 @@
     ],
     "texte": "Chaque époque, on l'aura compris, doit écrire ses propres livres ; mieux, chaque génération doit écrire pour celle qui la suivra. Les livres d'une période plus ancienne n'entrent pas dans ce cadre.\n \nCependant, c'est ici que se produit une grave erreur. Le caractère sacré qui s'attache à l'acte de création, à l'acte de pensée, est transféré sur le produit de ces actes. Le barde[^1] était considéré comme un homme divin : donc, son chant est également divin. L'écrivain était vu comme un esprit juste et sage : donc, il s'ensuit que son livre est parfait ; tout comme l'amour que l'on ressent pour le héros est ensuite corrompu en vénération idolâtre de la statue. Immédiatement, le livre devient nocif et le guide se fait tyran. L'esprit léthargique[^2] et perverti de la multitude, si lent à s'ouvrir aux incursions[^3] de la Raison, une fois qu'il est ainsi ouvert, une fois qu'il a reçu le livre, se repose dessus et se répand en protestations si ce livre est critiqué. On bâtit des universités sur ce livre. Des penseurs, mais non l'« Homme Pensant » écrivent d'autres livres sur celui-là ; ces livres sont certes écrits par des hommes de talent, mais ces hommes partent sur de mauvaises bases, ils réfléchissent à partir de dogmes acceptés et non à partir de leurs propres conceptions des grands principes. C'est ainsi que grandissent dans les bibliothèques des jeunes gens humbles et mous, qui croient qu'il est de leur devoir d'accepter les vues que Cicéron[^4], Locke[^5] ou Bacon[^6] ont exposées ; ils oublient que Cicéron, Locke et Bacon n'étaient que des jeunes gens eux-mêmes enfermés dans des bibliothèques, quand ils ont écrit leurs livres.\n\nEt alors, au lieu de l'« Homme Pensant », nous aurons droit au rat de bibliothèque.\n\n\n[^1]: Barde : poète celtique qui célébrait en chantant les exploits des héros.\n[^2]: Léthargique : ensommeillé, engourdi.\n[^3]: Incursion : surgissement momentané.\n[^4]: Cicéron : philosophe du 1er siècle avant J.-C.\n[^5]: Locke : philosophe anglais (1632-1704).\n[^6]: Bacon : philosophe anglais (1561-1626).",
     "themes_index": [
-      "creation@création",
+      "création",
       "lecture",
-      "genie@génie",
-      "ecrivain@écrivain",
+      "génie",
+      "écrivain",
+      "écriture",
       "nouveauté",
       "tradition",
       "critique (littéraire)",
       "influence",
-      "generation@génération",
+      "génération",
       "penseur"
     ]
   },
@@ -5174,7 +5176,7 @@
     "titre": "Vue avec grain de sable",
     "genre": "poesie",
     "datepub": "1996",
-    "reference_complementaire": "\n traduit du polonais par Piotr <span style=\"font-variant: small-caps;\">Kaminski</span>",
+    "reference_complementaire": "traduit du polonais par Piotr <span style=\"font-variant: small-caps;\">Kaminski</span>",
     "lieu": "Métropole",
     "annee": "2025",
     "jour": 2,
@@ -5273,15 +5275,15 @@
       "paix",
       "armée",
       "conquête",
-      "Etat@État",
-      "defense@défense!legitime defense@légitime défense",
+      "État",
+      "défense!légitime défense",
       "morale",
       "immoralité",
       "droit!droit international",
-      "Etat@État!relations inter-étatiques",
+      "État!relations inter-étatiques",
       "paix!pacifisme",
-      "desarmement@désarmement",
-      "mefiance@méfiance",
+      "désarmement",
+      "méfiance",
       "confiance",
       "crainte"
     ]
@@ -5321,14 +5323,14 @@
     "themes_index": [
       "intelligence artificielle",
       "usine",
-      "economie@économie",
+      "économie",
       "peinture",
       "technique",
       "soi",
       "art",
       "savoir",
       "données (data)",
-      "emotion@émotion",
+      "émotions",
       "technologie",
       "humanité",
       "compréhension"
@@ -5435,16 +5437,16 @@
     ],
     "texte": "Pour écrire un seul vers, il faut avoir vu beaucoup de villes, d’hommes et de choses, il faut connaître les animaux, il faut sentir comment volent les oiseaux et savoir quel mouvement font les petites fleurs en s’ouvrant le matin. Il faut pouvoir repenser à des chemins dans des régions inconnues, à des rencontres inattendues, à des départs que l’on voyait longtemps approcher, à des jours d’enfance dont le mystère ne s’est pas encore éclairci, à ses parents qu’il fallait qu’on froissât lorsqu’ils vous apportaient une joie et qu’on ne la comprenait pas (c’était une joie faite pour un autre), à des maladies d’enfance qui commençaient si singulièrement, par tant de profondes et graves transformations, à des jours passés dans des chambres calmes et contenues, à des matins au bord de la mer, à la mer elle-même, à des mers, à des nuits de voyage qui frémissaient très haut et volaient avec toutes les étoiles, – et il ne suffit même pas de savoir penser à tout cela. Il faut avoir des souvenirs de beaucoup de nuits d’amour, dont aucune ne ressemblait à l’autre, de cris de femmes en couche, et d’accouchées endormies, pâles et faibles. Il faut encore avoir été auprès de mourants, être resté assis auprès de morts, dans la chambre, avec la fenêtre ouverte et les bruits qui venaient par à-coups. Et il ne suffit même pas d’avoir des souvenirs. Il faut savoir les oublier quand ils sont nombreux, et il faut avoir la grande patience d’attendre qu’ils reviennent. Car les souvenirs ne sont pas encore cela. Ce n’est que lorsqu’ils deviennent en nous sang, regard, geste, lorsqu’ils n’ont plus de nom et ne se distinguent plus de nous, ce n’est qu’alors qu’il peut arriver qu’en une heure très rare, du milieu d’eux, se lève le premier mot d’un vers.",
     "themes_index": [
-      "ecriture@écriture",
+      "écriture",
       "sensation",
-      "experience@expérience",
+      "expérience",
       "nature!environnement",
       "enfance",
       "animaux",
       "maladie",
       "mer",
       "souvenir",
-      "creation@création",
+      "création",
       "transformation",
       "attente",
       "patience",
@@ -5484,10 +5486,10 @@
     ],
     "texte": "<i>George Sand, écrivaine du dix-neuvième siècle, se retire pour écrire un roman.</i>\n\n\n \n […] Je vécus à Paris tout à fait cachée pendant quelque temps. J’avais un roman à faire, et comme je mourais de chaud dans ma mansarde[^1] du quai Malaquais, je trouvai moyen de m’installer dans un atelier de travail assez singulier. L’appartement du rez-de-chaussée était en réparation, et les réparations se trouvaient suspendues, je ne sais plus pour quel motif. Les vastes pièces de ce beau local étaient encombrées de pierres et de bois de travail ; les portes donnant sur le jardin avaient été enlevées, et le jardin lui-même fermé, désert et abandonné, attendait une métamorphose. J’eus donc là une solitude complète, de l’ombrage, de l’air et de la fraîcheur. Je fis de l’établi d’un menuisier un bureau bien suffisant pour mon petit attirail, et j’y passai les journées les plus tranquilles que j’aie peut-être jamais pu saisir, car personne au monde ne me savait là, que le portier, qui m’avait confié la clef, et ma femme de chambre, qui m’y apportait mes lettres et mon déjeuner. Je ne sortais de ma tanière que pour aller voir mes enfants à leurs pensions respectives. J’avais remis Solange chez les demoiselles Martin[^2].\n \nJe pense que tout le monde est, comme moi, friand de ces rares et courts instants où les choses extérieures daignent s’arranger de manière à nous laisser un calme absolu relativement à elles. Le moindre coin nous devient alors une prison volontaire, et, quel qu’il soit, il se pare à nos yeux de ce je ne sais quoi de délicieux qui est comme le sentiment de la conquête et de la possession du temps, du silence et de nous-mêmes. Tout m’appartenait dans ces murs vides et dévastés, qui bientôt allaient se couvrir de dorures et de soie, mais dont jamais personne ne devait jouir à ma manière. Du moins je me disais que les futurs occupants n’y retrouveraient peut-être jamais une heure du loisir assuré et de la rêverie complète que j’y goûtais chaque jour, du matin à la nuit. Tout était mien en ce lieu, les tas de planches qui me servaient de sièges et de lits de repos, les araignées diligentes qui établissaient leurs grandes toiles avec tant de science et de prévision d’une corniche à l’autre ; les souris mystérieusement occupées à je ne sais quelles recherches actives et minutieuses dans les copeaux ; les merles du jardin qui, venus insolemment sur le seuil, me regardaient, immobiles et méfiants tout à coup, et terminaient leur chant insoucieux et moqueur sur une modulation bizarre, écourtée par la crainte. J’y descendais quelquefois le soir, non plus pour écrire, mais pour respirer et songer sur les marches du perron. Le chardon et le bouillon[^3] blanc avaient poussé dans les pierres disjointes ; les moineaux, réveillés par ma présence, frôlaient le feuillage des buissons dans un silence agité, et les bruits des voitures, les cris du dehors arrivant jusqu’à moi, me faisaient sentir davantage le prix de ma liberté et la douceur de mon repos.\n\nQuand mon roman fut fini, je rouvris ma porte à mon petit groupe d’amis.\n\n\n[^1]: <b>Mansarde :</b> petite chambre aménagée sous les combles.\n[^2]: <b>Solange,</b> fille de George Sand, est alors placée en pension chez les demoiselles Martin.\n[^3]: Bouillon : plante sauvage.",
     "themes_index": [
-      "ecriture@écriture",
+      "écriture",
       "solitude",
-      "tranquillite@tranquillité",
-      "creation@création!conditions de la création",
+      "tranquillité",
+      "création!conditions de la création",
       "loisirs",
       "nature!environnement",
       "silence",
@@ -5534,13 +5536,13 @@
       "technique!maîtrise technique de la nature",
       "naturel (et artificiel)",
       "culture!comme maîtrise de la nature",
-      "ecologie@écologie",
+      "écologie",
       "domination",
       "gigantisme",
       "industrie",
-      "revolution industrielle@révolution industrielle",
-      "deshumanisation@déshumanisation",
-      "creature et createur@créature et créateur",
+      "révolution industrielle",
+      "déshumanisation",
+      "créature et créateur",
       "pouvoir",
       "autonomie",
       "travail",
