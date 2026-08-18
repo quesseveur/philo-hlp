@@ -1,0 +1,378 @@
+%%%Début de la configuration de xkeyval%%%
+\makeatletter
+%%%%%%%%%%%%%%%%%%%Pour les sujets%%%%%%%%%%%%%%%%
+
+%% 1. Définition des clés pour les sujets 
+\define@cmdkey	[SUJ]	{sujet}	{semestre}		{}
+\define@cmdkey	[SUJ]	{sujet}	{lieu}			{}
+\define@cmdkey	[SUJ]	{sujet}	{annee}			{}
+\define@cmdkey	[SUJ]	{sujet}	{type}			{}
+\define@cmdkey	[SUJ]	{sujet}	{jour}			{}
+\define@cmdkey	[SUJ]	{sujet}	{prenomauteur}	{}
+\define@cmdkey	[SUJ]	{sujet}	{initialeprenom}{}
+\define@cmdkey	[SUJ]	{sujet}	{particule}		{}
+\define@cmdkey	[SUJ]	{sujet}	{nomauteur}		{}
+\define@cmdkey	[SUJ]	{sujet}	{titre}			{}
+\define@cmdkey	[SUJ]	{sujet}	{datepub}		{}
+\define@cmdkey	[SUJ]	{sujet}	{ajoutref}		{}
+\define@cmdkey	[SUJ]	{sujet}	{genre}			{}
+\define@cmdkey	[SUJ]	{sujet}	{corrige}		{}
+\define@cmdkey	[SUJ]	{sujet}	{liencorrige}	{}
+%\define@cmdkey	[SUJ]	{sujet}	{texte}			{}
+\define@cmdkey	[SUJ]	{sujet}	{typequn}		{}
+\define@cmdkey	[SUJ]	{sujet}	{typeqdeux}		{}
+\define@cmdkey	[SUJ]	{sujet}	{qun}			{}
+\define@cmdkey	[SUJ]	{sujet}	{qdeux}			{}
+\define@cmdkey	[SUJ]	{sujet}	{themeprogrammequn}	{}
+\define@cmdkey	[SUJ]	{sujet}	{themeprogrammeqdeux}	{}
+
+%% 2. Définition des commandes pour accéder aux valeurs des clés
+\newcommand{\semestre}{\cmdSUJ@sujet@semestre}
+\newcommand{\lieu}{\cmdSUJ@sujet@lieu}
+\newcommand{\annee}{\cmdSUJ@sujet@annee}
+\newcommand{\type}{\cmdSUJ@sujet@type}
+\newcommand{\jour}{\cmdSUJ@sujet@jour}
+\newcommand{\prenomauteur}{\cmdSUJ@sujet@prenomauteur}
+\newcommand{\initialeprenom}{\cmdSUJ@sujet@initialeprenom}
+\newcommand{\particule}{\cmdSUJ@sujet@particule}
+\newcommand{\nomauteur}{\cmdSUJ@sujet@nomauteur}
+\newcommand{\titre}{\cmdSUJ@sujet@titre}
+\newcommand{\datepub}{\cmdSUJ@sujet@datepub}
+\newcommand{\ajoutref}{\cmdSUJ@sujet@ajoutref}
+\newcommand{\genre}{\cmdSUJ@sujet@genre}
+\newcommand{\corrige}{\cmdSUJ@sujet@corrige}
+\newcommand{\liencorrige}{\cmdSUJ@sujet@liencorrige}
+%\newcommand{\texte}{\cmdSUJ@sujet@texte}
+\newcommand{\typequn}{\cmdSUJ@sujet@typequn}
+\newcommand{\typeqdeux}{\cmdSUJ@sujet@typeqdeux}
+\newcommand{\qun}{\cmdSUJ@sujet@qun}
+\newcommand{\qdeux}{\cmdSUJ@sujet@qdeux}
+\newcommand{\themeprogrammequn}{\cmdSUJ@sujet@themeprogrammequn}
+\newcommand{\themeprogrammeqdeux}{\cmdSUJ@sujet@themeprogrammeqdeux}
+
+%% 3. Valeurs par défaut des clés 
+\presetkeys[SUJ]{sujet}{%
+				nomauteur = Anonyme,
+				prenomauteur =,
+				initialeprenom =,
+				particule =,
+				titre = {LeTitre},
+				semestre = HQRS,
+				lieu = Métropole,
+				annee = 2020,
+				type =,
+				jour = 0,
+				datepub = 4545,
+				ajoutref =,
+				genre = \genrenondefini{},
+				corrige =,
+				liencorrige=,
+				typequn = \litt,
+				typeqdeux = \phil,
+				qun =,
+				qdeux =,
+				themeprogrammequn=,
+				themeprogrammeqdeux=,}{}
+%				texte = {Lorem ipsum dolor sit amet},}
+%%%Fin de la configuration de xkeyval
+
+% 4. Macros utilitaires pour le formatage et l'affichage
+% 4.1 Formatage du nom de l'auteur selon les cas
+\newcommand{\formatauteur}{%
+	\ifthenelse{\equal{\particule}{}}%
+	{\initialeprenom.~\textsc{\nomauteur}}%
+	{\IfEndWith{\particule}{'}%
+	{\initialeprenom.~\textsc{\particule\nomauteur}}%
+	{\initialeprenom.~\textsc{\particule{}~\nomauteur}}%
+	}%
+	}
+
+% 4.2 Formatage de l'en-tête
+\newcommand{\formatsessionentete}{%
+    \ifthenelse{\equal{\type}{}}%
+    {\lieu{}~\annee{} (Jour~\jour{})~:~}% Sans type spécifié
+    {\lieu{}~\annee{} (\type, Jour~\jour{})~:~}% Avec type spécifié
+}
+
+%% 5. Macros pour l'indexation et les tables des matières
+% 5.0 Commandes variables (visant à être écrasées à chaque fois que la fonction sera exécutée sur chaque texte)
+% 5.0.1. Variables pour le format de l'auteur
+\providecommand{\tocauteurformat}{}
+\providecommand{\indexauteurformat}{}
+
+% 5.0.2. Variables pour le format des informations temporelles
+\providecommand{\tocanneformat}{}
+\providecommand{\indexanneformat}{}
+
+% 5.0.3. Variable pour la clé de tri de l'index
+\providecommand{\indexcletri}{}
+
+% 5.1 Gestion de l'index des questions et des compteurs
+% 5.1.1 Indexation de l'auteur
+\newcommand{\indexerauteur}{%
+    \ifthenelse{\equal{\prenomauteur}{}}%
+    {\index[a]{\nomauteur{}@\textsc{\nomauteur}}}% Indexer sans prénom
+	    {\ifthenelse{\equal{\particule}{}}%Test de particule
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\nomauteur}~\prenomauteur{}}}%Sans particule
+	    	{\IfEndWith{\particule}{'}%Test de la fin de particule
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\particule\nomauteur{}},~\prenomauteur}}
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\particule{}~\nomauteur{}},~\prenomauteur}}
+	    	}
+	    }
+	}%Fin de la commande
+
+
+% 5.1.2 Index et mise en page des questions
+\newcommand{\indexerquestions}{%
+	\begin{envquestion}
+	\noindent\question{Question d'interprétation \typequn~:}\par\nopagebreak
+	\noindent\qun\index[q]{Question d'interprétation \typequn!\qun}
+	\spcsujet
+	\noindent\question{Essai \typeqdeux~:}\par\nopagebreak
+	\noindent\qdeux\index[q]{Essai \typeqdeux!\qdeux}
+	\index[p]{{\csname\themeprogrammequn\endcsname}!\qun}
+	\index[p]{{\csname\themeprogrammeqdeux\endcsname}!\qdeux}
+	\index[v]{Question d'interprétation \typequn!\csname\themeprogrammequn\endcsname!\qun}
+	\index[v]{Essai \typeqdeux!\csname\themeprogrammeqdeux\endcsname!\qdeux}
+	\index[w]{\csname\themeprogrammequn\endcsname!Question d'interprétation \typequn!\qun}
+	\index[w]{\csname\themeprogrammeqdeux\endcsname!Essai \typeqdeux!\qdeux}
+	\end{envquestion}
+	}
+	
+%5.1.3 Gestion des compteurs
+\newcommand{\compteurquestions}{
+	\stepcounter{sujetint\themeprogrammequn}%
+	\stepcounter{sujetref\themeprogrammeqdeux}%
+	\stepcounter{sujet\themeprogrammequn}%
+	\stepcounter{sujet\themeprogrammeqdeux}%
+	\ifthenelse{\equal{\typequn}{\litt}}%
+	%%%Si l'interprétation est littéraire, on augmente l'interprétation litt. liés et la réf. philosophique ; ainsi que les compteurs liés.
+	{\stepcounter{sujetintlitteraire\themeprogrammequn}
+	\stepcounter{nosujetintlitteraire}
+	\stepcounter{sujetrefphilosophique\themeprogrammeqdeux}
+	\stepcounter{nosujetrefphilosophique}%
+	}
+	{%%%Sinon, on augmente l'interprétation phil. et la réf. litt. ; ainsi que les compteurs liés.
+	\stepcounter{sujetintphilosophique\themeprogrammequn}
+	\stepcounter{nosujetintphilosophique}
+	\stepcounter{sujetreflitteraire\themeprogrammeqdeux}
+	\stepcounter{nosujetreflitteraire}
+	}
+}
+
+%5.2 Index de l'auteur pour la table des matières
+\newcommand{\indexerettoc}{%
+  % Étape 1 : Format de l'auteur pour la table des matières
+  \def\tocauteurformat{}%
+  \ifthenelse{\equal{\prenomauteur}{}}%
+    {% Sans prénom
+      \def\tocauteurformat{\textsc{\nomauteur}}%
+    }%
+    {% Avec prénom
+    \ifthenelse{\equal{\particule}{}}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\nomauteur}}}
+    	{\IfEndWith{\particule}{'}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\particule\nomauteur}}}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\particule{}~\nomauteur}}}
+    	}
+    	}
+  
+  % Étape 2 : Format de l'auteur pour l'index
+  \def\indexauteurformat{}%
+  \ifthenelse{\equal{\prenomauteur}{}}%
+    {% Sans prénom
+    \def\indexauteurformat{\nomauteur}%
+    }%
+    {% Avec prénom
+    \ifthenelse{\equal{\particule}{}}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\nomauteur}}
+    {\IfEndWith{\particule}{'}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\particule\nomauteur}}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\particule{}~\nomauteur}}
+    }
+    }%
+  
+  % Étape 3 : Ajout DIRECT à la table des matières (évite les variables intermédiaires)
+  \phantomsection
+  \ifthenelse{\equal{\type}{}}%
+    {% Épreuve obligatoire
+      \addcontentsline{toc}{section}{\tocauteurformat, \textit{\titre} (\lieu~\annee, Jour~\jour)}%
+    }%
+    {% Épreuve avec type spécifié
+      \addcontentsline{toc}{section}{\tocauteurformat, \textit{\titre} (\lieu~\annee~(\type), Jour~\jour)}%
+    }%
+%  
+%  % Étape 4 : Index
+%  \ifthenelse{\equal{\type}{}}%
+%      {\index[n]{\annee~\lieu~(Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}%
+%      {\index[n]{\annee~\lieu~(\type, Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (\type, Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}%
+%}
+%  
+%  % Étape 6 : Utilisation des variables précédentes dans la table des matièrs et l'index
+%  \phantomsection\addcontentsline{toc}{section}{\tocauteurformat, \textit{\titre} \tocanneformat}
+\ifthenelse{\equal{\type}{}}%
+      {\index[n]{\annee~\lieu~(Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}% Épreuve obligatoire
+      {\index[n]{\annee~\lieu~(\type, Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (\type, Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}% Épreuve avec type spécifié
+      }
+
+\newcommand{\sujetn}[2]{
+\stepcounter{nosujet}
+%%%%%Pour la mise en page%%%%
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead{}
+\fancyfoot{} %clear all footer fields
+\fancyfoot[RO]{\textbf{\thepage ~sur~\pageref*{TotPages}}\hspace*{1.5cm}}
+\fancyfoot[LE]{\hspace*{1.5cm}\textbf{\thepage ~sur~\pageref*{TotPages}}}
+  \fancyfoot[LO,RE]{\scriptsize{Humanités, Littérature, Philosophie -- Banque des sujets indexés -- Terminale}}
+    \setkeys[SUJ]{sujet}{#1}
+     % En-tête avec le formatage du titre
+	\fancyhead[C]{\formatsessionentete{}\formatauteur{}, \textit{\titre}}
+	\indexerettoc{}
+\renewcommand{\arraystretch}{1.5}
+\vspace{-0.5cm}
+\begin{center}
+\begin{huge}
+\textit{Sujet d'Humanités, Littérature, Philosophie}
+\end{huge}\\
+{\Large{Épreuve de Terminale}}\par
+\smallskip
+\hspace*{0.7cm}\noindent\fbox{%%Mise en page normal dans un petit encart au début de la page
+\makebox[\linewidth-3.25cm][c]{
+\begin{minipage}{\linewidth-3.25cm}
+		\begin{small}
+		\noindent\small \textbf{Axe du programme~:}~\semestre \hfill{
+		\noindent\textbf{Genre du texte~:}~\genre}\par 
+		\noindent\textbf{Auteur~:}
+		\ifthenelse{\equal{\prenomauteur}{}}%%%Si l'auteur n'a pas de prénom
+		{\textsc{\nomauteur}}%
+		%%%Si l'auteur a un prénom
+		{\ifthenelse{\equal{\particule}{}}
+		{\initialeprenom{}.~\textsc{\nomauteur}}
+		{\IfEndWith{\particule}{'}
+		{\initialeprenom{}.~\textsc{\particule\nomauteur}}
+		{\initialeprenom{}.~\textsc{\particule}~\textsc{\nomauteur}}
+		}
+		}%%%Fin du cas où l'auteur a un prénom
+		\hfill \textbf{Ouvrage~:} \textit{\titre}\par
+		\textbf{Centre d'examen :} \lieu \hfill \textbf{Année :} \annee\par
+		\textbf{Session~:~}%
+		\ifthenelse{\equal{\type}{}}{Obligatoire, Jour~\jour}{\type, Jour~\jour}%, Sujet \no{}\arabic{nosujet}%Pour vérifier que le nombre de sujets est bien conforme
+		\ifthenelse{\equal{\corrige}{}}{\hfill{}\textbf{Éléments de correction disponibles~:} Non}{\hfill{}\textbf{Éléments de correction disponibles~:} {\hyperlink{corr\liencorrige}{Oui}\hypertarget{\liencorrige}{}}}\end{small}
+\end{minipage}
+	\indexerauteur{}%
+	}
+	}%%%Fin de la fbox
+	\newline \smallskip \newline \noindent\textbf{Le candidat traite les deux parties sur des copies séparées.}
+	\end{center}\vspace{-0.3cm}
+	\begin{envtexte}
+	#2\par
+	\vspace{-0.4cm}\begin{flushright}\nopagebreak
+	\ifthenelse{\equal{\prenomauteur}{}}
+	{\textsc{\nomauteur}}%L'auteur n'a pas de prénom
+	{\prenomauteur~\ifthenelse{\equal{\particule}{}}
+	{\textsc{\nomauteur}}%L'auteur a un nom sans particule
+	{\IfEndWith{\particule}{'}
+	{\textsc{\particule\nomauteur}}%La particule s'achève par '
+	{\textsc{\particule{}~\nomauteur}}%Particule ordinaire
+	}%Fin du cas à particule
+	}, \textit{\titre} (\datepub)%
+	\ifthenelse{\equal{\ajoutref}{}}{.}{, \ajoutref{}.}
+	\end{flushright}
+	\end{envtexte}
+ \indexerquestions{}%
+ \compteurquestions{}%
+	\clearpage
+    }
+    %%%%%%%%%%%%%%%%%%%Pour les corrigés%%%%%%%%%%%%%%%%
+    \define@cmdkey	[COR]	{corr}	{lieu}			{}
+	\define@cmdkey	[COR]	{corr}	{jour}			{}
+	\define@cmdkey	[COR]	{corr}	{nosujet}		{}
+	\define@cmdkey	[COR]	{corr}	{prenomauteur}	{}
+	\define@cmdkey	[COR]	{corr}	{nomauteur}		{}
+	\define@cmdkey	[COR]	{corr}	{titre}			{}
+	\define@cmdkey	[COR]	{corr}	{type}			{}
+	\define@cmdkey	[COR]	{corr}	{liencorr}		{}
+	\define@cmdkey	[COR]	{corr}	{annee}			{}
+	\define@cmdkey	[COR]	{corr}	{typecorrun}	{}
+	\define@cmdkey	[COR]	{corr}	{typecorrdeux}	{}
+	\define@cmdkey	[COR]	{corr}	{questcorrun}	{}
+	\define@cmdkey	[COR]	{corr}	{questcorrdeux}	{}
+	\define@cmdkey	[COR]	{corr}	{corrsautdepage}{}
+
+\newcommand{\corrlieu}{\cmdCOR@corr@lieu}
+\newcommand{\corrjour}{\cmdCOR@corr@jour}
+\newcommand{\corrnosujet}{\cmdCOR@corr@nosujet}
+\newcommand{\corrprenomauteur}{\cmdCOR@corr@prenomauteur}
+\newcommand{\corrnomauteur}{\cmdCOR@corr@nomauteur}
+\newcommand{\corrtitre}{\cmdCOR@corr@titre}
+\newcommand{\corrtype}{\cmdCOR@corr@type}
+\newcommand{\corrlien}{\cmdCOR@corr@liencorr}
+\newcommand{\corrannee}{\cmdCOR@corr@annee}
+\newcommand{\corrtypeun}{\cmdCOR@corr@typecorrun}
+\newcommand{\corrtypedeux}{\cmdCOR@corr@typecorrdeux}
+\newcommand{\corrquestun}{\cmdCOR@corr@questcorrun}
+\newcommand{\corrquestdeux}{\cmdCOR@corr@questcorrdeux}
+\newcommand{\corrsautdepage}{\cmdCOR@corr@corrsautdepage}
+
+\presetkeys[COR]{corr}{%
+				lieu=Métropole,
+				jour={0},
+				nosujet=,
+				prenomauteur=,
+				nomauteur=Anonyme,
+				titre={Le Titre},
+				type=,
+				liencorr=,
+				annee=1900,
+				typecorrun=,
+				typecorrdeux=,
+				questcorrun=,
+				questcorrdeux=,
+				corrsautdepage=,}{}
+				
+\newcommand{\sujetcorrigen}[3]{
+    \setkeys[COR]{corr}{#1}
+	\ifthenelse{\equal{\corrnosujet}{}}{%
+	\ifthenelse{\equal{\corrtype}{}}{
+	\fancyhead[C]{\footnotesize Éléments de correction du jour~\corrjour{}, \corrlieu~(\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu{}~(\corrannee),~Jour~\corrjour}
+	}
+	{\fancyhead[C]{\footnotesize Éléments de correction du jour~\corrjour{}, \corrlieu~(\corrtype~\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu{}~(\corrtype~\corrannee),~Jour~\corrjour}}
+	}
+	{%
+	\ifthenelse{\equal{\corrtype}{}}
+	{\fancyhead[C]{\footnotesize Éléments de correction du sujet~\corrnosujet~du~jour~\corrjour{}, \corrlieu~(\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu~(\corrannee),~Jour~\corrjour,~Sujet~\corrnosujet}}
+	{\fancyhead[C]{\footnotesize Éléments de correction du sujet~\corrnosujet~du~jour~\corrjour{}, \corrlieu~(\corrtype~\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}	\subsection{\corrlieu~(\corrtype~\corrannee),~Jour~\corrjour,~Sujet~\corrnosujet}}
+	}%%%Fin de la mise en page des en-tête et niveaux de titre
+\begin{center}
+\fbox{
+\makebox[\linewidth-3.25cm][c]{
+\begin{minipage}{\linewidth-3.25cm}
+	\begin{center}
+	\noindent {\Large
+	\textit{Éléments de correction}}\par
+	\ifthenelse{\equal{\corrprenomauteur}{}}
+	{%
+	\hyperlink{\corrlien}{\textit{Voir le sujet} : \textsc{\corrnomauteur}, \textit{\corrtitre}}\hypertarget{corr\corrlien}{}%
+	}
+	{%
+	{\hyperlink{\corrlien}{\textit{Voir le sujet} : \corrprenomauteur~\textsc{\corrnomauteur}, \textit{\corrtitre}}\hypertarget{corr\corrlien}{}%
+	}}
+	\end{center}
+	\end{minipage}
+	}}
+\end{center}
+\corrint{\corrtypeun}{\corrquestun}\index[c]{Question~d'interprétation~\corrtypeun!\corrquestun{}@{\scriptsize \textbf{\corrlieu,\ \corrannee}~--\  \textsc{\corrnomauteur}, \textit{\corrtitre}}\nopagebreak\\[3pt]\nopagebreak\hspace*{12pt}\corrquestun}
+
+#2
+
+\ifthenelse{\equal{\corrsautdepage}{}}{}{\vfill{~}\clearpage}
+
+\corrref{\corrtypedeux}{\corrquestdeux}\index[c]{Essai~\corrtypedeux!\corrquestdeux{}@{\scriptsize \textbf{\corrlieu,~\corrannee~:}}\nopagebreak\\[3pt]\nopagebreak\hspace*{12pt}\corrquestdeux}
+
+#3
+}
+ 
+\makeatother

@@ -1,0 +1,41 @@
+;; corrige.xdy
+;; --- RÈGLES DE TRI PERSONNALISÉES ---
+
+;; 1. Ignorer la ponctuation parasite
+;; L'ajout de :string empêche xindy de planter sur les caractères spéciaux
+(merge-rule "« " "" :string)
+(merge-rule "» " "" :string)
+(merge-rule "«~~" "" :string)
+(merge-rule "»~~" "" :string)
+(merge-rule "[" "" :string)
+(merge-rule "]" "" :string)
+
+;; 2. Aplatir les lettres majuscules accentuées
+(merge-rule "À" "A" :string)
+(merge-rule "Â" "A" :string)
+(merge-rule "É" "E" :string)
+(merge-rule "È" "E" :string)
+(merge-rule "Ê" "E" :string)
+(merge-rule "Ë" "E" :string)
+(merge-rule "Î" "I" :string)
+(merge-rule "Ï" "I" :string)
+(merge-rule "Ô" "O" :string)
+(merge-rule "Û" "U" :string)
+(merge-rule "Ç" "C" :string)
+
+;; ------------------------------------
+
+;; ------------------------------------
+
+;; Niveau 0
+(markup-indexentry :open "~n\vspace{12pt plus 6pt minus 6pt}~n\hfill\item \questiontitle " :depth 0)
+
+;; Niveau 1 (L'espace insécable a été remplacée par une espace normale)
+(markup-indexentry :open "~n\vfill\vspace{6pt plus 3pt}~n \subitem \hspace*{-8pt}\normalfont\footnotesize " :depth 1)
+
+;; Points de suite
+(markup-locclass-list :open "\hspace{6pt}\dotfill\hspace{6pt}" :sep ", ")
+
+;; 3. LA BONNE MÉTHODE pour cacher les lettres (On masque visuellement, mais on garde l'alphabet pour le tri)
+(markup-locclass-list :open "\unskip\nobreak\dotfill\nobreak " :sep ", ")
+(define-letter-groups (""))

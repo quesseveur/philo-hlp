@@ -1,0 +1,1028 @@
+%%%%%%%%%%%%%%%%%%%Pour les index%%%%%%%%%%%%%%%%
+%%%%%%%%Gestion des index pour le document%%%%%%%
+%%%%%%%%%%%%avec éléments d'évaluation%%%%%%%%%%%
+\makeindex[name=q, title=Index des questions selon leur type\label{indexq}, options={-M styles/questions.xdy -L french -C utf8}]
+\makeindex[name=a, title=Index des auteurs\label{indexa},%
+options={-M styles/perso.xdy -L french -C utf8}]
+\makeindex[name=p, title=Index des questions selon les axes du programme\label{indexp},%
+options={-M styles/questions.xdy -L french -C utf8}]
+\makeindex[name=g, title=Index des textes selon leur genre\label{indexg},%
+options={-M styles/genre.xdy -L french -C utf8}]
+\makeindex[name=n, title=Index des sujets par lieux et années\label{indexn},%
+options={-M styles/numeros.xdy -L french -C utf8}]
+\makeindex[name=t, title=Index thématique\label{indext}, options={-M styles/themes.xdy}]
+\makeindex[name=w, title=Index des questions selon les axes du programme puis selon leur type\label{indexw}, options={-M styles/themesquestion.xdy}]
+\makeindex[name=v, title=Index des questions selon les types de question puis selon les axes du programme\label{indexv}, options={-M styles/questionthemes.xdy -L french -C utf8}]%questionthemes.ist
+\makeindex[name=c, title={Index des questions avec des éléments d'évaluation\label{indexc}}, options={-M styles/corrige.xdy}]%corrige.ist
+\makeindex[name=r, title={Index des références culturelles, œuvres et auteurs cités dans les éléments d'évaluation\label{indexac}}, options={-M styles/corrigeauteurs.xdy -L french -C utf8}]
+
+%%%Début de la configuration de xkeyval%%%
+\makeatletter
+%%%%%%%%%%%%%%%%%%%Pour les sujets%%%%%%%%%%%%%%%%
+
+%% 1. Définition des clés pour les sujets 
+\define@cmdkey	[SUJ]	{sujet}	{semestre}		{}
+\define@cmdkey	[SUJ]	{sujet}	{lieu}			{}
+\define@cmdkey	[SUJ]	{sujet}	{annee}			{}
+\define@cmdkey	[SUJ]	{sujet}	{type}			{}
+\define@cmdkey	[SUJ]	{sujet}	{jour}			{}
+\define@cmdkey	[SUJ]	{sujet}	{nosujet}		{}
+\define@cmdkey	[SUJ]	{sujet}	{prenomauteur}	{}
+\define@cmdkey	[SUJ]	{sujet}	{initialeprenom}{}
+\define@cmdkey	[SUJ]	{sujet}	{particule}		{}
+\define@cmdkey	[SUJ]	{sujet}	{nomauteur}		{}
+\define@cmdkey	[SUJ]	{sujet}	{titre}			{}
+\define@cmdkey	[SUJ]	{sujet}	{datepub}		{}
+\define@cmdkey	[SUJ]	{sujet}	{ajoutref}		{}
+\define@cmdkey	[SUJ]	{sujet}	{genre}			{}
+\define@cmdkey	[SUJ]	{sujet}	{corrige}		{}
+\define@cmdkey	[SUJ]	{sujet}	{liencorrige}	{}
+%\define@cmdkey	[SUJ]	{sujet}	{texte}			{}
+\define@cmdkey	[SUJ]	{sujet}	{typequn}		{}
+\define@cmdkey	[SUJ]	{sujet}	{typeqdeux}		{}
+\define@cmdkey	[SUJ]	{sujet}	{qun}			{}
+\define@cmdkey	[SUJ]	{sujet}	{quncsv}		{}
+\define@cmdkey	[SUJ]	{sujet}	{qdeux}			{}
+\define@cmdkey	[SUJ]	{sujet}	{qdeuxcsv}		{}
+\define@cmdkey	[SUJ]	{sujet}	{themeprogrammequn}	{}
+\define@cmdkey	[SUJ]	{sujet}	{themeprogrammeqdeux}	{}
+
+%% 2. Définition des commandes pour accéder aux valeurs des clés
+\newcommand{\semestre}{\cmdSUJ@sujet@semestre}
+\newcommand{\lieu}{\cmdSUJ@sujet@lieu}
+\newcommand{\annee}{\cmdSUJ@sujet@annee}
+\newcommand{\type}{\cmdSUJ@sujet@type}
+\newcommand{\jour}{\cmdSUJ@sujet@jour}
+\newcommand{\prenomauteur}{\cmdSUJ@sujet@prenomauteur}
+\newcommand{\initialeprenom}{\cmdSUJ@sujet@initialeprenom}
+\newcommand{\particule}{\cmdSUJ@sujet@particule}
+\newcommand{\nomauteur}{\cmdSUJ@sujet@nomauteur}
+\newcommand{\titre}{\cmdSUJ@sujet@titre}
+\newcommand{\datepub}{\cmdSUJ@sujet@datepub}
+\newcommand{\ajoutref}{\cmdSUJ@sujet@ajoutref}
+\newcommand{\genre}{\cmdSUJ@sujet@genre}
+\newcommand{\corrige}{\cmdSUJ@sujet@corrige}
+\newcommand{\liencorrige}{\cmdSUJ@sujet@liencorrige}
+%\newcommand{\texte}{\cmdSUJ@sujet@texte}
+\newcommand{\typequn}{\cmdSUJ@sujet@typequn}
+\newcommand{\typeqdeux}{\cmdSUJ@sujet@typeqdeux}
+\newcommand{\qun}{\cmdSUJ@sujet@qun}
+\newcommand{\qdeux}{\cmdSUJ@sujet@qdeux}
+\newcommand{\themeprogrammequn}{\cmdSUJ@sujet@themeprogrammequn}
+\newcommand{\themeprogrammeqdeux}{\cmdSUJ@sujet@themeprogrammeqdeux}
+
+%% 3. Valeurs par défaut des clés 
+\presetkeys[SUJ]{sujet}{%
+				nomauteur = Anonyme,
+				prenomauteur =,
+				initialeprenom =,
+				particule =,
+				titre = {LeTitre},
+				semestre = HQRS,
+				lieu = Métropole,
+				annee = 2020,
+				type =,
+				jour = 0,
+				datepub = 4545,
+				ajoutref =,
+				genre = \genrenondefini{},
+				corrige =,
+				liencorrige=,
+				typequn = \litt,
+				typeqdeux = \phil,
+				qun =,
+				quncsv=,
+				qdeux =,
+				qdeuxcsv=,
+				themeprogrammequn=,
+				themeprogrammeqdeux=,}{}
+%				texte = {Lorem ipsum dolor sit amet},}
+%%%Fin de la configuration de xkeyval
+
+% 4. Macros utilitaires pour le formatage et l'affichage
+% 4.1 Formatage du nom de l'auteur selon les cas
+\newcommand{\formatauteur}{%
+	\ifthenelse{\equal{\particule}{}}%
+	{\initialeprenom.~\textsc{\nomauteur}}%
+	{\IfEndWith{\particule}{'}%
+	{\initialeprenom.~\textsc{\particule\nomauteur}}%
+	{\initialeprenom.~\textsc{\particule{}~\nomauteur}}%
+	}%
+	}
+
+% 4.2 Formatage de l'en-tête
+\newcommand{\formatsessionentete}{%
+    \ifthenelse{\equal{\type}{}}%
+    {\lieu{}~\annee{} (Jour~\jour{})~:~}% Sans type spécifié
+    {\lieu{}~\annee{} (\type, Jour~\jour{})~:~}% Avec type spécifié
+}
+
+%% 5. Macros pour l'indexation et les tables des matières
+% 5.0 Commandes variables (visant à être écrasées à chaque fois que la fonction sera exécutée sur chaque texte)
+% 5.0.1. Variables pour le format de l'auteur
+\providecommand{\tocauteurformat}{}
+\providecommand{\indexauteurformat}{}
+
+% 5.0.2. Variables pour le format des informations temporelles
+\providecommand{\tocanneformat}{}
+\providecommand{\indexanneformat}{}
+
+% 5.0.3. Variable pour la clé de tri de l'index
+\providecommand{\indexcletri}{}
+
+% 5.1 Gestion de l'index des questions et des compteurs
+% 5.1.1 Indexation de l'auteur
+\newcommand{\indexerauteur}{%
+    \ifthenelse{\equal{\prenomauteur}{}}%
+    {\index[a]{\nomauteur{}@\textsc{\nomauteur}}}% Indexer sans prénom
+	    {\ifthenelse{\equal{\particule}{}}%Test de particule
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\nomauteur}~\prenomauteur{}}}%Sans particule
+	    	{\IfEndWith{\particule}{'}%Test de la fin de particule
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\particule\nomauteur{}},~\prenomauteur}}
+	    	{\index[a]{\nomauteur,~\prenomauteur{}@\textsc{\particule{}~\nomauteur{}},~\prenomauteur}}
+	    	}
+	    }
+	}%Fin de la commande
+
+
+% 5.1.2 Index et mise en page des questions
+\newcommand{\indexerquestions}{%
+	\begin{envquestion}
+	
+	% ==========================================
+	% 1. AFFICHAGE ET INDEXATION DE BASE [q], [p] et [w]
+	% ==========================================
+	\noindent\question{Question d'interprétation \typequn~:}\par\nopagebreak
+	\noindent\qun\index[q]{Question d'interprétation \typequn!\qun}
+	
+	\spcsujet
+	
+	\noindent\question{Essai \typeqdeux~:}\par\nopagebreak
+	\noindent\qdeux\index[q]{Essai \typeqdeux!\qdeux}
+	
+	% Index [p] (Thème ! Question)
+	\index[p]{{\csname\themeprogrammequn\endcsname}!\qun}
+	\index[p]{{\csname\themeprogrammeqdeux\endcsname}!\qdeux}
+	
+	% Index [w] (Thème ! Type ! Question) -> Plus besoin de conditions ici !
+	\index[w]{\csname\themeprogrammequn\endcsname!Question d'interprétation \typequn!\qun}
+	\index[w]{\csname\themeprogrammeqdeux\endcsname!Essai \typeqdeux!\qdeux}
+
+	% ==========================================
+	% 2. INDEX [v] POUR LA QUESTION 1 (INTERPRÉTATION)
+	% ==========================================
+	\ifthenelse{\equal{\typequn}{\litt}}%
+		{% --- Q1 est Littéraire (Ancre : intlitt...) ---
+		 \index[v]{Question d'interprétation \typequn @ Question d'interprétation \typequn !%
+		           \csname\themeprogrammequn\endcsname @ \protect\hypertarget{intlitteraire\themeprogrammequn}{\csname\themeprogrammequn\endcsname} !%
+		           \qun}%
+		}
+		{% --- Q1 est Philosophique (Ancre : intphil...) ---
+		 \index[v]{Question d'interprétation \typequn @ Question d'interprétation \typequn !%
+		           \csname\themeprogrammequn\endcsname @ \protect\hypertarget{intphilosophique\themeprogrammequn}{\csname\themeprogrammequn\endcsname} !%
+		           \qun}%
+		}
+
+	% ==========================================
+	% 3. INDEX [v] POUR LA QUESTION 2 (ESSAI)
+	% ==========================================
+	\ifthenelse{\equal{\typeqdeux}{\litt}}%
+		{% --- Q2 est Littéraire (Ancre : esslitt...) ---
+		 \index[v]{Essai \typeqdeux @ Essai \typeqdeux !%
+		           \csname\themeprogrammeqdeux\endcsname @ \protect\hypertarget{reflitteraire\themeprogrammeqdeux}{\csname\themeprogrammeqdeux\endcsname} !%
+		           \qdeux}%
+		}
+		{% --- Q2 est Philosophique (Ancre : essphil...) ---
+		 \index[v]{Essai \typeqdeux @ Essai \typeqdeux !%
+		           \csname\themeprogrammeqdeux\endcsname @ \protect\hypertarget{refphilosophique\themeprogrammeqdeux}{\csname\themeprogrammeqdeux\endcsname} !%
+		           \qdeux}%
+		}
+	\end{envquestion}
+}
+	
+%5.1.3 Gestion des compteurs
+\newcommand{\inter}{int}
+\newcommand{\refle}{ref}
+\newcommand{\litte}{litteraire}
+%\newcommand{\philo}{philosophique}
+\newcommand{\intlitt}{intlitteraire}
+\newcommand{\intphil}{intphilosophique}
+\newcommand{\reflitt}{reflitteraire}
+\newcommand{\refphil}{refphilosophique}
+
+\newcommand{\compteurquestions}{
+	\stepcounter{sujetint\themeprogrammequn}%
+	\stepcounter{sujetref\themeprogrammeqdeux}%
+	\stepcounter{sujet\themeprogrammequn}%
+	\stepcounter{sujet\themeprogrammeqdeux}%
+	\ifthenelse{\equal{\typequn}{\litt}}%
+	%%%Si l'interprétation est littéraire, on augmente l'interprétation litt. liés et la réf. philosophique ; ainsi que les compteurs liés.
+	{\stepcounter{sujetintlitteraire\themeprogrammequn}
+	\stepcounter{nosujetintlitteraire}
+	\stepcounter{sujetrefphilosophique\themeprogrammeqdeux}
+	\stepcounter{nosujetrefphilosophique}%
+	}
+	{%%%Sinon, on augmente l'interprétation phil. et la réf. litt. ; ainsi que les compteurs liés.
+	\stepcounter{sujetintphilosophique\themeprogrammequn}
+	\stepcounter{nosujetintphilosophique}
+	\stepcounter{sujetreflitteraire\themeprogrammeqdeux}
+	\stepcounter{nosujetreflitteraire}
+	}
+	  \IfStrEqCase{\lieu}{%
+    {Métropole}{\def\centexam{met}}%
+    {Amérique du Nord}{\def\centexam{amnord}}%
+    {Amérique du Sud}{\def\centexam{amsud}}%
+    {Centres étrangers}{\def\centexam{cea}}%
+    {Liban}{\def\centexam{lib}}%
+    {Polynésie}{\def\centexam{pol}}%
+    {Asie}{\def\centexam{asi}}%
+    {Sujet 0}{\def\centexam{suj}}%
+    {Nouvelle-Calédonie}{\def\centexam{nca}}%
+    {La Réunion}{\def\centexam{reu}}%
+    {Antilles}{\def\centexam{ang}}
+  }[\def\baseprefix{unk}]%
+  \stepcounter{sujet\centexam\inter\themeprogrammequn}%
+	\stepcounter{sujet\centexam\refle\themeprogrammeqdeux}%
+	\stepcounter{sujet\centexam\themeprogrammequn}%
+	\stepcounter{sujet\centexam\themeprogrammeqdeux}%
+	\ifthenelse{\equal{\typequn}{\litt}}%
+	%%%Si l'interprétation est littéraire, on augmente l'interprétation litt. liés et la réf. philosophique ; ainsi que les compteurs liés.
+	{\stepcounter{sujet\centexam\inter\litte\themeprogrammequn}
+	\stepcounter{nosujet\centexam\inter\litte}
+	\stepcounter{sujet\centexam\refle\phil\themeprogrammeqdeux}
+	\stepcounter{nosujet\centexam\refle\phil}%
+	}
+	{%%%Sinon, on augmente l'interprétation phil. et la réf. litt. ; ainsi que les compteurs liés.
+	\stepcounter{sujet\centexam\inter\phil\themeprogrammequn}
+	\stepcounter{nosujet\centexam\inter\phil}
+	\stepcounter{sujet\centexam\refle\litte\themeprogrammeqdeux}
+	\stepcounter{nosujet\centexam\refle\litte}
+	}
+}
+
+%#1 = type : \inter/\refle #2 discipline : = \litte/\phil #3 = theme
+\NewDocumentCommand{\statnat}{m m m}{%
+  \ifnum\value{sujet#1#2#3}=0 % Plus aucun risque d'accent ici !
+    \textcolor{black!70}{\arabic{sujet#1#2#3}}%
+  \else
+    % Le lien se construit tout seul avec les variables brutes
+    \hyperlink{#1#2#3}{\arabic{sujet#1#2#3}}%
+  \fi
+}
+  
+\NewDocumentCommand{\totstatthexam}{O{} m m m}{
+\ifnum\value{sujet#1all#2#3#4}=0
+    \textcolor{gray!50}{\arabic{sujet#1all#2#3#4}}%
+  \else
+    \arabic{sujet#1all#2#3#4}%
+  \fi}
+%\newcommand{\txttotstat}[1]{sujetall#1}
+
+\NewDocumentCommand{\statthexam}{O{} m m m}{
+\ifnum\value{sujet#1#2#3#4}=0
+\textcolor{gray!50}{\arabic{sujet#1#2#3#4}}%
+\else
+\arabic{sujet#1#2#3#4}%
+\fi}
+
+%%#1 : acronyme #2 : Nom du lieu
+\NewDocumentCommand{\statexam}{O{} m}{
+\gdef\centreexamen{#2}
+\pagestyle{stat-centreexam}
+\begin{table}[h]
+	\global\setlength{\aboverulesep}{0.4pt}
+%	\global\setlength{\belowrulesep}{0.6pt}
+\begin{tabularx}{\linewidth}{M{2cm}*{8}{X}*{8}{X}}
+\hline
+\multicolumn{17}{c}{\makecell[cc]{{\large \textbf{#2\stepcounter{subsection}\phantomsection\addcontentsline{toc}{subsection}{#2}}}}}\\
+\hline
+{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}&{\tiny ~}\\\hline
+\rowcolor{lightgray!60}
+~ & \multicolumn{8}{>{\hsize=\dimexpr8\hsize+14\tabcolsep\relax\centering\arraybackslash}X}{\makecell[cc]{\textbf{La Recherche de Soi}}} 
+  & \multicolumn{8}{>{\hsize=\dimexpr8\hsize+14\tabcolsep\relax\centering\arraybackslash}X}{\makecell[cc]{\textbf{L'Humanité en question}}} \\ \hline
+\vspace{6pt}~&\multicolumn{3}{c}{\makecell[cc]{\textit{Exclusivement}}}&\multicolumn{5}{c}{\makecell[cc]{\textit{Plusieurs chap.}}}&\multicolumn{3}{c}{\makecell[cc]{\textit{Exclusivement}}}&\multicolumn{5}{c}{\makecell[cc]{\textit{Plusieurs chap.}}}\\\cmidrule(l){2-4}\cmidrule(l){5-9}\cmidrule(l){10-12}\cmidrule(l){13-17}
+Questions & \tvert{ETA} & \tvert{EXS} & \tvert{MM} & \tvert{ETAMM} & \tvert{EXSTA} & \tvert{EXSMM} & \tvert{OdS} & \tvert{Tot.} & \tvert{CC} & \tvert{HV} & \tvert{HL} & \tvert{HVCC} & \tvert{HLCC} & \tvert{HVL} & \tvert{OdH} & \tvert{Tot.}\\\cmidrule{1-4}\cmidrule(l){5-9}\cmidrule(l){10-12}\cmidrule(l){13-17}
+Int. litt. & \statthexam[#1]{\inter}{\litte}{ETA} & \statthexam[#1]{\inter}{\litte}{EXS} & \statthexam[#1]{\inter}{\litte}{MM} & \statthexam[#1]{\inter}{\litte}{ETAMM} & \statthexam[#1]{\inter}{\litte}{EXSTA} & \statthexam[#1]{\inter}{\litte}{EXSMM} & \statthexam[#1]{\inter}{\litte}{OdS} & \arabic{sujet#1RS\inter\litte} & \statthexam[#1]{\inter}{\litte}{CC} & \statthexam[#1]{\inter}{\litte}{HV} & \statthexam[#1]{\inter}{\litte}{HL} & \statthexam[#1]{\inter}{\litte}{HVCC} & \statthexam[#1]{\inter}{\litte}{HLCC} & \statthexam[#1]{\inter}{\litte}{HVL} & \statthexam[#1]{\inter}{\litte}{OdH} & \arabic{sujet#1HQ\inter\litte} \\\cmidrule(l){2-4}\cmidrule(l){5-9}\cmidrule(l){10-12}\cmidrule(l){13-17}
+Int. phil. & \statthexam[#1]{\inter}{\phil}{ETA} & \statthexam[#1]{\inter}{\phil}{EXS} & \statthexam[#1]{\inter}{\phil}{MM} & \statthexam[#1]{\inter}{\phil}{ETAMM} & \statthexam[#1]{\inter}{\phil}{EXSTA} & \statthexam[#1]{\inter}{\phil}{EXSMM} & \statthexam[#1]{\inter}{\phil}{OdS} & \arabic{sujet#1RS\inter\phil} & \statthexam[#1]{\inter}{\phil}{CC} & \statthexam[#1]{\inter}{\phil}{HV} & \statthexam[#1]{\inter}{\phil}{HL} & \statthexam[#1]{\inter}{\phil}{HVCC} & \statthexam[#1]{\inter}{\phil}{HLCC} & \statthexam[#1]{\inter}{\phil}{HVL} & \statthexam[#1]{\inter}{\phil}{OdH} & \arabic{sujet#1HQ\inter\phil} \\\cmidrule(l){2-4}\cmidrule(l){5-9}\cmidrule(l){10-12}\cmidrule(l){13-17}
+Essai litt. & \statthexam[#1]{\refle}{\litte}{ETA} & \statthexam[#1]{\refle}{\litte}{EXS} & \statthexam[#1]{\refle}{\litte}{MM} & \statthexam[#1]{\refle}{\litte}{ETAMM} & \statthexam[#1]{\refle}{\litte}{EXSTA} & \statthexam[#1]{\refle}{\litte}{EXSMM} & \statthexam[#1]{\refle}{\litte}{OdS} & \arabic{sujet#1RS\refle\litte} & \statthexam[#1]{\refle}{\litte}{CC} & \statthexam[#1]{\refle}{\litte}{HV} & \statthexam[#1]{\refle}{\litte}{HL} & \statthexam[#1]{\refle}{\litte}{HVCC} & \statthexam[#1]{\refle}{\litte}{HLCC} & \statthexam[#1]{\refle}{\litte}{HVL} & \statthexam[#1]{\refle}{\litte}{OdH} & \arabic{sujet#1HQ\refle\litte} \\\cmidrule(l){2-4}\cmidrule(l){5-9}\cmidrule(l){10-12}\cmidrule(l){13-17}
+Essai phil. & \statthexam[#1]{\refle}{\phil}{ETA} & \statthexam[#1]{\refle}{\phil}{EXS} & \statthexam[#1]{\refle}{\phil}{MM} & \statthexam[#1]{\refle}{\phil}{ETAMM} & \statthexam[#1]{\refle}{\phil}{EXSTA} & \statthexam[#1]{\refle}{\phil}{EXSMM} & \statthexam[#1]{\refle}{\phil}{OdS} & \arabic{sujet#1RS\refle\phil} & \statthexam[#1]{\refle}{\phil}{CC} & \statthexam[#1]{\refle}{\phil}{HV} & \statthexam[#1]{\refle}{\phil}{HL} & \statthexam[#1]{\refle}{\phil}{HVCC} & \statthexam[#1]{\refle}{\phil}{HLCC} & \statthexam[#1]{\refle}{\phil}{HVL} & \statthexam[#1]{\refle}{\phil}{OdH} & \arabic{sujet#1HQ\refle\phil} \\\hline
+%~&~&~&~&~&~&~&~&~&~&~&~&~&~&~&~&~\\\hline
+\end{tabularx}
+
+\vspace{6pt}
+
+
+\begin{tabularx}{\linewidth}{M{2cm} *{9}{X} S *{6}{X}}
+    \cmidrule(r){1-10}\cmidrule{12-17}\\*[-18.75pt]
+    \rowcolor{lightgray!60}
+    ~ & \multicolumn{9}{c}{\textit{Transversaux sur les semestres}} 
+      & \cellcolor{white}
+      & \multicolumn{6}{c}{\textit{Transversaux sur les années}} \\*[-1pt]
+\cmidrule(r){1-10}\cmidrule{12-17}
+& \tvert{ETACC} & \tvert{ETAHV} & \tvert{ETAHL} & \tvert{EXSCC} & \tvert{EXSHV} & \tvert{EXSHL} & \tvert{MMCC} & \tvert{MMHV} & \tvert{MMHL} &~& \tvert{ETA Prem} & \tvert{EXS Prem} & \tvert{MM Prem} & \tvert{CC Prem} & \tvert{HV Prem} & \tvert{HL Prem} \\\cmidrule(r){1-10}\cmidrule{12-17}
+Int. litt. & \statthexam[#1]{\inter}{\litte}{ETACC} & \statthexam[#1]{\inter}{\litte}{ETAHV} & \statthexam[#1]{\inter}{\litte}{ETAHL} & \statthexam[#1]{\inter}{\litte}{EXSCC} & \statthexam[#1]{\inter}{\litte}{EXSHV} & \statthexam[#1]{\inter}{\litte}{EXSHL} & \statthexam[#1]{\inter}{\litte}{MMCC} & \statthexam[#1]{\inter}{\litte}{MMHV} & \statthexam[#1]{\inter}{\litte}{MMHL} &~&  \statthexam[#1]{\inter}{\litte}{premtermETA} & \statthexam[#1]{\inter}{\litte}{premtermEXS} & \statthexam[#1]{\inter}{\litte}{premtermMM} & \statthexam[#1]{\inter}{\litte}{premtermCC} & \statthexam[#1]{\inter}{\litte}{premtermHV} & \statthexam[#1]{\inter}{\litte}{premtermHL} \\\cmidrule(lr){2-10}\cmidrule{12-17}
+Int. phil. & \statthexam[#1]{\inter}{\phil}{ETACC} & \statthexam[#1]{\inter}{\phil}{ETAHV} & \statthexam[#1]{\inter}{\phil}{ETAHL} & \statthexam[#1]{\inter}{\phil}{EXSCC} & \statthexam[#1]{\inter}{\phil}{EXSHV} & \statthexam[#1]{\inter}{\phil}{EXSHL} & \statthexam[#1]{\inter}{\phil}{MMCC} & \statthexam[#1]{\inter}{\phil}{MMHV} & \statthexam[#1]{\inter}{\phil}{MMHL} &~&  \statthexam[#1]{\inter}{\phil}{premtermETA} & \statthexam[#1]{\inter}{\phil}{premtermEXS} & \statthexam[#1]{\inter}{\phil}{premtermMM} & \statthexam[#1]{\inter}{\phil}{premtermCC} & \statthexam[#1]{\inter}{\phil}{premtermHV} & \statthexam[#1]{\inter}{\phil}{premtermHL} \\\cmidrule(lr){2-10}\cmidrule{12-17}
+Essai litt. & \statthexam[#1]{\refle}{\litte}{ETACC} & \statthexam[#1]{\refle}{\litte}{ETAHV} & \statthexam[#1]{\refle}{\litte}{ETAHL} & \statthexam[#1]{\refle}{\litte}{EXSCC} & \statthexam[#1]{\refle}{\litte}{EXSHV} & \statthexam[#1]{\refle}{\litte}{EXSHL} & \statthexam[#1]{\refle}{\litte}{MMCC} & \statthexam[#1]{\refle}{\litte}{MMHV} & \statthexam[#1]{\refle}{\litte}{MMHL} &~&  \statthexam[#1]{\refle}{\litte}{premtermETA} & \statthexam[#1]{\refle}{\litte}{premtermEXS} & \statthexam[#1]{\refle}{\litte}{premtermMM} & \statthexam[#1]{\refle}{\litte}{premtermCC} & \statthexam[#1]{\refle}{\litte}{premtermHV} & \statthexam[#1]{\refle}{\litte}{premtermHL} \\\cmidrule(lr){2-10}\cmidrule{12-17}
+Essai phil. & \statthexam[#1]{\refle}{\phil}{ETACC} & \statthexam[#1]{\refle}{\phil}{ETAHV} & \statthexam[#1]{\refle}{\phil}{ETAHL} & \statthexam[#1]{\refle}{\phil}{EXSCC} & \statthexam[#1]{\refle}{\phil}{EXSHV} & \statthexam[#1]{\refle}{\phil}{EXSHL} & \statthexam[#1]{\refle}{\phil}{MMCC} & \statthexam[#1]{\refle}{\phil}{MMHV} & \statthexam[#1]{\refle}{\phil}{MMHL} &~&  \statthexam[#1]{\refle}{\phil}{premtermETA} & \statthexam[#1]{\refle}{\phil}{premtermEXS} & \statthexam[#1]{\refle}{\phil}{premtermMM} & \statthexam[#1]{\refle}{\phil}{premtermCC} & \statthexam[#1]{\refle}{\phil}{premtermHV} & \statthexam[#1]{\refle}{\phil}{premtermHL} \\\cmidrule(lr){1-10}\cmidrule{12-17}
+\end{tabularx}
+
+\vspace*{6pt}
+
+\begin{multicols}{2}
+\begin{tabularx}{0.9\linewidth}{M{2cm}XXXXXX}
+\hline
+\rowcolor{lightgray!60}~&\multicolumn{6}{c}{\textit{Tous les axes confondus}}\\\hline
+\vspace*{6pt}
+~&~ETA~&~EXS~&~MM~&~CC~&~HV~&~HL~\\\cmidrule(l){2-7}
+Int. litt.& \totstatthexam[#1]{\inter}{\litte}{ETA} & \totstatthexam[#1]{\inter}{\litte}{EXS} & \totstatthexam[#1]{\inter}{\litte}{MM} & \totstatthexam[#1]{\inter}{\litte}{CC} & \totstatthexam[#1]{\inter}{\litte}{HV} & \totstatthexam[#1]{\inter}{\litte}{HL}\\\cmidrule(l){2-7}
+Int. phil.& \totstatthexam[#1]{\inter}{\phil}{ETA} & \totstatthexam[#1]{\inter}{\phil}{EXS} & \totstatthexam[#1]{\inter}{\phil}{MM} & \totstatthexam[#1]{\inter}{\phil}{CC} & \totstatthexam[#1]{\inter}{\phil}{HV} & \totstatthexam[#1]{\inter}{\phil}{HL}\\\cmidrule(l){2-7}
+Essai. litt.& \totstatthexam[#1]{\inter}{\litte}{ETA} & \totstatthexam[#1]{\refle}{\litte}{EXS} & \totstatthexam[#1]{\refle}{\litte}{MM} & \totstatthexam[#1]{\refle}{\litte}{CC} & \totstatthexam[#1]{\refle}{\litte}{HV} & \totstatthexam[#1]{\refle}{\litte}{HL} \\\cmidrule(l){2-7}
+Essai. phil.& \totstatthexam[#1]{\inter}{\phil}{ETA} & \totstatthexam[#1]{\refle}{\phil}{EXS} & \totstatthexam[#1]{\refle}{\phil}{MM} & \totstatthexam[#1]{\refle}{\phil}{CC} & \totstatthexam[#1]{\refle}{\phil}{HV} & \totstatthexam[#1]{\refle}{\phil}{HL}\\\cmidrule(l){2-7}
+Totaux & \arabic{sujet#1allETA} & \arabic{sujet#1allEXS} & \arabic{sujet#1allMM} & \arabic{sujet#1allCC} & \arabic{sujet#1allHV} & \arabic{sujet#1allHL}\\\hline
+\end{tabularx}
+
+\begin{center}
+Au total, il y a eu \number\numexpr\value{sujet#1all}/2\relax{} 
+%\arabic{sujet#1all}{}
+sujets proposés en #2.
+\end{center}
+
+\columnbreak
+\setstretch{0.8}{{\scriptsize \underline{Liste des abréviations :} 
+\underline{ETA~:} \ETA{}, \underline{EXS~:} \EXS{}, \underline{MM~:} \MM{}, \underline{CC~:} \CC, \underline{HV~:} \HV{}, \underline{HL~:} \HL{}, \underline{ETAMM} \ETAMM, \underline{EXSTA~:} \EXS{} et \ETA{}, \underline{HVL~:} \HVL, \underline{EXSMM~:} \EXSMM, \underline{ETACC~:} \ETACC, \underline{ETAHV~:} \ETAHV{}, \underline{ETAHL~:} Éducation, transmission et émancipation et \HL, \underline{EXSCC~:} \EXSCC, \underline{EXSHV~:} \EXSHV, \underline{EXSHL~:} \EXSHL, \underline{MMCC~:} \MMCC, \underline{MMHV~:} \MMHV, \underline{MMHL~:} \MMHL. \underline{« Prem » :} sujet croisé entre un chapitre de Terminale et un chapitre de Première. Section \underline{« Tous les axes confondus »~:} nombre de sujets au total qui portent sur un chapitre donné, en comptant également les sujets « mixtes ».}}
+\end{multicols}
+\end{table}
+}%Fin de la commande statexam
+
+%5.2 Index de l'auteur pour la table des matières
+\newcommand{\indexerettoc}{%
+  % Étape 1 : Format de l'auteur pour la table des matières
+  \def\tocauteurformat{}%
+  \ifthenelse{\equal{\prenomauteur}{}}%
+    {% Sans prénom
+      \def\tocauteurformat{\textsc{\nomauteur}}%
+    }%
+    {% Avec prénom
+    \ifthenelse{\equal{\particule}{}}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\nomauteur}}}
+    	{\IfEndWith{\particule}{'}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\particule\nomauteur}}}
+    	{\def\tocauteurformat{\initialeprenom{}.~\textsc{\particule{}~\nomauteur}}}
+    	}
+    	}
+  
+  % Étape 2 : Format de l'auteur pour l'index
+  \def\indexauteurformat{}%
+  \ifthenelse{\equal{\prenomauteur}{}}%
+    {% Sans prénom
+    \def\indexauteurformat{\nomauteur}%
+    }%
+    {% Avec prénom
+    \ifthenelse{\equal{\particule}{}}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\nomauteur}}
+    {\IfEndWith{\particule}{'}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\particule\nomauteur}}
+    {\def\indexauteurformat{{\initialeprenom{}}.~\particule{}~\nomauteur}}
+    }
+    }%
+  
+  % Étape 3 : Ajout à la table des matières
+  \phantomsection
+  \ifthenelse{\equal{\type}{}}%
+    {% Épreuve obligatoire
+      \addcontentsline{toc}{section}{\tocauteurformat, \textit{\titre} (\lieu~\annee, Jour~\jour)}%
+    }%
+    {% Épreuve avec type spécifié
+      \addcontentsline{toc}{section}{\tocauteurformat, \textit{\titre} (\lieu~\annee~(\type), Jour~\jour)}%
+    }%
+
+  % Étape 4 : Index
+\ifthenelse{\equal{\type}{}}%
+      {\index[n]{\annee~\lieu~(Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}% Épreuve obligatoire
+      {\index[n]{\annee~\lieu~(\type, Jour~\jour) -- \nomauteur{}@\textbf{\annee,~\lieu} (\type, Jour~\jour) -- \\*\hspace*{1em}\indexauteurformat, \textit{\titre}}}% Épreuve avec type spécifié
+      }
+%%%%%%Génération automatique des liens vers les corrigés%%%%%%%%%%%
+
+\newcommand{\resetliencorrige}{%
+  \expandafter\def\csname cmdSUJ@sujet@liencorrige\endcsname{}%
+}
+
+\newcommand{\createlink}{%
+  % Forcer l'expansion de \liencorrige pour le test
+  \edef\templien{\liencorrige}%
+  \ifthenelse{\equal{\templien}{}}{%
+  % Préfixe selon le lieu
+  \def\baseprefix{}%
+  \IfStrEqCase{\lieu}{%
+    {Métropole}{\def\baseprefix{met}}%
+    {Amérique du Nord}{\def\baseprefix{amnord}}%
+    {Amérique du Sud}{\def\baseprefix{amsud}}%
+    {Antilles}{\def\baseprefix{ang}}%
+    {Centres étrangers}{\def\baseprefix{cea}}%
+    {Liban}{\def\baseprefix{lib}}%
+    {Polynésie}{\def\baseprefix{pol}}%
+    {Asie}{\def\baseprefix{asi}}%
+    {Sujet 0}{\def\baseprefix{suj}}%
+    {Nouvelle-Calédonie}{\def\baseprefix{nca}}%
+    {La Réunion}{\def\baseprefix{reu}}%
+  }[\def\baseprefix{unk}]%
+  
+  % Suffixe selon la nature de l'épreuve
+  \def\suffixe{}%
+  \IfStrEq{\type}{Remplacement}{\def\suffixe{rem}}{}%
+  \IfStrEq{\type}{Rattrapage}{\def\suffixe{rat}}{}%
+%  \ifStrEq{\type}{Candidats libres}{\def\suffixe{cal}}{}%
+  
+  % Utiliser le compteur nosujet qui existe déjà
+%  \def\numeroSujet{\arabic{nosujet}}% 
+  % Construction du lien
+ \expandafter\edef\csname cmdSUJ@sujet@liencorrige\endcsname{\baseprefix\suffixe_\annee_\jour}
+  }{}}
+  
+%%%%%%%Gestion de la base de données csv%%%%%%%%%%%%
+\newcommand{\creationcsv}{%
+\ifgencsv
+\newwrite\sujetdatabase
+\immediate\openout\sujetdatabase=sujetsdata.csv
+\immediate\write\sujetdatabase{%
+  numero;lieu;annee;jour;nomauteur;titre;typequn;axeun;typeqdeux;axedeux;%
+liencorrige;questun;questdeux%
+}%
+\fi
+}
+
+\newcommand{\writedonneecsv}{%
+  \ifgencsv
+	\createlink
+  \def\axeun{\themeprogrammequn}%
+  \def\axedeux{\themeprogrammeqdeux}%
+  \immediate\write\sujetdatabase{%
+    \arabic{nosujet};\lieu;\annee;\jour;%
+    \nomauteur;\titre;%
+    \typequn;\axeun;\typeqdeux;\axedeux;%
+    \liencorrige;%
+     \detokenize\expandafter{\cmdSUJ@sujet@qun}; \detokenize\expandafter{\cmdSUJ@sujet@qdeux}%
+  }%
+  \fi
+}
+
+\ifgencsv
+\creationcsv
+\fi
+\newcommand{\sujetn}[2]{
+\stepcounter{nosujet}
+%%%%%Pour la mise en page%%%%
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead{}
+\fancyfoot{} %clear all footer fields
+\fancyfoot[RO]{\textbf{\thepage ~sur~\pageref*{TotPages}}\hspace*{1.5cm}}
+\fancyfoot[LE]{\hspace*{1.5cm}\textbf{\thepage ~sur~\pageref*{TotPages}}}
+  \fancyfoot[LO,RE]{\scriptsize{Humanités, Littérature, Philosophie -- Banque des sujets indexés -- Terminale}}
+  %%%Réinitialse liencorrige, sinon la création automatique de lien ne fonctionne pas.
+  \resetliencorrige%
+    \setkeys[SUJ]{sujet}{#1}%
+    \createlink%%Création du lien vers le sujet et vers le corrigé s'il n'existe pas.
+\ifgencsv
+\writedonneecsv
+\fi
+     % En-tête avec le formatage du titre
+	\fancyhead[C]{\formatsessionentete{}\formatauteur{}, \textit{\titre}}
+	\indexerettoc{}
+\renewcommand{\arraystretch}{1.5}
+\vspace{-0.5cm}
+\begin{center}
+\begin{huge}
+\textit{Sujet d'Humanités, Littérature, Philosophie}
+\end{huge}\\
+{\Large{Épreuve de Terminale}}\par
+\smallskip
+\hspace*{0.7cm}\noindent\fbox{%%Mise en page normal dans un petit encart au début de la page
+\makebox[\linewidth-3.25cm][c]{
+\begin{minipage}{\linewidth-3.25cm}
+		\begin{small}
+		\noindent\small \textbf{Axe du programme~:}~\semestre \hfill{
+		\noindent\textbf{Genre du texte~:}~\genre}\par 
+		\noindent\textbf{Auteur~:}
+		\ifthenelse{\equal{\prenomauteur}{}}%%%Si l'auteur n'a pas de prénom
+		{\textsc{\nomauteur}}%
+		%%%Si l'auteur a un prénom
+		{\ifthenelse{\equal{\particule}{}}
+		{\initialeprenom{}.~\textsc{\nomauteur}}
+		{\IfEndWith{\particule}{'}
+		{\initialeprenom{}.~\textsc{\particule\nomauteur}}
+		{\initialeprenom{}.~\textsc{\particule}~\textsc{\nomauteur}}
+		}
+		}%%%Fin du cas où l'auteur a un prénom
+		\hfill \textbf{Ouvrage~:} \textit{\titre}\par
+		\textbf{Centre d'examen :} \lieu \hfill \textbf{Année :} \annee\par
+		\textbf{Session~:~}%
+		\ifthenelse{\equal{\type}{}}{Obligatoire, Jour~\jour}{\type, Jour~\jour}%, Sujet \no{}\arabic{nosujet}%Pour vérifier que le nombre de sujets est bien conforme
+		\ifthenelse{\equal{\corrige}{}}{\hfill{}\textbf{Éléments d'évaluation disponibles~:} Non\hypertarget{\liencorrige}{}}{\hfill{}\textbf{Éléments d'évaluation disponibles~:} {\hyperlink{corr\liencorrige}{Oui}\hypertarget{\liencorrige}{}}}\end{small}
+\end{minipage}
+	\indexerauteur{}%
+	}
+	}%%%Fin de la fbox
+	\newline \smallskip \newline \noindent\textbf{Le candidat traite les deux parties sur des copies séparées.}
+	\end{center}\vspace{-0.3cm}
+	\begin{envtexte}
+	#2\par
+	\vspace{-0.4cm}\begin{flushright}\nopagebreak
+	\ifthenelse{\equal{\prenomauteur}{}}
+	{\textsc{\nomauteur}}%L'auteur n'a pas de prénom
+	{\prenomauteur~\ifthenelse{\equal{\particule}{}}
+	{\textsc{\nomauteur}}%L'auteur a un nom sans particule
+	{\IfEndWith{\particule}{'}
+	{\textsc{\particule\nomauteur}}%La particule s'achève par '
+	{\textsc{\particule{}~\nomauteur}}%Particule ordinaire
+	}%Fin du cas à particule
+	}, \textit{\titre} (\datepub)%
+	\ifthenelse{\equal{\ajoutref}{}}{.}{, \ajoutref{}.}
+	\end{flushright}
+	\end{envtexte}
+ \indexerquestions{}%
+ \compteurquestions{}%
+	\clearpage
+    }
+    %%%%%%%%%%%%%%%%%%%Pour les corrigés%%%%%%%%%%%%%%%%
+    \define@cmdkey	[COR]	{corr}	{lieu}			{}
+	\define@cmdkey	[COR]	{corr}	{jour}			{}
+	\define@cmdkey	[COR]	{corr}	{nosujet}		{}
+	\define@cmdkey	[COR]	{corr}	{prenomauteur}	{}
+	\define@cmdkey	[COR]	{corr}	{nomauteur}		{}
+	\define@cmdkey	[COR]	{corr}	{titre}			{}
+	\define@cmdkey	[COR]	{corr}	{type}			{}
+	\define@cmdkey	[COR]	{corr}	{liencorr}		{}
+	\define@cmdkey	[COR]	{corr}	{annee}			{}
+	\define@cmdkey	[COR]	{corr}	{typecorrun}	{}
+	\define@cmdkey	[COR]	{corr}	{typecorrdeux}	{}
+	\define@cmdkey	[COR]	{corr}	{questcorrun}	{}
+	\define@cmdkey	[COR]	{corr}	{questcorrdeux}	{}
+	\define@cmdkey	[COR]	{corr}	{corrsautdepage}{}
+
+\newcommand{\corrlieu}{\cmdCOR@corr@lieu}
+\newcommand{\corrjour}{\cmdCOR@corr@jour}
+\newcommand{\corrnosujet}{\cmdCOR@corr@nosujet}
+\newcommand{\corrprenomauteur}{\cmdCOR@corr@prenomauteur}
+\newcommand{\corrnomauteur}{\cmdCOR@corr@nomauteur}
+\newcommand{\corrtitre}{\cmdCOR@corr@titre}
+\newcommand{\corrtype}{\cmdCOR@corr@type}
+\newcommand{\corrlien}{\cmdCOR@corr@liencorr}
+\newcommand{\corrannee}{\cmdCOR@corr@annee}
+\newcommand{\corrtypeun}{\cmdCOR@corr@typecorrun}
+\newcommand{\corrtypedeux}{\cmdCOR@corr@typecorrdeux}
+\newcommand{\corrquestun}{\cmdCOR@corr@questcorrun}
+\newcommand{\corrquestdeux}{\cmdCOR@corr@questcorrdeux}
+\newcommand{\corrsautdepage}{\cmdCOR@corr@corrsautdepage}
+
+\presetkeys[COR]{corr}{%
+				lieu=Métropole,
+				jour={0},
+				nosujet=,
+				prenomauteur=,
+				nomauteur=Anonyme,
+				titre={Le Titre},
+				type=,
+				liencorr=,
+				annee=1900,
+				typecorrun=,
+				typecorrdeux=,
+				questcorrun=,
+				questcorrdeux=,
+				corrsautdepage=,}{}
+				
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%Pour les corrigés%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\sujetcorrige}[8]{
+%	\ifthenelse{\equal{#3}{}}{%
+%	\fancyhead[C]{\footnotesize Éléments de correction du #2 en #1 (#8)~: \textsc{#5}, \textit{#6}}
+%	}
+%	{
+%	\fancyhead[C]{\footnotesize Éléments de correction du #3 du #2 en #1 (#8)~: \textsc{#5}, \textit{#6}}}
+%	\ifthenelse{\equal{#3}{}}{\subsection{#1 (#8), #2}}
+%	{\subsection{#1~(#8), #2, #3}}
+%\begin{center}
+%\fbox{
+%\makebox[\linewidth-3.25cm][c]{
+%\begin{minipage}{\linewidth-3.25cm}
+%	\begin{center}
+%	\noindent {\Large
+%	\textit{Éléments de correction}}\par
+%	\ifthenelse{\equal{#4}{}}
+%	{%
+%	\hyperlink{#7}{\textit{Voir le sujet} : \textsc{#5}, \textit{#6}}\hypertarget{corr#7}{}%
+%	}
+%	{%
+%	{\hyperlink{#7}{\textit{Voir le sujet} : #4 \textsc{#5}, \textit{#6}}\hypertarget{corr#7}{}%
+%	}}
+%	\end{center}
+%	\end{minipage}
+%	}}
+%\end{center}
+%}
+
+\newcommand{\preambulecorr}[1]{\vspace*{-12pt}
+\begin{center}
+\fbox{\makebox[\linewidth-1.5cm][c]{
+\begin{minipage}{\linewidth-2.0cm}
+\begin{small}
+\setlength{\parskip}{3pt}
+\vspace*{3pt}
+\begin{itshape}{#1}
+\vspace*{3pt}
+\end{itshape}\end{small}
+\end{minipage}}}
+\vspace*{18pt}\\
+\rule{0.5\linewidth}{1pt}
+ \end{center}
+}
+
+\newcommand{\noteorthographemoyenne}{~\\\begin{scriptsize}Selon la note de service du \href{https://www.education.gouv.fr/bo/2025/Hebdo32/MENE2523939N}{25-8-2025} relative au déroulement des corrections aux examens du
+second degré à compter de la session 2026 :\\« Chaque correcteur prend en compte dans l’attribution de la note la qualité rédactionnelle des
+candidats : l’orthographe, syntaxe, grammaire, clarté de la langue et lisibilité du propos. Ainsi,
+toute copie dont la lecture serait jugée incompréhensible doit se voir attribuer une note inférieure
+à la moyenne. […] La situation particulière des candidats bénéficiant d’un aménagement ou
+adaptation doit naturellement être prise en compte ».\end{scriptsize}}
+
+\newcommand{\preambulecorrint}{%
+\ifnum\c@chapter>2025{{\small On prendra en compte l’intelligibilité, l’expression et la maîtrise de la langue, sans toutefois
+pénaliser deux fois mais en considérant ce critère à l’échelle de l’ensemble de la copie.}}\fi
+
+\preambulecorr{L’exercice n’impose ni un nombre de «~parties~», ni un développement obéissant
+à une forme prédéfinie ou à une composition canonique~: il ne s’agit pas d’une
+explication de texte exhaustive, mais d’une lecture centrée sur certains éléments parmi
+les plus significatifs. L’interprétation, guidée par la question, requiert bien évidemment
+une attention à la lettre ainsi qu’à la langue du texte, à son écriture (son «~style~»), et
+tout particulièrement au questionnement qu’il développe et instruit.
+
+Les propositions qu’on trouvera ci-dessous ne constituent en aucun cas une
+correction exhaustive. Elles sont susceptibles d’être enrichies et ajustées au sein des
+commissions académiques.
+
+On utilisera tout l’éventail des notes~: on n’hésitera pas à attribuer aux très
+bonnes copies des notes allant jusqu’à 10~; la qualité est à évaluer à l’aune de la
+compréhension que l’on peut attendre d’un candidat issu de la classe terminale. Les
+notes inférieures à 3/10 correspondent à des copies véritablement indigentes.
+
+L’appréciation est précise, nuancée et ne se limite pas à pointer les faiblesses
+du devoir~; on se pose prioritairement la question suivante~: «~quelles sont les qualités
+de la copie~?~»
+
+L’évaluation des travaux tient compte de la qualité de l’expression (correction
+orthographique et syntaxique~; précision, justesse, finesse, voire élégance de la
+rédaction).
+\ifnum\c@chapter>2025{\noteorthographemoyenne}\fi}%
+}
+
+\newcommand{\preambulecorrref}{
+\preambulecorr{L’essai n’impose ni un nombre de «~parties~», ni un développement obéissant à
+une forme prédéfinie ou à une logique de composition canonique. En revanche, il
+suppose une implication personnelle dans la réflexion favorisant l’exploration et
+l’exploitation de connaissances que les candidats ont pu s’approprier.
+
+Les propositions qu’on trouvera ci-dessous ne constituent en aucun cas une
+correction exhaustive. Elles sont susceptibles d’être enrichies et ajustées au sein des
+commissions académiques.
+
+On utilisera tout l’éventail des notes~: on n’hésitera pas à attribuer aux très
+bonnes copies des notes allant jusqu’à 10~; la qualité est à évaluer par rapport aux
+connaissances et capacités que l’on peut attendre d’un candidat issu de la classe
+terminale. Les notes inférieures à 3/10 correspondent à des copies véritablement
+indigentes.
+
+L’appréciation est précise, nuancée, elle ne se limite pas à pointer les faiblesses
+du devoir. On se pose la question suivante~: «~quelles sont les qualités de la copie~?~»
+
+L’évaluation des travaux tient compte de la qualité de l’expression (correction
+orthographique et syntaxique~; précision, justesse, finesse, voire élégance de la
+rédaction).
+\ifnum\c@chapter>2025{\noteorthographemoyenne}\fi}%
+}%
+
+\newcommand{\corrint}[2]{
+\subsubsection{Interprétation #1}
+\vspace*{-6pt}\begin{center}{\textbf{\underline{Sujet~:}} {#2}}\end{center}\vspace*{-6pt}
+\preambulecorrint}
+
+\newcommand{\corrref}[2]{
+\subsubsection{Essai #1}
+\vspace*{-6pt}\begin{center}{\textbf{\underline{Sujet~:}} {#2}}\end{center}\vspace*{-6pt}
+\preambulecorrref}
+
+% #1 = Prénom ; #2 = Nom
+\newcommand{\corrauteur}[2]{#2%
+  \ifthenelse{\equal{#2}{}}{}{%
+    \ifthenelse{\equal{#1}{}}%
+      {\index[r]{#2@\textsc{#2}}}%
+      {\index[r]{#2@\textsc{#2}~(#1)}}%
+  }%
+  \xspace}
+
+% #1 = Prénom ; #2 = Nom ; #3 = Titre
+\newcommand{\corroeuvre}[3]{\emph{#3}%
+  \ifthenelse{\equal{#2}{}}{}{% Auteur vide ? On ne fait rien.
+    \ifthenelse{\equal{#3}{}}%
+      {\index[r]{#2@\textsc{#2}}}% #3 est vide : pas de "!"
+      {\index[r]{#2@\textsc{#2}!#3}}% #3 existe : on met le "!"
+  }%
+  \xspace%
+}
+
+%#1 = Prénom, #2 = Nom, #3 = Titre, #4 = Texte à afficher dans le corrigé
+\newcommand{\corrreference}[4]{#4%
+  \ifthenelse{\equal{#2}{}}{}{% Auteur vide ? On ne fait rien.
+    \ifthenelse{\equal{#1}{}}%
+      {% Cas sans particule
+        \ifthenelse{\equal{#3}{}}%
+          {\index[r]{#2@\textsc{#2}}}% Pas d'œuvre : pas de "!"
+          {\index[r]{#2@\textsc{#2}!#3}}% Œuvre existe
+      }%
+      {% Cas avec particule (ou variante)
+        \ifthenelse{\equal{#3}{}}%
+          {\index[r]{#2@\textsc{#2}~(#1)}}% Pas d'œuvre
+          {\index[r]{#2@\textsc{#2}~(#1)!#3}}% Œuvre existe
+      }%
+  }%
+}
+
+\newcommand{\sujetcorrigen}[3]{
+    \setkeys[COR]{corr}{#1}
+	\ifthenelse{\equal{\corrnosujet}{}}{%
+	\ifthenelse{\equal{\corrtype}{}}{
+	\fancyhead[C]{\footnotesize Éléments d'évaluation du jour~\corrjour{}, \corrlieu~(\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu{}~(\corrannee),~Jour~\corrjour}
+	}
+	{\fancyhead[C]{\footnotesize Éléments d'évaluation du jour~\corrjour{}, \corrlieu~(\corrtype~\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu{}~(\corrtype~\corrannee),~Jour~\corrjour}}
+	}
+	{%
+	\ifthenelse{\equal{\corrtype}{}}
+	{\fancyhead[C]{\footnotesize Éléments d'évaluation du sujet~\corrnosujet~du~jour~\corrjour{}, \corrlieu~(\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}
+	\subsection{\corrlieu~(\corrannee),~Jour~\corrjour,~Sujet~\corrnosujet}}
+	{\fancyhead[C]{\footnotesize Éléments d'évaluation du sujet~\corrnosujet~du~jour~\corrjour{}, \corrlieu~(\corrtype~\corrannee)~: \textsc{\corrnomauteur}, \textit{\corrtitre}}	\subsection{\corrlieu~(\corrtype~\corrannee),~Jour~\corrjour,~Sujet~\corrnosujet}}
+	}%%%Fin de la mise en page des en-tête et niveaux de titre
+\begin{center}
+\fbox{
+\makebox[\linewidth-3.25cm][c]{
+\begin{minipage}{\linewidth-3.25cm}
+	\begin{center}
+	\noindent {\Large
+	\textit{Éléments d'évaluation}}\par
+	\ifthenelse{\equal{\corrprenomauteur}{}}
+	{%
+	\hyperlink{\corrlien}{\textit{Voir le sujet} : \textsc{\corrnomauteur}, \textit{\corrtitre}}\hypertarget{corr\corrlien}{}%
+	}
+	{%
+	{\hyperlink{\corrlien}{\textit{Voir le sujet} : \corrprenomauteur~\textsc{\corrnomauteur}, \textit{\corrtitre}}\hypertarget{corr\corrlien}{}%
+	}}
+	\end{center}
+	\end{minipage}
+	}}
+\end{center}
+\corrint{\corrtypeun}{\corrquestun}\index[c]{Question~d'interprétation~\corrtypeun!\corrquestun{}@{\scriptsize \textbf{\corrlieu,\ \corrannee}~--\  \textsc{\corrnomauteur}, \textit{\corrtitre}}\nopagebreak\\[3pt]\nopagebreak\hspace*{12pt}\corrquestun}
+
+#2
+
+\ifthenelse{\equal{\corrsautdepage}{}}{}{\vfill{~}\clearpage}
+
+\corrref{\corrtypedeux}{\corrquestdeux}\index[c]{Essai~\corrtypedeux!\corrquestdeux{}@{\scriptsize \textbf{\corrlieu,~\corrannee~:}}\nopagebreak\\[3pt]\nopagebreak\hspace*{12pt}\corrquestdeux}
+
+#3
+}
+
+%%%%%%% Gestion des graphiques par centre d'examen%%%%
+
+%% Transformation de la valeur en donnée numérique gérée avec pgf-pie
+\newcommand{\getcompteur}[1]{\number\value{#1}}
+%\newcommand{\getcompteurs}[2]{\number\value{#1#2}}
+
+\NewDocumentCommand{\camembertthemesgen }{O{} m}{% #1 = centre (ex. asi, met, amnord); #2 = Titre
+  \edef\totalsujetscentre{\number\value{sujet#1total}}%
+  \edef\pctETA{\fpeval{round(100 * \value{sujet#1allETA} / \totalsujetscentre, 0)}}%
+  \edef\pctEXS{\fpeval{round(100 * \value{sujet#1allEXS} / \totalsujetscentre, 0)}}%
+  \edef\pctMM{\fpeval{round(100 * \value{sujet#1allMM} / \totalsujetscentre, 0)}}%
+  \edef\pctCC{\fpeval{round(100 * \value{sujet#1allCC} / \totalsujetscentre, 0)}}%
+  \edef\pctHV{\fpeval{round(100 * \value{sujet#1allHV} / \totalsujetscentre, 0)}}%
+  \edef\pctHL{\fpeval{round(100 * \value{sujet#1allHL} / \totalsujetscentre, 0)}}%
+  \edef\pctaut{\fpeval{round(100 * \value{sujet#1allaut} / \totalsujetscentre, 0)}}%
+  \begin{center}
+  \textbf{#2}\\
+  \begin{tikzpicture}
+    \pie[radius=2, text=legend,
+         sum=\totalsujetscentre,
+         hide number=true,
+         color={purple!50,red!60,orange!50,yellow!50,green!50,blue!50,gray!50}]{%
+      \getcompteur{sujet#1allETA}/ETA (\pctETA\%),
+      \getcompteur{sujet#1allEXS}/EXS (\pctEXS\%),
+      \getcompteur{sujet#1allMM}/MM (\pctMM\%),
+      \getcompteur{sujet#1allCC}/CC (\pctCC\%),
+      \getcompteur{sujet#1allHV}/HV (\pctHV\%),
+      \getcompteur{sujet#1allHL}/HL (\pctHL\%),
+      \getcompteur{sujet#1allaut}/Aut. (\pctaut\%)%
+    }%
+  \end{tikzpicture}%
+  \end{center}
+}
+
+\NewDocumentCommand{\camembertthemesexcl}{O{} m}{%
+  \edef\totalsujetscentre{\number\value{sujet#1all}}%
+  \edef\pctexclRS{\fpeval{round(100 * \value{sujet#1exclRS} / \totalsujetscentre, 0)}}%
+  \edef\pctmixtRS{\fpeval{round(100 * \value{sujet#1mixtRS} / \totalsujetscentre, 0)}}%
+  \edef\pctexclHQ{\fpeval{round(100 * \value{sujet#1exclHQ} / \totalsujetscentre, 0)}}%
+  \edef\pctmixtHQ{\fpeval{round(100 * \value{sujet#1mixtHQ} / \totalsujetscentre, 0)}}%
+  \edef\pctmixtHQRS{\fpeval{round(100 * \value{sujet#1mixtHQRS} / \totalsujetscentre, 0)}}%
+  \begin{center}
+    \textbf{#2}\\
+    \begin{tikzpicture}
+      \pie[radius=2, text=legend,
+           sum=\totalsujetscentre,
+           color={red!55,red!45,blue!60,blue!50,yellow!60}]{%
+            \getcompteur{sujet#1exclRS}/Excl. RS (\pctexclRS\%),
+            \getcompteur{sujet#1mixtRS}/Mixt. RS (\pctmixtRS\%),
+            \getcompteur{sujet#1exclHQ}/Excl. HQ (\pctexclHQ\%),
+            \getcompteur{sujet#1mixtHQ}/Mixt. HQ (\pctmixtHQ\%),
+            \getcompteur{sujet#1mixtHQRS}/Mixt. HQRS (\pctmixtHQRS\%)%
+      }%
+    \end{tikzpicture}%
+  \end{center}
+}
+
+\NewDocumentCommand{\camembertthemes}{O{} m m}{% #1 = centre (ex. asi, met, amnord); #2 = discipline; #3 = Titre
+  \edef\totalsujetscentre{\number\value{sujet#1#2total}}%
+  \edef\pctETA{\fpeval{round(100 * \value{sujet#1#2ETA} / \totalsujetscentre, 0)}}%
+  \edef\pctEXS{\fpeval{round(100 * \value{sujet#1#2EXS} / \totalsujetscentre, 0)}}%
+  \edef\pctMM{\fpeval{round(100 * \value{sujet#1#2MM} / \totalsujetscentre, 0)}}%
+  \edef\pctCC{\fpeval{round(100 * \value{sujet#1#2CC} / \totalsujetscentre, 0)}}%
+  \edef\pctHV{\fpeval{round(100 * \value{sujet#1#2HV} / \totalsujetscentre, 0)}}%
+  \edef\pctHL{\fpeval{round(100 * \value{sujet#1#2HL} / \totalsujetscentre, 0)}}%
+  \edef\pctaut{\fpeval{round(100 * \value{sujet#1#2aut} / \totalsujetscentre, 0)}}%
+  \begin{center}
+  \textbf{#3}\\
+  \begin{tikzpicture}
+    \pie[radius=2, text=legend,
+         sum=\totalsujetscentre,
+         hide number=true,
+         color={purple!50,red!60,orange!50,yellow!50,green!50,blue!50,gray!50}]{%
+      \getcompteur{sujet#1#2ETA}/ETA (\pctETA\%),
+      \getcompteur{sujet#1#2EXS}/EXS (\pctEXS\%),
+      \getcompteur{sujet#1#2MM}/MM (\pctMM\%),
+      \getcompteur{sujet#1#2CC}/CC (\pctCC\%),
+      \getcompteur{sujet#1#2HV}/HV (\pctHV\%),
+      \getcompteur{sujet#1#2HL}/HL (\pctHL\%),
+      \getcompteur{sujet#1#2aut}/Aut. (\pctaut\%)%
+    }%
+  \end{tikzpicture}%
+  \end{center}
+}
+
+% #1 : centre (ex. met)
+% #2 : type d'épreuve (int ou ref)
+% #3 : discipline (litteraire ou philosophique)
+\NewDocumentCommand{\barreexam}{O{} m m}{%
+    % 1. Extraction et "gel" des valeurs des compteurs
+    \edef\vETA{\number\value{sujet#1#2#3ETA}}%
+    \edef\vEXS{\number\value{sujet#1#2#3EXS}}%
+    \edef\vMM{\number\value{sujet#1#2#3MM}}%
+    \edef\vCC{\number\value{sujet#1#2#3CC}}%
+    \edef\vHV{\number\value{sujet#1#2#3HV}}%
+    \edef\vHL{\number\value{sujet#1#2#3HL}}%
+    \edef\vEXSTA{\number\value{sujet#1#2#3EXSTA}}%
+    \edef\vETAMM{\number\value{sujet#1#2#3ETAMM}}%
+    \edef\vEXSMM{\number\value{sujet#1#2#3EXSMM}}%
+    \edef\vHVCC{\number\value{sujet#1#2#3HVCC}}%
+    \edef\vHLCC{\number\value{sujet#1#2#3HLCC}}%
+    \edef\vHVL{\number\value{sujet#1#2#3HVL}}%
+    % Cas particulier pour le transversal
+    \edef\vTrans{\number\value{sujettrans#1#2#3}}%
+    
+    % 2. Calcul du plafond dynamique
+    \edef\maxval{\fpeval{max(\vETA, \vEXS, \vMM, \vCC, \vHV, \vHL, \vEXSTA, \vETAMM, \vEXSMM, \vHVCC, \vHLCC, \vHVL, \vTrans) + 1}}%
+
+    % 3. Génération du graphique
+    \begin{tikzpicture}
+    \begin{axis}[
+        ybar, 
+        bar width=6pt,
+        ymin=0, ymax=\maxval, % À ajuster selon le volume maximum de ta banque
+        symbolic x coords={ETA,EXS,MM,CC,HV,HL,EXSTA,ETAMM,EXSMM,HVCC,HLCC,HVL,Trans},
+        xtick=data,
+        x tick label style={rotate=45, anchor=east, font=\tiny},
+        width=8.5cm, height=3.5cm,
+        axis lines*=left,
+        nodes near coords, 
+        every node near coord/.append style={font=\tiny},
+        % Esthétique fidèle à ta capture d'écran
+        fill=black!10, draw=black
+    ]
+    % PGFPlots reçoit ici des nombres purs, ce qui évite les plantages
+    \addplot coordinates {
+        (ETA,\vETA) (EXS,\vEXS) (MM,\vMM)
+        (CC,\vCC) (HV,\vHV) (HL,\vHL)
+        (EXSTA,\vEXSTA) (ETAMM,\vETAMM) (EXSMM,\vEXSMM)
+        (HVCC,\vHVCC) (HLCC,\vHLCC) (HVL,\vHVL)
+        (Trans,\vTrans)
+    };
+    \end{axis}
+    \end{tikzpicture}%
+}
+
+\NewDocumentCommand{\graphexamen}{O{} m}{
+\clearpage\newpage
+\noindent\vspace*{-6pt}
+% ==========================================
+% COLONNE DE GAUCHE : GÉNÉRAL
+% ==========================================
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{0pt}
+    % Un cadre englobant pour la gauche, inspiré de ta capture
+    \begin{tcolorbox}[
+    	height=0.9835\textheight,
+        colback=gray!5, 
+        colframe=gray!50, 
+        sharp corners, 
+        boxrule=0.5pt,
+        % On peut forcer la hauteur ici si on veut qu'elle s'aligne 
+        % parfaitement avec le bas de "Philosophie" plus tard
+    ]
+        \subsection*{Graphiques pour #2}
+        \camembertthemesexcl[#1]{Proportion des questions\\mixtes et exclusives\\~}
+        
+		\begin{center}
+		{\scriptsize{\underline{Légende~:} \emph{Excl. RS} : Un seul chapitre de la Recherche de soi ; \emph{Mixt. RS} : Plusieurs chapitres de la Recherche de soi ; \emph{Excl. HQ} : Un seul chapitre de l'Humanité en question ; \emph{Mixt. HQ} : Plusieurs chapitres de l'Humanité en question ; \emph{Mixt. HQRS} : Chapitres transversaux sur les semestres et les années.}}
+		\end{center}
+%        \vspace{2cm} % Espacement vertical généreux entre les deux camemberts
+        
+        \camembertthemesgen[#1]{Proportion des questions selon\\les thèmes du programme}
+        
+        {\scriptsize{Dès qu'une question fait appel à un thème, y compris pour les sujets croisés, elle est comptée dans le thème. Par exemple si une question porte sur EXS et MM, elle augmentera la proportion pour EXS et pour MM.}}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill% Le ressort horizontal qui pousse la colonne de droite
+% ==========================================
+% COLONNE DE DROITE : Littérature & Philosophie
+% ==========================================
+\begin{minipage}[t]{0.85\textwidth}
+    \vspace{0pt}
+    % --- 1. BLOC LITTÉRATURE ---
+    \begin{tcolorbox}[
+    	height=0.49\textheight,
+        colback=red!15, 
+        colframe=black, 
+        sharp corners, 
+        boxrule=0.5pt
+    ]
+        % Séparation interne du bloc Littérature
+        \begin{minipage}{0.45\textwidth}
+            \begin{center} % Pour bien centrer le camembert dans sa moitié
+                \camembertthemes[#1]{litteraire}{Proportion des questions selon\\les thèmes du programme}
+            \end{center}
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}{0.5\textwidth}
+            \textbf{Interprétation}\\
+            \barreexam[#1]{int}{litteraire}
+            
+            \vspace{0.1cm} % Ajustement entre les deux graphiques en barres
+            
+            \textbf{Essai}\\
+            \barreexam[#1]{ref}{litteraire}
+        \end{minipage}
+        
+        \vspace{-0.8cm} % Espace avant d'écrire le label
+        
+        % Le label placé manuellement en bas à gauche
+        {\large \textbf{Littérature}} 
+    \end{tcolorbox}
+%    
+    % --- 2. BLOC PHILOSOPHIE ---
+    \begin{tcolorbox}[
+    	height=0.48\textheight,
+        colback=gray!20, 
+        colframe=black, 
+        sharp corners, 
+        boxrule=0.5pt
+    ]
+                % Séparation interne du bloc Littérature
+        \begin{minipage}{0.45\textwidth}
+            \begin{center} % Pour bien centrer le camembert dans sa moitié
+                \camembertthemes[#1]{philosophique}{Proportion des questions selon\\les thèmes du programme}
+            \end{center}
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}{0.5\textwidth}
+            \textbf{Interprétation}\\
+            \barreexam[#1]{int}{philosophique}
+            
+            \vspace{0.1cm} % Ajustement entre les deux graphiques en barres
+            
+            \textbf{Essai}\\
+            \barreexam[#1]{ref}{philosophique}
+        \end{minipage}
+        
+        \vspace{-1cm} % Espace avant d'écrire le label
+        
+        % Le label placé manuellement en bas à gauche
+        {\large \textbf{Philosophie}}
+    \end{tcolorbox}
+\end{minipage}
+}

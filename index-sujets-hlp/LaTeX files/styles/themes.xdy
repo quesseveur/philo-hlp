@@ -1,0 +1,45 @@
+;; --- theme.xdy ---
+;; --- RÈGLES DE TRI PERSONNALISÉES ---
+
+;; 1. Ignorer la ponctuation parasite
+;; L'ajout de :string empêche xindy de planter sur les caractères spéciaux
+(merge-rule "« " "" :string)
+(merge-rule "» " "" :string)
+(merge-rule "«~~" "" :string)
+(merge-rule "»~~" "" :string)
+(merge-rule "[" "" :string)
+(merge-rule "]" "" :string)
+
+;; 2. Aplatir les lettres majuscules accentuées
+(merge-rule "À" "A" :string)
+(merge-rule "Â" "A" :string)
+(merge-rule "É" "E" :string)
+(merge-rule "È" "E" :string)
+(merge-rule "Ê" "E" :string)
+(merge-rule "Ë" "E" :string)
+(merge-rule "Î" "I" :string)
+(merge-rule "Ï" "I" :string)
+(merge-rule "Ô" "O" :string)
+(merge-rule "Û" "U" :string)
+(merge-rule "Ç" "C" :string)
+
+;; Ignorer les accents et les trier convenablement
+(merge-rule "à" "a" :string)
+(merge-rule "â" "a" :string)
+(merge-rule "é" "e" :string)
+(merge-rule "è" "e" :string)
+(merge-rule "ê" "e" :string)
+(merge-rule "ë" "e" :string)
+(merge-rule "î" "i" :string)
+(merge-rule "ï" "i" :string)
+(merge-rule "ô" "o" :string)
+(merge-rule "û" "u" :string)
+(merge-rule "ç" "c" :string)
+
+;; ------------------------------------
+(markup-indexentry :open "~n\item \normalfont " :depth 0)
+(markup-indexentry :open "~n \subitem \normalfont\itshape " :depth 1)
+(markup-locclass-list :open "\hspace{6pt}\dotfill\hspace{6pt}" :sep ", ")
+;; Gestion des lettres
+(markup-letter-group-list :sep "~n~n \indexspace ~n")
+(markup-letter-group :open "~n {\bfseries\hfil\hfil " :close "\hfil}\nopagebreak~n")

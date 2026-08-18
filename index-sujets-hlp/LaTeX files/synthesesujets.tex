@@ -1,0 +1,47 @@
+\pagestyle{recap}
+\stepcounter{section}
+\begin{landscape}
+\phantomsection\addcontentsline{toc}{section}{Récapitulatif des indexations}
+\hypertarget{synthesesujets}{}
+
+\begin{scriptsize}
+
+\section*{Récapitulatif des indexations}
+
+\DTLloaddb{sujetsdb}{sujetsdata.csv}
+
+\rowcolors{1}{white}{gray!25} %
+
+\begin{longtable}{|ccp{1.5cm}c|p{2cm}p{2.7cm}|cp{3.25cm}c|cp{3.25cm}c|}
+\hline
+\textbf{No} &  \textbf{An.} & \textbf{Lieu} & \textbf{J} & \textbf{Auteur} & \textbf{Titre} & \textbf{Int.} & \textbf{Question d'interpr.} & \textbf{Thème int.} & \textbf{Essai} & \textbf{Question d'essai} & \textbf{Thème ess.}\\\hline
+\endfirsthead
+
+\hline
+\textbf{No} &  \textbf{An.} & \textbf{Lieu} & \textbf{J} & \textbf{Auteur} & \textbf{Titre} & \textbf{Int.} & \textbf{Question d'interpr.} & \textbf{Thème int.} & \textbf{Essai} & \textbf{Question d'essai} & \textbf{Thème ess.}\\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+%\textbf{No} &  \textbf{An.} & \textbf{Lieu} & \textbf{J} & \textbf{Auteur} & \textbf{Titre} & \textbf{Interprétation} & \textbf{Thème int.} & \textbf{Essai} & \textbf{Thème ess.}\\
+\hline
+\endlastfoot
+
+\DTLforeach{sujetsdb}{%
+  % Mapper les colonnes CSV aux variables LaTeX
+  \dbnum=numero,\dblieu=lieu,\dbannee=annee,\dbjour=jour,%
+  \dbauteur=nomauteur,\dbtitre=titre,%
+  \dbtqun=typequn,\dbtqdeux=typeqdeux,\dbaxun=axeun,\dbaxdeux=axedeux,%
+  \dblien=liencorrige,\dbqun=questun,\dbqdeux=questdeux%
+}{%
+\DTLiffirstrow{}
+\\\textbf{\hyperlink{\dblien}{\dbnum{}}} & \dbannee & \dblieu & \dbjour & {\textsc{\dbauteur}} & \textit{\dbtitre}%
+	& \StrLeft{\dbtqun{}}{4}{}. & \dbqun{} & \dbaxun{} & \StrLeft{\dbtqdeux{}}{4}{}. & \dbqdeux{} & \dbaxdeux{}
+%	& {\detokenize\expandafter{\dblien}}
+}
+
+\end{longtable}
+\end{scriptsize}
+\end{landscape}

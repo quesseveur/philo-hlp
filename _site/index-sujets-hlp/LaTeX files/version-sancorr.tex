@@ -1,0 +1,196 @@
+\setcounter{chapter}{0}
+\setcounter{section}{1}
+\setcounter{subsection}{-1}
+\chapter{Notes de version}
+
+\subsection{Version originelle}
+
+\subsubsection{Contenu de cette version}
+La première version de cette banque des sujets indexés d'Humanités, Littérature et Philosophie a été créée en juillet 2022, et publiée en août 2022. Elle comportait la plus grande partie de ce qui compose encore aujourd'hui ce fichier, à savoir~:
+
+\begin{enumerate}
+\item un index des auteurs~;
+
+\item un index des questions selon qu'elles sont~:
+
+\begin{itemize}
+\item d'interprétation ou de réflexion (essais)~;
+
+\item littéraires ou philosophiques.
+\end{itemize}
+
+\item un index des textes selon leur genre (qui mérite certainement d'être interrogé)~;
+
+\item  un index des questions par sous-axes ou chapitres du programme (Les expressions de la sensibilité, Métamorphoses du moi, Histoire et violence, l'humain et ses limites) (qui mérite plus que tout autre d'être interrogé)~;
+
+\item un index des dates et centres d'examen,
+
+\item un index thématique pour chaque sujet (qui mérite également d'être interrogé).
+\end{enumerate}
+
+\subsubsection{Origine de la construction du fichier et code de départ}
+Le code permettant la construction du fichier était en grandie partie repris de ce que j'avais fait pour les sujets de Première, avec le seul ajout d'un index thématique (qui est tout de même certainement un ajout utile). Quelques améliorations cosmétiques, notamment dans la présentation des index, avaient été faites.
+Le principal défaut du code proposé tenait à une limite interne à \LaTeX{}, à savoir la limite des 9 arguments dans le cas de l'usage de \texttt{$\backslash$newcommand}, qui obligeait à indiquer deux fois le nom de l'auteur (une fois pour la mise en page de l'en-tête du sujet, une autre fois lors de l'indication de la référence). De plus, l'environnement dans lequel on introduisait les textes (pour qu'ils aient une dimension qui corresponde à l'en-tête) obligeait à séparer un \texttt{$\backslash$begin\{flushright\}} du \texttt{$\backslash$end\{flushright\}}, ce qui n'était guère souhaitable.
+
+Un certain nombre de coquilles s'étaient également glissées dans les sujets, ce que l'on continue, toujours et encore, de chasser. L'ambition première était alors surtout de fournir des index pour les sujets, de manière à permettre à chaque professeur de pouvoir identifier des sujets à proposer aux élèves autant que pour soi-même concevoir des cours en fonction de ce qui avait déjà été proposé.
+
+\vfill{~}
+
+\stepcounter{section}
+\setcounter{subsection}{-1}
+\subsection{Juillet 2024-Septembre 2025}
+
+Après deux ans sans mise à jour (officielle), le fichier a été amélioré, ce qui entraîne, néanmoins, une incompatibilité entre cette version et la version précédente, ce que l'on va détailler dans ce qui suit.
+
+\subsubsection{Mise à jour des sujets}
+
+La première des tâches a consisté à ajouter à ce fichier les sujets proposés après août 2022. On a ainsi pu ajouter les sujets suivants :
+
+\begin{enumerate}
+\item Session de remplacement, Métropole 2022 (sept.~2022)
+\item Nouvelle-Calédonie 2022 (oct.~2022)
+\item Tous les sujets de 2023 (Amérique du Nord, Asie, Centres étrangers, La Réunion, Liban, Métropole, Métropole (Session de Rattrapage), Nouvelle-Calédonie, Polynésie).
+\item Les sujets de la session 2024 des centres suivants : Amérique du Nord, Asie, Centres étrangers, Métropole, Métropole (Session de Rattrapage), Polynésie.
+\item Les sujets de la session 2025 des centres suivants : Amérique du Nord, Asie, Centres étrangers, Métropole, Polynésie.
+\end{enumerate}
+
+Il manque toujours à ce jour (24 septembre 2025) les sujets des sessions suivantes~:
+
+\begin{enumerate}
+\item Les sujets proposés en \textbf{Asie} pour le \textbf{jour 1} des spécialités en \textbf{2021} (on dispose du jour 2, mais pas du jour 1).
+\item Les sujets proposés pour le jour 2 en Polynésie en 2021.
+\item Les sujets proposés pour le jour 2 en Polynésie en 2021 comme sujet de remplacement.\footnote{On suppose néanmoins qu'il est très probable que le sujet de remplacement dont on dispose ait été utilisé comme sujet pour le jour 2 de la session 2021 en Polynésie, ce qui ferait alors qu'il ne nous manquerait pas vraiment de sujet (s'il n'y a pas eu de session de remplacement en Polynésie en 2021.)}
+\item Les sujets proposés en Amérique du Sud en 2023 (jour 1 et jour 2).
+\item Les sujets proposés en Nouvelle-Calédonie pour 2025 (épreuves les 20 et 21 novembre 2025).
+\end{enumerate}
+
+\subsubsection{Modification de l'index des axes du programme}
+
+Un des apports majeurs de cette nouvelle version réside dans la modification de l'index selon les axes du programme qui existait dans la précédente version. À l'usage, on s'est aperçu qu'un de ses défauts majeurs résidait dans l'absence de distinction entre les questions d'interprétation et les essais. Pour cette nouvelle édition, on a donc fait en sorte d'améliorer cet index en le divisant en deux index distincts qui permettent de chercher plus efficacement les sujets voulus. Le premier conserve l'indexation thématique originelle, mais subdivise chacune des catégories thématiques selon le fait que la question est une question d'interprétation ou un essai, et selon que la question est littéraire ou philosophique (créant ainsi pour chaque thème les sous-catégorie question d'interprétation littéraire, question d'interprétation philosophique, question d'essai littéraire, question d'essai philosophique) (voir \hyperlink{indexw}{l'index des questions selon les axes du programme puis selon leur type}). Le principal défaut de cet index est que cela allonge assez considérablement la longueur de cet index, mais certainement était-ce préférable à la simple accumulation de questions dont on ne pouvait distinguer le type. Il nous semble que l'intérêt principal est moins pour le professeur de trouver un sujet à proposer aux élèves (puisque certains sujets peuvent proposer des questions relevant d'axes du programme légèrement différents) que de se faire une idée de ce qui peut être attendu sur un thème en particulier. On a créé également un deuxième index qui cette fois-ci part du type de question proposée (selon qu'elle est littéraire ou philosophique ou qu'il s'agisse d'une question d'interprétation ou d'un essai) pour ensuite donner la subdivision selon les axes du programme voir \hyperlink{indexv}{l'index des questions selon leur type puis selon les axes du programme}). Un tel index paraît le plus approprié à un professeur qui chercherait à trouver un sujet pour ses élèves.
+
+On a conservé, après certaines hésitations, l'index des questions selon leur type, qui ne distingue pas les thèmes du programme, quoique cela puisse paraître redondant. Il nous semble néanmoins que c'est un moyen efficace de se faire une bonne idée du genre de questions qui peuvent être posées, indépendamment du thème, notamment dans la formulation des questions (mais à terme, il n'est pas inenvisageable qu'un tel index disparaisse, pour raccourcir un peu le fichier). Cela permet ainsi de se faire une bonne idée des attendus possibles de l'épreuve.
+
+\subsubsection{Ajout d'un chapitre sur les statistiques}
+
+L'autre grand ajout de cette nouvelle édition réside dans la présence d'un chapitre dans l'Appendice sur les statistiques (p.~\pageref{statistiques}). Cela a exigé une refonte du code qui produit ce fichier, notamment parce que le système d'indexation (le paquet \texttt{imakeidx}) ne supportait par les compteurs dans les noms de commande, ce qui rend désormais ce fichier incompatible avec la version précédente\footnote{Ce n'est pas le changement majeur qui a le plus eu de conséquences, mais cela rend malgré tout déjà les versions incompatibles, notamment parce que dans les sujets on n'indique plus le thème de chaque question par une commande mais par une abréviation, par exemple, pour \MM{}, on n'indique plus \texttt{$\backslash$MM}, mais simplement \texttt{MM} dans le code.}. Le système de compteurs a été pensé pour être le plus robuste possible (notamment en prévision de sujets exotiques qui mêleraient des sujets de Terminale et de première), ce qui fait que les deux tableaux qui présentent la répartition des sujets selon chaque thème et selon chaque type de questions devraient, théoriquement, s'actualiser sans difficultés.
+
+Le principal objectif de ces statistiques est l'identification des thèmes qui ont été le plus souvent traités selon le type de questions, même si aucun passage de ce qui est à ce qui sera ou devra être ne saurait être fait. On notera néanmoins, à cette date de version, qu'il a semble-t-il été plus facile de proposer des sujets d'essais littéraires sur «~\MM{}~» que sur «~\EXS{}~» (\arabic{sujetallreflitteraireMM} pour «~\MM{}~» contre \arabic{sujetallreflitteraireEXS} pour «~\EXS~»), tandis que les questions d'interprétation littéraires ont plutôt tendance à inverser ce rapport (cela est moins manifeste~: \arabic{sujetallintlitteraireMM} pour «~\MM{}~» contre \arabic{sujetallintlitteraireEXS} pour «~\EXS{}~»). Il convient de noter, néanmoins, comme cela est déjà indiqué dans les quelques éléments de réflexion sur les statistiques que l'on propose (p.~\pageref{statistiques}) que le fait que les sujets liés à «~\ETA~~» et «~\CC~» n'aient pu faire l'objet d'une évaluation qu'à partir de la session 2024 du baccalauréat mène forcément à un écart en termes de nombre de sujets proposés sur ces thèmes.
+
+\subsubsection{Transformation du système d'indexation et du code pour produire les sujets}
+
+En plus de l'ajout des compteurs pour les statistiques, on a considérablement transformé le code pour produire les fichiers, pour améliorer le système d'indexation et rapprocher le code qui permet de produire les sujets de ce qui peut être utilisé dans une base de données, en «~nommant~» notamment chacun des éléments au sein d'un sujet, plutôt qu'en laissant l'ordre d'apparition des arguments déterminer la nature de ce qui doit être inséré. Parce qu'on voulait ajouter la possibilité de préciser si un corrigé existait, et pour éviter de répéter le nom de l'auteur (un des problèmes identifiés de la v.~1.0), on est passé de l'usage de la commande \texttt{$\backslash$sujet} dont on disposait auparavant, à une nouvelle commande (\texttt{$\backslash$sujetn}) qui fait appel à \texttt{xkeyval}. Le paquet \texttt{xkeyval} permet, par rapport à l'usage simple d'une déclaration de commande via \texttt{$\backslash$newcommand}, une structuration des données, et permet de dépasser la limite des 9 arguments internes à l'usage d'une commande définie par l'utilisateur. C'est la modification la plus importante qui rend complètement incompatible cette version avec la version précédente, mais qui offre l'avantage d'une plus grande lisibilité dans la création d'un sujet, ainsi que d'une plus grande facilité à maintenir à jour les sujets. Parmi les défauts restants, l'incompatibilité entre le système d'indexation et l'usage de commande \LaTeX{} à l'intérieur de l'indexation ne permet pas, pour le moment, de récupérer automatiquement l'initiale du prénom de l'auteur (ce que l'on aimerait améliorer à l'avenir), ce qui devrait être faisable à terme (sous réserve que cela soit bien effectivement possible au regard du fonctionnement interne des commandes \TeX{} et \LaTeX{}), mais qui dépasse pour l'heure nos compétences techniques, puisque cela exige une compréhension du système d'«~expansion~» de \LaTeX{}.
+
+On a profité de cette transformation pour ajouter, sans savoir si cela était vraiment une nécessité, mais par commodité de lecture, le caractère Obligatoire de la session, ou si cela relevait d'une session de remplacement (session de septembre en Métropole) ; on a également ajouté le jour de passage de l'épreuve (jour 1 ou jour 2) dans \hyperlink{indexn}{l'index des sujets par lieux et par année}. De cette manière, on peut plus facilement se retrouver dans la liste des sujets proposés, mais c'est là un ajout qui n'est peut-être pas pertinent (n'hésitez pas \href{mailto:mikael.quesseveur@ac-lille.fr}{à m'indiquer ce que vous en pensez}).
+
+\subsubsection{Création d'une version de ce fichier avec des éléments d'évaluation}
+
+Cet élément n'est pas visible dans ce document, mais a été un apport majeur de l'autre version de ce fichier (voir \sujetshlpcorr). Il vise à faire du fichier un outil complet de travail pour les professeurs, qui peuvent ainsi non seulement accéder à la liste des sujets, mais aussi se faire une idée plus claire des attendus en consultant les éléments d'évaluation sur les épreuves quand ils sont disponibles. Dans cet autre fichier, un système de liens et de rétroliens permet de naviguer facilement de l'un à l'autre et indique pour chaque sujet (contrairement à ce fichier) si des éléments d'évaluation existent, et permet de naviguer entre ces éléments d'évaluation et les sujets. Dans cet autre fichier, on trouvera à la fin, avec les autres index, un index des questions avec des éléments d'évaluation. On trouve également à la fin de cet autre fichier, dans la \hyperlink{TdM}{Table des matières}, la liste des sujets disposant d'éléments d'évaluation classés par centres d'examen et session du baccalauréat, ce qui permet d'avoir une vue synoptique.
+
+Pour que ces éléments d'évaluation puissent également être utiles dans la préparation des cours, et non seulement comme le moyen de pouvoir évaluer les attendus sur un sujet donné, on a créé un nouvel index des références culturelles, œuvres et auteurs cités dans les éléments d'évaluation. Si accéder à ce fichier avec l'ensemble des éléments d'évaluation vous intéressent, vous pouvez vous rendre cliquer sur le lien suivant pour télécharger le fichier : \sujetshlpcorr.
+
+\subsubsection{Création de ce fichier sans les éléments d'évaluation}
+
+Pour les professeurs qui souhaiteraient avoir un fichier moins long (et moins lourd) qui ne contiennent pas les éléments d'évaluation, on a créé ce fichier, qui peut être téléchargé à ce lien~: \sujetshlpsanscorr{}.
+
+Cela oblige à maintenir deux fichiers, au lieu d'un, mais cela présente l'avantage d'avoir un fichier vraiment plus compact, qui ne comporte pas l'index des références culturelles des éléments d'évaluation, et qui contient le cœur de ce travail de compilation des sujets proposés en HLP. La présence des éléments d'évaluation à terme, sera certainement problématique et risque de mener le fichier, à dépasser les \nombre{1000} pages, ce qui n'est guère raisonnable. On verra à ce moment-là ce qui paraît la meilleure solution, même si l'on pense proposer une version «~définitive~» des sujets des années 2020 à 2030, ou 2035, selon le cas, dans un seul et même fichier, et créer un autre fichier qui ne contiendrait au plus que dix années de sujets HLP.
+
+\subsubsection{Ajout de cette note de version}
+
+Pour rendre plus lisible les changements apportés, on a également ajouté les«~Notes de version~» que vous êtes actuellement en train de lire. Cela vise principalement à garder un historique de l'évolution de ce fichier, et considérer la compatibilité des différentes versions (ou non).
+
+\subsubsection{Amélioration cosmétique et amélioration mineure}
+
+On a, enfin, apporté quelques améliorations cosmétiques ou mineures :
+
+\begin{itemize}
+\item On a, pour des raisons de lisibilité, enlever les cadres qui signalent les liens, et on les a remplacés par des textes avec des couleurs (sombres) pour que cela ne soit pas trop visible à l'impression et que cela permette malgré tout de bien identifier les liens cliquables.
+\item On a amélioré l'alignement des textes avec la boîte de titre, ce qui n'est pas clairement visible, mais qui, dans le code, était effectif.
+\item On a réduit la taille des textes dans la boîte de titre, pour éviter notamment certains retours à la ligne dans quelques sujets, qui étaient fort inesthétiques, notamment sur «~\HQ~» lorsque le genre du texte était trop long.
+\item On a essayé de réduire le plus possible le poids du fichier malgré l'ensemble des ajouts que l'on a faits, notamment en réduisant le poids des images utilisées, en couverture ainsi qu'au long du fichier (image de titre de chapitres, logo d'HLP\footnote{Logo qui n'a rien d'officiel et dont on est l'auteur ; le seul but était d'avoir une identité visuelle.}).
+\item On a supprimé dans le code la possibilité de transformer les sujets en «~épreuve~» sur le modèle de ce qui avait été fait pour les sujets de Première, puisque la forme des sujets s'est éloignée de ce qui avait été proposé dans la Banque Nationale des Sujets (BNS) pour les sujets de Première. Cette transformation est également liée au passage sous \texttt{xkeyval} des données.
+\item On a supprimé l'espace insérée automatiquement par le paquet \texttt{babel} en français entre la fin d'un mot et l'appel de note de bas de page, que l'on trouvait inesthétique. Si cela ne respecte pas les règles typographiques édictées par le \emph{Lexique des règles typographiques en usage à l’Imprimerie Nationale}, troisième édition (1994), (voir l'entrée «~appel de note~», pp.~23--25), cela nous semblait plus conforme aux habitudes des professeurs et des élèves face à des traitements de texte, et permet d'éviter d'éventuelles confusions.
+\item On a corrigé des fautes typographiques que l'on avait faites lorsque l'on a recopié les sujets depuis une version photo des sujets, quand ils viennent de paraître, et qu'on ne les avait pas récupérés depuis le PDF officiel. 
+\end{itemize}
+
+\subsubsection{Améliorations à venir}
+
+Même si le fichier se perfectionne, il reste encore quelques améliorations possibles, notamment concernant quelques bugs d'indexation. Par exemple le sujet de Remplacement proposé au jour 1 en Métropole, qui porte sur Hannah Arendt, a une question d'interprétation philosophique dont la première lettre (À) est mal indexée, et se retrouve à la fin, étant donné que ce n'est pas un caractère ASCII mais unicode, ce que \texttt{imakeidx} gère mal. Probablement faudra-t-il trouver un moyen d'améliorer cela (malgré quelques essais, on n'y est pas encore parvenu). La prochaine amélioration conséquente va peut-être consister à passer sous \texttt{xindy} pour l'indexation, mais on n'a pour l'heure aucune idée de la possibilité d'effectuer une telle transformation sans fournir un effort qui dépasserait nos capacités.
+
+Ce passage sous \texttt{xindy} permettra peut-être une autre amélioration conséquente, même s'il n'est pas certain que cela soit possible, même avec un nouveau système d'indexation, à savoir la possibilité de rendre le tableau de statistiques «~cliquable~» pour renvoyer aux questions pertinentes dans l'Index des questions selon les types de question puis selon les axes du programme. Ce sera certainement un gros travail autour de la commande principale de création de sujets pour que tout continue à fonctionner normalement. Si l'amélioration est possible, on espère parvenir à l'ajouter aux grandes vacances prochaines (été 2026).
+
+Il serait souhaitable également de parvenir à récupérer automatiquement l'initiale du prénom de l'auteur pour ne pas avoir à systématiquement l'indiquer (le risque d'erreur humaine augmentant nécessairement).
+
+On songe, éventuellement, à créer un nouvel index avec les questions pour lequel, cette fois-ci, on ne séparerait pas les sujets qui appartiennent à plusieurs chapitres, mais on les ferait apparaître plusieurs fois dans l'index, pour chaque chapitre. Cela permettrait d'avoir très vite un aperçu pour chaque chapitre des sujets proposés, sans avoir à parcourir toutes les pages de l'index pour savoir s'il n'y a pas un autre sujet sur le même chapitre qui serait groupé avec un autre chapitre. Par exemple, les sujets sur \ETA{} apparaissent à ce jour en première page de l'\hyperlink{indexw}{Index des questions selon les axes du programmes puis selon leur type}, mais on en trouve d'autres indexés à «~\EXSTA{}~», quasiment à la fin de cet index. Ce nouvel index, qui s'ajouterait (encore) à l'ensemble des index, n'apparaît pas une urgence. Sa création dépendra, surtout, des \href{mailto:mikael.quesseveur@ac-lille.fr}{retours que j'aurais à ce sujet}.
+
+Enfin, on songe ---~mais il n'est pas évident que cela soit une bonne idée~--- à indexer les concepts, mouvements littéraires et autres éléments de connaissance présents dans les éléments d'évaluation. Cela permettrait aux professeurs qui utiliseraient ce fichier de pouvoir, d'une part, identifier rapidement des sujets qui répondraient à ce qu'ils ont étudié au cours de l'année et, d'autre part, d'intégrer aux cours les éléments les plus récurrents des éléments d'évaluation, qui, à ce titre, sont pertinents pour les sujets et qu'ils auraient pu, auparavant, ne pas forcément avoir traités dans leurs cours.
+
+\subsubsection{Hotfix, 27 septembre 2025}
+
+\begin{itemize}
+\item Correction de l'ordre des packages \texttt{hyperref} et \texttt{bookmark} pour rétablir les liens présents pour les pages dans les différents index.
+
+\item Remplacement des expressions «~éléments de correction~» par «~éléments d'évaluation~». 
+
+\item Correction des liens présents sur la dernière page pour qu'ils mènent aux bons fichiers.
+
+\item Correction du numéro de la page de couverture pour éviter les conflits de lien de page.
+\end{itemize}
+
+\vfill{~}
+
+\subsection{Février 2026}
+
+\subsubsection{Création d'un fichier \texttt{csv} dépendant de ce fichier \LaTeX{}}
+
+\begin{itemize}
+\item Modification du code pour produire automatiquement un fichier \texttt{csv} qui contient les informations concernant les numéros de sujet, les lieux, les années, les jours, les noms d'auteur, les titres des œuvres, les types de la question d'interprétation et d'essai, les questions correspondantes ainsi que les questions en elles-mêmes. Cela a obligé à quelques modifications dans les références données en bas de sujets, notamment pour le sujet sur Foucault (\hyperlink{metcal_2021_1_1}{Métropole, Candidats libres, 2021, Jour 1}) pour lequel on a dû référencer \textit{Rêve et existence} plutôt qu'«~Introduction~» à \textit{Rêve et existence} pour des questions de gestion d'encodage des caractères dans le \texttt{csv}. Ce fichier permet de se faire une bonne idée des répartitions statistiques de manière plus directe que les \hyperlink{statistiques}{Statistiques} présentes dans ce fichier, puisqu'elles ne font que donner la tendance générale, sans préciser à chaque fois les sujets.
+
+\item Indication du lien vers le fichier \texttt{Sheet} qui récapitule les indexations et les questions, selon la même logique que le \texttt{csv} dans un format plus lisible, mieux présenté et directement interactif. On peut accéder à ce fichier en cliquant ici : \sujetscsv{}.
+\end{itemize}
+
+\subsubsection{Statistiques : répartition des sujets par centres d'examen}
+
+Dans les \hyperlink{statistiques}{Statistiques}, on a également ajouté la répartition des sujets selon les centres d'examen. Cela permet de se faire une idée assez précise de la distribution des sujets à travers les centres d'examen. La disposition permet une lisibilité efficace même si elle demande certainement de chercher l'information plutôt que de se laisser guider simplement par la connaissance que l'on a du programme, mais il paraissait moins nécessaire de produire des statistiques aussi développées pour les centres d'examen individuels que pour le récapitulatif général. 
+
+\subsubsection{Récapitulatif des indexations}
+
+Pour plus de lisibilité concernant ce fichier, on a indiqué désormais \hyperlink{synthesesujets}{le récapitulatif des indexations}. On se fait une idée ainsi assez rapide des indexations proposées, avec les sujets. Le fichier est produit directement à partir du \texttt{csv}. Le numéro du sujet est un lien qui permet d'accéder directement au sujet, ce qui permet de rapidement naviguer entre les indexations et les sujets. Cela peut certainement servir à quelqu'un qui chercherait un sujet en souhaitant identifier les chapitres de rattachement de la question d'interprétation comme de l'essai, sans avoir à passer pour autant par le fichier Excel.
+
+\subsection{Juillet 2026}
+
+\subsubsection{Créations des graphiques généraux et pour les différentes zones géographiques}
+
+On a créé des graphiques pour chaque centre d'examen et pour l'ensemble des centres d'examen, pour rendre plus lisible et visible la répartition des sujets. Comme toutes statistiques, elles sont à prendre avec prudence, puisque le passé ne saurait présager de l'avenir, surtout pour des sujets d'examens. On y a inclus :
+
+\begin{enumerate}
+\item Deux graphiques généraux : le premier qui prend en compte toutes les questions et détaillent la répartition selon les semestres, ce qui permet de juger de l'équilibre (ou non) des semestres proposés à l'étude ; le deuxième qui détaille à quelles chapitres précisément les questions posées se sont rapportées.
+\item Des graphiques spécifiques à chaque discipline, signalés par un encadré rouge pour la littérature, et bleu pour la philosophie. On y trouve le même type de graphique que pour les généralités, en détaillant les chapitres auxquels se rapportent chaque question ; on trouve également, \emph{via} un diagramme en barres, la proportion de chaque sujet que ce soit pour les questions d'interprétation ou d'essai.
+\end{enumerate}
+
+On a ainsi en un coup d'œil un aperçu très rapide de ce qui a été plus souvent proposé à l'examen par le passé, ce qui n'a pas reçu pour l'heure une attention soutenue, et les éventuels croisements thématiques plus rares au sein du centre d'examen.
+
+\subsubsection{Améliorations cosmétiques}
+
+Pour rendre les données plus lisibles dans les tableaux statistiques par centres d'examen, on a grisé tous les thèmes pour lesquels il n'y avait eu aucune question posée. On a appliqué la même logique pour les statistiques générales avec un aspect et un peu moins grisé néanmoins. On l'a fait d'abord par esthétisme, mais aussi parce que, contrairement aux statistiques par centre d'examen, qu'un thème ou un croisement de thème n'ait pas été traité paraît plus significatif : cela marque ou bien une difficulté à proposer des questions sur des croisements spécifiques, dont les affinités sont moins naturelles potentiellement (par exemple, on peut penser qu'il est plus difficile de faire le lien entre histoire et violence et création, continuités et ruptures qu'entre les expressions de la sensibilité et les métamorphoses du moi). Cela ne veut pas dire que cela est impossible, bien au contraire, mais que certains thèmes ont peut-être plus d'affinités que d'autres.
+
+\subsubsection{Passage sous \XeLaTeX{} pour la compilation et compatibilité avec les versions précédentes}
+
+Depuis la production du \texttt{csv} et malgré nos efforts, il est devenu difficile d'utiliser uniquement pdf\LaTeX{}, parce que la gestion des caractères \texttt{UTF-8} est moins bien gérée qu'avec d'autres moteurs, et que l'inclusion depuis le fichier \texttt{csv} du récapitulatif des indexations et des sujets était impossible en faisant usage seulement de pdf\LaTeX{}. Pour éviter de rendre néanmoins ce fichier inutilisable et incompatible avec les versions précédentes, on a inclus le package \texttt{iftex} qui permet de faire un test sur le moteur de compilation utilisé, de sorte que l'on peut utiliser tant pdf\TeX{} que \XeTeX{} pour compiler le fichier.
+
+\subsubsection{Passage sous \texttt{xindy} pour l'indexation}
+
+Comme on l'avait envisagé, on est passé sous \texttt{xindy} pour la gestion des index : c'était un changement moins important que prévu qui n'a pas vraiment demandé de changer le code de la commande principale (\texttt{$\backslash$sujetn}) parce que c'est toujours \texttt{imakeidx} qui est utilisé comme package, mais le moteur est à présent \texttt{xindy} et non \texttt{makeindex}. Cela a permis de résoudre les problèmes identifiés d'ordre dans l'index, notamment concernant les caractères spéciaux (notamment les guillemets) et les lettres accentuées. Tout est à présent rangé dans l'ordre correctement. Cela a eu pour conséquence néanmoins de rendre désuet les fichiers de styles utilisés, et la syntaxe de \texttt{xindy} nous était moins familière, et parfois elle s'est avérée moins flexible, ce qui nous a mené à nous aider de l'IA pour régler cette gestion de l'apparence et retrouver un document le plus proche possible de ce que nous avions proposé par le passé. Cela a également permis de régler des problèmes de mise en page dans que nous avions auparavant, notamment des sauts de colonnes ou de pages mal placés, des numéros de pages dans l'index légèrement décalés, et l'IA nous a bien guidé ici pour résoudre toutes ces difficultés.
+
+\subsubsection{Création de liens dans le tableau statistiques}
+
+Une des évolutions notables de ce fichier, que nous avions envisagé avec le passage à \texttt{xindy} était l'incorporation de liens dans le tableau des statistiques générales pour renvoyer à l'index. Ce n'est en fait pas tant \texttt{xindy} qui a résolu le problème qu'une meilleure compréhension des questions d'expansion dans \LaTeX{}, même si, de fait, le passage sous \texttt{xindy}, plus robuste aux caractères spéciaux, a probablement facilité les choses et éviter quelques erreurs : au moyen de l'usage d'une macro \LaTeX{} classique mais efficace (\texttt{$\backslash$protect}), on a pu faire en sorte que les liens soient écrits correctement dans les fichiers \texttt{.ind} qui permettent de produire les index. Cela nous a permis en tout cas de créer les ancres dans nos commandes d'indexation et d'inclure des liens dans le tableau vers ces ancres.
+
+\subsubsection{Usage de l'IA pour écrire le code}
+
+L'honnêteté oblige à indiquer qu'une partie du code pour les dernières modifications a été rédigé par l'IA : on commençait à toucher à des commandes \LaTeX{} avancée difficile à pleinement maîtriser, que ce soit l'usage de \texttt{pgfplots} pour les graphiques et les diagrammes, la bascule sous \texttt{xindy} et la gestion surtout des styles pour améliorer l'apparence des index (même si en soi le gros du changement a été fait sans, certains éléments de détail échappaient à notre compréhension), ou encore le fait de rendre compatible les versions pdf\LaTeX{} et \XeLaTeX{} (notamment pour comprendre les raisons de certaines incompatibilités) et même la création de liens dans le tableau des statistiques générales, qui exige une compréhension du système d'expansion de \LaTeX{}. Cela ne change rien nous semble-t-il à la valeur de ce fichier, d'autant que l'usage visait d'abord la compréhension pour rédiger une large partie du code nous-même. À certains moments, notamment pour les styles de \texttt{xindy} on a néanmoins suivi de nombreuses propositions faites par l'IA (majoritairement Claude et Gemini). Le travail d'indexation thématique en lui-même, le choix (discutable) des axes du programme identifiés, l'identification dans les éléments de correction des références restent de notre fait, même si, à l'occasion, on a demandé des suggestions à l'IA pour les thèmes pour s'assurer de la pertinence de nos choix (principalement Mistral).
+
+\subsubsection{Améliorations à venir}
+
+La plupart des axes d'amélioration identifiés dans la précédente version ont été menés à leur terme. Il reste à voir ce qui est faisable pour récupérer l'initiale du prénom de l'auteur automatiquement, si cela est vraiment pertinent. On a même produit un peu plus que ce que l'on aurait espéré en intégrant les graphiques, qui semblent plus pertinents que cette automatisation supplémentaire de l'initiale. Il reste, semble-t-il, peu de choses à améliorer à ce fichier : il devient particulièrement complet. Les principales améliorations possibles relèvent davantage ainsi de l'optimisation, notamment pour améliorer la compilation (qui commence à devenir longue) et éviter les erreurs humaines. On envisage ainsi, mais cela sera totalement invisible pour une personne qui utilise ce fichier comme produit fini, à automatiser la création des compteurs, pour permettre aisément l'ajout de nouveaux compteurs si on avait oublié certains thèmes. On a déjà automatisé complètement les calculs sur les compteurs pour les statistiques : simplifier la création des compteurs paraît utile, même si ce n'est pas absolument nécessaire. On va essayer de réfléchir à d'autres optimisations, mais il semble, à l'heure qu'il est (juillet 2026) qu'il n'y a plus grand chose à ajouter à ce fichier, si ce n'est continuer à l'augmenter.
+
+La véritable transformation de ce fichier ne viendra donc pas du fichier lui-même, mais du fait de se libérer de son cadre. Le fichier devient long (à la date de rédaction de cette note, \numprint{480}~pages) et donc de plus en plus difficile à manipuler, même si cela ne change pas fondamentalement de la version précédente. Néanmoins, permettre de disposer plus aisément de l'ensemble de ces fichiers paraît une priorité : on songe ainsi à sortir du cadre du PDF pour mettre en ligne sur un site internet l'ensemble de ce que l'on propose (fichiers  à télécharger, indexation, statistiques, éléments de correction) et à proposer un outil de recherche parmi tous ces fichiers. Dans nos espoirs les plus fous, on pourrait parvenir à cela en septembre 2026, mais cela mettre peut-être plus de temps à arriver : c'est en tout cas, très certainement, l'évolution normale et logique de ce fichier, c'est-à-dire cesser d'en être un pour être plus utile.

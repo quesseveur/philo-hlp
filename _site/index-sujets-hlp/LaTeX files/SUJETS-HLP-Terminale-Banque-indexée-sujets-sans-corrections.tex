@@ -1,0 +1,128 @@
+\input{preambule/preambule.tex}
+\newif\ifgencsv
+\gencsvfalse
+\input{preambule/preambulespecifiquesanscorr}
+
+\begin{document}
+%\dominitoc
+
+\pagestyle{plain}
+
+\pagenumbering{Alph}
+\includepdf{img/couv2026_sujetshlp-sanscorrTale.pdf}
+
+\frontmatter
+
+\input{titlepagesanscorr}
+
+\clearpage
+\input{credits-imagesanscorr}
+\clearpage
+
+\bigskip
+
+\input{avertissement-sanscorr}
+
+\clearpage
+
+\pagestyle{plain}
+
+\cleardoublepage
+
+\pagestyle{ToC}
+
+\setlength{\parskip}{0pt}
+\phantomsection\addcontentsline{toc}{chapter}{Sommaire}
+\shorttoc{Sommaire}{1}
+
+\cleardoublepage
+
+\setlength{\parskip}{6pt}
+
+\mainmatter
+
+\pagestyle{fancy}
+
+\part{Sujets}
+
+\chapitre{La recherche de soi}{img/Friedrich_voyageur.png}{Caspar David \textsc{Friedrich}, \textit{Le Voyageur contemplant une mer de nuages}, 1818, huile sur toile, 94.4×74.8cm, Hamburger Kunsthalle (Hambourg, Allemagne).}{0.6\textwidth}
+
+\cleardoublepage
+
+\input{Recherche-soi}
+
+%\chapter{L'humanité en question}
+\chapitre{L'humanité en question}{img/creation-robotic-adam.jpg}{Auteur inconnu, \textit{La création de l'Adam robotique}, XXI\ieme{} s., artwork.}{0.8\textwidth}
+
+\cleardoublepage
+
+\input{Humanité-question}
+
+\pagestyle{plain}
+
+\backmatter\setcounter{section}{0}
+
+\part*{Index\\et appendices}
+\phantomsection\addcontentsline{toc}{part}{Index et appendices}
+\label{indexdeb}
+\phantomsection\addcontentsline{toc}{chapter}{Index}
+
+\input{index-sanscorr}
+
+\clearpage
+\pagestyle{plain}
+\cleardoublepage
+\pagestyle{stats}
+\input{statistiques}
+
+\clearpage
+\pagestyle{plain}
+\cleardoublepage
+\pagestyle{stats}
+\input{errata}
+
+\clearpage
+\pagestyle{plain}
+\cleardoublepage
+\pagestyle{version}
+\input{version-sancorr}
+~
+\clearpage
+\pagestyle{plain}
+\cleardoublepage
+\pagestyle{ToC}
+
+\setlength{\parskip}{0pt}
+
+\setcounter{tocdepth}{10}
+\renewcommand\contentsname{Table des matières}
+
+\hypertarget{TdM}{}
+
+\tableofcontents
+
+\clearpage
+\pagestyle{plain}
+\clearpage\vfill{~}
+\vfill{~}\begin{figure}[h]
+{\hfill
+\includegraphics[width=0.4\textwidth]{img/logo_HLP_clr.png}\hfill~
+}
+\end{figure}
+
+~ \vfill
+Textes mis en page par Mikaël \textsc{Quesseveur}, professeur de philosophie de l'Académie de Lille. La mise en page et l'indexation ont été effectuées sous \LaTeX{}.
+
+Si vous constatez des coquilles, des erreurs ou des problèmes de mise en page, vous pouvez me contacter à : \href{mailto:mikael.quesseveur@ac-lille.fr}{mikael.quesseveur@ac-lille.fr}. Il est possible de télécharger ce fichier 
+\href{https://drive.google.com/file/d/127SoEaNlMn662R3lhdlSIw74tFSGJGNQ/view?usp=drive_link}
+{à cette adresse} dans sa dernière version si elle existe (actualisée annuellement normalement). Vous pouvez également télécharger l'ensemble des fichiers qui ont servi à produire ce fichier (y compris les textes) au format \TeX{} en cliquant 
+\href{https://drive.google.com/drive/folders/1QwtvLY3i87WzyajRLPe0Xmmb31FK9oDp?usp=sharing}
+{ici}. Vous pouvez également télécharger les fichiers de sujets dans un format texte LibreOffice 
+\href{https://drive.google.com/file/d/1DnEUzL6_MTiRfS60gFycgNy-jxfQFMsu/view?usp=sharing}
+{ici} ou Word (docx)
+\href{https://docs.google.com/document/d/1XnJ397bNF5Vn-ZwEVjEvbJiCvbMBvRGi/edit?usp=sharing&ouid=103662385121242831300&rtpof=true&sd=true}
+{ici} (fichier sans index des auteurs pour le fichier Word) ou encore une version PDF simplifiée ne contenant que les fichiers et un index des auteurs \href{https://drive.google.com/file/d/1IRRNhgu3YuUxAvOHtcaqKaeHUeaGV3Xn/view?usp=sharing}{ici}. Si vous souhaitez accéder à la version avec les éléments d'évaluation, vous la trouverez \href{https://drive.google.com/file/d/1PJyaKCNypSU1-v5-fRtyrf5YMxSI8puw/view?usp=drive_link}{ici}.
+
+
+\bigskip
+\end{document}

@@ -1,0 +1,31 @@
+;; --- questions.xdy ---
+;; --- RÈGLES DE TRI PERSONNALISÉES ---
+;; 1. Ignorer la ponctuation parasite
+;; L'ajout de :string empêche xindy de planter sur les caractères spéciaux
+(merge-rule "« " "" :string)
+(merge-rule "» " "" :string)
+(merge-rule "«~~" "" :string)
+(merge-rule "»~~" "" :string)
+(merge-rule "[" "" :string)
+(merge-rule "]" "" :string)
+;; 2. Aplatir les lettres majuscules accentuées
+(merge-rule "À" "A" :string)
+(merge-rule "Â" "A" :string)
+(merge-rule "É" "E" :string)
+(merge-rule "È" "E" :string)
+(merge-rule "Ê" "E" :string)
+(merge-rule "Ë" "E" :string)
+(merge-rule "Î" "I" :string)
+(merge-rule "Ï" "I" :string)
+(merge-rule "Ô" "O" :string)
+(merge-rule "Û" "U" :string)
+(merge-rule "Ç" "C" :string)
+;; ------------------------------------
+;; Niveau 0 : On définit la macro \espsousitem (12pt pour le 1er, 2pt pour les autres)
+(markup-indexentry :open "~n\vspace{15pt plus 8pt minus 5pt}\item \gdef\espsousitem{\vspace{12pt}\gdef\espsousitem{\vspace{2pt}}}\normalfont\large\bfseries " :depth 0)
+;; Niveau 1 : On appelle \espsousitem juste avant le \subitem
+(markup-indexentry :open "~n\espsousitem \normalfont\normalsize \subitem \footnotesize " :depth 1)
+;; Points de suite — \nobreak interdit la coupure au point exact où le numéro s'isolait
+(markup-locclass-list :open "\nobreak\hspace{6pt}\dotfill\nobreak\hspace{6pt}" :sep ", ")
+;; Désactivation des lettres
+(define-letter-groups (""))

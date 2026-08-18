@@ -1,0 +1,47 @@
+;; --- questionthemes.xdy ---
+
+;; --- RÈGLES DE TRI PERSONNALISÉES ---
+;; 1. Ignorer la ponctuation parasite
+;; L'ajout de :string empêche xindy de planter sur les caractères spéciaux
+(merge-rule "« " "" :string)
+(merge-rule "» " "" :string)
+(merge-rule "«~~" "" :string)
+(merge-rule "»~~" "" :string)
+(merge-rule "[" "" :string)
+(merge-rule "]" "" :string)
+
+;; 2. Aplatir les lettres majuscules accentuées
+(merge-rule "À" "A" :string)
+(merge-rule "Â" "A" :string)
+(merge-rule "É" "E" :string)
+(merge-rule "È" "E" :string)
+(merge-rule "Ê" "E" :string)
+(merge-rule "Ë" "E" :string)
+(merge-rule "Î" "I" :string)
+(merge-rule "Ï" "I" :string)
+(merge-rule "Ô" "O" :string)
+(merge-rule "Û" "U" :string)
+(merge-rule "Ç" "C" :string)
+;; ------------------------------------
+
+;; Niveau 0 : Le Type — needspace dimensionné pour Type + Thème + 1ère question,
+;; afin d'éviter que le Type reste seul en bas de colonne avant que le Thème
+;; (niveau 1, toujours accroché juste après) ne parte à la colonne suivante.
+(markup-indexentry :open "~n\leftskip=0pt\relax\rightskip=0pt\relax\parfillskip=0pt plus 1fil\relax\parindent=0pt\relax\needspace{9\baselineskip}\vspace{15pt plus 2pt minus 5pt}\item \normalfont\large\bfseries " :depth 0)
+
+;; Niveau 1 : Le Thème — \begingroup/\endgroup au lieu de {...} + verrouillage après coup.
+;; Le \needspace ici reste en filet de sécurité pour le cas où un Thème
+;; apparaîtrait sans Type juste au-dessus (première entrée de l'index, etc.).
+(markup-indexentry
+  :open "~n\needspace{5\baselineskip}\nopagebreak\par\vspace{9pt plus 3pt minus 3pt}\begingroup\centering\normalfont\large\itshape "
+  :close "\par\endgroup\leftskip=0pt\relax\rightskip=0pt\relax\parfillskip=0pt plus 1fil\relax\parindent=0pt\relax\nopagebreak\vspace{6pt plus 1pt minus 2pt}"
+  :depth 1)
+
+;; Niveau 2 : Les questions — parfillskip rigide pour que le dotfill ne soit jamais concurrencé
+(markup-indexentry 
+  :open "~n\nopagebreak\par\nopagebreak\leftskip=0pt\relax\rightskip=0pt\relax\parfillskip=0pt\relax\parindent=0pt\relax\vspace{4pt plus 2pt minus 1pt}\noindent\normalfont\footnotesize " 
+  :close "\par"
+  :depth 2)
+
+(markup-locclass-list :open "\unskip\nobreak\dotfill\nobreak " :sep ", ")
+(define-letter-groups (""))

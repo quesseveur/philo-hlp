@@ -1,0 +1,38 @@
+;; --- questionthemes.xdy ---
+(merge-rule "« " "" :string)
+(merge-rule "» " "" :string)
+(merge-rule "«~~" "" :string)
+(merge-rule "»~~" "" :string)
+(merge-rule "[" "" :string)
+(merge-rule "]" "" :string)
+(merge-rule "À" "A" :string)
+(merge-rule "Â" "A" :string)
+(merge-rule "É" "E" :string)
+(merge-rule "È" "E" :string)
+(merge-rule "Ê" "E" :string)
+(merge-rule "Ë" "E" :string)
+(merge-rule "Î" "I" :string)
+(merge-rule "Ï" "I" :string)
+(merge-rule "Ô" "O" :string)
+(merge-rule "Û" "U" :string)
+(merge-rule "Ç" "C" :string)
+
+;; Niveau 0 : Le Thème — le needspace couvre maintenant Thème + Type + 1ère question
+(markup-indexentry :open "~n\leftskip=0pt\relax\rightskip=0pt\relax\nopagebreak\parfillskip=0pt plus 1fil\relax\parindent=0pt\relax\needspace{10\baselineskip}\vspace{15pt plus 2pt minus 5pt}\item \normalfont\normalsize\bfseries " :depth 0
+:close "\nopagebreak\par\nopagebreak ")
+
+;; Niveau 1 : Le Type — on garde un needspace plus modeste en filet de sécurité
+;; (utile si un Type se retrouve premier élément de l'index, sans Thème au-dessus)
+(markup-indexentry
+  :open "~n\needspace{5\baselineskip}\nopagebreak\par\nopagebreak\vspace{9pt plus 3pt minus 3pt}\begingroup\centering\normalfont\normalsize\itshape "
+  :close "\par\endgroup\leftskip=0pt\relax\rightskip=0pt\relax\parfillskip=0pt plus 1fil\relax\parindent=0pt\relax\nopagebreak\vspace{6pt plus 1pt minus 2pt}"
+  :depth 1)
+
+;; Niveau 2 : inchangé
+(markup-indexentry 
+  :open "~n\nopagebreak\par\nopagebreak\leftskip=0pt\relax\rightskip=0pt\relax\parfillskip=0pt\relax\parindent=0pt\relax\vspace{4pt plus 2pt minus 1pt}\noindent\normalfont\footnotesize " 
+  :close "\par"
+  :depth 2)
+  
+(markup-locclass-list :open "\unskip\nobreak\dotfill\nobreak " :sep ", ")
+(define-letter-groups (""))
