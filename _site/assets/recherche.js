@@ -202,6 +202,7 @@
       var texteDiv = document.createElement("div");
       texteDiv.className = "texte-extrait";
       texteDiv.innerHTML = item.texte_html;
+      ajouterBoutonsExport(item, texteDiv);
       detailsTexte.appendChild(texteDiv);
       li.appendChild(detailsTexte);
 
@@ -227,6 +228,7 @@
       var texteDiv = document.createElement("div");
       texteDiv.className = "texte-extrait";
       texteDiv.innerHTML = item.texte_html;
+      ajouterBoutonsExport(item, texteDiv);
       details.appendChild(texteDiv);
       li.appendChild(details);
 
@@ -365,5 +367,259 @@
         rafraichir(); 
       }
     });
+  }
+
+  // ==========================================
+  // FONCTIONS D'EXPORT (Word, LaTeX, MD, Copie)
+  // ==========================================
+
+  // ==========================================
+  // FONCTIONS D'EXPORT (Word, LaTeX, MD, Copie)
+  // ==========================================
+
+  function getAuteur(item) {
+    if (typeof item.auteur === 'object') {
+      return (item.auteur.prenom + " " + item.auteur.nom).trim();
+    }
+    return item.auteur || "Auteur inconnu";
+  }
+
+  function genererEnTete(item) {
+    var enTete = "Sujets d'Humanités, Littérature et Philosophie -- " + (item.lieu || "Lieu inconnu") + ", " + (item.annee || "Année inconnue");
+    if (item.jour) enTete += ", Jour " + item.jour;
+    if (item.id) enTete += " (sujet " + item.id + ")";
+    return enTete;
+  }
+
+  function genererQuestionsBrutes(itemCourant) {
+    var disciplines = { "litt": "littéraire", "phil": "philosophique" };
+    var texteQuestions = "";
+    var questionsDuSujet = [];
+    
+    if (typeof donnees !== 'undefined') {
+      questionsDuSujet = donnees.filter(function(d) {
+        return (itemCourant.id && d.id === itemCourant.id) || 
+               (itemCourant.texte_html && d.texte_html === itemCourant.texte_html);
+      });
+    }
+
+    if (questionsDuSujet.length === 0) questionsDuSujet = [itemCourant];
+
+    var questionsUniques = [];
+    var intitulesVus = {};
+    questionsDuSujet.forEach(function(q) {
+      if (q.intitule && !intitulesVus[q.intitule]) {
+        intitulesVus[q.intitule] = true;
+        questionsUniques.push(q);
+      }
+    });
+
+    questionsUniques.sort(function(a, b) {
+      var typeA = (a.type_question === "essai") ? 1 : -1;
+      var typeB = (b.type_question === "essai") ? 1 : -1;
+      return typeA - typeB;
+    });
+
+    questionsUniques.forEach(function(q) {
+      var type = q.type_question === "interpretation" ? "interprétation" : "essai";
+      var disc = disciplines[q.discipline] ? " " + disciplines[q.discipline] : "";
+      texteQuestions += "\nQuestion d'" + type + disc + " : " + q.intitule + "\n";
+    });
+    
+    return texteQuestions;
+  }
+
+  // --- LE NETTOYEUR UNIVERSEL ---
+  function preparerTexte(item, format) {
+    var texte = item.texte_html || item.texte || "";
+
+    // 1. Gérer le symbole de retour des notes de Jekyll
+    texte = texte.replace(/&#8617;/g, '\n').replace(/↩/g, '\n');
+
+    // 2. Formater les appels de notes de bas de page HTML (ex: transforme en [1])
+    texte = texte.replace(/<sup[^>]*><a[^>]*>([^<]+)<\/a><\/sup>/gi, '[$1]');
+    
+    // 3. Formater les définitions de notes (ex: transforme <li id="fn:1"> en [1]: )
+    texte = texte.replace(/<li id="fn:([^"]+)"[^>]*>/gi, '\n\n[$1]: ');
+
+    // 4. Nettoyer les retours à la ligne tout en protégeant les listes et les notes
+    texte = texte.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+    // On fusionne si la ligne suivante ne commence pas par un crochet [ (note) ou < (balise)
+    texte = texte.replace(/([^\n])\n(?=[^\n\[<])/g, "$1 ");
+    
+    // 5. Remplacer les italiques selon le format voulu
+    if (format === 'md') {
+        texte = texte.replace(/<i>/gi, '*').replace(/<\/i>/gi, '*');
+        texte = texte.replace(/<em>/gi, '*').replace(/<\/em>/gi, '*');
+    } else if (format === 'tex') {
+        texte = texte.replace(/<i>/gi, '\\textit{').replace(/<\/i>/gi, '}');
+        texte = texte.replace(/<em>/gi, '\\textit{').replace(/<\/em>/gi, '}');
+        texte = texte.replace(/&/g, '\\&'); // Echappement basique LaTeX
+    } else if (format === 'txt') {
+        texte = texte.replace(/<\/?(?:i|em)>/gi, '');
+    }
+
+    // 6. Retrait de toutes les balises HTML restantes pour tout ce qui n'est pas Word
+    if (format !== 'word') {
+        texte = texte.replace(/<[^>]*>?/gm, '');
+        // On reconvertit les entités HTML classiques pour que ce soit lisible
+        texte = texte.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
+    }
+
+    // 7. Retrait des espaces multiples
+    texte = texte.replace(/[ \t]{2,}/g, " ");
+
+    return texte.trim();
+  }
+
+  // --- EXPORT PRESSE-PAPIER ---
+  function copierSujet(item) {
+    var texteNettoye = preparerTexte(item, 'txt');
+    var texteComplet = genererEnTete(item) + "\n" +
+                       getAuteur(item) + ", " + (item.titre || "") + "\n\n" +
+                       texteNettoye + "\n" +
+                       genererQuestionsBrutes(item);
+    
+    navigator.clipboard.writeText(texteComplet).then(function() {
+      alert("Sujet copié dans le presse-papier !");
+    }).catch(function(err) { console.error("Erreur copie :", err); });
+  }
+
+  // --- EXPORT MARKDOWN ---
+  function telechargerMarkdown(item) {
+    var texteMd = preparerTexte(item, 'md');
+    var mdComplet = genererEnTete(item) + "\n\n" +
+                    "**" + getAuteur(item) + "**, *" + (item.titre || "") + "*\n\n" +
+                    texteMd + "\n\n" +
+                    genererQuestionsBrutes(item);
+    
+    declencherTelechargement("Sujet_" + (item.id || "HLP") + ".md", mdComplet, 'text/markdown');
+  }
+
+  // --- EXPORT LATEX ---
+  function telechargerTex(item) {
+    var texteTex = preparerTexte(item, 'tex');
+    var texComplet = "% " + genererEnTete(item) + "\n\n" +
+                     "\\noindent \\textbf{" + getAuteur(item) + "}, \\textit{" + (item.titre || "") + "}\\\\[0.5cm]\n" +
+                     texteTex + "\\\\[0.5cm]\n\n" +
+                     genererQuestionsBrutes(item);
+                     
+    declencherTelechargement("Sujet_" + (item.id || "HLP") + ".tex", texComplet, 'text/plain');
+  }
+
+  // --- EXPORT WORD (.DOCX) ---
+  async function telechargerWord(item) {
+    if (typeof docx === 'undefined') {
+      alert("L'outil de génération Word n'est pas encore chargé, vérifiez votre connexion.");
+      return;
+    }
+    var Document = docx.Document, Packer = docx.Packer, Paragraph = docx.Paragraph, TextRun = docx.TextRun;
+
+    // On prépare le texte en conservant les balises <i> pour docx
+    var texteHtmlPropre = preparerTexte(item, 'word');
+
+    function parserHtmlVersRuns(html) {
+      var runs = [];
+      var parties = html.split(/(<\/?(?:i|em)>)/i);
+      var enItalique = false;
+
+      parties.forEach(function(partie) {
+        var p = partie.toLowerCase();
+        if (p === '<i>' || p === '<em>') {
+          enItalique = true;
+        } else if (p === '</i>' || p === '</em>') {
+          enItalique = false;
+        } else if (partie.length > 0) {
+          // On nettoie les autres balises HTML restantes
+          var texteNettoye = partie.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
+          if (texteNettoye) {
+            runs.push(new TextRun({ text: texteNettoye, italics: enItalique }));
+          }
+        }
+      });
+      return runs;
+    }
+
+    var paragraphesTexte = texteHtmlPropre.split(/\n\s*\n/);
+    var enfantsParagraphesTexte = [];
+    paragraphesTexte.forEach(function(para) {
+      var paraSansSauts = para.replace(/\n/g, ' '); 
+      enfantsParagraphesTexte.push(new Paragraph({
+        children: parserHtmlVersRuns(paraSansSauts),
+        spacing: { before: 120, after: 120 }
+      }));
+    });
+
+    // Construction du document sans syntaxe ES6 pour éviter les plantages
+    var contenuDocument = [
+      new Paragraph({ children: [new TextRun(genererEnTete(item))] }),
+      new Paragraph({
+        children: [
+          new TextRun(getAuteur(item) + ", "),
+          new TextRun({ text: item.titre || "", italics: true })
+        ],
+        spacing: { after: 240 }
+      })
+    ];
+
+    // Concaténation classique
+    contenuDocument = contenuDocument.concat(enfantsParagraphesTexte);
+
+    contenuDocument.push(new Paragraph({ 
+      text: genererQuestionsBrutes(item),
+      spacing: { before: 240 }
+    }));
+
+    var doc = new Document({ sections: [{ children: contenuDocument }] });
+
+    var blob = await Packer.toBlob(doc);
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "Sujet_" + (item.id || "HLP") + ".docx";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function declencherTelechargement(nomFichier, contenu, typeMime) {
+    var blob = new Blob([contenu], { type: typeMime });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = nomFichier;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function ajouterBoutonsExport(item, conteneurTexteHTML) {
+    var barreOutils = document.createElement('div');
+    barreOutils.className = 'barre-outils-export';
+
+    var btnCopier = document.createElement('button');
+    btnCopier.innerHTML = '📋 Copier';
+    btnCopier.onclick = function() { copierSujet(item); };
+
+    var btnWord = document.createElement('button');
+    btnWord.innerHTML = '📄 Word';
+    btnWord.onclick = function() { telechargerWord(item); };
+
+    var btnMarkdown = document.createElement('button');
+    btnMarkdown.innerHTML = '📝 Markdown';
+    btnMarkdown.onclick = function() { telechargerMarkdown(item); };
+
+    var btnTex = document.createElement('button');
+    btnTex.innerHTML = '📐 LaTeX';
+    btnTex.onclick = function() { telechargerTex(item); };
+
+    barreOutils.appendChild(btnCopier);
+    barreOutils.appendChild(btnWord);
+    barreOutils.appendChild(btnMarkdown);
+    barreOutils.appendChild(btnTex);
+
+    conteneurTexteHTML.insertBefore(barreOutils, conteneurTexteHTML.firstChild);
   }
 })();

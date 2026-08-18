@@ -402,3 +402,27 @@ details[open] summary ~ div {
     transform: translateY(0);
   }
 }
+
+.barre-outils-export {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.barre-outils-export button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.barre-outils-export button:hover {
+  background-color: #e9ecef;
+}
