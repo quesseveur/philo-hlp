@@ -1,0 +1,37 @@
+---
+layout: default
+title: Carte thématique
+permalink: /index-sujets-hlp/carte-thematique/
+---
+
+<h1>Carte thématique</h1>
+<p class="carte-mentale-intro">Cette carte permet d’explorer les mots-clés réellement indexés dans les sujets. Déployez un chapitre pour afficher ses termes récurrents, puis cliquez sur un mot-clé pour retrouver les sujets correspondants.</p>
+
+<div class="carte-mentale-outils">
+  <label for="seuil-carte-mentale">Afficher les mots indexés au moins</label>
+  <select id="seuil-carte-mentale">
+    <option value="2">2 fois — exploration large</option>
+    <option value="3" selected>3 fois — recommandé</option>
+  </select>
+</div>
+
+<p id="etat-carte-mentale" class="carte-mentale-etat" aria-live="polite">Chargement de la carte thématique…</p>
+
+<!--<div class="carte-mentale-legende" aria-label="Légende de la carte">
+  <span><i class="trait-plein" aria-hidden="true"></i> déploiement d’un chapitre</span>
+  <span><i class="trait-pointille" aria-hidden="true"></i> rattachement à un autre chapitre, visible au survol ou au focus</span>
+</div>-->
+
+<div id="carte-mentale" class="carte-mentale">
+  <svg id="liaisons-carte-mentale" aria-hidden="true"></svg>
+  <section id="carte-semestre-1" class="carte-mentale__semestre carte-mentale__semestre--haut" aria-label="Semestre 1 : La Recherche de soi"></section>
+  <section id="carte-semestre-2" class="carte-mentale__semestre carte-mentale__semestre--bas" aria-label="Semestre 2 : L’humanité en question"></section>
+</div>
+
+<p id="explication-liens-croises" class="carte-mentale-explication">Un mot au contour pointillé est présent dans au moins deux chapitres au seuil choisi. Son survol ou son focus fait apparaître ses autres rattachements.</p>
+
+<script>
+  const urlDonneesCarte = "{{ '/index-sujets-hlp/donnees-recherche.json' | relative_url }}";
+  const urlRechercheCarte = "{{ '/index-sujets-hlp/sujets/' | relative_url }}";
+</script>
+<script src="{{ '/assets/carte-mentale.js' | relative_url }}" defer></script>

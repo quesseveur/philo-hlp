@@ -18,7 +18,13 @@
   if (!champRecherche || !resultats) return;
 
   var mode = champRecherche.getAttribute("data-mode") || "sujets";
-  var donnees = [];
+var donnees = [];
+
+/* Lit le mot transmis par la carte : /sujets/?q=mémoire */
+var motCleURL = new URLSearchParams(window.location.search).get("q");
+if (motCleURL) {
+  champRecherche.value = motCleURL;
+}
 
   var axesConnus = [];
   for (var i = 0; i < checkboxesAxes.length; i++) {

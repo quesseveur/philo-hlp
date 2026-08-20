@@ -3,123 +3,126 @@ layout: default
 title: Statistiques
 permalink: /index-sujets-hlp/statistiques/
 ---
-<h1>Statistiques</h1>
-<!-- À placer dans ton layout ou ton fichier .md -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Grand conteneur principal divisé en 2 colonnes -->
-<div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+<div class="page-statistiques">
+  <div class="statistiques-contenu">
+    <h1>Statistiques</h1>
+    <p class="note">Sélectionnez une zone dans le panneau latéral, puis consultez la synthèse graphique ou le détail complet par axe.</p>
 
-    <!-- COLONNE GAUCHE : Le menu de filtres collant -->
-    <!-- flex: 0 0 200px fixe la largeur à 200px. position: sticky et top: 20px le rendent "collant" -->
-    <div id="menu-lateral" style="position: sticky; top: 20px; flex: 0 0 125px; display: flex; flex-direction: column; gap: 10px; z-index: 100;">
-        
-        <h3 style="margin-top: 0;">Filtres</h3>
-        
-        <button onclick="filtrerZone('Toutes')">Toutes les zones</button>
-        <button onclick="filtrerZone('Antilles')">Antilles</button>
-        <button onclick="filtrerZone('Asie')">Asie</button>
-        <button onclick="filtrerZone('Amérique du Nord')">Amérique du Nord</button>
-        <button onclick="filtrerZone('Amérique du Sud')">Amérique du Sud</button>
-        <button onclick="filtrerZone('Centres étrangers')">Centres étrangers</button>
-        <button onclick="filtrerZone('La Réunion')">La Réunion</button>
-        <button onclick="filtrerZone('Liban')">Liban</button>
-        <button onclick="filtrerZone('Métropole')">Métropole</button>
-        <button onclick="filtrerZone('Nouvelle-Calédonie')">Nouvelle-Calédonie</button>
-        <button onclick="filtrerZone('Polynésie')">Polynésie</button>
+    <div class="statistiques-outils" aria-label="Options des statistiques">
+      <div class="statistiques-champ">
+        <label for="filtre-section-graphique">Graphiques et lignes affichés</label>
+        <select id="filtre-section-graphique">
+          <option value="tout">Tout afficher</option>
+          <option value="general">Récapitulatif général</option>
+          <option value="litterature">Questions littéraires</option>
+          <option value="philosophie">Questions philosophiques</option>
+        </select>
+      </div>
 
-        <!-- Tri par discipline -->
-    <h3 style="margin-top: 30px;">Affichage</h3>
-    <button onclick="afficherSection('tout')">Tout afficher</button>
-    <button onclick="afficherSection('general')">Récapitulatif général</button>
-    <button onclick="afficherSection('litterature')">Littérature</button>
-    <button onclick="afficherSection('philosophie')">Philosophie</button>
-
+      <div class="statistiques-aide">
+        <button id="ouvrir-aide-abreviations" class="bouton-aide" type="button" aria-haspopup="dialog" aria-controls="aide-abreviations" title="Afficher la liste des abréviations">?</button>
+        <span>Abréviations</span>
+      </div>
     </div>
 
-<!-- COLONNE DROITE : Les graphiques -->
-    <!-- flex: 1 lui dit de prendre tout le reste de l'espace disponible -->
-    <div style="flex: 1; min-width: 0;">
-        
-        <!-- Le compteur dynamique -->
-        <h3 id="compteur-sujets" style="margin-bottom: 20px; color: #555;"></h3>
+    <div class="statistiques-vues" role="group" aria-label="Choisir le mode d’affichage">
+      <button class="bouton-vue est-actif" type="button" data-vue="graphiques" aria-pressed="true">Graphiques</button>
+      <button class="bouton-vue" type="button" data-vue="tableau" aria-pressed="false">Tableaux détaillés</button>
+    </div>
 
-<!-- SECTION 1 : Disciplines et répartition globale -->
-<div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
+    <p id="compteur-sujets" class="statistiques-compteur" aria-live="polite"></p>
 
-    <!-- Colonne GAUCHE (environ 30%) : Les deux camemberts empilés -->
-    <!-- flex-direction: column permet de les mettre l'un au-dessus de l'autre -->
-    <div style="flex: 5; min-width: 100px; display: flex; flex-direction: column; gap: 40px;">
+    <section id="vue-graphiques">
+      <div class="statistiques-grille statistiques-grille-general">
+        <article class="statistiques-carte statistiques-carte-petite"><canvas id="canvasInterpDiscipline"></canvas></article>
+        <article class="statistiques-carte statistiques-carte-petite"><canvas id="canvasEssaiDiscipline"></canvas></article>
+        <article class="statistiques-carte statistiques-carte-large"><canvas id="barThemesGlobal"></canvas></article>
+      </div>
+
+      <section id="section-litterature" class="statistiques-section">
+        <h2>Questions littéraires</h2>
+        <div class="statistiques-grille statistiques-grille-detail">
+          <article class="statistiques-carte statistiques-carte-petite"><canvas id="pieLittGlobal"></canvas></article>
+          <article class="statistiques-carte"><canvas id="barLittInterp"></canvas></article>
+          <article class="statistiques-carte"><canvas id="barLittEssai"></canvas></article>
+        </div>
+      </section>
+
+      <section id="section-philosophie" class="statistiques-section">
+        <h2>Questions philosophiques</h2>
+        <div class="statistiques-grille statistiques-grille-detail">
+          <article class="statistiques-carte statistiques-carte-petite"><canvas id="piePhilGlobal"></canvas></article>
+          <article class="statistiques-carte"><canvas id="barPhilInterp"></canvas></article>
+          <article class="statistiques-carte"><canvas id="barPhilEssai"></canvas></article>
+        </div>
+      </section>
+
+      <section id="section-general" class="statistiques-section">
+        <h2>Récapitulatif général</h2>
+        <div class="statistiques-grille statistiques-grille-quatre">
+          <article class="statistiques-carte"><canvas id="pieInterpLitt"></canvas></article>
+          <article class="statistiques-carte"><canvas id="pieInterpPhil"></canvas></article>
+          <article class="statistiques-carte"><canvas id="pieEssaiLitt"></canvas></article>
+          <article class="statistiques-carte"><canvas id="pieEssaiPhil"></canvas></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="vue-tableau" hidden aria-labelledby="titre-tableau-statistiques">
+      <div class="entete-tableaux">
         <div>
-            <canvas id="canvasInterpDiscipline"></canvas>
+          <h2 id="titre-tableau-statistiques">Tableaux détaillés</h2>
+          <p class="note">La sélection « Graphiques et lignes affichés » limite aussi les lignes présentées ici aux questions littéraires ou philosophiques lorsque nécessaire.</p>
         </div>
-    </div>
-    <div style="flex:5; min-width: 100px; display: flex; flex-direction:column; gap: 40px;">
-            <div>
-            <canvas id="canvasEssaiDiscipline"></canvas>
+        <div class="outils-csv">
+          <button id="copier-csv" class="bouton-csv" type="button">Copier les données (CSV)</button>
+          <p id="etat-copie-csv" class="etat-copie-csv" aria-live="polite"></p>
         </div>
-    </div>
+      </div>
+      <div id="conteneur-tableau-statistiques"></div>
+    </section>
+  </div>
 
-    <!-- Colonne DROITE (environ 70%) : Le grand diagramme en barres -->
-    <div style="flex: 1; min-width: 300px;">
-        <canvas id="barThemesGlobal"></canvas>
-    </div>
-</div>
-<hr style="margin: 40px 0;">
-
-<!-- SECTION 2 : Détails Littérature (Camembert à gauche, 2 Barres à droite) -->
- <div id="section-litterature">
-    <h2 style="text-align: center; color: #36A2EB;">Questions Littéraires</h2>
-    <div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
-    
-        <!--Camemberg global Littérature-->
-        <canvas id="pieLittGlobal"></canvas>
-        <!-- DROITE (70%) : Barres Interprétation au-dessus de Essai -->
-        <div style="flex: 5; min-width: 300px; display: flex; flex-direction: column; gap: 40px;">
-            <div><canvas id="barLittInterp"></canvas></div>
-        </div>
-        <div style="flex: 5; min-width: 300px;">
-            <div><canvas id="barLittEssai"></canvas></div>
-        </div>
-    </div>
-
-<hr style="margin: 40px 0;">
+  <aside id="menu-lateral" class="menu-lateral" aria-label="Filtrer les statistiques par zone géographique"></aside>
 </div>
 
+<dialog id="aide-abreviations" class="dialogue-aide" aria-labelledby="titre-aide-abreviations">
+  <div class="dialogue-aide-entete">
+    <h2 id="titre-aide-abreviations">Liste des abréviations</h2>
+    <button id="fermer-aide-abreviations" type="button" class="bouton-fermer" aria-label="Fermer la fenêtre d’aide">×</button>
+  </div>
+  <dl class="liste-abreviations">
+    <dt>ETA</dt><dd>Éducation, transmission et émancipation.</dd>
+    <dt>EXS</dt><dd>Les expressions de la sensibilité.</dd>
+    <dt>MM</dt><dd>Les métamorphoses du moi.</dd>
+    <dt>CC</dt><dd>Création, continuités et ruptures.</dd>
+    <dt>HV</dt><dd>Histoire et violence.</dd>
+    <dt>HL</dt><dd>L’humain et ses limites.</dd>
+    <dt>EXSTA</dt><dd>Les expressions de la sensibilité et Éducation, transmission et émancipation.</dd>
+    <dt>ETAMM</dt><dd>Éducation, transmission et émancipation et Les métamorphoses du moi.</dd>
+    <dt>EXSMM</dt><dd>Les expressions de la sensibilité et Les métamorphoses du moi.</dd>
+    <dt>HVCC</dt><dd>Histoire et violence et Création, continuités et ruptures.</dd>
+    <dt>HLCC</dt><dd>L’humain et ses limites et Création, continuités et ruptures.</dd>
+    <dt>HVL</dt><dd>Histoire et violence et L’humain et ses limites.</dd>
+    <dt>ETACC</dt><dd>Éducation, transmission et émancipation et Création, continuités et ruptures.</dd>
+    <dt>ETAHV</dt><dd>Éducation, transmission et émancipation et Histoire et violence.</dd>
+    <dt>ETAHL</dt><dd>Éducation, transmission et émancipation et L’humain et ses limites.</dd>
+    <dt>EXSCC</dt><dd>Les expressions de la sensibilité et Création, continuités et ruptures.</dd>
+    <dt>EXSHV</dt><dd>Les expressions de la sensibilité et Histoire et violence.</dd>
+    <dt>EXSHL</dt><dd>Les expressions de la sensibilité et L’humain et ses limites.</dd>
+    <dt>MMCC</dt><dd>Les métamorphoses du moi et Création, continuités et ruptures.</dd>
+    <dt>MMHV</dt><dd>Les métamorphoses du moi et Histoire et violence.</dd>
+    <dt>MMHL</dt><dd>Les métamorphoses du moi et L’humain et ses limites.</dd>
+    <dt>OdS</dt><dd>Objet d’étude de « La Recherche de soi ».</dd>
+    <dt>OdH</dt><dd>Objet d’étude de « L’humanité en question ».</dd>
+    <dt>Prem.</dt><dd>Croisement entre un chapitre de Terminale et un chapitre de Première.</dd>
+    <dt>Int.</dt><dd>Question d’interprétation.</dd>
+  </dl>
+</dialog>
 
-<!-- SECTION 3 : Détails Philosophie (Camembert à gauche, 2 Barres à droite) -->
- <div id="section-philosophie">
-    <h2 style="text-align: center; color: #FFCE56;">Questions Philosophiques</h2>
-    <div style="display: flex; gap: 30px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
-        
-        <!--Camemberg global Philosophie-->
-        <canvas id="piePhilGlobal"></canvas>
-        <!-- DROITE (70%) : Barres Interprétation au-dessus de Essai -->
-        <div style="flex: 5; min-width: 300px; display: flex; flex-direction: column; gap: 40px;">
-            <div><canvas id="barPhilInterp"></canvas></div>
-        </div>
-        <div style="flex: 5; min-width: 300px;">
-            <div><canvas id="barPhilEssai"></canvas></div>
-        </div>
-    </div>
-    <hr style="margin: 40px 0;">
-</div>
-
-<!-- SECTION 4 : 4 Camemberts des thèmes (Interprétation puis Essai) -->
- <div id="section-general">
- <h2 style="text-align: center;">Récapitulatif général</h2>
-<div style="display: flex; gap: 40px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
-    <div style="flex: 5; min-width: 300px;"><canvas id="pieInterpLitt"></canvas></div>
-    <div style="flex: 5; min-width: 300px;"><canvas id="pieInterpPhil"></canvas></div>
-</div>
-<div style="display: flex; gap: 40px; margin-bottom: 40px; align-items: center; flex-wrap: wrap;">
-    <div style="flex: 5; min-width: 300px;"><canvas id="pieEssaiLitt"></canvas></div>
-    <div style="flex: 5; min-width: 300px;"><canvas id="pieEssaiPhil"></canvas></div>
-</div>
-<hr style="margin: 40px 0;"></div>
-
-<!-- Le script de traitement -->
- <script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
   const urlDonnees = "{{ '/api-sujets.json' | relative_url }}";
 </script>
-<script src="{{ '/assets/statistiques.js' | relative_url }}"></script>
+<script src="{{ '/assets/statistiques.js' | relative_url }}" defer></script>

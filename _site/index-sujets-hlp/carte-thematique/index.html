@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte thématique — Sujets de Bac HLP — Banque indexée</title>
+  <meta name="description" content="Ressources pour l'enseignement de l'HLP : banque de sujets indexée et autres outils à venir.">
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+  <link rel="stylesheet" href="/philo-hlp/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="breadcrumb"><a href="/philo-hlp/">← HLP - Philo / Site de M. Quesseveur</a></div>
+    <div class="header-row">
+      <a class="site-title" href="/philo-hlp/index-sujets-hlp/">Sujets de Bac HLP — Banque indexée</a>
+      <nav>
+        <a href="/philo-hlp/index-sujets-hlp/">Accueil</a>
+        <a href="/philo-hlp/index-sujets-hlp/sujets/">Rechercher</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Carte thématique</h1>
+<p class="carte-mentale-intro">Cette carte permet d’explorer les mots-clés réellement indexés dans les sujets. Déployez un chapitre pour afficher ses termes récurrents, puis cliquez sur un mot-clé pour retrouver les sujets correspondants.</p>
+
+<div class="carte-mentale-outils">
+  <label for="seuil-carte-mentale">Afficher les mots indexés au moins</label>
+  <select id="seuil-carte-mentale">
+    <option value="2">2 fois — exploration large</option>
+    <option value="3" selected>3 fois — recommandé</option>
+  </select>
+</div>
+
+<p id="etat-carte-mentale" class="carte-mentale-etat" aria-live="polite">Chargement de la carte thématique…</p>
+
+<!--<div class="carte-mentale-legende" aria-label="Légende de la carte">
+  <span><i class="trait-plein" aria-hidden="true"></i> déploiement d’un chapitre</span>
+  <span><i class="trait-pointille" aria-hidden="true"></i> rattachement à un autre chapitre, visible au survol ou au focus</span>
+</div>-->
+
+<div id="carte-mentale" class="carte-mentale">
+  <svg id="liaisons-carte-mentale" aria-hidden="true"></svg>
+  <section id="carte-semestre-1" class="carte-mentale__semestre carte-mentale__semestre--haut" aria-label="Semestre 1 : La Recherche de soi"></section>
+  <section id="carte-semestre-2" class="carte-mentale__semestre carte-mentale__semestre--bas" aria-label="Semestre 2 : L’humanité en question"></section>
+</div>
+
+<p id="explication-liens-croises" class="carte-mentale-explication">Un mot au contour pointillé est présent dans au moins deux chapitres au seuil choisi. Son survol ou son focus fait apparaître ses autres rattachements.</p>
+
+<script>
+  const urlDonneesCarte = "/philo-hlp/index-sujets-hlp/donnees-recherche.json";
+  const urlRechercheCarte = "/philo-hlp/index-sujets-hlp/sujets/";
+</script>
+<script src="/philo-hlp/assets/carte-mentale.js" defer></script>
+
+  </main>
+
+  <footer>
+    <p>127 sujets indexés · généré avec Jekyll</p>
+  </footer>
+</body>
+</html>

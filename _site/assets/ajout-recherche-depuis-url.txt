@@ -1,0 +1,15 @@
+Dans `assets/recherche.js`, ajoutez ce bloc juste avant la ligne :
+
+```js
+var source = champRecherche.getAttribute("data-source");
+```
+
+Ajout :
+
+```js
+/* Préremplit la recherche lorsqu’un mot-clé est passé dans l’URL, par exemple ?q=mémoire. */
+var motCleURL = new URLSearchParams(window.location.search).get("q");
+if (motCleURL) champRecherche.value = motCleURL;
+```
+
+Aucune autre modification n’est nécessaire : l’appel existant à `rafraichir()` après le chargement des données utilisera automatiquement le contenu prérempli du champ de recherche.
