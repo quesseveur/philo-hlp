@@ -27,11 +27,34 @@ h1, h2, .site-title, .hero-sujet {
   font-weight: 400;
 }
 
+.page-content {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.page-content h2 {
+  margin-top: 2rem;
+}
+
 .site-header {
   max-width: var(--measure);
   margin: 0 auto;
   padding: 1.1rem 1.5rem 1.5rem;
   border-bottom: 1px solid var(--filet);
+}
+
+.site-title-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .breadcrumb {
@@ -65,15 +88,29 @@ h1, h2, .site-title, .hero-sujet {
   text-decoration: none;
 }
 
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
+  row-gap: 0.4rem;
+  margin-top: 1rem;
+}
+
 .site-header nav a {
   color: var(--encre);
   text-decoration: none;
-  margin-left: 1.1rem;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
+  padding-right: 0.75rem;
+  border-right: 1px solid #ccc;
+}
+
+.site-header nav a:last-child {
+  padding-right: 0;
+  border-right: none;
 }
 
 .site-header nav a:hover,
@@ -118,6 +155,17 @@ h2 {
   padding-bottom: 0.4rem;
   border-bottom: 2px solid var(--rouge);
   display: inline-block;
+}
+
+.pdf-link {
+/*  display: inline-flex;*/
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pdf-icon {
+  vertical-align: middle;
+  margin-left: 0.3em;
 }
 
 .liste-sujets { list-style: none; margin: 0.5rem 0 0; padding: 0; }
@@ -1087,10 +1135,10 @@ details[open] summary ~ div {
 @media (max-width: 900px) {
   .page-statistiques { flex-direction: column; }
   .menu-lateral {
-    position: static;
-    order: 0;
-    width: 100%;
-  }
+  position: static;
+  order: -1;
+  width: 100%;
+}
   .menu-lateral-zones {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1404,6 +1452,255 @@ details[open] summary ~ div {
 @media (prefers-reduced-motion: reduce) {
   .carte-mentale__nuage,
   .carte-mentale__nuage.est-en-fermeture {
+    animation: none;
+  }
+}
+
+.index-thematique {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--filet);
+}
+
+/*Index thématique*/
+.index-thematique {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--filet);
+}
+
+.index-thematique > h2 { margin-top: 0; }
+
+.index-semestre {
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid var(--filet);
+  border-radius: 4px;
+}
+
+.index-semestre > summary {
+  padding: 0.8rem 1rem;
+  color: var(--encre);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+
+.index-semestre[open] > summary {
+  color: var(--rouge);
+  border-bottom: 1px solid var(--filet);
+}
+
+/* Les chapitres sont empilés pour offrir toute la largeur au chapitre déployé. */
+.index-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.index-chapitre {
+  min-width: 0;
+  background: var(--papier);
+  border: 1px solid var(--filet);
+  border-radius: 3px;
+}
+
+.index-chapitre > summary {
+  min-height: 0;
+  padding: 0.75rem 0.9rem;
+  color: var(--encre);
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.index-chapitre > summary span {
+  display: inline-block;
+  min-width: 3.4rem;
+  margin-right: 0.5rem;
+  color: var(--rouge);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.index-chapitre[open] > summary {
+  color: var(--rouge);
+  border-bottom: 1px solid var(--filet);
+}
+
+/* Les sous-thèmes occupent deux colonnes pour comparer les groupes sans rétrécir les mots. */
+.index-contenu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  padding: 1rem;
+}
+
+.index-contenu section {
+  min-width: 0;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+.index-contenu h3 {
+  margin: 0 0 0.5rem;
+  color: var(--gris-texte);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.index-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+/* === Index thématique détaillé : interactions et animation === */
+
+.index-tags a {
+  display: inline-block;
+  color: var(--encre);
+  background: #fff;
+  border: 1px solid var(--filet);
+  border-radius: 999px;
+  padding: 0.17rem 0.48rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, color 0.16s ease, font-weight 0.16s ease;
+}
+
+.index-tags a:hover,
+.index-tags a:focus-visible {
+  color: var(--encre);
+  border-color: var(--encre);
+  box-shadow: inset 0 -2px 0 rgb(27 36 48 / 13%);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--rouge);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.16em;
+}
+
+/* Le rouge orangé signale seulement un mot commun aux deux chapitres ouverts. */
+.index-tag-partage {
+  display: inline-block;
+  color: var(--rouge);
+  background: #fff8f5;
+  border: 1px solid var(--rouge);
+  border-radius: 999px;
+  box-shadow: inset 0 -2px 0 rgb(151 50 39 / 20%);
+  padding: 0.17rem 0.48rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.index-tags a.index-tag-partage:hover,
+.index-tags a.index-tag-partage:focus-visible {
+  color: var(--rouge);
+  border-color: var(--rouge);
+  box-shadow: inset 0 -2px 0 rgb(151 50 39 / 35%);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.16em;
+}
+
+/* Déploiement et repli doux du contenu d’un chapitre. */
+.index-chapitre[open] > .index-contenu {
+  overflow: hidden;
+  animation: index-deploiement 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+}
+
+.index-chapitre.est-en-fermeture > .index-contenu {
+  overflow: hidden;
+  animation: index-repli 0.26s ease-in both;
+  transform-origin: top center;
+}
+
+@keyframes index-deploiement {
+  from {
+    opacity: 0;
+    transform: translateY(-0.45rem) scaleY(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes index-repli {
+  from {
+    max-height: 100rem;
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  to {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    transform: translateY(-0.35rem) scaleY(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-tags a,
+  .index-chapitre[open] > .index-contenu,
+  .index-chapitre.est-en-fermeture > .index-contenu {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Visible seulement lorsqu'exactement deux chapitres sont ouverts en même temps. */
+.index-tags .index-tag-partage {
+  display: inline-block;
+  color: var(--rouge);
+  background: #fff8f5;
+  border: 1px solid var(--rouge);
+  border-radius: 999px;
+  box-shadow: inset 0 -2px 0 rgb(151 50 39 / 20%);
+  padding: 0.17rem 0.48rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@media (max-width: 680px) {
+  .index-contenu { grid-template-columns: 1fr; }
+  .index-chapitre > summary span { display: block; margin-bottom: 0.18rem; }
+}
+
+/* Déploiement doux de l’index thématique détaillé. */
+.index-semestre[open] > .index-grille {
+  animation: index-apparition 0.28s ease-out both;
+}
+
+.index-chapitre[open] > .index-contenu {
+  animation: index-apparition 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+}
+
+@keyframes index-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(-0.45rem) scaleY(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-semestre[open] > .index-grille,
+  .index-chapitre[open] > .index-contenu {
     animation: none;
   }
 }

@@ -18,7 +18,11 @@
   if (!champRecherche || !resultats) return;
 
   var mode = champRecherche.getAttribute("data-mode") || "sujets";
-var donnees = [];
+  var donnees = [];
+
+  // Par défaut, l’export reste lisible. Passer à true pour afficher aussi
+  // la référence interne (par ex. « sujet amnord_2022_1_1 ») dans son en-tête.
+  var afficherReferenceInterneExport = false;
 
 /* Lit le mot transmis par la carte : /sujets/?q=mémoire */
 var motCleURL = new URLSearchParams(window.location.search).get("q");
@@ -220,6 +224,7 @@ if (motCleURL) {
       var corrDiv = document.createElement("div");
       corrDiv.className = "corrige-texte";
       corrDiv.innerHTML = item.corrige_html;
+      ajouterBoutonsExportCorrige(item, corrDiv);
       detailsCorrige.appendChild(corrDiv);
       li.appendChild(detailsCorrige);
 
@@ -247,6 +252,7 @@ if (motCleURL) {
         var corrDivSujet = document.createElement("div");
         corrDivSujet.className = "corrige-texte";
         corrDivSujet.innerHTML = item.corrige_html;
+        ajouterBoutonsExportCorrige(item, corrDivSujet);
         detailsCorrigeSujet.appendChild(corrDivSujet);
 
         li.appendChild(detailsCorrigeSujet);
@@ -391,9 +397,14 @@ if (motCleURL) {
   }
 
   function genererEnTete(item) {
-    var enTete = "Sujets d'Humanités, Littérature et Philosophie -- " + (item.lieu || "Lieu inconnu") + ", " + (item.annee || "Année inconnue");
+    var enTete = "Sujets d'Humanités, Littérature et Philosophie -- " +
+      (item.lieu || "Lieu inconnu") + ", " + (item.annee || "Année inconnue");
     if (item.jour) enTete += ", Jour " + item.jour;
-    if (item.id) enTete += " (sujet " + item.id + ")";
+
+    if (afficherReferenceInterneExport) {
+      var identifiant = item.sujet_id || item.id;
+      if (identifiant) enTete += " (sujet " + identifiant + ")";
+    }
     return enTete;
   }
 
@@ -429,53 +440,212 @@ if (motCleURL) {
     questionsUniques.forEach(function(q) {
       var type = q.type_question === "interpretation" ? "interprétation" : "essai";
       var disc = disciplines[q.discipline] ? " " + disciplines[q.discipline] : "";
-      texteQuestions += "\nQuestion d'" + type + disc + " : " + q.intitule + "\n";
+      texteQuestions += "\n\nQuestion d'" + type + disc + " : " + q.intitule;
     });
     
     return texteQuestions;
   }
 
-  // --- LE NETTOYEUR UNIVERSEL ---
+  // --- CONVERSION HTML STRUCTURÉE (paragraphes, listes et listes imbriquées) ---
+  function preparerHtmlSource(item) {
+    var html = item.texte_html || item.texte || "";
+    html = html.replace(/&#8617;/g, "").replace(/↩/g, "");
+    html = html.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+    return html;
+  }
+
+  function separerNotesDeBasPage(item) {
+    var racine = document.createElement("div");
+    racine.innerHTML = preparerHtmlSource(item);
+    var notes = [];
+
+    // Les appels Jekyll sont habituellement <sup id="fnref:1"><a …>1</a></sup>.
+    Array.prototype.forEach.call(racine.querySelectorAll("sup[id^='fnref:'], sup .footnote"), function (appel) {
+      var numero = (appel.textContent || "").trim();
+      if (numero) appel.replaceWith(document.createTextNode("[" + numero + "]"));
+    });
+
+    // Jekyll regroupe les contenus dans .footnotes / role=doc-endnotes ;
+    // le sélecteur des li permet aussi les variantes de balisage.
+    Array.prototype.forEach.call(racine.querySelectorAll("li[id^='fn:']"), function (note) {
+      var identifiant = note.id.slice(3);
+      var clone = note.cloneNode(true);
+      Array.prototype.forEach.call(clone.querySelectorAll("a[href^='#fnref:'], .reversefootnote"), function (retour) {
+        retour.remove();
+      });
+      notes.push({ numero: identifiant, html: clone.innerHTML });
+    });
+
+    Array.prototype.forEach.call(racine.querySelectorAll(".footnotes, [role='doc-endnotes']"), function (conteneur) {
+      conteneur.remove();
+    });
+    // Variante rare : des notes sans conteneur dédié.
+    Array.prototype.forEach.call(racine.querySelectorAll("li[id^='fn:']"), function (note) {
+      note.remove();
+    });
+
+    notes.sort(function (a, b) {
+      return String(a.numero).localeCompare(String(b.numero), "fr", { numeric: true });
+    });
+    return { html: racine.innerHTML, notes: notes };
+  }
+
+  function formaterNotes(notes, format) {
+    if (!notes.length) return "";
+    var titre = format === "md" ? "## Notes" : (format === "tex" ? "\\medskip\n\\noindent \\textbf{Notes}\\par" : "Notes");
+    var lignes = notes.map(function (note) {
+      var contenu = blocsVersTexte(analyserHtmlPourExport(note.html), format);
+      if (format === "tex") return "\\noindent [" + note.numero + "] " + contenu + "\\par";
+      return "[" + note.numero + "] " + contenu;
+    });
+    return "\n\n" + titre + "\n" + lignes.join("\n");
+  }
+
+  function analyserHtmlPourExport(html) {
+    var racine = document.createElement("div");
+    racine.innerHTML = html;
+    var blocs = [];
+
+    function ajouterParagraphe(noeud) {
+      if ((noeud.textContent || "").trim()) blocs.push({ type: "paragraphe", noeud: noeud });
+    }
+
+    function parcourirListe(liste, niveau) {
+      var ordonnee = liste.tagName.toLowerCase() === "ol";
+      var numero = 0;
+      Array.prototype.forEach.call(liste.children, function (enfant) {
+        if (enfant.tagName.toLowerCase() !== "li") return;
+        numero += 1;
+        var contenu = document.createElement("span");
+        Array.prototype.forEach.call(enfant.childNodes, function (noeud) {
+          var nom = noeud.nodeType === 1 ? noeud.tagName.toLowerCase() : "";
+          if (nom !== "ul" && nom !== "ol") contenu.appendChild(noeud.cloneNode(true));
+        });
+        blocs.push({
+          type: "liste",
+          noeud: contenu,
+          niveau: niveau,
+          ordonnee: ordonnee,
+          numero: numero
+        });
+        Array.prototype.forEach.call(enfant.children, function (noeud) {
+          var nom = noeud.tagName.toLowerCase();
+          if (nom === "ul" || nom === "ol") parcourirListe(noeud, niveau + 1);
+        });
+      });
+    }
+
+    Array.prototype.forEach.call(racine.childNodes, function (noeud) {
+      if (noeud.nodeType === 3) {
+        if (noeud.nodeValue.trim()) {
+          var paragraphe = document.createElement("p");
+          paragraphe.textContent = noeud.nodeValue;
+          ajouterParagraphe(paragraphe);
+        }
+        return;
+      }
+      if (noeud.nodeType !== 1) return;
+      var nom = noeud.tagName.toLowerCase();
+      if (nom === "ul" || nom === "ol") parcourirListe(noeud, 0);
+      else if (nom === "p" || nom === "div" || /^h[1-6]$/.test(nom) || nom === "blockquote") ajouterParagraphe(noeud);
+      else ajouterParagraphe(noeud);
+    });
+    return blocs;
+  }
+
+  function echapperLatex(texte) {
+    return texte.replace(/([&%_$#{}])/g, "\\$1").replace(/~/g, "\\textasciitilde{}").replace(/\^/g, "\\textasciicircum{}");
+  }
+
+  function convertirInline(noeud, format) {
+    var sortie = "";
+    Array.prototype.forEach.call(noeud.childNodes, function (enfant) {
+      if (enfant.nodeType === 3) {
+        sortie += format === "tex" ? echapperLatex(enfant.nodeValue) : enfant.nodeValue;
+        return;
+      }
+      if (enfant.nodeType !== 1) return;
+      var nom = enfant.tagName.toLowerCase();
+      if (nom === "br") {
+        sortie += "\n";
+        return;
+      }
+      var contenu = convertirInline(enfant, format);
+      if (format === "md" && (nom === "i" || nom === "em")) sortie += "*" + contenu + "*";
+      else if (format === "md" && (nom === "strong" || nom === "b")) sortie += "**" + contenu + "**";
+      else if (format === "tex" && (nom === "i" || nom === "em")) sortie += "\\textit{" + contenu + "}";
+      else if (format === "tex" && (nom === "strong" || nom === "b")) sortie += "\\textbf{" + contenu + "}";
+      else sortie += contenu;
+    });
+    return sortie.replace(/[ \t]+/g, " ").trim();
+  }
+
+  function blocsVersTexte(blocs, format) {
+    var sortie = [];
+    var pileListes = [];
+    var precedentEtaitUneListe = false;
+
+    function fermerListes(jusqua) {
+      while (pileListes.length > jusqua) {
+        sortie.push("\\end{" + pileListes.pop() + "}");
+      }
+    }
+
+    blocs.forEach(function (bloc) {
+      var contenu = convertirInline(bloc.noeud, format);
+      if (bloc.type === "paragraphe") {
+        if (format === "tex") fermerListes(0);
+        if (contenu) sortie.push(contenu);
+        precedentEtaitUneListe = false;
+        return;
+      }
+
+      if (format === "txt") {
+        sortie.push(new Array(bloc.niveau + 1).join("  ") + (bloc.ordonnee ? bloc.numero + ". " : "• ") + contenu);
+        precedentEtaitUneListe = true;
+      } else if (format === "md") {
+        sortie.push(new Array(bloc.niveau + 1).join("  ") + (bloc.ordonnee ? bloc.numero + ". " : "- ") + contenu);
+        precedentEtaitUneListe = true;
+      } else if (format === "tex") {
+        var environnement = bloc.ordonnee ? "enumerate" : "itemize";
+        precedentEtaitUneListe = true;
+        while (pileListes.length > bloc.niveau + 1) fermerListes(bloc.niveau + 1);
+        if (pileListes.length === bloc.niveau + 1 && pileListes[bloc.niveau] !== environnement) fermerListes(bloc.niveau);
+        while (pileListes.length < bloc.niveau + 1) {
+          pileListes.push(environnement);
+          sortie.push("\\begin{" + environnement + "}");
+        }
+        sortie.push("\\item " + contenu);
+      }
+    });
+
+    if (format === "tex") fermerListes(0);
+
+    if (format === "txt" || format === "md") {
+      var resultat = "";
+      blocs.forEach(function (bloc, index) {
+        var contenu = convertirInline(bloc.noeud, format);
+        var ligne = bloc.type === "liste"
+          ? new Array(bloc.niveau + 1).join("  ") + (bloc.ordonnee ? bloc.numero + ". " : (format === "md" ? "- " : "• ")) + contenu
+          : contenu;
+        if (!ligne) return;
+        if (resultat) {
+          var precedent = blocs[index - 1];
+          resultat += precedent && precedent.type === "liste" && bloc.type === "liste" ? "\n" : "\n\n";
+        }
+        resultat += ligne;
+      });
+      return resultat.replace(/\n{3,}/g, "\n\n").trim();
+    }
+
+    return sortie.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+  }
+
   function preparerTexte(item, format) {
-    var texte = item.texte_html || item.texte || "";
-
-    // 1. Gérer le symbole de retour des notes de Jekyll
-    texte = texte.replace(/&#8617;/g, '\n').replace(/↩/g, '\n');
-
-    // 2. Formater les appels de notes de bas de page HTML (ex: transforme en [1])
-    texte = texte.replace(/<sup[^>]*><a[^>]*>([^<]+)<\/a><\/sup>/gi, '[$1]');
-    
-    // 3. Formater les définitions de notes (ex: transforme <li id="fn:1"> en [1]: )
-    texte = texte.replace(/<li id="fn:([^"]+)"[^>]*>/gi, '\n\n[$1]: ');
-
-    // 4. Nettoyer les retours à la ligne tout en protégeant les listes et les notes
-    texte = texte.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-    // On fusionne si la ligne suivante ne commence pas par un crochet [ (note) ou < (balise)
-    texte = texte.replace(/([^\n])\n(?=[^\n\[<])/g, "$1 ");
-    
-    // 5. Remplacer les italiques selon le format voulu
-    if (format === 'md') {
-        texte = texte.replace(/<i>/gi, '*').replace(/<\/i>/gi, '*');
-        texte = texte.replace(/<em>/gi, '*').replace(/<\/em>/gi, '*');
-    } else if (format === 'tex') {
-        texte = texte.replace(/<i>/gi, '\\textit{').replace(/<\/i>/gi, '}');
-        texte = texte.replace(/<em>/gi, '\\textit{').replace(/<\/em>/gi, '}');
-        texte = texte.replace(/&/g, '\\&'); // Echappement basique LaTeX
-    } else if (format === 'txt') {
-        texte = texte.replace(/<\/?(?:i|em)>/gi, '');
-    }
-
-    // 6. Retrait de toutes les balises HTML restantes pour tout ce qui n'est pas Word
-    if (format !== 'word') {
-        texte = texte.replace(/<[^>]*>?/gm, '');
-        // On reconvertit les entités HTML classiques pour que ce soit lisible
-        texte = texte.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
-    }
-
-    // 7. Retrait des espaces multiples
-    texte = texte.replace(/[ \t]{2,}/g, " ");
-
-    return texte.trim();
+    var source = separerNotesDeBasPage(item);
+    if (format === "word") return source.html;
+    var corps = blocsVersTexte(analyserHtmlPourExport(source.html), format);
+    return (corps + formaterNotes(source.notes, format)).trim();
   }
 
   // --- EXPORT PRESSE-PAPIER ---
@@ -514,49 +684,78 @@ if (motCleURL) {
   }
 
   // --- EXPORT WORD (.DOCX) ---
+  function creerRunsWord(noeud, TextRun, styles) {
+    var runs = [];
+    styles = styles || { italics: false, bold: false };
+
+    Array.prototype.forEach.call(noeud.childNodes, function (enfant) {
+      if (enfant.nodeType === 3) {
+        var texte = enfant.nodeValue.replace(/\s+/g, " ");
+        if (texte) runs.push(new TextRun({ text: texte, italics: styles.italics, bold: styles.bold }));
+        return;
+      }
+      if (enfant.nodeType !== 1) return;
+      var nom = enfant.tagName.toLowerCase();
+      if (nom === "br") {
+        runs.push(new TextRun({ break: 1 }));
+        return;
+      }
+      creerRunsWord(enfant, TextRun, {
+        italics: styles.italics || nom === "i" || nom === "em",
+        bold: styles.bold || nom === "strong" || nom === "b"
+      }).forEach(function (run) { runs.push(run); });
+    });
+    return runs;
+  }
+
+  function creerParagraphesWordDepuisHtml(html, Paragraph, TextRun) {
+    var blocs = analyserHtmlPourExport(html);
+    return blocs.map(function (bloc) {
+      var options = {
+        children: creerRunsWord(bloc.noeud, TextRun),
+        spacing: { before: 100, after: 100 }
+      };
+      if (bloc.type === "liste") {
+        var marqueur = bloc.ordonnee ? bloc.numero + ". " : "• ";
+        options.children.unshift(new TextRun({ text: marqueur }));
+        options.indent = { left: 360 * (bloc.niveau + 1), hanging: 180 };
+        options.spacing = { before: 40, after: 40 };
+      }
+      return new Paragraph(options);
+    });
+  }
+
+  function creerParagraphesNotesWord(notes, Paragraph, TextRun) {
+    if (!notes.length) return [];
+    var resultat = [
+      new Paragraph({ children: [new TextRun({ text: "Notes", bold: true })], spacing: { before: 240, after: 100 } })
+    ];
+
+    notes.forEach(function (note) {
+      var blocs = analyserHtmlPourExport(note.html);
+      blocs.forEach(function (bloc, index) {
+        var options = {
+          children: creerRunsWord(bloc.noeud, TextRun),
+          spacing: { before: 50, after: 50 }
+        };
+        if (index === 0) options.children.unshift(new TextRun({ text: "[" + note.numero + "] ", bold: true }));
+        if (bloc.type === "liste") {
+          options.children.unshift(new TextRun({ text: bloc.ordonnee ? bloc.numero + ". " : "• " }));
+          options.indent = { left: 360 * (bloc.niveau + 1), hanging: 180 };
+        }
+        resultat.push(new Paragraph(options));
+      });
+    });
+    return resultat;
+  }
+
   async function telechargerWord(item) {
-    if (typeof docx === 'undefined') {
+    if (typeof docx === "undefined") {
       alert("L'outil de génération Word n'est pas encore chargé, vérifiez votre connexion.");
       return;
     }
     var Document = docx.Document, Packer = docx.Packer, Paragraph = docx.Paragraph, TextRun = docx.TextRun;
-
-    // On prépare le texte en conservant les balises <i> pour docx
-    var texteHtmlPropre = preparerTexte(item, 'word');
-
-    function parserHtmlVersRuns(html) {
-      var runs = [];
-      var parties = html.split(/(<\/?(?:i|em)>)/i);
-      var enItalique = false;
-
-      parties.forEach(function(partie) {
-        var p = partie.toLowerCase();
-        if (p === '<i>' || p === '<em>') {
-          enItalique = true;
-        } else if (p === '</i>' || p === '</em>') {
-          enItalique = false;
-        } else if (partie.length > 0) {
-          // On nettoie les autres balises HTML restantes
-          var texteNettoye = partie.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&');
-          if (texteNettoye) {
-            runs.push(new TextRun({ text: texteNettoye, italics: enItalique }));
-          }
-        }
-      });
-      return runs;
-    }
-
-    var paragraphesTexte = texteHtmlPropre.split(/\n\s*\n/);
-    var enfantsParagraphesTexte = [];
-    paragraphesTexte.forEach(function(para) {
-      var paraSansSauts = para.replace(/\n/g, ' '); 
-      enfantsParagraphesTexte.push(new Paragraph({
-        children: parserHtmlVersRuns(paraSansSauts),
-        spacing: { before: 120, after: 120 }
-      }));
-    });
-
-    // Construction du document sans syntaxe ES6 pour éviter les plantages
+    var source = separerNotesDeBasPage(item);
     var contenuDocument = [
       new Paragraph({ children: [new TextRun(genererEnTete(item))] }),
       new Paragraph({
@@ -566,27 +765,179 @@ if (motCleURL) {
         ],
         spacing: { after: 240 }
       })
-    ];
+    ].concat(creerParagraphesWordDepuisHtml(source.html, Paragraph, TextRun));
 
-    // Concaténation classique
-    contenuDocument = contenuDocument.concat(enfantsParagraphesTexte);
-
-    contenuDocument.push(new Paragraph({ 
-      text: genererQuestionsBrutes(item),
-      spacing: { before: 240 }
+    contenuDocument = contenuDocument.concat(creerParagraphesNotesWord(source.notes, Paragraph, TextRun));
+  genererQuestionsBrutes(item)
+  .trim()
+  .split(/\n\s*\n/)
+  .filter(function (question) { return question.trim(); })
+  .forEach(function (question) {
+    contenuDocument.push(new Paragraph({
+      text: question.trim(),
+      spacing: { before: 160, after: 160 }
     }));
+  });
 
     var doc = new Document({ sections: [{ children: contenuDocument }] });
-
     var blob = await Packer.toBlob(doc);
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
-    a.download = "Sujet_" + (item.id || "HLP") + ".docx";
+    a.download = "Sujet_" + getIdentifiantSujet(item) + ".docx";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  }
+
+  // --- EXPORT DES ÉLÉMENTS DE CORRECTION ---
+  function getIdentifiantSujet(item) {
+    return item.sujet_id || item.id || "HLP";
+  }
+
+  function genererLibelleQuestion(item) {
+    var disciplines = { "litt": "littéraire", "phil": "philosophique" };
+    var type = item.type_question === "interpretation" ? "interprétation" : "essai";
+    var discipline = disciplines[item.discipline] ? " " + disciplines[item.discipline] : "";
+    return "Question d'" + type + discipline + " : " + (item.intitule || "");
+  }
+
+  function preparerCorrige(item, format) {
+    return preparerTexte({ texte_html: item.corrige_html || "" }, format);
+  }
+
+  function getReferencesCulturelles(item) {
+    if (!item.references_culturelles || item.references_culturelles === "null") return [];
+    return (Array.isArray(item.references_culturelles)
+      ? item.references_culturelles
+      : [item.references_culturelles])
+      .map(function (reference) {
+        var div = document.createElement("div");
+        div.innerHTML = String(reference);
+        return (div.textContent || div.innerText || "").trim();
+      })
+      .filter(function (reference) { return reference.length > 0; });
+  }
+
+  function formaterReferencesCorrige(item, format) {
+    var references = getReferencesCulturelles(item);
+    if (references.length === 0) return "";
+
+    if (format === "md") {
+      return "\n\n## Références culturelles citées\n" + references.map(function (reference) {
+        return "- " + reference;
+      }).join("\n");
+    }
+
+    if (format === "tex") {
+      return "\n\n\\medskip\n\\noindent \\textbf{Références culturelles citées}\\par\n" + references.map(function (reference) {
+        return "- " + reference.replace(/([&%_$#{}])/g, "\\\\$1");
+      }).join("\n");
+    }
+
+    return "\n\nRéférences culturelles citées :\n" + references.map(function (reference) {
+      return "- " + reference;
+    }).join("\n");
+  }
+
+  function genererEnteteCorrige(item) {
+    return genererEnTete(item) + " — Éléments de correction";
+  }
+
+  function copierCorrige(item) {
+    var contenu = genererEnteteCorrige(item) + "\n" +
+      getAuteur(item) + ", " + (item.titre || "") + "\n\n" +
+      genererLibelleQuestion(item) + "\n\n" +
+      "ÉLÉMENTS DE CORRECTION\n\n" + preparerCorrige(item, "txt") +
+      formaterReferencesCorrige(item, "txt");
+
+    navigator.clipboard.writeText(contenu).then(function () {
+      alert("Éléments de correction copiés dans le presse-papier !");
+    }).catch(function (err) { console.error("Erreur copie :", err); });
+  }
+
+  function telechargerMarkdownCorrige(item) {
+    var contenu = "# Éléments de correction\n\n" +
+      genererEnteteCorrige(item) + "\n\n" +
+      "**" + getAuteur(item) + "**, *" + (item.titre || "") + "*\n\n" +
+      "## " + genererLibelleQuestion(item) + "\n\n" +
+      preparerCorrige(item, "md") + formaterReferencesCorrige(item, "md");
+    declencherTelechargement("Correction_" + getIdentifiantSujet(item) + ".md", contenu, "text/markdown");
+  }
+
+  function telechargerTexCorrige(item) {
+    var contenu = "% " + genererEnteteCorrige(item) + "\n\n" +
+      "\\noindent \\textbf{Éléments de correction}\\\\[0.25cm]\n" +
+      "\\noindent " + genererLibelleQuestion(item).replace(/([&%_$#{}])/g, "\\\\$1") + "\\\\[0.5cm]\n" +
+      preparerCorrige(item, "tex") + formaterReferencesCorrige(item, "tex");
+    declencherTelechargement("Correction_" + getIdentifiantSujet(item) + ".tex", contenu, "text/plain");
+  }
+
+  async function telechargerWordCorrige(item) {
+    if (typeof docx === "undefined") {
+      alert("L'outil de génération Word n'est pas encore chargé, vérifiez votre connexion.");
+      return;
+    }
+
+    var Document = docx.Document, Packer = docx.Packer, Paragraph = docx.Paragraph, TextRun = docx.TextRun;
+    var source = separerNotesDeBasPage({ texte_html: item.corrige_html || "" });
+    var contenuDocument = [
+      new Paragraph({ children: [new TextRun({ text: "Éléments de correction", bold: true })] }),
+      new Paragraph({ text: genererEnTete(item), spacing: { after: 120 } }),
+      new Paragraph({ text: genererLibelleQuestion(item), spacing: { after: 240 } })
+    ].concat(creerParagraphesWordDepuisHtml(source.html, Paragraph, TextRun));
+    contenuDocument = contenuDocument.concat(creerParagraphesNotesWord(source.notes, Paragraph, TextRun));
+
+    var references = getReferencesCulturelles(item);
+    if (references.length > 0) {
+      contenuDocument.push(new Paragraph({ text: "Références culturelles citées", spacing: { before: 240, after: 80 } }));
+      references.forEach(function (reference) {
+        contenuDocument.push(new Paragraph({ text: "• " + reference, spacing: { after: 60 } }));
+      });
+    }
+
+    var documentWord = new Document({ sections: [{ children: contenuDocument }] });
+    var blob = await Packer.toBlob(documentWord);
+    var url = URL.createObjectURL(blob);
+    var lien = document.createElement("a");
+    lien.href = url;
+    lien.download = "Correction_" + getIdentifiantSujet(item) + ".docx";
+    document.body.appendChild(lien);
+    lien.click();
+    document.body.removeChild(lien);
+    URL.revokeObjectURL(url);
+  }
+
+  function ajouterBoutonsExportCorrige(item, conteneurCorrectionHTML) {
+    var barreOutils = document.createElement("div");
+    barreOutils.className = "barre-outils-export barre-outils-corrige";
+
+    var btnCopier = document.createElement("button");
+    btnCopier.type = "button";
+    btnCopier.textContent = "📋 Copier";
+    btnCopier.onclick = function () { copierCorrige(item); };
+
+    var btnWord = document.createElement("button");
+    btnWord.type = "button";
+    btnWord.textContent = "📄 Word";
+    btnWord.onclick = function () { telechargerWordCorrige(item); };
+
+    var btnMarkdown = document.createElement("button");
+    btnMarkdown.type = "button";
+    btnMarkdown.textContent = "📝 Markdown";
+    btnMarkdown.onclick = function () { telechargerMarkdownCorrige(item); };
+
+    var btnTex = document.createElement("button");
+    btnTex.type = "button";
+    btnTex.textContent = "📐 LaTeX";
+    btnTex.onclick = function () { telechargerTexCorrige(item); };
+
+    barreOutils.appendChild(btnCopier);
+    barreOutils.appendChild(btnWord);
+    barreOutils.appendChild(btnMarkdown);
+    barreOutils.appendChild(btnTex);
+    conteneurCorrectionHTML.insertBefore(barreOutils, conteneurCorrectionHTML.firstChild);
   }
 
   function declencherTelechargement(nomFichier, contenu, typeMime) {

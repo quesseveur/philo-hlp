@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} — {{ site.sujets_section_title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
-    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">← {{ site.title }}</a></div>
-    <div class="header-row">
-      <a class="site-title" href="{{ '/index-sujets-hlp/' | relative_url }}">{{ site.sujets_section_title }}</a>
-      <nav>
-        <a href="{{ '/index-sujets-hlp/' | relative_url }}">Accueil</a>
-        <a href="{{ '/index-sujets-hlp/sujets/' | relative_url }}">Rechercher</a>
-      </nav>
-    </div>
-  </header>
+  <div class="breadcrumb"><a href="{{ '/' | relative_url }}">← {{ site.title }}</a></div>
+
+  <div class="header-title">
+    <a class="site-title-link" href="{{ '/index-sujets-hlp/' | relative_url }}">
+      <img src="{{ '/assets/images/favicon.png' | relative_url }}" alt="" class="site-icon">
+      <span class="site-title">{{ site.sujets_section_title }}</span>
+    </a>
+  </div>
+
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}">Accueil HLP</a>
+    <a href="{{ '/index-sujets-hlp/sujets/' | relative_url }}">Recherche un sujet</a>
+    <a href="{{ '/index-sujets-hlp/corriges/' | relative_url }}">Éléments d'évaluation</a>
+    <a href="{{ '/index-sujets-hlp/statistiques/' | relative_url }}">Statistiques</a>
+    <a href="{{ '/index-sujets-hlp/carte-thematique/' | relative_url }}">Carte thématique</a>
+    <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
+  </nav>
+</header>
 
   <main>
     {{ content }}
