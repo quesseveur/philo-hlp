@@ -3265,6 +3265,53 @@
     ]
   },
   {
+    "id": "met_2026_2",
+    "auteur": {
+      "nom": "Nietzsche",
+      "prenom": "Friedrich",
+      "initiale": "F",
+      "particule": ""
+    },
+    "titre": "Seconde considération intempestive, De l’utilité et de l’inconvénient des études historiques pour la vie",
+    "genre": "essaip",
+    "datepub": "1875",
+    "reference_complementaire": "",
+    "lieu": "Métropole",
+    "annee": "2026",
+    "jour": 2,
+    "type_session": "Remplacement",
+    "semestre": "RS",
+    "a_un_corrige": false,
+    "chapeau": "",
+    "questions": [
+      {
+        "discipline": "phil",
+        "intitule": "Expliquez en quoi, d’après ce texte, le « sens historique » nuit à l’être vivant.",
+        "theme_programme": "MM"
+      },
+      {
+        "discipline": "litt",
+        "intitule": "La littérature et les arts ont-ils pour vocation de forger une mémoire ?",
+        "theme_programme": "MM"
+      }
+    ],
+    "texte": "Le plus petit bonheur, pourvu qu’il reste ininterrompu et qu’il rende heureux,\nrenferme, sans conteste, une dose supérieure de bonheur que le plus grand qui n’arrive\nque comme un épisode, en quelque sorte par fantaisie, telle une idée folle, au milieu des\nennuis, des désirs et des privations. Mais le plus petit comme le plus grand bonheur sont\ntoujours créés par une chose : le pouvoir d’oublier, ou, pour m’exprimer en savant, la\nfaculté de sentir, abstraction faite de toute idée historique, pendant toute la durée du\nbonheur. Celui qui ne sait pas se reposer sur le seuil du moment, oubliant tout le passé,\ncelui qui ne sait pas se dresser, comme le génie de la victoire, sans vertige et sans crainte,\nne saura jamais ce que c’est que le bonheur, et, ce qui pis est[^1], il ne fera jamais rien qui\npuisse rendre heureux les autres. Imaginez l’exemple le plus complet : un homme qui\nserait absolument dépourvu de la faculté d’oublier et qui serait condamné à voir, en toute\nchose, le devenir. Un tel homme ne croirait plus à son propre être, ne croirait plus en\nlui-même. Il verrait toutes choses se dérouler en une série de points mouvants, il se\nperdrait dans cette mer du devenir. En véritable élève d’Héraclite[^2] il finirait par ne plus\noser lever un doigt. Toute action exige l’oubli, comme tout organisme a besoin, non\nseulement de lumière, mais encore d’obscurité. Un homme qui voudrait ne sentir que\nd’une façon purement historique ressemblerait à quelqu’un que l’on aurait forcé de se\npriver de sommeil, ou bien à un animal qui serait condamné à ruminer sans cesse les\nmêmes aliments. Il est donc possible de vivre sans presque se souvenir, de vivre même\nheureux, à l’exemple de l’animal, mais il est absolument impossible de vivre sans oublier.\nSi je devais m’exprimer, sur ce sujet, d’une façon plus simple encore, je dirais : <i>il y a un\ndegré d’insomnie, de rumination, de sens historique qui nuit à l’être vivant et finit par\nl’anéantir, qu’il s’agisse d’un homme, d’un peuple ou d’une civilisation.</i>\n\n\n[^1]: Ce qui est encore pire.\n[^2]: Philosophe grec de la fin du VI<sup>e</sup> siècle avant notre ère.",
+    "themes_index": [
+      "oubli",
+      "temps",
+      "identité",
+      "temps",
+      "passage du temps",
+      "rumination",
+      "histoire sens historique",
+      "passé",
+      "devenir",
+      "animalité",
+      "action",
+      "bonheur"
+    ]
+  },
+  {
     "id": "sujet0_michaux",
     "auteur": {
       "nom": "Michaux",
@@ -5747,6 +5794,60 @@
       "soumission",
       "inversion des rôles",
       "armée"
+    ]
+  },
+  {
+    "id": "metrem_2026_1",
+    "auteur": {
+      "nom": "Camus",
+      "prenom": "Albert",
+      "initiale": "A",
+      "particule": ""
+    },
+    "titre": "Lettres à un ami allemand",
+    "genre": "lettrep",
+    "datepub": "1945",
+    "reference_complementaire": "",
+    "lieu": "Métropole",
+    "annee": "2026",
+    "jour": 1,
+    "type_session": "Remplacement",
+    "semestre": "HQ",
+    "a_un_corrige": true,
+    "chapeau": "",
+    "questions": [
+      {
+        "discipline": "litt",
+        "intitule": "Qu’oppose Camus à la violence de l’Histoire ?",
+        "theme_programme": "EXSHV"
+      },
+      {
+        "discipline": "phil",
+        "intitule": "La violence est-elle irréparable ?",
+        "theme_programme": "HV"
+      }
+    ],
+    "texte": "<i>Les </i>Lettres à un ami allemand<i> d’Albert Camus ont d’abord paru séparément dans\ndiverses revues clandestines sous l’Occupation. Elles ont été pour la première fois\nréunies et publiées en 1945. Voici un extrait de la Troisième lettre écrite en 1944.</i>\n\n\nIl m’arrive quelquefois, au détour d’une rue, dans ces courts répits que laissent les\nlongues heures de la lutte commune, de penser à tous ces lieux d’Europe que je\nconnais bien. C’est une terre magnifique faite de peine et d’histoire. Je recommence\nces pèlerinages que j’ai faits avec tous les hommes d’Occident : les roses dans les\ncloîtres de Florence, les bulbes dorés de Cracovie, le Hradschin[^1] et ses palais morts,\nles statues contorsionnées du pont Charles sur la Vltava[^2], les jardins délicats de\nSalzbourg[^3]. Toutes ces fleurs et ces pierres, ces collines et ces paysages où le temps\ndes hommes et le temps du monde ont mêlé les vieux arbres et les monuments ! Mon\nsouvenir a fondu ces images superposées pour en faire un seul visage qui est celui de\nma plus grande patrie. Quelque chose se serre en moi lorsque je pense alors que sur\ncette face énergique et tourmentée votre ombre, depuis des années, s’est posée. Il est\npourtant quelques-uns de ces lieux que vous et moi avons vus ensemble. Je n’avais\npas l’idée en ce temps-là qu’un jour il nous faudrait les délivrer de vous. Et encore, à\ncertaines heures de rage et de désespoir, il m’arrive de regretter que les roses puissent\nencore pousser dans le cloître de San Marco[^4], les pigeons se détacher en grappes de\nla cathédrale de Salzbourg et les géraniums rouges pousser inlassablement sur les\npetits cimetières de Silésie[^5].\n\nMais à d’autres moments, et ce sont les seuls vrais, je m’en réjouis. Car tous ces\npaysages, ces fleurs et ces labours, la plus vieille des terres, vous démontrent à\nchaque printemps qu’il est des choses que vous ne pouvez étouffer dans le sang. C’est\nsur cette image que je puis finir. Il ne me suffirait pas de penser que toutes les grandes\nombres de l’Occident et que trente peuples sont avec nous : je ne pouvais pas me\npasser de la terre. Et je sais ainsi que tout dans l’Europe, le paysage et l’esprit, vous\nnie tranquillement, sans haine désordonnée, avec la force calme des victoires. Les\narmes dont l’esprit européen dispose contre vous sont les mêmes que détient cette\nterre sans cesse renaissante en moissons et en corolles. La lutte que nous menons a\nla certitude de la victoire puisqu’elle a l’obstination des printemps.\n\n\n[^1]: <i>Le Hradschin :</i> quartier historique de Prague.\n[^2]: <i>La Vltava :</i> rivière qui arrose Prague. Le pont Charles, construit au XIV<sup>e</sup> siècle, célèbre pour ses nombreuses statues, est le plus ancien pont de Prague.\n[^3]: La ville autrichienne de Salzbourg et sa cathédrale ont été durement touchées par les bombardements allemands.\n[^4]: <i>San Marco :</i> couvent de Florence, décoré au XV<sup>e</sup> siècle par d’admirables fresques de Fra Angelico.\n[^5]: <i>Silésie :</i> région de Pologne annexée par le III<sup>e</sup> Reich en 1939.",
+    "themes_index": [
+      "mémoire",
+      "Europe",
+      "culture patrimoine culturel",
+      "guerre",
+      "occupation",
+      "printemps",
+      "nazisme",
+      "résistance",
+      "espoir",
+      "beauté",
+      "culture",
+      "temps",
+      "nature (environnement)",
+      "monument historique",
+      "amitié",
+      "terre",
+      "peuple",
+      "victoire",
+      "printemps"
     ]
   }
 ]
